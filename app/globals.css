@@ -1,0 +1,14 @@
+@import "./utils/styles/_base.css";
+@import "./utils/styles/_variables.css";
+
+.static-line {
+  stroke-width: 3;
+  fill: none;
+}
+
+.animated-line {
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 20000;
+}

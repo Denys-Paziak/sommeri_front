@@ -1,0 +1,225 @@
+.technologies__section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.technologies__wrapper {
+  width: 100%;
+}
+.technologies__wrapper_title {
+  /* background: linear-gradient(
+    73deg,
+    #2696a8 26.85%,
+    rgba(38, 150, 168, 0) 112.47%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-size: 60px;
+  line-height: 80px;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+}
+.technologies__sliders_shadow {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    43.72% 315.9% at 50% 50%,
+    rgba(12, 12, 12, 0) 0%,
+    rgba(12, 12, 12, 0.9) 100%
+  );
+}
+.technologies__slider {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 300px;
+}
+.technologies__slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotateZ(180deg);
+}
+.technologies__slider::before {
+  left: 0;
+  top: 0;
+}
+.technologies__slider_track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(300px * 8);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.technologies__slider_track:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.technologies__slider_item {
+  padding: 20px 60px;
+  background: var(--white-gray);
+  border-radius: 12px;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  filter: blur(0.5px);
+}
+.technologies__item_logo {
+  width: 32px;
+  height: 32px;
+}
+.technologies__item_text {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--white);
+}
+.technologies__wrapper_main {
+  width: 100%;
+  min-height: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.technologies__main_dashboard {
+  max-width: 1000px;
+  height: 100%;
+  position: relative;
+  background: var(--dark);
+  border-radius: 12px;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.technologies__main_dashboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(
+    89.96deg,
+    rgba(255, 255, 255, 0.1) 15.05%,
+    rgba(76, 195, 230, 0.2) 23.12%,
+    rgba(18, 187, 214, 0.6) 48.29%,
+    #2696a8 54.75%,
+    rgba(18, 187, 214, 0.6) 61.9%,
+    rgba(82, 182, 154, 0.2) 88.62%,
+    rgba(82, 182, 154, 0.1) 101.04%,
+    rgba(255, 255, 255, 0.1) 118.56%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.technologies__dashboard_circle {
+  position: absolute;
+  top: 10px;
+  right: -45px;
+}
+.technologies__dashboard_radial {
+  position: absolute;
+  left: -65px;
+  bottom: -65px;
+}
+.technologies__dashboard_title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  color: var(--white);
+  text-align: center;
+}
+.technologies__dashboard_banner {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+.technologies__banner_image {
+  width: 100%;
+  height: 100%;
+}
+.technologies__dashboard_footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.technologies__footer_text {
+  width: 60%;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--gray);
+  text-align: center;
+}
+.technologies__dashboard_bamboo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.animLeft {
+  animation: scrollLeft 50s linear infinite;
+}
+
+.animRight {
+  animation: scrollRight 50s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

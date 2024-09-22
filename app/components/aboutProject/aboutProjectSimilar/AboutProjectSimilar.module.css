@@ -1,0 +1,18 @@
+.similar__projects_section {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 140px;
+}
+.similar__project_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.similar__wrapper_title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  color: var(--white);
+}

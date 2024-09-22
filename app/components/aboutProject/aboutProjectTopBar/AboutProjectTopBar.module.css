@@ -1,0 +1,52 @@
+.project__top_section {
+  width: 100%;
+  height: 100%;
+  padding-top: 212px;
+  padding-bottom: 40px;
+}
+.project__top_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project__top_info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.project__top_name {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 500;
+  color: var(--white);
+}
+.project__top_type {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--gray);
+}
+.project__top_visit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.project__visit_text {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--white);
+}
+.project__visit_icon {
+  width: 10px;
+  height: 11px;
+}
+.project__visit_icon svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,243 @@
+<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2606"
+          height="1726"
+          viewBox="0 0 2606 1726"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#52B69A" />
+              <stop offset="50%" stop-color="#2696A8" />
+              <stop offset="100%" stop-color="#168AAD" />
+            </linearGradient>
+          </defs>
+
+          <g stroke="#555" stroke-width="1" opacity="0.5">
+            <path d="M101.5 1C162.5 942 187 1201.5 1 1368" />
+            <path d="M276.5 1C345.5 1152.5 356 1281 7 1529.5" />
+            <path d="M446.5 1C503.5 1372.5 552 1268 9 1714" />
+            <path d="M621.5 1C642.5 1373 754.5 1174.5 270.5 1724.5" />
+            <path d="M793.5 1C793.5 1373 898 1181.5 535.5 1717" />
+            <path d="M966.5 1C969 1368 1043.5 1145.5 798 1723.5" />
+            <path d="M1139.5 1C1142 1368 1170.5 1198.5 1060.5 1724" />
+            <path d="M1312.5 1C1315 1368 1306.5 1197.5 1324 1722" />
+            <path d="M1485.5 1C1481.5 1376.5 1449 1231 1586 1717" />
+            <path d="M1658.53 1C1646.5 1378.5 1591.5 1193.5 1846.53 1717" />
+            <path d="M1831.53 1C1815.5 1369 1731.5 1196 2110.5 1719" />
+            <path d="M2004.52 1C1977 1364 1886.5 1219 2374.5 1719" />
+            <path d="M2177.52 1C2136.5 1333 2050.5 1239 2601.5 1691.5" />
+            <path d="M2349.52 1C2275.5 1312.5 2297.5 1263 2605 1509.5" />
+            <path d="M2522.51 1C2438.5 1298.5 2494 1152 2599 1344.5" />
+
+            <path d="M0 100 H2606" />
+            <path d="M0 300 H2606" />
+            <path d="M0 500 H2606" />
+            <path d="M0 700 H2606" />
+            <path d="M0 900 H2606" />
+            <path d="M0 1100 H2606" />
+            <path d="M0 1300 H2606" />
+          </g>
+
+          <g stroke="url(#gradient)" stroke-width="2">
+            <path d="M101.5 1C162.5 942 187 1201.5 1 1368">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M276.5 1C345.5 1152.5 356 1281 7 1529.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.5s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M446.5 1C503.5 1372.5 552 1268 9 1714">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M621.5 1C642.5 1373 754.5 1174.5 270.5 1724.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.2s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M793.5 1C793.5 1373 898 1181.5 535.5 1717">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.8s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M966.5 1C969 1368 1043.5 1145.5 798 1723.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.6s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M1139.5 1C1142 1368 1170.5 1198.5 1060.5 1724">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.9s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M1312.5 1C1315 1368 1306.5 1197.5 1324 1722">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8.1s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M1485.5 1C1481.5 1376.5 1449 1231 1586 1717">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.4s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M1658.53 1C1646.5 1378.5 1591.5 1193.5 1846.53 1717">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8.3s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M1831.53 1C1815.5 1369 1731.5 1196 2110.5 1719">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M2004.52 1C1977 1364 1886.5 1219 2374.5 1719">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.7s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M2177.52 1C2136.5 1333 2050.5 1239 2601.5 1691.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8.5s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M2349.52 1C2275.5 1312.5 2297.5 1263 2605 1509.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="8.2s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M2522.51 1C2438.5 1298.5 2494 1152 2599 1344.5">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,1726"
+                to="1726,0"
+                dur="7.6s"
+                fill="freeze"
+              />
+            </path>
+
+            <path d="M0 100 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.3s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 300 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.6s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 500 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.8s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 700 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.1s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 900 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.5s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 1100 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="3s"
+                fill="freeze"
+              />
+            </path>
+            <path d="M0 1300 H2606">
+              <animate
+                attributeName="stroke-dasharray"
+                from="0,2606"
+                to="2606,0"
+                dur="2.4s"
+                fill="freeze"
+              />
+            </path>
+          </g>
+        </svg>
