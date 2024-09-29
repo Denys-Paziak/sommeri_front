@@ -52,7 +52,7 @@ const OurProjects = () => {
             <ResponsiveMasonry
               columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
             >
-              {/* <Masonry gutter="50px">
+              <Masonry gutter="50px">
                 {projects.map((project, index) => {
                   let projectStyle;
 
@@ -62,7 +62,7 @@ const OurProjects = () => {
                   return (
                     <Link
                       className={projectStyle}
-                      href={"/project/" + project.id}
+                      href={"/project/" + project.documentId}
                     >
                       <div
                         key={project.id}
@@ -127,7 +127,7 @@ const OurProjects = () => {
                     </Link>
                   );
                 })}
-              </Masonry> */}
+              </Masonry>
             </ResponsiveMasonry>
           </div>
         </div>

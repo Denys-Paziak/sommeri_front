@@ -1,10 +1,10 @@
 import styles from "./AboutProjectGalery.module.css";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
-import ReactMarkdown from 'react-markdown'
+import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
+import ReactMarkdown from "react-markdown";
 import React from "react";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 
-const AboutProjectGalery = ({project}: {project: ProjectInterface}) => {
+const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
   console.log(project);
   return (
     <section className={styles.project__galery_section}>
@@ -12,9 +12,11 @@ const AboutProjectGalery = ({project}: {project: ProjectInterface}) => {
         <div className={styles.project__galery_wrapper}>
           <div className={styles.project__wrapper_banners}>
             {project.attributes.About_project_galery.data.map((image) => {
-              return    <div className={styles.project__banners_item}>
-                <ImageServer link={image.attributes.url}/>
-              </div>
+              return (
+                <div className={styles.project__banners_item}>
+                  <ImageServer link={image.attributes.url} />
+                </div>
+              );
             })}
           </div>
           <div className={styles.project__wrapper_result}>

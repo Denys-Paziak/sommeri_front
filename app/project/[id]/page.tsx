@@ -4,9 +4,9 @@ import Header from "@/app/components/header/Header";
 import AboutProject from "@/app/components/aboutProject/AboutProject";
 
 import dynamic from "next/dynamic";
-import {useEffect, useState} from "react";
-import {getProject} from "@/app/utils/server/server";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
+import { useEffect, useState } from "react";
+import { getProject } from "@/app/utils/server/server";
+import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
 import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
@@ -14,20 +14,20 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 });
 
 const Project = ({ params }: { params: { id: string } }) => {
-    const [project, setProject] = useState<ProjectInterface>();
+  const [project, setProject] = useState<ProjectInterface>();
 
-    useEffect(() => {
-        getProject(params.id).then(data => {
-            setProject(data);
-            console.log(data)
-        })
-    }, []);
+  useEffect(() => {
+    getProject(params.id).then((data) => {
+      setProject(data);
+      console.log(data);
+    });
+  }, []);
 
   return (
     <div>
-        <CustomCursor/>
+      <CustomCursor />
       <Header />
-        {project && <AboutProject project={project}/>}
+      {project && <AboutProject project={project} />}
     </div>
   );
 };
