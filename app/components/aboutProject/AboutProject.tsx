@@ -17,8 +17,8 @@ const AboutProject = ({project}: {project: ProjectInterface}) => {
             <AboutProjectFrame project={project}/>
             <AboutProjectMockup project={project}/>
             <AboutProjectGalery project={project}/>
-            <AboutProjectSimilar  project={project}/>
-            <AboutProjectReviews/>
+            {/*<AboutProjectSimilar  project={project}/>*/}
+            {/*<AboutProjectReviews/>*/}
         </main>
     );
 };

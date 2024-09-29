@@ -9,7 +9,7 @@ import Faq from "@/app/components/home/faq/Faq";
 
 const HomePage = () => {
   return (
-    <main>
+    <>
       <Hero />
       <Services />
       <About />
@@ -18,7 +18,7 @@ const HomePage = () => {
       <ClientsSay />
       <WhyUs />
       <Faq />
-    </main>
+    </>
   );
 };
 

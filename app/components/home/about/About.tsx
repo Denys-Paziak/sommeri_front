@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./About.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 import LineVector from "@/app/components/lineVector/LineVector";
+import React from "react";
 
 const About = () => {
   return (
@@ -25,7 +26,7 @@ const About = () => {
                 step we take is aimed at exceeding expectations and creating a
                 truly valuable product.
               </p>
-              <SecondaryButton>Reviews</SecondaryButton>
+              <SecondaryButton type={''}>Reviews</SecondaryButton>
             </div>
             <div className={styles.about__main_banner}>
               <Image

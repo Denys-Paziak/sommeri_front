@@ -7,8 +7,8 @@ const AboutProjectTopBar = ({project}: {project: ProjectInterface}) => {
       <div className="container">
         <div className={styles.project__top_wrapper}>
           <div className={styles.project__top_info}>
-            <h2 className={styles.project__top_name}>{project.attributes.Project_name}</h2>
-            <p className={styles.project__top_type}>{project.attributes.Category}</p>
+            <h2 className={styles.project__top_name}>{project.Name}</h2>
+            <p className={styles.project__top_type}>{project.Category.Name}</p>
           </div>
           <button className={styles.project__top_visit} type="button">
             <span className={styles.project__visit_text}>Visit</span>

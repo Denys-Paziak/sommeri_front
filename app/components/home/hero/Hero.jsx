@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Hero.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import HeroBrand from "./components/HeroBrand";
 import Button from "@/app/components/UI/button/Button";
 import gsap from "gsap";
 import {

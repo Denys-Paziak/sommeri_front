@@ -11,9 +11,9 @@ const AboutProjectGalery = ({project}: {project: ProjectInterface}) => {
       <div className="container">
         <div className={styles.project__galery_wrapper}>
           <div className={styles.project__wrapper_banners}>
-            {project.attributes.About_project_galery.data.map((image) => {
+            {project.Galery.map((image) => {
               return    <div className={styles.project__banners_item}>
-                <ImageServer link={image.attributes.url}/>
+                <ImageServer link={image.url}/>
               </div>
             })}
           </div>
@@ -22,7 +22,7 @@ const AboutProjectGalery = ({project}: {project: ProjectInterface}) => {
               <h3 className={styles.project__block_subtitle}>Result:</h3>
               <div className={styles.project__result_info}>
                 <p className={styles.project__block_text}>
-                  <ReactMarkdown>{project.attributes.Result}</ReactMarkdown>
+                  <ReactMarkdown>{project.Result}</ReactMarkdown>
                 </p>
               </div>
             </div>

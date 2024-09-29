@@ -7,7 +7,9 @@ const AboutProjectFrame = ({project}: {project: ProjectInterface}) => {
     <section className={styles.project__frame_section}>
       <div className="container">
         <div className={styles.project__frame_wrapper}>
-            <ImageServer link={project.attributes.About_project_frame.data.attributes.url}/>
+            <div className={styles.project__frame_image}>
+                <ImageServer link={project.Mokap_1.url}/>
+            </div>
         </div>
       </div>
     </section>
