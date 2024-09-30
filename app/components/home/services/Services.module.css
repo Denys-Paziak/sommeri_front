@@ -148,10 +148,6 @@
   overflow: hidden;
 }
 
-.services__main_card:hover .services__inner_text {
-  max-height: 100px;
-}
-
 .services__card_image {
   position: absolute;
   top: 20px;
@@ -187,6 +183,12 @@
   .services__card_primary {
     width: 100%;
   }
+  .services__inner_text {
+    max-height: 100%;
+  }
+  .services__main_card::before {
+    opacity: 0.4;
+  }
 }
 
 @media (max-width: 900px) {
@@ -204,6 +206,10 @@
 @media (max-width: 768px) {
   .services__heading_vector {
     display: none;
+  }
+
+  .services__main_card {
+    height: 320px;
   }
 }
 
@@ -233,10 +239,6 @@
 }
 
 @media (max-width: 500px) {
-  .services__main_card {
-    height: 380px;
-  }
-
   .services__card_info {
     width: 100%;
   }

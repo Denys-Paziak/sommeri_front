@@ -1,53 +1,3 @@
-// import styles from "./Faq.module.css";
-
-// const Faq = () => {
-//   return (
-//     <section className={styles.faq__section}>
-//       <div className="container">
-//         <div className={styles.faq__wrapper}>
-//           <h2 className={styles.faq__wrapper_title}>Question? Answers</h2>
-//           <div className={styles.faq__wrapper_main}>
-//             <div className={styles.faq__main_list}>
-//               <div className={styles.faq__main_item}>
-//                 <div className={styles.faq__item_inner}>
-//                   <h3 className={styles.faq__inner_title}>
-//                     How long does it take to develop a website?
-//                   </h3>
-//                   <span className={styles.faq__inner_circle}>
-//                     <svg
-//                       width="12"
-//                       height="12"
-//                       viewBox="0 0 12 12"
-//                       fill="none"
-//                       xmlns="http://www.w3.org/2000/svg"
-//                     >
-//                       <path
-//                         d="M1.33325 6.00016H5.99992M5.99992 6.00016H10.6666M5.99992 6.00016V1.3335M5.99992 6.00016V10.6668"
-//                         stroke="white"
-//                         stroke-width="2"
-//                         stroke-linecap="round"
-//                         stroke-linejoin="round"
-//                       />
-//                     </svg>
-//                   </span>
-//                 </div>
-//                 <div className={styles.faq__item_content}>
-//                   <p className={styles.faq__content_text}>
-//                     Yes, we offer technical support services to ensure stable
-//                     operation of the website after its launch.
-//                   </p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Faq;
-
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Faq.module.css";
@@ -122,11 +72,9 @@ const Faq = () => {
                       </svg>
                     </span>
                   </div>
-                  {activeIndex === index && (
-                    <div className={styles.faq__item_content}>
+                    <div className={styles.faq__item_content} >
                       <p className={styles.faq__content_text}>{item.answer}</p>
                     </div>
-                  )}
                 </div>
               ))}
             </div>

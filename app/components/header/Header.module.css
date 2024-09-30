@@ -28,12 +28,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.header__wrapper_logo {
+.header__wrapper img {
   max-width: 212px;
-}
-.header__logo_icon {
-  width: 100%;
-  height: auto;
 }
 .header__nav_list {
   display: flex;

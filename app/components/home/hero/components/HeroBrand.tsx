@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "../Hero.module.css";
 
-const HeroBrand = ({ brand }) => {
+interface Props {
+  brand: { image_path: string };
+}
+
+const HeroBrand: FC<Props> = ({ brand }) => {
   return (
     <li className={styles.hero__brands_item}>
       <img

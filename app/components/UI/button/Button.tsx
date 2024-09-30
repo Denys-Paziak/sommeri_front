@@ -1,12 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ children, type, arrowColor, style }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
+  arrowColor?: string;
+  style?: "fill" | "outline";
+}
+
+const Button: FC<ButtonProps> = ({
+  children,
+  type,
+  onClick,
+  arrowColor,
+  style,
+}) => {
   return (
     <div>
       <button
+        onClick={onClick}
         className={`${styles.button} ${style === "fill" && styles.fill}`}
         type={type}
       >

@@ -1,4 +1,3 @@
-
 import Button from "@/app/components/UI/button/Button";
 import { technologies } from "../../../utils/data/technologies";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import styles from "./Technologies.module.css";
 
 const Technologies = () => {
   return (
-    <section className={styles.technologies__section}>
+    <section id="technologies" className={styles.technologies__section}>
       <div className="container">
         <div className={styles.technologies__wrapper}>
           <h2 className={styles.technologies__wrapper_title}>
@@ -71,9 +70,17 @@ const Technologies = () => {
       </div>
       <div className={styles.technologies__slider}>
         {technologies.map((technologyBlocks, index) => (
-          <div key={index} className={`${styles.technologies__slider_track} ${index % 2 === 0 ? styles.animLeft : styles.animRight}`}>
+          <div
+            key={index}
+            className={`${styles.technologies__slider_track} ${
+              index % 2 === 0 ? styles.animLeft : styles.animRight
+            }`}
+          >
             {technologyBlocks.map((technologyBlock, index) => (
-              <div key={index} className={ `${styles.technologies__slider_item} `}>
+              <div
+                key={index}
+                className={`${styles.technologies__slider_item} `}
+              >
                 <Image
                   src={technologyBlock.image_url}
                   alt="technology logo"

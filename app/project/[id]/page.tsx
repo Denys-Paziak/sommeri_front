@@ -2,6 +2,7 @@
 
 import Header from "@/app/components/header/Header";
 import AboutProject from "@/app/components/aboutProject/AboutProject";
+import Footer from "@/app/components/footer/Footer";
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
@@ -28,6 +29,7 @@ const Project = ({ params }: { params: { id: string } }) => {
       <CustomCursor />
       <Header />
       {project && <AboutProject project={project} />}
+      <Footer />
     </div>
   );
 };

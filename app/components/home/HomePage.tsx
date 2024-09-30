@@ -6,6 +6,7 @@ import OurProjects from "@/app/components/home/ourProjects/OurProjects";
 import ClientsSay from "@/app/components/home/clientsSay/ClientsSay";
 import WhyUs from "@/app/components/home/whyUs/WhyUs";
 import Faq from "@/app/components/home/faq/Faq";
+import Contact from "@/app/components/home/contact/Contact";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <ClientsSay />
       <WhyUs />
       <Faq />
+      <Contact />
     </main>
   );
 };

@@ -2,10 +2,12 @@ import Image from "next/image";
 import styles from "./About.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 import LineVector from "@/app/components/lineVector/LineVector";
+import React from "react";
+import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 
 const About = () => {
   return (
-    <section className={styles.about__section}>
+    <section id="about" className={styles.about__section}>
       <div className="container">
         <div className={styles.about__wrapper}>
           <h2 className={styles.about__wrapper_title}>About us</h2>
@@ -25,7 +27,12 @@ const About = () => {
                 step we take is aimed at exceeding expectations and creating a
                 truly valuable product.
               </p>
-              <SecondaryButton>Reviews</SecondaryButton>
+              <SecondaryButton
+                type={"button"}
+                onClick={() => handleScroll("reviews")}
+              >
+                Reviews
+              </SecondaryButton>
             </div>
             <div className={styles.about__main_banner}>
               <Image
@@ -40,7 +47,7 @@ const About = () => {
         </div>
       </div>
       <div className={styles.vector}>
-        <LineVector/>
+        <LineVector />
       </div>
     </section>
   );

@@ -1,53 +1,56 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, RefObject } from "react";
 import styles from "./Services.module.css";
 import AnimBorder from "@/app/components/animBorder/AnimBorder";
 import { gsap } from "gsap";
-import Image from "next/image";
 
-const Services = () => {
-  const pathRef = useRef([]);
+const Services: React.FC = () => {
+  const pathRef = useRef<SVGPathElement[]>([]);
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (index: number) => {
     const path = pathRef.current[index];
 
-    const length = path.getTotalLength();
+    if (path) {
+      const length = path.getTotalLength();
 
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = length;
+      path.style.strokeDasharray = `${length}`;
+      path.style.strokeDashoffset = `${length}`;
 
-    let tl = gsap.timeline();
-    tl.to(
-      path,
-      {
-        strokeDashoffset: 0,
+      let tl = gsap.timeline();
+      tl.to(
+        path,
+        {
+          strokeDashoffset: 0,
+          duration: 2,
+          stroke: "#2696a8",
+          ease: "power2.inOut",
+        },
+        "0"
+      );
+    }
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const path = pathRef.current[index];
+    if (path) {
+      const length = path.getTotalLength();
+      gsap.killTweensOf(path);
+      gsap.to(path, {
+        strokeDashoffset: length,
+        fill: "rgba(255,255,255,0)",
         duration: 2,
-        stroke: "#2696a8",
         ease: "power2.inOut",
-      },
-      "0"
-    );
+      });
+    }
   };
 
-  const handleMouseLeave = (index) => {
-    const path = pathRef.current[index];
-    const length = path.getTotalLength();
-    gsap.killTweensOf(path);
-    gsap.to(path, {
-      strokeDashoffset: length,
-      fill: "rgba(255,255,255,0)",
-      duration: 2,
-      ease: "power2.inOut",
-    });
-  };
-
-  const addToRefs = (el) => {
+  const addToRefs = (el: SVGPathElement | null) => {
     if (el && !pathRef.current.includes(el)) {
       pathRef.current.push(el);
     }
   };
 
   return (
-    <section className={styles.services__section}>
+    <section id="services" className={styles.services__section}>
       <div className="container">
         <div className={styles.services__wrapper}>
           <div className={styles.services__wrapper_heading}>
@@ -60,15 +63,6 @@ const Services = () => {
                 identities
               </p>
             </div>
-            {/* <div className={styles.services__heading_vector}>
-              <Image
-                src="../../images/services-vector.svg"
-                alt="heading vector"
-                width={500}
-                height={500}
-                className={styles.services__vector_icon}
-              />
-            </div> */}
           </div>
           <div className={styles.services__wrapper_main}>
             <AnimBorder

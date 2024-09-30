@@ -6,21 +6,21 @@ import AboutProjectMockup from "@/app/components/aboutProject/aboutProjectMockup
 import AboutProjectGalery from "@/app/components/aboutProject/aboutProjectGalery/AboutProjectGalery";
 import AboutProjectSimilar from "@/app/components/aboutProject/aboutProjectSimilar/AboutProjectSimilar";
 import AboutProjectReviews from "@/app/components/aboutProject/aboutProjectReviews/AboutProjectReviews";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
+import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
 
-const AboutProject = ({project}: {project: ProjectInterface}) => {
-    return (
-        <main>
-            <AboutProjectTopBar project={project}/>
-            <AboutProjectBanner project={project}/>
-            <AboutProjectInfo project={project}/>
-            <AboutProjectFrame project={project}/>
-            <AboutProjectMockup project={project}/>
-            <AboutProjectGalery project={project}/>
-            <AboutProjectSimilar  project={project}/>
-            <AboutProjectReviews/>
-        </main>
-    );
+const AboutProject = ({ project }: { project: ProjectInterface }) => {
+  return (
+    <main>
+      <AboutProjectTopBar project={project} />
+      <AboutProjectBanner project={project} />
+      <AboutProjectInfo project={project} />
+      <AboutProjectFrame project={project} />
+      <AboutProjectMockup project={project} />
+      <AboutProjectGalery project={project} />
+      {/*<AboutProjectSimilar  project={project}/>*/}
+      {/*<AboutProjectReviews/>*/}
+    </main>
+  );
 };
 
 export default AboutProject;

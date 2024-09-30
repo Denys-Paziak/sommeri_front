@@ -1,0 +1,142 @@
+.footer {
+  width: 100%;
+}
+.footer__section {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  border-top: 1px solid #ffffff1a;
+  position: relative;
+}
+.footer__section_vector {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 110px;
+  z-index: 1;
+}
+.footer__section_vector img {
+  width: 100%;
+  height: 100%;
+}
+.footer_wrapper {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.footer__wrapper_main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__main_contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.footer__contact_logo {
+  max-width: 285px;
+}
+.footer__contact_logo img {
+  width: 100%;
+}
+.footer__contact_block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__block_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__item_text {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--gray);
+}
+.footer__main_info {
+  display: flex;
+  gap: 110px;
+}
+.footer__info_block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer__block_menu,
+.footer__block_security {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__item_link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--gray);
+  transition: 0.4s;
+}
+.footer__item_link:hover {
+  color: var(--primary);
+}
+.footer__block_subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--white);
+}
+.footer__block_socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer__block_socials a {
+  cursor: pointer;
+}
+.footer__wrapper_bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  border-top: 1px solid #ffffff1a;
+}
+.footer__bottom_reserved {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  color: #ffffff33;
+}
+
+@media (max-width: 1024px) {
+  .footer__wrapper_main {
+    flex-direction: column;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer__main_info {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .footer__contact_logo {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__main_contact {
+    gap: 20px;
+  }
+  .footer__section {
+    padding-top: 80px;
+  }
+}

@@ -10,15 +10,17 @@ const AboutProjectMockup = ({project}: {project: ProjectInterface}) => {
           <div className={styles.project__info_block}>
             <h3 className={styles.project__block_subtitle}>We did:</h3>
             <p className={styles.project__block_text}>
-              {project.attributes.We_did}
+              {project.We_did_1}
             </p>
           </div>
           <div className={styles.project__wrapper_inner}>
-            <ImageServer link={project.attributes.About_project_mockup.data.attributes.url}/>
+            <div className={styles.project__frame_image}>
+              <ImageServer link={project.Mokup_2.url}/>
+            </div>
           </div>
           <div className={styles.project__info_block}>
             <p className={styles.project__block_text}>
-              {project.attributes.We_did_2}
+              {project.We_did_2}
             </p>
           </div>
         </div>

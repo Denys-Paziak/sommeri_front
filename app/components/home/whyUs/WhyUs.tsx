@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const WhyUs = () => {
   return (
-    <section className={styles.why__us_section}>
+    <section id="whyUs" className={styles.why__us_section}>
       <div className="container">
         <div className={styles.why__us_wrapper}>
           <div className={styles.why__us_heading}>

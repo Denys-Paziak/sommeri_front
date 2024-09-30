@@ -1,7 +1,9 @@
+const host = "http://localhost:1337";
+
 const getProjects = async () => {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/projects?populate=*"
+        host + "/api/projects?populate=*"
     );
     const data = await response.json();
     return data.data;
@@ -13,7 +15,7 @@ const getProjects = async () => {
 const getProject = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:1337/api/projects/${id}?populate=*`
+        host + `/api/projects/${id}?populate=*`
     );
     const data = await response.json();
     return data.data;

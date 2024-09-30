@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-import Logo from "./components/Logo";
+import Logo from "../logo/Logo";
 import Navbar from "./components/Navbar";
 import Options from "./components/Options";
 
@@ -24,8 +24,9 @@ const Header = () => {
 
             <div
               onClick={handleBurgerMenu}
-              className={`${styles.header__mobile_burger} ${isMobileMenuOpen ? `${styles.active}` : ""
-                }`}
+              className={`${styles.header__mobile_burger} ${
+                isMobileMenuOpen ? `${styles.active}` : ""
+              }`}
             >
               <span className={styles.header__burger_bar}></span>
               <span className={styles.header__burger_bar}></span>

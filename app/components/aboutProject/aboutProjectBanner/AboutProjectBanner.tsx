@@ -6,7 +6,9 @@ const AboutProjectBanner = ({project}: {project: ProjectInterface}) => {
   return (
     <section className={styles.project__banner_section}>
       <div className={styles.project__banner_wrapper}>
-          <ImageServer link={project.attributes.Hero_image.data.attributes.url}/>
+          <div className={styles.project__banner_image}>
+              <ImageServer link={project.Hero_image.url}/>
+          </div>
       </div>
     </section>
   );

@@ -9,13 +9,6 @@
   width: 100%;
 }
 .technologies__wrapper_title {
-  /* background: linear-gradient(
-    73deg,
-    #2696a8 26.85%,
-    rgba(38, 150, 168, 0) 112.47%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   font-size: 60px;
   line-height: 80px;
   font-weight: 500;
@@ -221,5 +214,12 @@
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .technologies__wrapper_title {
+    font-size: 36px;
+    line-height: 40px;
   }
 }

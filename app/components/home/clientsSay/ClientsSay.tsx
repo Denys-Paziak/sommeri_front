@@ -3,7 +3,7 @@ import Reviews from "@/app/components/reviews/Reviews";
 
 const ClientsSay = () => {
   return (
-    <div className={styles.client__say_block}>
+    <div id="reviews" className={styles.client__say_block}>
       <section className={styles.client__say_section}>
         <div className="container">
           <div className={styles.client__say_wrapper}>

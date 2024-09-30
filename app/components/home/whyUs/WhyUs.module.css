@@ -20,13 +20,6 @@
   gap: 20px;
 }
 .why__heading_title {
-  /* background: linear-gradient(
-    73deg,
-    #2696a8 26.85%,
-    rgba(38, 150, 168, 0) 112.47%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   font-size: 60px;
   line-height: 80px;
   font-weight: 500;
@@ -113,6 +106,9 @@
   .why__us_section {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+  .why__us_heading {
+    align-items: center;
   }
   .why__heading_title {
     font-size: 36px;

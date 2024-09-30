@@ -3,16 +3,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Hero.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import HeroBrand from "./components/HeroBrand";
 import Button from "@/app/components/UI/button/Button";
 import gsap from "gsap";
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
 } from "react-parallax-mouse";
+import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+
+interface Brand {
+  image_path: string;
+}
 
 const Hero = () => {
-  const [brands, setBrands] = useState([
+  const [brands, setBrands] = useState<Brand[]>([
     { image_path: "company-1" },
     { image_path: "company-2" },
     { image_path: "company-3" },
@@ -21,10 +25,13 @@ const Hero = () => {
     { image_path: "company-6" },
   ]);
 
-  const svgRef = useRef(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
-    const lines = svgRef.current.querySelectorAll(".animated-line");
+    if (!svgRef.current) return;
+
+    const lines =
+      svgRef.current.querySelectorAll<SVGPathElement>(".animated-line");
 
     startLineAnim(lines[1], 0);
     startLineAnim(lines[2], 2);
@@ -35,7 +42,7 @@ const Hero = () => {
     }, 19000);
   }, []);
 
-  function startLineAnim(line, delay) {
+  function startLineAnim(line: SVGPathElement, delay: number) {
     gsap.set(line, { strokeDashoffset: 20000 });
     gsap.to(line, {
       duration: 50,
@@ -65,19 +72,25 @@ const Hero = () => {
               </p>
             </div>
             <div className={styles.hero__wrapper_actions}>
-              <Button arrowColor={"#fff"} type={"button"}>
+              <Button
+                arrowColor={"#fff"}
+                type={"button"}
+                onClick={() => handleScroll("contactUs")}
+              >
                 Contact Us
               </Button>
-              <SecondaryButton type={"button"}>Our Projects</SecondaryButton>
+              <SecondaryButton
+                type={"button"}
+                onClick={() => handleScroll("portfolio")}
+              >
+                Our Projects
+              </SecondaryButton>
             </div>
             <div className={styles.hero__wrapper_brands}>
               <p className={styles.hero__brands_subtitle}>
                 Trusted by the world's biggest brands
               </p>
               <ul className={styles.hero__brands_list}>
-                {/* {brands.map((brand, index) => (
-                  <HeroBrand key={index} brand={brand} />
-                ))} */}
                 <li className={styles.hero__brands_item}>
                   <svg
                     width="128"
