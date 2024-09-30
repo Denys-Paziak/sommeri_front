@@ -26,11 +26,11 @@ const About = () => {
                 step we take is aimed at exceeding expectations and creating a
                 truly valuable product.
               </p>
-              <SecondaryButton type={''}>Reviews</SecondaryButton>
+              <SecondaryButton>Reviews</SecondaryButton>
             </div>
             <div className={styles.about__main_banner}>
               <Image
-                src="../../images/about-us-vector.svg"
+                src="/images/about-us-vector.svg"
                 alt="about us vector"
                 width={500}
                 height={500}

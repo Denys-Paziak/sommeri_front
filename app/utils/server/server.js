@@ -5,8 +5,7 @@ const getProjects = async () => {
     const response = await fetch(
         host + "/api/projects?populate=*"
     );
-    const data = await response.json();
-    return data.data;
+    return response;
   } catch (error) {
     console.error("Error fetching projects:", error);
   }
