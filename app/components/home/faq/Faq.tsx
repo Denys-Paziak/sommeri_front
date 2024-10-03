@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Faq.module.css";
@@ -85,7 +87,6 @@ const Faq = () => {
                 src="/images/faq-grid.svg"
                 alt="faq grid"
               />
-              {/* <img src="/images/faq-grid.svg" alt="faq grid" /> */}
             </div>
           </div>
         </div>

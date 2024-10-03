@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, RefObject } from "react";
+"use client"
+
+import React, { useEffect, useRef } from "react";
 import styles from "./Services.module.css";
 import AnimBorder from "@/app/components/animBorder/AnimBorder";
 import { gsap } from "gsap";

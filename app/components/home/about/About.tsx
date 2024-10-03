@@ -27,16 +27,20 @@ const About = () => {
                 step we take is aimed at exceeding expectations and creating a
                 truly valuable product.
               </p>
+<<<<<<< HEAD
               <SecondaryButton
                 type={"button"}
                 onClick={() => handleScroll("reviews")}
               >
                 Reviews
               </SecondaryButton>
+=======
+              <SecondaryButton>Reviews</SecondaryButton>
+>>>>>>> 41b277000a6055557a79d6fb0ecfe638cba27130
             </div>
             <div className={styles.about__main_banner}>
               <Image
-                src="../../images/about-us-vector.svg"
+                src="/images/about-us-vector.svg"
                 alt="about us vector"
                 width={500}
                 height={500}
