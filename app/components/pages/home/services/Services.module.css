@@ -1,0 +1,245 @@
+.services__section {
+  width: 100%;
+  height: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.services__section_svg {
+  stroke-dasharray: 0;
+}
+
+.services__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.services__wrapper_heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 106px;
+}
+
+.services__heading_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.services__info_title {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 80px;
+  color: var(--white);
+  text-align: center;
+}
+
+.services__info_subtext {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--gray);
+  text-align: center;
+}
+
+.services__wrapper_main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.services__main_card {
+  height: 318px;
+  background-image: url("/public/images/card-noise.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.8s;
+  overflow: hidden;
+}
+
+.services__main_card::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  box-shadow: 0 0 200px 100px var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  background: var(--primary);
+  transition: 0.5s 0.5s;
+}
+
+.services__main_card:hover::before {
+  opacity: 0.4;
+}
+
+.services__main_card:hover {
+  border-color: var(--primary);
+}
+
+.services__main_card:hover .services__info_count {
+  color: var(--white);
+}
+
+.services__main_card:hover .services__inner_text {
+  max-height: 100px;
+}
+
+.services__card_secondary {
+  width: calc(42% - 10px);
+}
+
+.services__card_primary {
+  width: calc(58% - 10px);
+}
+
+.services__card_info {
+  width: 72%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.services__info_count {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 58px;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.services__info_inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.services__inner_title {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  color: var(--white);
+}
+
+.services__inner_text {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 24px;
+  color: var(--white);
+  opacity: 0.8;
+  transition: 0.6s;
+  max-height: 0px;
+  overflow: hidden;
+}
+
+.services__card_image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  max-width: 180px;
+  height: 180px;
+}
+
+.services__card_image path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  fill: transparent;
+}
+
+.services__vector_icon {
+  max-width: 200px;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  .services__wrapper_heading {
+    gap: 80px;
+  }
+
+  .services__info_title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .services__card_secondary,
+  .services__card_primary {
+    width: 100%;
+  }
+  .services__inner_text {
+    max-height: 100%;
+  }
+  .services__main_card::before {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 900px) {
+  .services__info_title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .services__vector_icon {
+    max-width: 140px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .services__heading_vector {
+    display: none;
+  }
+
+  .services__main_card {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services__heading_info {
+    gap: 14px;
+  }
+
+  .services__wrapper {
+    gap: 40px;
+  }
+
+  .services__info_title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .services__info_count {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .services__card_image {
+    max-width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .services__card_info {
+    width: 100%;
+  }
+}

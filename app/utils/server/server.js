@@ -1,9 +1,9 @@
-const host = "http://localhost:1337";
+export const backHost = "http://localhost:1337";
 
-const getProjects = async () => {
+export const getProjects = async () => {
   try {
     const response = await fetch(
-        host + "/api/projects?populate=*"
+        backHost + "/api/projects?populate=*"
     );
     return response;
   } catch (error) {
@@ -11,16 +11,25 @@ const getProjects = async () => {
   }
 };
 
-const getProject = async (id) => {
+export const getProject = async (id) => {
   try {
     const response = await fetch(
-        host + `/api/projects/${id}?populate=*`
+        backHost + `/api/projects/${id}?populate=*`
     );
-    const data = await response.json();
-    return data.data;
+    return response;
   } catch (error) {
     console.error("Error fetching projects:", error);
   }
 };
 
-export { getProjects, getProject };
+export const getCategories = async () => {
+  try {
+    const response = await fetch(
+        backHost + `/api/categories`
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+};
+
