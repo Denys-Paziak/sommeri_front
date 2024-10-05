@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 .reviews__track_item {
   min-width: 400px;
