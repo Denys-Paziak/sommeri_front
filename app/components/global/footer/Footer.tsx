@@ -3,9 +3,32 @@ import Link from "next/link";
 import Logo from "../logo/Logo";
 import styles from "./Footer.module.css";
 import Image from "next/image";
-import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+import SectionLink from "@/app/components/global/sectionLink/SectionLink";
 
 const Footer = () => {
+  const NavbarItems = [
+    {
+      name: "Services",
+      link: "services",
+    },
+    {
+      name: "About us",
+      link: "about",
+    },
+    {
+      name: "Technologies",
+      link: "technologies",
+    },
+    {
+      name: "Projects",
+      link: "portfolio",
+    },
+    {
+      name: "Why us",
+      link: "whyUs",
+    },
+  ];
+
   return (
     <footer className={styles.footer}>
       <section className={styles.footer__section}>
@@ -61,46 +84,12 @@ const Footer = () => {
                 <div className={styles.footer__info_block}>
                   <h4 className={styles.footer__block_subtitle}>Menu</h4>
                   <ul className={styles.footer__block_menu}>
-                    <li className={styles.footer__list_item}>
-                      <a
-                        onClick={() => handleScroll("services")}
-                        className={styles.footer__item_link}
-                      >
-                        Services
-                      </a>
-                    </li>
-                    <li className={styles.footer__list_item}>
-                      <a
-                        onClick={() => handleScroll("about")}
-                        className={styles.footer__item_link}
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li className={styles.footer__list_item}>
-                      <a
-                        onClick={() => handleScroll("technologies")}
-                        className={styles.footer__item_link}
-                      >
-                        Technologies
-                      </a>
-                    </li>
-                    <li className={styles.footer__list_item}>
-                      <a
-                        onClick={() => handleScroll("portfolio")}
-                        className={styles.footer__item_link}
-                      >
-                        Projects
-                      </a>
-                    </li>
-                    <li className={styles.footer__list_item}>
-                      <a
-                        onClick={() => handleScroll("whyUs")}
-                        className={styles.footer__item_link}
-                      >
-                        Why Us
-                      </a>
-                    </li>
+                    {NavbarItems.map((NavbarItem) => (
+                      <SectionLink
+                        name={NavbarItem.name}
+                        link={NavbarItem.link}
+                      />
+                    ))}
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>

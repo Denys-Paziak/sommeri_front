@@ -1,5 +1,5 @@
 import styles from "./AboutProjectReviews.module.css";
-import Reviews from "@/app/components/reviews/Reviews";
+import Reviews from "@/app/components/global/reviews/Reviews";
 
 const AboutProjectReviews = () => {
   return (

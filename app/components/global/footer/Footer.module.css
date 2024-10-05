@@ -40,10 +40,11 @@
   gap: 40px;
 }
 .footer__contact_logo {
-  max-width: 285px;
+  max-width: 200px;
 }
 .footer__contact_logo img {
   width: 100%;
+  height: 100%;
 }
 .footer__contact_block {
   display: flex;
@@ -70,6 +71,9 @@
   flex-direction: column;
   gap: 24px;
 }
+.footer__block_menu a {
+  color: var(--gray);
+}
 .footer__block_menu,
 .footer__block_security {
   display: flex;
@@ -86,6 +90,7 @@
 .footer__item_link:hover {
   color: var(--primary);
 }
+
 .footer__block_subtitle {
   font-size: 16px;
   font-weight: 500;

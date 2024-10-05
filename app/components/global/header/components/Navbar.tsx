@@ -1,20 +1,39 @@
 import React from "react";
 import styles from "../Header.module.css";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+import SectionLink from "@/app/components/global/sectionLink/SectionLink";
 
 const Navbar = () => {
+  const NavbarItems = [
+    {
+      name: "Services",
+      link: "services",
+    },
+    {
+      name: "About us",
+      link: "about",
+    },
+    {
+      name: "Technologies",
+      link: "technologies",
+    },
+    {
+      name: "Projects",
+      link: "portfolio",
+    },
+    {
+      name: "Why us",
+      link: "whyUs",
+    },
+  ];
+
   return (
     <nav className={styles.header__wrapper_nav}>
       <ul className={styles.header__nav_list}>
-        <li className={styles.header__list_item}>
-          <a
-            onClick={() => handleScroll("services")}
-            className={styles.header__item_link}
-          >
-            Services
-          </a>
-        </li>
-        <li className={styles.header__list_item}>
+        {NavbarItems.map((NavbarItem) => (
+          <SectionLink name={NavbarItem.name} link={NavbarItem.link} />
+        ))}
+        {/* <li className={styles.header__list_item}>
           <a
             onClick={() => handleScroll("about")}
             className={styles.header__item_link}
@@ -45,7 +64,7 @@ const Navbar = () => {
           >
             Why Us
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
