@@ -114,6 +114,11 @@
 
   .project__block_subtitle {
     font-size: 26px;
+    text-align: center;
+  }
+
+  .project__block_text {
+    text-align: center;
   }
 
   .project__wrapper_inner {

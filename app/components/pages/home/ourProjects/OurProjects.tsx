@@ -4,7 +4,7 @@ import { backHost } from "@/app/utils/server/server";
 import Link from "next/link";
 
 import styles from "./OurProjects.module.css";
-import MasonryGrid from "@/app/components/UI/button/MasonryGrid/MasonryGrid";
+import MasonryGrid from "@/app/components/UI/MasonryGrid/MasonryGrid";
 import Image from "next/image";
 import { useState } from "react";
 

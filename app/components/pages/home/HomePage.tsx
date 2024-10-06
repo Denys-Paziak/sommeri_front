@@ -5,6 +5,7 @@ import OurProjects from "@/app/components/pages/home/ourProjects/OurProjects";
 import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
 import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
 import Faq from "@/app/components/pages/home/faq/Faq";
+import Contact from "@/app/components/pages/home/contact/Contact";
 import { getCategories, getProjects } from "@/app/utils/server/server";
 
 const HomePage = async () => {
@@ -24,6 +25,7 @@ const HomePage = async () => {
       <ClientsSay />
       <WhyUs />
       <Faq />
+      <Contact />
     </>
   );
 };

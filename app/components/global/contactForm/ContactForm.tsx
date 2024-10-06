@@ -1,43 +1,43 @@
-import { useState } from "react";
+"use client";
+
+import React, { useCallback, useState } from "react";
 import styles from "./ContactForm.module.css";
-import InputMask from "react-input-mask";
+import Button from "@/app/components/UI/button/Button";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { useDropzone } from "react-dropzone";
+import Select from "react-select";
 
 const ContactForm = () => {
   const [selectedService, setSelectedService] = useState("");
-  const [phone, setPhone] = useState("");
-  const [phoneError, setPhoneError] = useState("");
+  const [fileName, setFileName] = useState("");
 
   const services = [
     { value: "website", label: "Website develop." },
     { value: "web-design", label: "Web-design" },
     { value: "mobile-app", label: "Mobile app develop." },
     { value: "google-ads", label: "Google Ads" },
+    { value: "seo", label: "SEO" },
+    { value: "google-ads", label: "Google Ads" },
   ];
+
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    if (acceptedFiles.length > 0) {
+      setFileName(acceptedFiles[0].name);
+    }
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    multiple: false,
+  });
 
   const handleChange = (value: string) => {
     setSelectedService(value);
   };
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
-  };
-
-  const validatePhone = () => {
-    const pattern =
-      /^\+\d{1,3}\s?\(?\d{1,3}\)?[\s-]?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{1,4}$/;
-    if (!pattern.test(phone)) {
-      setPhoneError("Please enter a valid phone number starting with +380");
-    } else {
-      setPhoneError("");
-    }
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    validatePhone();
-    if (!phoneError) {
-      console.log("Form submitted with phone:", phone);
-    }
   };
 
   return (
@@ -92,35 +92,40 @@ const ContactForm = () => {
           <div
             className={`${styles.contact__fields_block} ${styles.contact__phone_block}`}
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M19.3115 25.8217C17.6315 25.7599 12.8703 25.1019 7.88398 20.1167C2.89881 15.1304 2.24198 10.3704 2.17898 8.68922C2.08565 6.12722 4.04798 3.63872 6.31481 2.66689C6.58779 2.54901 6.88671 2.50414 7.18227 2.53666C7.47782 2.56918 7.75983 2.67798 8.00065 2.85239C9.86731 4.21272 11.1553 6.27072 12.2613 7.88889C12.5047 8.2444 12.6087 8.67702 12.5536 9.10431C12.4986 9.53161 12.2882 9.9237 11.9626 10.2059L9.68648 11.8964C9.57651 11.9758 9.49911 12.0924 9.46864 12.2246C9.43817 12.3568 9.45671 12.4955 9.52081 12.6151C10.0365 13.5519 10.9535 14.9472 12.0035 15.9972C13.0535 17.0472 14.5153 18.0249 15.5175 18.5989C15.6431 18.6694 15.791 18.6891 15.9308 18.654C16.0705 18.6188 16.1915 18.5315 16.2688 18.4099L17.7505 16.1547C18.0229 15.7929 18.4247 15.5505 18.8719 15.4783C19.319 15.4061 19.7767 15.5097 20.1491 15.7674C21.7906 16.9037 23.7063 18.1696 25.1086 19.9651C25.2972 20.2076 25.4172 20.4964 25.4559 20.8011C25.4947 21.1059 25.4509 21.4155 25.3291 21.6976C24.3526 23.9761 21.8816 25.9162 19.3115 25.8217Z"
-                fill="white"
-                fill-opacity="0.75"
-              />
-            </svg>
-            <InputMask
-              mask="+999 (999) 999-99-99"
-              maskChar={null}
-              value={phone}
-              onChange={handlePhoneChange}
-              onBlur={validatePhone}
-              placeholder="+123 (456) 789-01-23"
-              className={styles.contact__block_input}
-              required
+            <PhoneInput
+              enableSearch={true}
+              placeholder={"099-000-00-00"}
+              inputClass={"contact__block_input"}
+              buttonClass={"contact__block_lang"}
+              country={"ua"} // Початково вибрана країна
+              regions={"europe"}
+              disableCountryCode={false} // Не дозволяємо редагувати код країни
+              masks={{
+                ua: "(..) ...-..-..", // Ukraine
+                pl: "(..) ...-..-..", // Poland
+                de: "(....) ...-....", // Germany
+                us: "(...) ...-....", // United States
+                gb: "(....) ...-....", // England
+                fr: "(...) ..-..-..", // France
+                it: "(...) ...-....", // Italy
+                cz: ".. ... .. ..", // Czech Republic
+                es: "(...) ...-...", // Spain
+                pt: "(..) ...-....", // Portugal
+                id: "(...) ...-...", // Indonesia
+                ch: ".... ...-....", // Switzerland
+                at: "(...) ...-....", // Austria (Austereich)
+                tr: "(...) ...-....", // Turkey
+                ro: "(..) ...-..-..", // Romania
+              }}
+              inputProps={{
+                name: "phone",
+                required: true,
+                autoFocus: true,
+              }}
             />
-            {phoneError && <span className={styles.error}>{phoneError}</span>}
           </div>
           <div className={styles.contact__fields_services}>
-            {services.map((service) => (
+            {/* {services.map((service) => (
               <label
                 key={service.value}
                 className={`${styles.contact__services_item} ${
@@ -137,19 +142,58 @@ const ContactForm = () => {
                 />
                 {service.label}
               </label>
-            ))}
+            ))} */}
+            <Select options={services} />
           </div>
-          <div className={styles.contact__fields_block}>
+          <div className={styles.contact__fields_textarea}>
             <textarea
               className={styles.contact__block_textarea}
               placeholder="How can we help you?"
             ></textarea>
+          </div>
+          <div className={styles.contact__fields_block}>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.8869 3.36324C11.8289 0.546238 16.5869 0.546238 19.5299 3.36324C22.4909 6.19724 22.4909 10.8072 19.5299 13.6422L11.5819 21.2502C9.4919 23.2502 6.1159 23.2502 4.0259 21.2502C3.52648 20.78 3.12852 20.2125 2.85651 19.5827C2.5845 18.953 2.44418 18.2742 2.44418 17.5882C2.44418 16.9022 2.5845 16.2235 2.85651 15.5937C3.12852 14.964 3.52648 14.3965 4.0259 13.9262L11.8599 6.42824C12.4638 5.85769 13.2631 5.53982 14.0939 5.53982C14.9247 5.53982 15.724 5.85769 16.3279 6.42824C16.6256 6.70871 16.8628 7.04708 17.0249 7.42258C17.187 7.79807 17.2706 8.20274 17.2706 8.61174C17.2706 9.02073 17.187 9.42541 17.0249 9.8009C16.8628 10.1764 16.6256 10.5148 16.3279 10.7952L8.4379 18.3492C8.36673 18.4174 8.28282 18.4709 8.19098 18.5066C8.09914 18.5423 8.00116 18.5596 7.90264 18.5575C7.80412 18.5553 7.70698 18.5338 7.61677 18.4941C7.52657 18.4545 7.44506 18.3974 7.3769 18.3262C7.30875 18.2551 7.25528 18.1712 7.21955 18.0793C7.18382 17.9875 7.16653 17.8895 7.16866 17.791C7.1708 17.6925 7.19232 17.5953 7.23199 17.5051C7.27167 17.4149 7.32873 17.3334 7.3999 17.2652L15.2899 9.71224C15.441 9.57159 15.5614 9.40133 15.6438 9.21208C15.7262 9.02283 15.7687 8.81864 15.7687 8.61224C15.7687 8.40584 15.7262 8.20165 15.6438 8.0124C15.5614 7.82315 15.441 7.65289 15.2899 7.51224C14.9653 7.20905 14.5376 7.04041 14.0934 7.04041C13.6492 7.04041 13.2215 7.20905 12.8969 7.51224L5.0629 15.0102C4.70987 15.3405 4.42842 15.7397 4.236 16.1831C4.04358 16.6266 3.94429 17.1048 3.94429 17.5882C3.94429 18.0716 4.04358 18.5499 4.236 18.9934C4.42842 19.4368 4.70987 19.836 5.0629 20.1662C6.5729 21.6112 9.0349 21.6112 10.5449 20.1662L18.4929 12.5582C20.8369 10.3142 20.8369 6.69024 18.4929 4.44624C16.1299 2.18524 12.2869 2.18524 9.9229 4.44624L3.5199 10.5762C3.37629 10.714 3.18382 10.7891 2.98485 10.785C2.78587 10.7809 2.59668 10.6979 2.4589 10.5542C2.32112 10.4106 2.24604 10.2182 2.25016 10.0192C2.25429 9.82021 2.33729 9.63102 2.4809 9.49324L8.8869 3.36324Z"
+                fill="white"
+                fill-opacity="0.75"
+              />
+            </svg>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              {fileName ? (
+                <p className={styles.contact__block_file}>{fileName}</p>
+              ) : isDragActive ? (
+                <p className={styles.contact__block_file}>
+                  Drop the files here ...
+                </p>
+              ) : (
+                <p className={styles.contact__block_file}>
+                  Drag 'n' drop some files here, or click to select files
+                </p>
+              )}
+            </div>
           </div>
         </div>
         <div className={styles.contact__form_action}>
           <button className={styles.contact__action_button} type="submit">
             Send message
           </button>
+          {/* <Button
+            arrowColor={"#fff"}
+            type={"button"}
+            onClick={() => handleScroll("contactUs")}
+          >
+            Contact Us
+          </Button> */}
         </div>
       </form>
     </div>

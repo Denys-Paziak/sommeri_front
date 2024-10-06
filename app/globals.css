@@ -16,3 +16,34 @@
   stroke-dasharray: 4000;
   stroke-dashoffset: 20000;
 }
+
+.contact__block_input {
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  padding: 5px 0 5px 46px !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  color: var(--gray) !important;
+}
+
+.contact__block_input::placeholder {
+  color: var(--gray) !important;
+}
+
+.contact__block_lang {
+  background: transparent !important;
+  border: none !important;
+}
+
+.contact__block_lang div:hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.contact__block_lang div {
+  padding: 0 !important;
+}

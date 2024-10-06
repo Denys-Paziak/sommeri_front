@@ -65,16 +65,11 @@
 
   .project__top_info {
     flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
   }
 
   .project__top_wrapper {
-    align-items: flex-start;
-  }
-
-  .project__top_visit {
-    align-items: flex-start;
-    padding-top: 10px;
+    flex-direction: column;
+    gap: 20px;
   }
 }
