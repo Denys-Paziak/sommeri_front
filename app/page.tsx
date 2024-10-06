@@ -12,7 +12,7 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 export default function Home() {
   return (
     <div>
-      {/* <CustomCursor /> */}
+      <CustomCursor />
       <Header />
       <HomePage />
       <Footer />
