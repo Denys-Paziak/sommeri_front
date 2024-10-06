@@ -8,9 +8,9 @@
   height: 100%;
 }
 
-.project__banner_image img{
+.project__banner_image img {
   width: 100%;
-  height: 100%;
+  height: 480px;
   object-fit: cover;
   user-select: none;
 }
@@ -19,5 +19,25 @@
   .project__banner_section {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .project__banner_section {
+    height: 380px;
+  }
+
+  .project__banner_image img {
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project__banner_section {
+    height: 280px;
+  }
+
+  .project__banner_image img {
+    height: 280px;
   }
 }

@@ -1,0 +1,10 @@
+.section__item_link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: var(--white);
+  transition: 0.4s;
+}
+.section__item_link:hover {
+  color: var(--primary);
+}

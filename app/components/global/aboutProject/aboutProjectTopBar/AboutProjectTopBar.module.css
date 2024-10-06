@@ -50,3 +50,31 @@
   width: 100%;
   height: 100%;
 }
+
+@media (max-width: 1100px) {
+  .project__top_section {
+    padding-top: 140px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project__top_section {
+    padding-top: 100px;
+  }
+
+  .project__top_info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .project__top_wrapper {
+    align-items: flex-start;
+  }
+
+  .project__top_visit {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+}

@@ -75,3 +75,50 @@
 .project__info_vector {
   width: 25%;
 }
+
+@media (max-width: 1100px) {
+  .project__wrapper_inner {
+    width: 100%;
+  }
+  .project__info_vector {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .project__inner_block {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project__wrapper_inner {
+    gap: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .project__block_subtitle {
+    width: 100%;
+  }
+
+  .project__block_text,
+  .project__block_technologies {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .project__inner_block {
+    padding-bottom: 20px;
+  }
+
+  .project__block_subtitle {
+    font-size: 26px;
+  }
+
+  .project__wrapper_inner {
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}

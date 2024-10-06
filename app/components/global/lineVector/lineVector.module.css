@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.vector svg {
+  width: 100%;
+}
+
 .vector:before {
   content: "";
   position: absolute;

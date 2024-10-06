@@ -42,3 +42,38 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 1100px) {
+  .project__block_subtitle {
+    width: 35%;
+  }
+  .project__block_text {
+    width: 65%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project__info_block {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .project__block_subtitle,
+  .project__block_text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .project__mockup_section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .project__block_subtitle {
+    font-size: 26px;
+  }
+
+  .project__mockup_wrapper {
+    gap: 40px;
+  }
+}

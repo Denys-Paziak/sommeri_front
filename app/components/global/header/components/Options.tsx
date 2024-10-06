@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "../Header.module.css";
 import Button from "@/app/components/UI/button/Button";
@@ -10,7 +12,7 @@ const Options = () => {
       <Button style={"fill"} onClick={() => handleScroll("contactUs")}>
         Contact us
       </Button>
-        <LanguageSelector />
+      <LanguageSelector />
     </div>
   );
 };
