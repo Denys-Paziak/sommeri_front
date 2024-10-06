@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-import Logo from "./components/Logo";
+import Logo from "../logo/Logo";
 import Navbar from "./components/Navbar";
 import Options from "./components/Options";
 
