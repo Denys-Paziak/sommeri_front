@@ -1,22 +1,33 @@
+"use client";
 import Header from "@/app/components/global/header/Header";
-import Footer from "@/app/components/global/footer/Footer";
 import AboutProject from "@/app/components/global/aboutProject/AboutProject";
+import Footer from "@/app/components/global/footer/Footer";
+import { useEffect, useState } from "react";
 import { getProject } from "@/app/utils/server/server";
 import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
+
 import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
 
-const Project = async ({ params }: { params: { id: string } }) => {
-  const res: any = await getProject(params.id);
-  const { data }: { data: ProjectInterface } = await res.json();
+
+const Project = ({ params }: { params: { id: string } }) => {
+  const [project, setProject] = useState<ProjectInterface>();
+
+  useEffect(() => {
+    getProject(params.id).then((data) => {
+      setProject(data);
+      console.log(data);
+    });
+  }, []);
 
   return (
     <div>
       <CustomCursor />
       <Header />
-      <AboutProject project={data} />
+      {project && <AboutProject project={project} />}
       <Footer />
     </div>
   );
+
 };
 
 export default Project;
