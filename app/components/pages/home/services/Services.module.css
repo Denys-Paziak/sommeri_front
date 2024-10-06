@@ -57,7 +57,7 @@
 
 .services__main_card {
   height: 318px;
-  background-image: url("/public/images/card-noise.png");
+  background-image: url("/images/card-noise.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -207,6 +207,12 @@
   .services__heading_vector {
     display: none;
   }
+
+  .services__card_image path {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
 
   .services__main_card {
     height: 320px;

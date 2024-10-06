@@ -7,13 +7,13 @@ function CustomCursor() {
     return (
             <AnimatedCursor
                 color={"255, 255, 255"}
-                outerSize={50}
+                outerSize={20}
                 innerSize={8}
                 innerStyle={{
                     backgroundColor: "rgb(255, 255, 255)",
                     mixBlendMode: "difference"
                 }}
-                outerScale={2}
+                outerScale={1.5}
                 outerAlpha={1}
                 outerStyle={{
                     mixBlendMode: "difference",
