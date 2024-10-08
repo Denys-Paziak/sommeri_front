@@ -4,40 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./Faq.module.css";
 
-const Faq = () => {
+const Faq = ({faqItems}) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index) => {
     setActiveIndex(index === activeIndex ? null : index); // Перевіряємо, чи елемент вже активний
   };
 
-  const faqItems = [
-    {
-      question: "How long does it take to develop a website?",
-      answer:
-        "Yes, we offer technical support services to ensure stable operation of the website after its launch. Yes, we offer technical support services to ensure stable operation of the website after its launch.",
-    },
-    {
-      question: "How long does it take to develop a website?",
-      answer:
-        "Yes, we offer technical support services to ensure stable operation of the website after its launch. Yes, we offer technical support services to ensure stable operation of the website after its launch.",
-    },
-    {
-      question: "How long does it take to develop a website?",
-      answer:
-        "Yes, we offer technical support services to ensure stable operation of the website after its launch. Yes, we offer technical support services to ensure stable operation of the website after its launch.",
-    },
-    {
-      question: "How long does it take to develop a website?",
-      answer:
-        "Yes, we offer technical support services to ensure stable operation of the website after its launch. Yes, we offer technical support services to ensure stable operation of the website after its launch.",
-    },
-    {
-      question: "How long does it take to develop a website?",
-      answer:
-        "Yes, we offer technical support services to ensure stable operation of the website after its launch. Yes, we offer technical support services to ensure stable operation of the website after its launch.",
-    },
-  ];
 
   return (
     <section className={styles.faq__section}>
@@ -46,7 +19,7 @@ const Faq = () => {
           <h2 className={styles.faq__wrapper_title}>Question? Answers</h2>
           <div className={styles.faq__wrapper_main}>
             <div className={styles.faq__main_list}>
-              {faqItems.map((item, index) => (
+              {faqItems && faqItems.map((item, index) => (
                 <div
                   onClick={() => handleClick(index)}
                   key={index}
@@ -55,7 +28,7 @@ const Faq = () => {
                   }`}
                 >
                   <div className={styles.faq__item_inner}>
-                    <h3 className={styles.faq__inner_title}>{item.question}</h3>
+                    <h3 className={styles.faq__inner_title}>{item.title}</h3>
                     <span className={styles.faq__inner_circle}>
                       <svg
                         width="12"
@@ -75,7 +48,7 @@ const Faq = () => {
                     </span>
                   </div>
                     <div className={styles.faq__item_content} >
-                      <p className={styles.faq__content_text}>{item.answer}</p>
+                      <p className={styles.faq__content_text}>{item.content}</p>
                     </div>
                 </div>
               ))}

@@ -12,17 +12,16 @@ const Project = async ({ params }: { params: { id: string } }) => {
 
     try {
         const data: any = await getProject(params.id);
-        project = data.json();
+        project = await data.json();
     }catch (error) {
         console.error("Error fetching project:", error);
     }
-
 
     return (
     <div>
       <CustomCursor />
       <Header />
-      {project && <AboutProject project={project} />}
+      {project && <AboutProject project={project.data} />}
       <Footer />
     </div>
   );

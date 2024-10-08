@@ -1,4 +1,4 @@
-export const backHost = "http://localhost:1337";
+export const backHost = "http://185.233.117.23:1337";
 
 export const getProjects = async () => {
   try {
@@ -32,4 +32,29 @@ export const getCategories = async () => {
     console.error("Error fetching projects:", error);
   }
 };
+
+
+export const getFAQ = async () => {
+  try {
+    const response = await fetch(
+        backHost + `/api/faqs`
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+};
+
+export const getReviews = async () => {
+  try {
+    const response = await fetch(
+        backHost + `/api/reviews?populate=*`
+    );
+    return response;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+};
+
+
 

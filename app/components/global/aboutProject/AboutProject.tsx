@@ -1,3 +1,5 @@
+"use client"
+
 import AboutProjectTopBar from "@/app/components/global/aboutProject/aboutProjectTopBar/AboutProjectTopBar";
 import AboutProjectBanner from "@/app/components/global/aboutProject/aboutProjectBanner/AboutProjectBanner";
 import AboutProjectInfo from "@/app/components/global/aboutProject/aboutProjectInfo/AboutProjectInfo";
@@ -9,6 +11,9 @@ import AboutProjectSimilar from "./aboutProjectSimilar/AboutProjectSimilar";
 import AboutProjectReviews from "./aboutProjectReviews/AboutProjectReviews";
 
 const AboutProject = ({ project }: { project: ProjectInterface }) => {
+
+    console.log(project)
+
   return (
     <main>
       <AboutProjectTopBar project={project} />
@@ -16,9 +21,9 @@ const AboutProject = ({ project }: { project: ProjectInterface }) => {
       <AboutProjectInfo project={project} />
       <AboutProjectFrame project={project} />
       <AboutProjectMockup project={project} />
-      <AboutProjectGalery project={project} />
+      {/*<AboutProjectGalery project={project} />*/}
       {/* <AboutProjectSimilar project={project} /> */}
-      <AboutProjectReviews />
+      {/*<AboutProjectReviews />*/}
     </main>
   );
 };

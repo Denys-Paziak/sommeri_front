@@ -7,14 +7,24 @@ import styles from "./OurProjects.module.css";
 import MasonryGrid from "@/app/components/UI/MasonryGrid/MasonryGrid";
 import Image from "next/image";
 import { useState } from "react";
+import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
 
-export default function Page({ posts, categories }) {
+interface iProps {
+  posts: {
+    data: ProjectInterface []
+  },
+}
+
+export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const filteredPosts =
+
+  console.log(posts, categories)
+
+  const filteredPosts: ProjectInterface [] =
     activeCategory === "All"
       ? posts.data
       : posts.data.filter(
-          (project) => project.Category.Name === activeCategory
+          (project: ProjectInterface) => project.Category.Name === activeCategory
         );
 
   return (
@@ -56,18 +66,18 @@ export default function Page({ posts, categories }) {
                   All
                 </li>
 
-                {categories.data.map((categori) => {
+                {categories.data && categories.data.map((category) => {
                   return (
                     <li
-                      key={categori.Name}
+                      key={category.Name}
                       className={`${styles.projects__category_item} ${
-                        activeCategory === categori.Name && styles.active
+                        activeCategory === category.Name && styles.active
                       }`}
                       onClick={() => {
-                        setActiveCategory(categori.Name);
+                        setActiveCategory(category.Name);
                       }}
                     >
-                      {categori.Name}
+                      {category.Name}
                     </li>
                   );
                 })}
@@ -75,7 +85,7 @@ export default function Page({ posts, categories }) {
             </div>
 
             <MasonryGrid>
-              {filteredPosts.map((project, index) => {
+              {filteredPosts && filteredPosts.map((project, index) => {
                 let projectStyle;
 
                 if (index % 2 === 0) {
@@ -133,13 +143,13 @@ export default function Page({ posts, categories }) {
                           {project.Category.Name}
                         </p>
                         <p className={styles.project__info_categories}>
-                          {project.technologies.map((technologi) => {
+                          {project.technologies.map((technology) => {
                             return (
                               <span
-                                key={technologi.Name}
+                                key={technology.Name}
                                 className={styles.project__categories_item}
                               >
-                                {technologi.Name}
+                                {technology.Name}
                               </span>
                             );
                           })}
