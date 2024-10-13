@@ -56,5 +56,14 @@ export const getReviews = async () => {
   }
 };
 
-
-
+export const getTechnologiesWay = async () => {
+  try {
+    const response = await fetch(
+        backHost + `/api/technologies-ways?populate=technologies.image`
+    );
+    const result = await response.json();
+    return result.data;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+};

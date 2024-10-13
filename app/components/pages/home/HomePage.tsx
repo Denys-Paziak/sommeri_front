@@ -7,6 +7,7 @@ import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
 import Faq from "@/app/components/pages/home/faq/Faq";
 import Contact from "@/app/components/pages/home/contact/Contact";
 import {getCategories, getFAQ, getProjects, getReviews} from "@/app/utils/server/server";
+import Technologies from "@/app/components/pages/home/technologies/Technologies";
 
 const HomePage = async () => {
     let posts = [];
@@ -48,7 +49,7 @@ const HomePage = async () => {
             <About/>
             <WhyUs/>
             <Services/>
-            {/* <Technologies /> */} {/* nazar */}
+             <Technologies />
             <OurProjects posts={posts} categories={categories}/>
             <ClientsSay reviews={reviews.data}/> {/* nazar */}
             <Faq faqItems={faqItems.data}/>
