@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Reviews.module.css";
 // @ts-ignore
 import Slider from 'react-infinite-logo-slider';
+import {backHost} from "@/app/utils/server/server";
 
 
 const reviews = [
@@ -53,7 +54,7 @@ const reviews = [
 ];
 
 
-const Reviews = () => {
+const Reviews = ({reviews}) => {
     return (
         <div className={styles.reviews__block}>
             <div className={styles.reviews__block_slider}>
@@ -65,13 +66,13 @@ const Reviews = () => {
                         blurBorders={false}
                         blurBoderColor={'#fff'}
                     >
-                        {reviews.map((review, index) => {
+                        {reviews.reviews && reviews.reviews.map((review, index) => {
                             return <Slider.Slide key={index}>
                                 <li className={styles.reviews__track_item}>
                                     <div className={styles.reviews__item_header}>
                                         <div className={styles.reviews__header_inner}>
                                             <Image
-                                                src={review.image}
+                                                src={backHost + review.image.url}
                                                 alt="review logo"
                                                 width={24}
                                                 height={24}
@@ -100,13 +101,13 @@ const Reviews = () => {
                         blurBorders={false}
                         blurBoderColor={'#fff'}
                     >
-                        {reviews.reverse().map((review, index) => {
+                        {reviews.reviews && reviews.reviews.reverse().map((review, index) => {
                             return <Slider.Slide key={index}>
                                 <li className={styles.reviews__track_item}>
                                     <div className={styles.reviews__item_header}>
                                         <div className={styles.reviews__header_inner}>
                                             <Image
-                                                src={review.image}
+                                                src={backHost + review.image.url}
                                                 alt="review logo"
                                                 width={24}
                                                 height={24}

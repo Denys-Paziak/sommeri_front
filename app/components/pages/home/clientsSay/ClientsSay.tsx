@@ -1,7 +1,7 @@
 import styles from "./ClientsSay.module.css";
 import Reviews from "@/app/components/global/reviews/Reviews";
 
-const ClientsSay = () => {
+const ClientsSay = ({reviews}) => {
   return (
     <div id="reviews" className={styles.client__say_block}>
       <section className={styles.client__say_section}>
@@ -21,7 +21,7 @@ const ClientsSay = () => {
           </div>
         </div>
       </section>
-      <Reviews />
+      <Reviews reviews={{reviews}}/>
       <div className={styles.client__say_shape}></div>
     </div>
   );

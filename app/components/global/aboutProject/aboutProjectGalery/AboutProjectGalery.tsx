@@ -11,7 +11,7 @@ const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
       <div className="container">
         <div className={styles.project__galery_wrapper}>
           <div className={styles.project__wrapper_banners}>
-            {project.Galery.map((image) => {
+            {project.Galery && project.Galery.map((image) => {
               return (
                 <div className={styles.project__banners_item}>
                   <ImageServer link={image.url} />

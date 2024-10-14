@@ -10,6 +10,9 @@ export interface ProjectInterface {
     Result: string,
     Solution: string,
     Objectives: string,
+    technologies: {
+        Name: string
+    } [],
     Hero_image: {
         url: string,
         formats: {
@@ -21,7 +24,10 @@ export interface ProjectInterface {
     Mokap_1: {
         url: string
     },
-    Mokap_2: {
+    Mokup_2: {
+        url: string
+    },
+    Preview: {
         url: string
     },
     Galery:  {

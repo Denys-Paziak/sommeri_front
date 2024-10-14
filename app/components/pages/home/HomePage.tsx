@@ -6,11 +6,19 @@ import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
 import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
 import Faq from "@/app/components/pages/home/faq/Faq";
 import Contact from "@/app/components/pages/home/contact/Contact";
-import { getCategories, getProjects } from "@/app/utils/server/server";
+import {
+  getCategories,
+  getFAQ,
+  getProjects,
+  getReviews,
+} from "@/app/utils/server/server";
+import Technologies from "@/app/components/pages/home/technologies/Technologies";
 
 const HomePage = async () => {
   let posts = [];
   let categories = [];
+  let faqItems = [];
+  let reviews = [];
 
   try {
     const postData: any = await getProjects();
@@ -26,17 +34,31 @@ const HomePage = async () => {
     console.error("Error fetching categories:", error);
   }
 
+  try {
+    const postData: any = await getFAQ();
+    faqItems = await postData.json();
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+
+  try {
+    const postData: any = await getReviews();
+    reviews = await postData.json();
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+
   return (
     <>
       <Hero />
-      <Services />
       <About />
-      {/* <Technologies /> */} {/* nazar */}
-      <OurProjects posts={posts} categories={categories} />
-      <ClientsSay /> {/* nazar */}
       <WhyUs />
-      <Faq />
-      <Contact />
+      <Services />
+      <Technologies />
+      <OurProjects posts={posts} categories={categories} />
+      <ClientsSay reviews={reviews.data} /> {/* nazar */}
+      <Faq faqItems={faqItems.data} />
+      {/*<Contact />*/}
     </>
   );
 };

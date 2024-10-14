@@ -15,7 +15,7 @@ const AboutProjectMockup = ({project}: {project: ProjectInterface}) => {
           </div>
           <div className={styles.project__wrapper_inner}>
             <div className={styles.project__frame_image}>
-              <ImageServer link={project.Mokup_2.url}/>
+              <ImageServer link={project.Mokup_2 &&  project.Mokup_2.url}/>
             </div>
           </div>
           <div className={styles.project__info_block}>
