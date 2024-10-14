@@ -52,22 +52,12 @@
   width: 100%;
 }
 
-/* .css-1nmdiq5-menu {
-  background: var(--black) !important;
-  border: 1px solid #444 !important;
-  border-radius: 8px !important;
-  color: var(--white) !important;
+.css-hlgwow {
+  padding: 0 !important;
 }
 
-.css-10wo9uf-option:hover {
-  background: red !important;
+@media (max-width: 600px) {
+  .contact__block_input {
+    padding: 5px 0 5px 36px !important;
+  }
 }
-
-.css-10wo9uf-option:active {
-  background: red !important;
-}
-
-.css-13cymwt-control {
-  background: transparent !important;
-  border: transparent !important;
-} */

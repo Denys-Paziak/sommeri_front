@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className={styles.header__wrapper_nav}>
       <ul className={styles.header__nav_list}>
         {NavbarItems.map((NavbarItem) => (
-          <SectionLink name={NavbarItem.name} link={NavbarItem.link} />
+          <SectionLink key={NavbarItem.name} name={NavbarItem.name} link={NavbarItem.link} />
         ))}
         {/* <li className={styles.header__list_item}>
           <a

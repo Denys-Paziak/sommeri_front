@@ -18,6 +18,9 @@
   z-index: 0;
   overflow: hidden;
 }
+.hero__animation::-webkit-scrollbar {
+  display: none;
+}
 .hero__animation svg {
   position: absolute;
   top: -50%;

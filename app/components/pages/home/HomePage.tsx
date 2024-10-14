@@ -9,20 +9,31 @@ import Contact from "@/app/components/pages/home/contact/Contact";
 import { getCategories, getProjects } from "@/app/utils/server/server";
 
 const HomePage = async () => {
-  const postData: any = await getProjects();
-  const posts = await postData.json();
+  let posts = [];
+  let categories = [];
 
-  const categoriesData: any = await getCategories();
-  const categories = await categoriesData.json();
+  try {
+    const postData: any = await getProjects();
+    posts = await postData.json();
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
+
+  try {
+    const categoriesData: any = await getCategories();
+    categories = categoriesData.json();
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+  }
 
   return (
     <>
       <Hero />
       <Services />
       <About />
-      {/* <Technologies /> */}
+      {/* <Technologies /> */} {/* nazar */}
       <OurProjects posts={posts} categories={categories} />
-      <ClientsSay />
+      <ClientsSay /> {/* nazar */}
       <WhyUs />
       <Faq />
       <Contact />

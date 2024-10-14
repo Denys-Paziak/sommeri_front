@@ -497,15 +497,15 @@ const Hero = () => {
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "rgba(255, 255, 255, 0.02)" }}
+                  style={{ stopColor: "rgba(255, 255, 255, 0.025)" }}
                 />
                 <stop
                   offset="49.5%"
-                  style={{ stopColor: "rgba(255, 255, 255, 0.02)" }}
+                  style={{ stopColor: "rgba(255, 255, 255, 0.025)" }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "rgba(255, 255, 255, 0.02)" }}
+                  style={{ stopColor: "rgba(255, 255, 255, 0.025)" }}
                 />
               </linearGradient>
               <linearGradient
@@ -602,7 +602,7 @@ const Hero = () => {
               y1="150"
               x2="2606"
               y2="150"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -610,7 +610,7 @@ const Hero = () => {
               y1="300"
               x2="2606"
               y2="300"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -618,7 +618,7 @@ const Hero = () => {
               y1="450"
               x2="2606"
               y2="450"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -626,7 +626,7 @@ const Hero = () => {
               y1="600"
               x2="2606"
               y2="600"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -634,7 +634,7 @@ const Hero = () => {
               y1="750"
               x2="2606"
               y2="750"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -642,7 +642,7 @@ const Hero = () => {
               y1="900"
               x2="2606"
               y2="900"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -650,7 +650,7 @@ const Hero = () => {
               y1="1050"
               x2="2606"
               y2="1050"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -658,7 +658,7 @@ const Hero = () => {
               y1="1200"
               x2="2606"
               y2="1200"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -666,7 +666,7 @@ const Hero = () => {
               y1="1350"
               x2="2606"
               y2="1350"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -674,7 +674,7 @@ const Hero = () => {
               y1="1500"
               x2="2606"
               y2="1500"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
             <line
@@ -682,7 +682,7 @@ const Hero = () => {
               y1="1650"
               x2="2606"
               y2="1650"
-              stroke="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(255, 255, 255, 0.025)"
               className="static-line"
             />
 

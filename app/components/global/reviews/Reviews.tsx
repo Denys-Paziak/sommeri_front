@@ -65,8 +65,8 @@ const Reviews = () => {
                         blurBorders={false}
                         blurBoderColor={'#fff'}
                     >
-                        {reviews.map(review => {
-                            return <Slider.Slide>
+                        {reviews.map((review, index) => {
+                            return <Slider.Slide key={index}>
                                 <li className={styles.reviews__track_item}>
                                     <div className={styles.reviews__item_header}>
                                         <div className={styles.reviews__header_inner}>
@@ -100,8 +100,8 @@ const Reviews = () => {
                         blurBorders={false}
                         blurBoderColor={'#fff'}
                     >
-                        {reviews.reverse().map(review => {
-                            return <Slider.Slide>
+                        {reviews.reverse().map((review, index) => {
+                            return <Slider.Slide key={index}>
                                 <li className={styles.reviews__track_item}>
                                     <div className={styles.reviews__item_header}>
                                         <div className={styles.reviews__header_inner}>

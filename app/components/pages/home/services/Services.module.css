@@ -57,11 +57,11 @@
 
 .services__main_card {
   height: 318px;
-  background-image: url("/public/images/card-noise.png");
+  background-image: url("/images/card-noise.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
   padding: 20px;
   cursor: pointer;
@@ -206,6 +206,11 @@
 @media (max-width: 768px) {
   .services__heading_vector {
     display: none;
+  }
+
+  .services__card_image path {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
   }
 
   .services__main_card {
