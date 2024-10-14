@@ -13,6 +13,7 @@ interface iProps {
   posts: {
     data: ProjectInterface []
   },
+  categories: any
 }
 
 export default function Page({ posts, categories }: iProps) {
