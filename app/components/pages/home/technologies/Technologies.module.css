@@ -45,7 +45,14 @@
 
 .technologies {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  filter: grayscale(1);
+  transition: 0.4s ease-in-out;
+}
+
+.box:hover .technologies {
+  filter: grayscale(0);
 }
 
 .technology {
@@ -56,5 +63,6 @@
 
 .icon {
   width:  28px;
-  height: 20px;
+  height: 28px;
+  object-fit: contain;
 }

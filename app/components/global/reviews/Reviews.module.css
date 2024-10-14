@@ -22,8 +22,8 @@
   padding: 20px;
   background: var(--second-dark);
   border-radius: 12px;
-  border: 1px solid;
   border: 1px solid #ffffff1a;
+  margin-left: 20px;
 }
 .reviews__item_header {
   width: 100%;
