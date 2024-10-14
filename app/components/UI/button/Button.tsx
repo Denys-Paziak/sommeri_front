@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = ({
         type={type}
       >
         <p>{children}</p>
-        <svg
+        {/* <svg
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -41,7 +41,7 @@ const Button: FC<ButtonProps> = ({
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-        </svg>
+        </svg> */}
       </button>
     </div>
   );

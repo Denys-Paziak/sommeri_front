@@ -7,25 +7,26 @@ import styles from "./OurProjects.module.css";
 import MasonryGrid from "@/app/components/UI/MasonryGrid/MasonryGrid";
 import Image from "next/image";
 import { useState } from "react";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
+import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
 
 interface iProps {
   posts: {
-    data: ProjectInterface []
-  },
-  categories: any
+    data: ProjectInterface[];
+  };
+  categories: any;
 }
 
 export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  console.log(posts, categories)
+  console.log(posts, categories);
 
-  const filteredPosts: ProjectInterface [] =
+  const filteredPosts: ProjectInterface[] =
     activeCategory === "All"
       ? posts.data
       : posts.data.filter(
-          (project: ProjectInterface) => project.Category.Name === activeCategory
+          (project: ProjectInterface) =>
+            project.Category.Name === activeCategory
         );
 
   return (
@@ -67,99 +68,101 @@ export default function Page({ posts, categories }: iProps) {
                   All
                 </li>
 
-                {categories.data && categories.data.map((category) => {
-                  return (
-                    <li
-                      key={category.Name}
-                      className={`${styles.projects__category_item} ${
-                        activeCategory === category.Name && styles.active
-                      }`}
-                      onClick={() => {
-                        setActiveCategory(category.Name);
-                      }}
-                    >
-                      {category.Name}
-                    </li>
-                  );
-                })}
+                {categories.data &&
+                  categories.data.map((category) => {
+                    return (
+                      <li
+                        key={category.Name}
+                        className={`${styles.projects__category_item} ${
+                          activeCategory === category.Name && styles.active
+                        }`}
+                        onClick={() => {
+                          setActiveCategory(category.Name);
+                        }}
+                      >
+                        {category.Name}
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
 
             <MasonryGrid>
-              {filteredPosts && filteredPosts.map((project, index) => {
-                let projectStyle;
+              {filteredPosts &&
+                filteredPosts.map((project, index) => {
+                  let projectStyle;
 
-                if (index % 2 === 0) {
-                  projectStyle = styles.mt;
-                }
+                  if (index % 2 === 0) {
+                    projectStyle = styles.mt;
+                  }
 
-                return (
-                  <Link
-                    key={project.documentId}
-                    className={projectStyle}
-                    href={"/project/" + project.documentId}
-                  >
-                    <div className={styles.project__portfolio_item}>
-                      <div className={styles.project__item_banner}>
-                        <Image
-                          src={backHost + project.Preview.url}
-                          alt={"project img"}
-                          width={500}
-                          height={500}
-                          className={styles.project__banner_item}
-                        />
-                        <div className={styles.project__banner_inner}>
-                          <h4 className={styles.project__inner_name}>
-                            {project.Name}
-                          </h4>
-                          <div className={styles.project__inner_visit}>
-                            <svg
-                              width="12"
-                              height="13"
-                              viewBox="0 0 12 13"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
-                                stroke="white"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <button
-                          className={styles.project__banner_view}
-                          type="button"
-                        >
-                          <span className={styles.project__view_text}>
-                            View
-                          </span>
-                        </button>
-                      </div>
-                      <div className={styles.project__item_info}>
-                        <p className={styles.project__info_category}>
-                          {project.Category.Name}
-                        </p>
-                        <p className={styles.project__info_categories}>
-                          {project.technologies.map((technology) => {
-                            return (
-                              <span
-                                key={technology.Name}
-                                className={styles.project__categories_item}
+                  return (
+                    <Link
+                      key={project.documentId}
+                      className={projectStyle}
+                      href={"/project/" + project.documentId}
+                    >
+                      <div className={styles.project__portfolio_item}>
+                        <div className={styles.project__item_banner}>
+                          <Image
+                            src={backHost + project.Preview.url}
+                            alt={"project img"}
+                            width={500}
+                            height={500}
+                            className={styles.project__banner_item}
+                          />
+                          <div className={styles.project__banner_inner}>
+                            <h4 className={styles.project__inner_name}>
+                              {project.Name}
+                            </h4>
+                            <div className={styles.project__inner_visit}>
+                              <svg
+                                width="12"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                {technology.Name}
-                              </span>
-                            );
-                          })}
-                        </p>
+                                <path
+                                  d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
+                                  stroke="white"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <button
+                            className={styles.project__banner_view}
+                            type="button"
+                          >
+                            <span className={styles.project__view_text}>
+                              View
+                            </span>
+                          </button>
+                        </div>
+                        <div className={styles.project__item_info}>
+                          <p className={styles.project__info_category}>
+                            {project.Category.Name}
+                          </p>
+                          <p className={styles.project__info_categories}>
+                            {project.technologies.map((technology) => {
+                              return (
+                                <span
+                                  key={technology.Name}
+                                  className={styles.project__categories_item}
+                                >
+                                  {technology.Name}
+                                </span>
+                              );
+                            })}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
             </MasonryGrid>
           </div>
         </div>

@@ -58,7 +58,7 @@ const HomePage = async () => {
       <OurProjects posts={posts} categories={categories} />
       <ClientsSay reviews={reviews.data} /> {/* nazar */}
       <Faq faqItems={faqItems.data} />
-      {/*<Contact />*/}
+      <Contact />
     </>
   );
 };

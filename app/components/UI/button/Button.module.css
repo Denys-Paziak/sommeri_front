@@ -1,4 +1,4 @@
-.button {
+/* .button {
   padding: 16px 32px;
   background: transparent;
   border-radius: 30px;
@@ -12,9 +12,68 @@
   display: flex;
   align-items: center;
   gap: 10px;
+} */
+
+.button {
+  padding: 16px 32px;
+  background: transparent;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--black);
+  background: white;
+  border: none;
+  transition: 0.4s all ease-in-out;
+  display: inline-block;
+  position: relative; /* Важливо для правильного позиціонування псевдоелементів */
+  overflow: hidden;
+  cursor: pointer; /* Додаємо курсор */
 }
 
-.button svg path {
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  transform: translate3d(0, -100%, 0); /* Стартова позиція вище кнопки */
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -10%;
+  background: #000;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  transform: scale3d(
+    0,
+    0,
+    0
+  ); /* Початкова позиція і розмір (нульовий масштаб) */
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button:hover::after {
+  transform: translate3d(
+    0,
+    0,
+    0
+  ); /* При наведенні кнопки псевдоелемент рухається вниз */
+}
+
+.button:hover::before {
+  transform: scale3d(1, 1, 1); /* Масштабування псевдоелементу при наведенні */
+}
+
+/* .button svg path {
   transition: 0.4s all ease-in-out;
 }
 
@@ -54,7 +113,6 @@
   }
 }
 
-/* Fill */
 .fill {
   position: relative;
   background: var(--white);
@@ -84,4 +142,4 @@
 
 .fill:hover p {
   color: var(--white);
-}
+} */
