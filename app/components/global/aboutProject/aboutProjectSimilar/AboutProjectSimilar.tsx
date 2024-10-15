@@ -5,6 +5,7 @@ import SimilarProjectItems from "@/app/components/global/similarProjects/Similar
 
 const AboutProjectSimilar = async ({url}: {url: string}) => {
     const projects: ProjectInterface[] = await getSimilars(url);
+
     return (
         <>
             {projects.length > 0 && <section className={styles.similar__projects_section}>

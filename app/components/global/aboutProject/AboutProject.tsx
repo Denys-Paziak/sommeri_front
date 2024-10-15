@@ -19,7 +19,6 @@ const AboutProject = ({project}: { project: ProjectInterface }) => {
             <AboutProjectMockup project={project}/>
             <AboutProjectGalery project={project}/>
             <AboutProjectSimilar url={project.url}/>
-            {/*<AboutProjectReviews />*/}
         </main>
     );
 };
