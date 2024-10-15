@@ -5,7 +5,6 @@ export const backHost = "http://185.233.117.23:1337";
 export const getProjects = async () => {
   try {
     const response = await axios.get(`${backHost}/api/projects?populate=*`);
-    console.log(response)
     return response.data.data;
   } catch (error) {
     console.error("Error fetching projects:", error);

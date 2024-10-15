@@ -30,7 +30,7 @@ const HomePage = async () => {
       <OurProjects posts={posts} categories={categories} />
       <ClientsSay reviews={reviews} />
       <Faq faqItems={faqItems} />
-      <Contact />
+      {/*<Contact />*/}
     </>
   );
 };
