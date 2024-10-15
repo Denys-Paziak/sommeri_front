@@ -2,7 +2,7 @@
   position: fixed;
   left: 28px;
   bottom: 28px;
-  z-index: 4;
+  z-index: 5;
 }
 .quick__contacts_wrapper {
   width: 100%;
@@ -146,5 +146,27 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .quick__contacts_block {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick__inner_line {
+    display: none;
+  }
+  .quick__inner_call {
+    min-width: 38px;
+    min-height: 38px;
+  }
+  .quick__inner_call svg {
+    width: 18px;
   }
 }

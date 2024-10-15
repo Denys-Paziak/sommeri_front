@@ -56,6 +56,26 @@
   padding: 0 !important;
 }
 
+.react-international-phone-country-selector-dropdown {
+  outline: none;
+  border: 1px solid #ffffff0d;
+  border-radius: 8px;
+}
+
+.react-international-phone-input-container,
+.react-international-phone-input {
+  width: 100%;
+  font-size: 16px !important;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--gray) !important;
+  padding: 0 4px !important;
+}
+
+.react-international-phone-country-selector-button__flag-emoji {
+  margin: 0 4px 0 0 !important;
+}
+
 @media (max-width: 600px) {
   .contact__block_input {
     padding: 5px 0 5px 36px !important;

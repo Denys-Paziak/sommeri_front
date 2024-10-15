@@ -178,10 +178,6 @@
   gap: 8px;
 }
 
-.languageName {
-  font-weight: 500;
-}
-
 .arrow {
   width: 10px;
   transition: transform 0.3s ease;
@@ -200,7 +196,7 @@
   transform: rotate(90deg);
 }
 
-.languageList {
+.language__list {
   position: absolute;
   top: 110%;
   right: 0;
@@ -216,14 +212,7 @@
   animation: fadeIn 0.3s forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.languageItem {
+.language__list_item {
   display: flex;
   padding: 8px 8px;
   cursor: pointer;
@@ -231,6 +220,13 @@
   transition: background-color 0.3s ease;
 }
 
-.languageItem:hover {
+.language__list_item:hover {
   background-color: var(--black);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

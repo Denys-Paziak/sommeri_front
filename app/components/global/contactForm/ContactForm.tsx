@@ -2,14 +2,17 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "./ContactForm.module.css";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 import { useDropzone } from "react-dropzone";
 import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
 import { sendMessageWithFileToTelegram } from "@/app/api/telegram";
 import axios from "axios";
 import Button from "../../UI/button/Button";
+import { useDispatch } from "react-redux";
+import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
+import { isValidPhoneNumber, CountryCode } from "libphonenumber-js";
 
 interface IFormData {
   name: string;
@@ -23,6 +26,9 @@ const ContactForm = () => {
   const [fileName, setFileName] = useState("");
   const [userCountryCode, setUserCountryCode] = useState("ua");
   const [acceptedFiles, setAcceptedFiles] = useState<File[]>([]);
+  const [phone, setPhone] = useState("");
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -80,7 +86,6 @@ const ContactForm = () => {
     🚀Обробіть заявку як умога найшвидше🚀
     `;
 
-    console.log(message);
     const file = acceptedFiles.length > 0 ? acceptedFiles[0] : null;
 
     await sendMessageWithFileToTelegram(message, file);
@@ -89,6 +94,8 @@ const ContactForm = () => {
     setFileName("");
     setAcceptedFiles([]);
     setValue("phone", "");
+    dispatch(openThanksPopup());
+    setPhone("");
   };
 
   const fetchUserCountry = async () => {
@@ -106,6 +113,10 @@ const ContactForm = () => {
   useEffect(() => {
     fetchUserCountry();
   }, []);
+
+  useEffect(() => {
+    setPhone(`+${userCountryCode}`);
+  }, [userCountryCode]);
 
   return (
     <div className={styles.contact__block}>
@@ -192,24 +203,41 @@ const ContactForm = () => {
               control={control}
               rules={{
                 required: true,
-                minLength: {
-                  value: 10,
-                  message: "",
+                validate: (value) => {
+                  const countryCode =
+                    userCountryCode.toUpperCase() as CountryCode; // Приведення до типу CountryCode
+                  if (!isValidPhoneNumber(value, countryCode)) {
+                    return "Phone number is invalid";
+                  }
+                  return true;
                 },
               }}
               render={({ field }) => (
                 <PhoneInput
                   {...field}
-                  enableSearch={true}
+                  key={userCountryCode}
+                  value={phone}
+                  defaultCountry={userCountryCode}
                   placeholder={"099-000-00-00"}
-                  inputClass={"contact__block_input"}
-                  buttonClass={"contact__block_lang"}
-                  country={userCountryCode}
-                  regions={"europe"}
-                  inputProps={{
-                    required: true,
-                    autoFocus: false,
+                  onChange={(value) => {
+                    setPhone(value);
+                    setValue("phone", value);
                   }}
+                  style={
+                    {
+                      "--react-international-phone-border-radius": 0,
+                      "--react-international-phone-border-color": "transparent",
+                      "--react-international-phone-background-color":
+                        "transparent",
+                      "--react-international-phone-text-color": "white",
+                      "--react-international-phone-selected-dropdown-item-background-color":
+                        "var(--dark)",
+                      "--react-international-phone-country-selector-background-color-hover":
+                        "transparent",
+                      "--react-international-phone-dropdown-item-background-color":
+                        "#1c1c1c",
+                    } as React.CSSProperties
+                  }
                 />
               )}
             />

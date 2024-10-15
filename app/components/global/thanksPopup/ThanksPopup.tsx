@@ -66,17 +66,17 @@ const ThanksPopup = () => {
                 <path
                   d="M24.334 21.0207L42.0131 38.6999L77.3631 3.3457"
                   stroke="white"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M3.5 21.0207L21.1792 38.6999M56.5333 3.3457L43.0833 16.9165"
                   stroke="white"
-                  stroke-opacity="0.5"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeOpacity="0.5"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>

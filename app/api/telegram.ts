@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL =
-  "https://api.telegram.org/bot7886880144:AAGn-UlOgX8KyEY2iHk3lB0VHMv67Pqmbzk/";
+  "https://api.telegram.org/bot7543360501:AAGcJrw4orFdD0DOYZ8ySk9YJDwY4mewEpQ/";
 
 export const sendMessageWithFileToTelegram = async (
   message: string,
@@ -9,17 +9,31 @@ export const sendMessageWithFileToTelegram = async (
 ): Promise<void> => {
   try {
     const formData = new FormData();
-
-    // Add the message to formData
     formData.append("chat_id", "-1002440367804");
+
+    const messageLength = message.length;
+
+    if (messageLength > 1024 || !file) {
+      const url = `${baseURL}sendMessage?chat_id=-1002440367804&text=${encodeURIComponent(
+        message
+      )}`;
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.description || "Something went wrong...");
+      }
+
+      return;
+    }
+
     formData.append("caption", message);
 
     if (file) {
-      // Add the file to formData if it exists
       formData.append("document", file);
     }
 
-    const url = `${baseURL}${file ? "sendDocument" : "sendMessage"}`;
+    const url = `${baseURL}sendDocument`;
     const response = await axios.post(url, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
