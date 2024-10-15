@@ -90,6 +90,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  border: none;
   transition: 0.4s;
   cursor: pointer;
   -webkit-box-shadow: 0 8px 10px rgba(38, 150, 168, 0.3);

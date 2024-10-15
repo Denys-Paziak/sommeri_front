@@ -9,6 +9,7 @@ import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
 import { sendMessageWithFileToTelegram } from "@/app/api/telegram";
 import axios from "axios";
+import Button from "../../UI/button/Button";
 
 interface IFormData {
   name: string;
@@ -25,7 +26,7 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors },
     control,
     reset,
     setValue,
@@ -65,20 +66,21 @@ const ContactForm = () => {
 
   const onSubmit = async (data: IFormData) => {
     const message = `
-      🔔Нове повідомлення з сайту🔔
-      ----------------------------
-  
-      Ім'я: ${data.name}
-      Пошта: ${data.email}
-      Телефон: ${data.phone}
-      Послуга: ${data.service?.label}
-      Коментар: ${data.message ? data.message : "Коментар не додано"}
-      Файл: ${fileName ? fileName : "Файл не завантажено"}
-  
-      -------------------------------------
-      🚀Обробіть заявку як умога найшвидше🚀
+    🔔Нове повідомлення з сайту🔔
+    ----------------------------
+    
+    Ім'я: ${data.name}
+    Пошта: ${data.email}
+    Телефон: ${data.phone}
+    Послуга: ${data.service?.label}
+    Коментар: ${data.message !== "" ? data.message : "Коментар не додано"}
+    Файл: ${fileName ? fileName : "Файл не завантажено"}
+    
+    -------------------------------------
+    🚀Обробіть заявку як умога найшвидше🚀
     `;
 
+    console.log(message);
     const file = acceptedFiles.length > 0 ? acceptedFiles[0] : null;
 
     await sendMessageWithFileToTelegram(message, file);
@@ -89,19 +91,19 @@ const ContactForm = () => {
     setValue("phone", "");
   };
 
-  useEffect(() => {
-    const fetchUserCountry = async () => {
-      try {
-        const response = await axios.get(
-          "https://ipinfo.io?token=2256f517d09a51"
-        );
-        const countryCode = response.data.country.toLowerCase();
-        setUserCountryCode(countryCode);
-      } catch (error) {
-        console.error("Error fetching user country: ", error);
-      }
-    };
+  const fetchUserCountry = async () => {
+    try {
+      const response = await axios.get(
+        "https://ipinfo.io?token=2256f517d09a51"
+      );
+      const countryCode = response.data.country.toLowerCase();
+      setUserCountryCode(countryCode);
+    } catch (error) {
+      console.error("Error fetching user country: ", error);
+    }
+  };
 
+  useEffect(() => {
     fetchUserCountry();
   }, []);
 
@@ -189,7 +191,7 @@ const ContactForm = () => {
               name="phone"
               control={control}
               rules={{
-                required: isSubmitted,
+                required: true,
                 minLength: {
                   value: 10,
                   message: "",
@@ -288,13 +290,12 @@ const ContactForm = () => {
           </div>
 
           {/* Textarea for message */}
-
           <div className={styles.contact__fields_textarea}>
             <textarea
               className={styles.contact__block_textarea}
               placeholder="How can we help you?"
               {...register("message", {
-                required: "Message is required",
+                required: false,
               })}
             ></textarea>
           </div>
@@ -334,9 +335,7 @@ const ContactForm = () => {
         </div>
 
         <div className={styles.contact__form_action}>
-          <button className={styles.contact__action_button} type="submit">
-            Send message
-          </button>
+          <Button type={"submit"}>Send message</Button>
         </div>
       </form>
     </div>

@@ -68,20 +68,32 @@
 .footer__item_text:hover {
   color: var(--primary);
 }
-.footer__item_text:hover::after {
-  transform: translateX(-50%) scale(1);
-}
+.footer__item_text::before,
+.footer__item_link::before,
 .footer__item_text::after,
 .footer__item_link::after {
-  content: "";
   position: absolute;
-  left: 50%;
-  bottom: -3px;
-  transform: translateX(-50%) scale(0);
   width: 100%;
   height: 1px;
-  background: var(--primary);
-  transition: 0.3s;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.footer__item_link::before,
+.footer__item_text::before {
+  content: "";
+}
+.footer__item_link::before,
+.footer__item_text::before {
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+.footer__item_text:hover::before,
+.footer__item_link:hover::before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
 }
 .footer__main_info {
   display: flex;

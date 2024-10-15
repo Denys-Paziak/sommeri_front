@@ -12,10 +12,10 @@ const Options = () => {
 
   return (
     <div className={styles.header__wrapper_options}>
+      <LanguageSelector />
       <Button style={"fill"} onClick={() => dispatch(openPopup())}>
         Contact us
       </Button>
-      <LanguageSelector />
     </div>
   );
 };

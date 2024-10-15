@@ -1,16 +1,27 @@
+import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import styles from "./ClientsSay.module.css";
 import Reviews from "@/app/components/global/reviews/Reviews";
+import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 
-const ClientsSay = ({reviews}) => {
+interface Review {
+  id: number;
+  name: string;
+  content: string;
+  rating: number;
+}
+
+interface ClientsSayProps {
+  reviews: Review[];
+}
+
+const ClientsSay: React.FC<ClientsSayProps> = ({ reviews }) => {
   return (
-    <div id="reviews" className={styles.client__say_block}>
+    <SectionWrapper sectionId="reviews">
       <section className={styles.client__say_section}>
         <div className="container">
           <div className={styles.client__say_wrapper}>
             <div className={styles.client__say_heading}>
-              <h2 className={styles.client__heading_title}>
-                What our clients say
-              </h2>
+              <TitleWrapper>What our clients say</TitleWrapper>
               <p className={styles.client__heading_subtitle}>
                 Discover how we’ve helped businesses transform their online
                 presence with tailored web development solutions that deliver
@@ -21,9 +32,9 @@ const ClientsSay = ({reviews}) => {
           </div>
         </div>
       </section>
-      <Reviews reviews={{reviews}}/>
+      <Reviews reviews={reviews} />
       <div className={styles.client__say_shape}></div>
-    </div>
+    </SectionWrapper>
   );
 };
 

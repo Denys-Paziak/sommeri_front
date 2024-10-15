@@ -15,38 +15,10 @@ import {
 import Technologies from "@/app/components/pages/home/technologies/Technologies";
 
 const HomePage = async () => {
-  let posts = [];
-  let categories = [];
-  let faqItems = [];
-  let reviews = [];
-
-  try {
-    const postData: any = await getProjects();
-    posts = await postData.json();
-  } catch (error) {
-    console.error("Error fetching projects:", error);
-  }
-
-  try {
-    const categoriesData: any = await getCategories();
-    categories = categoriesData.json();
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-  }
-
-  try {
-    const postData: any = await getFAQ();
-    faqItems = await postData.json();
-  } catch (error) {
-    console.error("Error fetching projects:", error);
-  }
-
-  try {
-    const postData: any = await getReviews();
-    reviews = await postData.json();
-  } catch (error) {
-    console.error("Error fetching projects:", error);
-  }
+  let posts = await getProjects();
+  let categories = await getCategories();
+  let faqItems = await getFAQ();
+  let reviews = await getReviews();
 
   return (
     <>
@@ -56,8 +28,8 @@ const HomePage = async () => {
       <Services />
       <Technologies />
       <OurProjects posts={posts} categories={categories} />
-      <ClientsSay reviews={reviews.data} /> {/* nazar */}
-      <Faq faqItems={faqItems.data} />
+      <ClientsSay reviews={reviews} />
+      <Faq faqItems={faqItems} />
       <Contact />
     </>
   );

@@ -25,7 +25,12 @@ const Button: FC<ButtonProps> = ({
         className={`${styles.button} ${style === "fill" && styles.fill}`}
         type={type}
       >
-        <p>{children}</p>
+        {/* ---first button animation */}
+        {/* <span>{children}</span> */}
+        {/* --- second button animation */}
+        <span>{children}</span>
+        <div className={styles.button__bg}></div>
+
         {/* <svg
           width="20"
           height="20"

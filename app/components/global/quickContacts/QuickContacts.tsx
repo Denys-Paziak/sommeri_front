@@ -115,7 +115,7 @@ const QuickContacts = () => {
               </span>
             </div>
           </div>
-          <div className={styles.quick__inner_call}>
+          <button type="button" className={styles.quick__inner_call}>
             <svg
               width="20"
               height="20"
@@ -128,7 +128,7 @@ const QuickContacts = () => {
                 fill="white"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </div>

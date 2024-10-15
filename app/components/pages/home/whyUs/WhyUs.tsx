@@ -1,15 +1,15 @@
+import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import styles from "./WhyUs.module.css";
 import Image from "next/image";
+import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 
 const WhyUs = () => {
   return (
-    <section id="whyUs" className={styles.why__us_section}>
+    <SectionWrapper sectionId="whyUs">
       <div className="container">
         <div className={styles.why__us_wrapper}>
           <div className={styles.why__us_heading}>
-            <h2 className={styles.why__heading_title}>
-              Why you should work with us
-            </h2>
+            <TitleWrapper>Why you should work with us</TitleWrapper>
             <p className={styles.why__heading_subtitle}>
               We create effective solutions that meet your goals and needs.
             </p>
@@ -132,7 +132,15 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
-    </section>
+      <div className={styles.why__us_vector}>
+        <Image
+          width={2000}
+          height={740}
+          src="/images/why-us-vector.svg"
+          alt="why us vector"
+        />
+      </div>
+    </SectionWrapper>
   );
 };
 

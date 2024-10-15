@@ -3,14 +3,15 @@ import styles from "./About.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 import LineVector from "@/app/components/global/lineVector/LineVector";
 import React from "react";
-import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
+import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 
 const About = () => {
   return (
-    <section id="about" className={styles.about__section}>
+    <SectionWrapper sectionId="about">
       <div className="container">
         <div className={styles.about__wrapper}>
-          <h2 className={styles.about__wrapper_title}>About us</h2>
+          <TitleWrapper>About us</TitleWrapper>
           <div className={styles.about__wrapper_main}>
             <div className={styles.about__main_info}>
               <h3 className={styles.about__info_subtitle}>
@@ -27,11 +28,7 @@ const About = () => {
                 step we take is aimed at exceeding expectations and creating a
                 truly valuable product.
               </p>
-              <SecondaryButton
-                type={"button"}
-              >
-                Reviews
-              </SecondaryButton>
+              <SecondaryButton type={"button"}>Reviews</SecondaryButton>
             </div>
             <div className={styles.about__main_banner}>
               <Image
@@ -48,7 +45,7 @@ const About = () => {
       <div className={styles.vector}>
         <LineVector />
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

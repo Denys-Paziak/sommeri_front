@@ -1,14 +1,10 @@
-.contact__section {
-  width: 100%;
-  padding-top: 140px;
-  padding-bottom: 140px;
-}
 .contact__wrapper {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  padding-bottom: 50px;
 }
 .contact__wrapper_heading {
   width: 100%;
@@ -16,14 +12,6 @@
   align-items: center;
   flex-direction: column;
   gap: 10px;
-}
-.contact__heading_title {
-  text-align: center;
-  font-size: 60px;
-  line-height: 80px;
-  font-weight: 500;
-  color: var(--white);
-  text-align: center;
 }
 .contact__heading_subtitle {
   font-size: 16px;
@@ -70,9 +58,8 @@
   .contact__wrapper_heading {
     align-items: center;
   }
-  .contact__heading_title {
-    font-size: 36px;
-    line-height: 40px;
+  .contact__wrapper {
+    padding-bottom: 20px;
   }
   .contact__heading_subtitle {
     width: 80%;
