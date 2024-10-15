@@ -29,7 +29,7 @@
   mask-composite: exclude;
   pointer-events: none;
 }
-.similar__item_banner {
+.similar__item_banner img{
   width: 100%;
   height: 100%;
   border-radius: 8px;

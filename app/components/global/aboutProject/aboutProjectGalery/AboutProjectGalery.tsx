@@ -1,11 +1,10 @@
 import styles from "./AboutProjectGalery.module.css";
-import { ProjectInterface } from "@/app/project/[id]/ProjectInterface";
+import { ProjectInterface} from "@/app/utils/interfaces/project";
 import ReactMarkdown from "react-markdown";
 import React from "react";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 
 const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
-  console.log(project);
   return (
     <section className={styles.project__galery_section}>
       <div className="container">

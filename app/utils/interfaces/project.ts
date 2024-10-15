@@ -10,6 +10,8 @@ export interface ProjectInterface {
     Result: string,
     Solution: string,
     Objectives: string,
+    url: string,
+    similars: ProjectInterface[],
     technologies: {
         Name: string
     } [],

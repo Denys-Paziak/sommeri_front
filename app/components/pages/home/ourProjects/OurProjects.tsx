@@ -72,7 +72,7 @@ export default function Page({ posts, categories }: iProps) {
                   <Link
                     key={project.documentId}
                     className={projectStyle}
-                    href={`/project/${project.documentId}`}
+                    href={`/project/${project.url}`}
                   >
                     <div className={styles.project__portfolio_item}>
                       <div className={styles.project__item_banner}>
@@ -119,14 +119,12 @@ export default function Page({ posts, categories }: iProps) {
                           {project.Category.Name}
                         </p>
                         <p className={styles.project__info_categories}>
-                          {project.technologies.map((technology) => (
                             <span
-                              key={technology.Name}
+                              key={project.technologies[0].Name}
                               className={styles.project__categories_item}
                             >
-                              {technology.Name}
+                              {project.technologies[0].Name}
                             </span>
-                          ))}
                         </p>
                       </div>
                     </div>

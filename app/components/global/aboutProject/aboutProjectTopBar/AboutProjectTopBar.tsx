@@ -1,5 +1,5 @@
 import styles from "./AboutProjectTopBar.module.css";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
+import {ProjectInterface} from "@/app/utils/interfaces/project";
 
 const AboutProjectTopBar = ({project}: {project: ProjectInterface}) => {
   return (
