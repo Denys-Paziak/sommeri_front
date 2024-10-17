@@ -2,7 +2,6 @@
 
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import styles from "./SectionLink.module.css";
-import { ReactNode } from "react";
 
 interface SectionLinkProps {
   link: string;

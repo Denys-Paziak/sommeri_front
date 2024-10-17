@@ -37,38 +37,6 @@ const Navbar = () => {
             link={NavbarItem.link}
           />
         ))}
-        {/* <li className={styles.header__list_item}>
-          <a
-            onClick={() => handleScroll("about")}
-            className={styles.header__item_link}
-          >
-            About Us
-          </a>
-        </li>
-        <li className={styles.header__list_item}>
-          <a
-            onClick={() => handleScroll("technologies")}
-            className={styles.header__item_link}
-          >
-            Technologies
-          </a>
-        </li>
-        <li className={styles.header__list_item}>
-          <a
-            onClick={() => handleScroll("portfolio")}
-            className={styles.header__item_link}
-          >
-            Projects
-          </a>
-        </li>
-        <li className={styles.header__list_item}>
-          <a
-            onClick={() => handleScroll("whyUs")}
-            className={styles.header__item_link}
-          >
-            Why Us
-          </a>
-        </li> */}
       </ul>
     </nav>
   );

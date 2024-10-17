@@ -13,8 +13,10 @@ export const getProjects = async () => {
 
 export const getProject = async (id) => {
   try {
-    const response = await axios.get(`${backHost}/api/projects/${id}?populate=*`);
-    return response.data.data;
+    const response = await axios.get(`${backHost}/api/projects?filters[url][$eq]=${id}&populate=*`);
+
+    return response.data.data[0];
+
   } catch (error) {
     console.error("Error fetching project:", error);
   }
@@ -55,3 +57,16 @@ export const getTechnologiesWay = async () => {
     console.error("Error fetching technologies way:", error);
   }
 };
+
+export const getSimilars = async (url) => {
+  try {
+    const response = await axios.get(`${backHost}/api/projects?filters[url][$eq]=${url}&populate[similars][populate]=*`);
+
+    return response.data.data[0].similars;
+  } catch (error) {
+    console.error("Error fetching technologies way:", error);
+  }
+};
+
+
+

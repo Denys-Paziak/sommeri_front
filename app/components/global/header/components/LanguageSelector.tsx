@@ -7,26 +7,17 @@ interface Language {
   name: string;
 }
 
-// const languages: Language[] = [
-//   { code: "en", name: "Англійська" },
-//   { code: "ua", name: "Українська" },
-// ];
-
 const LanguageSelector: React.FC = () => {
-  //   const [selectedLanguage, setSelectedLanguage] = useState<Language>(
-  //     languages[0]
-  //   );
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleLanguageChange = (language: Language) => {
-    // setSelectedLanguage(language);
     setIsOpen(false);
   };
 
   return (
-    <div className={styles.languageSelector}>
-      <button
-        className={styles.selectorButton}
+    <div className={styles.language__selector}>
+      <div
+        className={styles.language__selector_button}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className={styles.languageName}>EN</span>
@@ -49,7 +40,7 @@ const LanguageSelector: React.FC = () => {
             />
           </svg>
         </div>
-      </button>
+      </div>
 
       {isOpen && (
         <ul className={styles.language__list}>
@@ -57,26 +48,24 @@ const LanguageSelector: React.FC = () => {
             <span className={styles.language__item_flag}>
               <Image
                 width={20}
-                height={18}
+                height={12}
                 src="/images/ua-flag.svg"
-                alt="flag icon"
-              />
-            </span>
-            <p className={styles.language__item_name}>English</p>
-          </li>
-          <li className={styles.languageItem}>
-            <span className={styles.language__item_flag}>
-              <Image
-                width={20}
-                height={18}
-                src="/images/us-flag.svg"
                 alt="flag icon"
               />
             </span>
             <p className={styles.language__item_name}>Ukrainian</p>
           </li>
-          {/* {languages.map((language) => (
-          ))} */}
+          <li className={styles.language__list_item}>
+            <span className={styles.language__item_flag}>
+              <Image
+                width={20}
+                height={12}
+                src="/images/uk-flag.svg"
+                alt="flag icon"
+              />
+            </span>
+            <p className={styles.language__item_name}>English</p>
+          </li>
         </ul>
       )}
     </div>

@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 .reviews__track_item {
-  min-width: 400px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/home/about/About.jsxt/About.jsx",
-    "app/components/home/HomePage"
+    "app/components/home/HomePage",
+    "app/not-found.tsx"
   ],
   "exclude": ["node_modules"]
 }

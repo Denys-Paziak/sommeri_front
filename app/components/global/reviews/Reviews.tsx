@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./Reviews.module.css";
 // @ts-ignore
@@ -22,12 +22,34 @@ interface ReviewsProps {
 }
 
 const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
+  const [sliderWidth, setSliderWidth] = useState(420);
+
+  useEffect(() => {
+    // Функція для зміни ширини слайдера в залежності від ширини вікна
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSliderWidth(300); // Для менших екранів
+      } else {
+        setSliderWidth(420); // Для більших екранів
+      }
+    };
+
+    // Викликаємо один раз при монтуванні
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className={styles.reviews__block}>
       <div className={styles.reviews__block_slider}>
         <ul className={styles.reviews__slider_track}>
           <Slider
-            width="420px"
+            width={`${sliderWidth}px`}
             duration={40}
             pauseOnHover={true}
             blurBorders={false}

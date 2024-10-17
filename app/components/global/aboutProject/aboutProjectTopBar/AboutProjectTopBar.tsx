@@ -1,14 +1,16 @@
 import styles from "./AboutProjectTopBar.module.css";
-import {ProjectInterface} from "@/app/project/[id]/ProjectInterface";
+import { ProjectInterface } from "@/app/utils/interfaces/project";
 
-const AboutProjectTopBar = ({project}: {project: ProjectInterface}) => {
+const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
   return (
     <section className={styles.project__top_section}>
       <div className="container">
         <div className={styles.project__top_wrapper}>
           <div className={styles.project__top_info}>
             <h2 className={styles.project__top_name}>{project.Name}</h2>
-            <p className={styles.project__top_type}>{project.Category && project.Category.Name}</p>
+            <p className={styles.project__top_type}>
+              {project.Category && project.Category.Name}
+            </p>
           </div>
           <button className={styles.project__top_visit} type="button">
             <span className={styles.project__visit_text}>Visit</span>

@@ -10,6 +10,7 @@ import {
   MouseParallaxChild,
 } from "react-parallax-mouse";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+import { useTranslations } from "next-intl";
 
 interface Brand {
   image_path: string;
@@ -24,6 +25,7 @@ const Hero = () => {
     { image_path: "company-5" },
     { image_path: "company-6" },
   ]);
+  const t = useTranslations("HomePage");
 
   const svgRef = useRef<SVGSVGElement | null>(null);
 
@@ -56,13 +58,12 @@ const Hero = () => {
   return (
     <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
       <section className={styles.hero__section}>
+        <div className={styles.hero__top_blur}></div>
         <div className="container">
           <div className={styles.hero__wrapper}>
             <div className={styles.hero__wrapper_heading}>
               <h1 className={styles.hero__heading_title}>
-                <span className={styles.hero__title_special}>
-                  One step ahead with
-                </span>{" "}
+                <span className={styles.hero__title_special}>{t("title")}</span>{" "}
                 <br />
                 our solutions
               </h1>

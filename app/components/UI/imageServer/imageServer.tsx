@@ -1,10 +1,9 @@
 import Image from "next/image";
-import {backHost} from "@/app/utils/server/server";
+import { backHost } from "@/app/utils/server/server";
 
-const ImageServer = ({link}: {link: string}) => {
-
+const ImageServer = ({ link }: { link: string }) => {
   return (
-    <Image src={backHost + link} width={2000} height={2000} alt={"link"}/>
+    <Image src={backHost + link} width={2000} height={2000} alt={"link"} />
   );
 };
 

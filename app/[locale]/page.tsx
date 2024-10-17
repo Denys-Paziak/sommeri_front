@@ -1,6 +1,4 @@
-import Header from "@/app/components/global/header/Header";
 import HomePage from "@/app/components/pages/home/HomePage";
-import Footer from "@/app/components/global/footer/Footer";
 
 import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
 import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
@@ -14,9 +12,7 @@ export default function Home() {
       <ContactFormPopup />
       <ThanksPopup />
       <QuickContacts />
-      <Header />
       <HomePage />
-      <Footer />
     </div>
   );
 }
