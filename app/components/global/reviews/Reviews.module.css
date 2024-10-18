@@ -1,36 +1,50 @@
 .reviews__block {
-  width: 100%;
-}
-.reviews__block_slider {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
-.reviews__slider_track {
+
+.reviews__block_slider {
+  position: relative;
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 20px;
   overflow: hidden;
 }
+
+.reviews__slider_track, .reviews__slider_track_right{
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: anim 12s linear infinite;
+}
+
+.reviews__slider_track_right {
+  animation: animRight 12s linear infinite;
+}
+
+.reviews__slider_track:hover, .reviews__slider_track_right:hover {
+  animation-play-state: paused;
+}
+
 .reviews__track_item {
+<<<<<<< HEAD
   min-width: 200px;
+=======
+>>>>>>> 81675b4 (recoding reviews)
   display: flex;
   flex-direction: column;
+  width: 400px;
   gap: 20px;
   padding: 20px;
   background: var(--second-dark);
   border-radius: 12px;
   border: 1px solid #ffffff1a;
-  margin-left: 20px;
+  margin-right: 20px;
 }
-.reviews__item_header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 .reviews__header_inner {
   display: flex;
   align-items: center;
@@ -42,6 +56,15 @@
   border-radius: 50%;
   object-position: center center;
 }
+
+.reviews__item_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 .reviews__inner_name {
   font-size: 16px;
   line-height: 20px;
@@ -59,6 +82,7 @@
   height: 40px;
   overflow: scroll;
 }
+
 .reviews__main_text {
   font-size: 13px;
   line-height: 16px;
@@ -66,8 +90,40 @@
   color: var(--white);
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .reviews__track_item {
     width: 200px;
+=======
+@media screen and (max-width: 768px) {
+  .reviews__track_item {
+    width: 260px;
+  }
+
+  .reviews__item_main {
+    height: 60px;
+  }
+
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+@keyframes animRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+>>>>>>> 81675b4 (recoding reviews)
   }
 }
