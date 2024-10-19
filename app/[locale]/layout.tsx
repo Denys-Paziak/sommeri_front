@@ -69,10 +69,10 @@ export default async function RootLayout({
             <NextIntlClientProvider messages={messages}>
                 <ReduxProvider>
                     <Header/>
-                    <CustomCursor/>
-                    <ContactFormPopup/>
-                    <ThanksPopup/>
-                    <QuickContacts/>
+                    <CustomCursor />
+                    <ContactFormPopup />
+                    <ThanksPopup />
+                    <QuickContacts />
                     {children}
                     <Footer/>
                 </ReduxProvider>

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React from "react";
 import { Link } from "@/navigation";
@@ -6,11 +6,9 @@ import Logo from "../logo/Logo";
 import styles from "./Footer.module.css";
 import Image from "next/image";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
-  const pathname = usePathname();
-
   const NavbarItems = [
     {
       name: "Services",
@@ -34,22 +32,13 @@ const Footer = () => {
     },
   ];
 
-  const securityMenu = [
-    {
-      name: "Privacy Policy",
-      link: "/privacy-policy",
-    },
-    {
-      name: "Terms of Use",
-      link: "/terms-of-use",
-    },
-  ];
+  const pathname = usePathname();
 
   return (
     <footer className={styles.footer}>
       <section className={styles.footer__section}>
         <div className="container">
-          <div className={styles.footer__wrapper}>
+          <div className={styles.footer_wrapper}>
             <div className={styles.footer__wrapper_main}>
               <div className={styles.footer__main_contact}>
                 <div className={styles.footer__contact_logo}>
@@ -111,18 +100,20 @@ const Footer = () => {
                 <div className={styles.footer__info_block}>
                   <h4 className={styles.footer__block_subtitle}>Legal</h4>
                   <ul className={styles.footer__block_security}>
-                    {securityMenu.map((securityItem, index) => {
-                      return (
-                        <li key={index + securityItem.link} className={styles.footer__list_item}>
-                          <Link
-                            href={securityItem.link}
-                            className={"/" + pathname.split("/").at(-1) == securityItem.link ? styles.footer__item_link__active : styles.footer__item_link }
-                          >
-                            {securityItem.name}
-                          </Link>
-                        </li>
-                      );
-                    })}
+                    <li className={styles.footer__list_item}>
+                      <Link
+                        href={"/privacy-policy"}
+                        className={ pathname.split("/").at(-1) == "privacy-policy" ? styles.footer__item_link__active : styles.footer__item_link }
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li className={styles.footer__list_item}>
+                      <Link href={"/terms-of-use"}
+                            className={ pathname.split("/").at(-1) == "terms-of-use" ? styles.footer__item_link__active : styles.footer__item_link }>
+                        Terms of Use
+                      </Link>
+                    </li>
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>

@@ -6,19 +6,18 @@ import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
 import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
 import ContactFormPopup from "@/app/components/global/contactFormPopup/ContactFormPopup";
 import QuickContacts from "@/app/components/global/quickContacts/QuickContacts";
+import Loader from "@/app/components/global/loader/Loader";
 
 const Project = async ({ params }: { params: { id: string } }) => {
   const project: any = await getProject(params.id);
 
+    if (!project ) {
+        return  <Loader/>
+    }
+
   return (
     <div>
-      <CustomCursor />
-      <ContactFormPopup />
-      <ThanksPopup />
-      <QuickContacts />
-      <Header />
       {project && <AboutProject project={project} />}
-      <Footer />
     </div>
   );
 };
