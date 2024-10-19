@@ -1,18 +1,20 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
-import styles from "./ContactForm.module.css";
-import { PhoneInput } from "react-international-phone";
-import "react-international-phone/style.css";
 import { useDropzone } from "react-dropzone";
 import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
-import { sendMessageWithFileToTelegram } from "@/app/api/telegram";
-import axios from "axios";
-import Button from "../../UI/button/Button";
 import { useDispatch } from "react-redux";
-import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
 import { isValidPhoneNumber, CountryCode } from "libphonenumber-js";
+import { PhoneInput, getActiveFormattingMask } from "react-international-phone";
+import axios from "axios";
+import "react-international-phone/style.css";
+
+import styles from "./ContactForm.module.css";
+import { sendMessageWithFileToTelegram } from "@/app/api/telegram";
+import Button from "@/app/components/UI/button/Button";
+import { Link } from "@/navigation";
+import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
 
 interface IFormData {
   name: string;
@@ -24,7 +26,7 @@ interface IFormData {
 
 const ContactForm = () => {
   const [fileName, setFileName] = useState("");
-  const [userCountryCode, setUserCountryCode] = useState("ua");
+  const [userCountryCode, setUserCountryCode] = useState("");
   const [acceptedFiles, setAcceptedFiles] = useState<File[]>([]);
   const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
@@ -54,7 +56,7 @@ const ContactForm = () => {
     { value: "seo", label: "SEO Optimization" },
     {
       value: "comprehensive-it-solutions",
-      label: "Comprehensive IT Solutions",
+      label: "IT Solutions",
     },
   ];
 
@@ -207,7 +209,7 @@ const ContactForm = () => {
                   const countryCode =
                     userCountryCode.toUpperCase() as CountryCode; // Приведення до типу CountryCode
                   if (!isValidPhoneNumber(value, countryCode)) {
-                    return "Phone number is invalid";
+                    return "";
                   }
                   return true;
                 },
@@ -219,9 +221,15 @@ const ContactForm = () => {
                   value={phone}
                   defaultCountry={userCountryCode}
                   placeholder={"099-000-00-00"}
-                  onChange={(value) => {
+                  onChange={(value, { country }) => {
                     setPhone(value);
                     setValue("phone", value);
+                    const mask = getActiveFormattingMask({
+                      country,
+                      phone,
+                      defaultMask: "............",
+                      disableFormatting: false,
+                    });
                   }}
                   style={
                     {
@@ -360,6 +368,19 @@ const ContactForm = () => {
               )}
             </div>
           </div>
+        </div>
+
+        {/* agree privacy policy */}
+        <div className={styles.contact__form_agree}>
+          <p className={styles.contact__block_agree}>
+            Натискаючи на кнопку "Надіслати" ви погоджуєтесь з{" "}
+            <Link
+              href={"/privacy-policy"}
+              className={styles.contact__agree_link}
+            >
+              Політикою конфіденційності
+            </Link>
+          </p>
         </div>
 
         <div className={styles.contact__form_action}>

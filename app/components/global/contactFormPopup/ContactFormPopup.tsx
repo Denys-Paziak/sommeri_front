@@ -1,13 +1,16 @@
 "use client";
 
 import React, { useEffect } from "react";
-import styles from "./ContactFormPopup.module.css";
 import { useForm } from "react-hook-form";
-import { sendMessageToTelegram } from "@/app/api/telegram";
 import { useDispatch, useSelector } from "react-redux";
+
+import styles from "./ContactFormPopup.module.css";
+import { sendMessageToTelegram } from "@/app/api/telegram";
 import { RootState } from "@/app/redux/store";
 import { closePopup } from "@/app/redux/popupSlice";
 import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
+import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
+import { Link } from "@/navigation";
 
 interface IFormData {
   name: string;
@@ -68,7 +71,7 @@ const ContactFormPopup = () => {
         className={styles.overlay}
         onClick={() => dispatch(closePopup())}
       ></div>
-      <div className={styles.contact__form_popup}>
+      <PopupWrapper>
         <div className={styles.contact__popup_wrapper}>
           <button
             type="button"
@@ -171,6 +174,19 @@ const ContactFormPopup = () => {
               </div>
             </div>
 
+            {/* agree privacy policy */}
+            <div className={styles.contact__form_agree}>
+              <p className={styles.contact__block_agree}>
+                Натискаючи на кнопку "Надіслати" ви погоджуєтесь з{" "}
+                <Link
+                  href={"/privacy-policy"}
+                  className={styles.contact__agree_link}
+                >
+                  Політикою конфіденційності
+                </Link>
+              </p>
+            </div>
+
             <div className={styles.contact__wrapper_action}>
               <button className={styles.contact__action_button} type="submit">
                 Send message
@@ -178,7 +194,7 @@ const ContactFormPopup = () => {
             </div>
           </form>
         </div>
-      </div>
+      </PopupWrapper>
     </div>
   );
 };

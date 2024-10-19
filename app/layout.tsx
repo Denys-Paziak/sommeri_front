@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 import ReduxProvider from "@/app/redux/ReduxProvider";
 import Header from "@/app/components/global/header/Header";
 import Footer from "@/app/components/global/footer/Footer";
+import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
+import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
+import ContactFormPopup from "@/app/components/global/contactFormPopup/ContactFormPopup";
+import QuickContacts from "@/app/components/global/quickContacts/QuickContacts";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,6 +62,10 @@ export default async function RootLayout({
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
+            <CustomCursor />
+            <ContactFormPopup />
+            <ThanksPopup />
+            <QuickContacts />
             <Header />
             {children}
             <Footer />

@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import styles from "./ThanksPopup.module.css";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { RootState } from "@/app/redux/store";
+import styles from "./ThanksPopup.module.css";
 import { closeThanksPopup } from "@/app/redux/thanksPopupSlice";
+import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
 
 const ThanksPopup = () => {
   const isOpen = useSelector((state: RootState) => state.thanksPopup.isOpen);
@@ -30,7 +32,7 @@ const ThanksPopup = () => {
         className={styles.overlay}
         onClick={() => dispatch(closeThanksPopup())}
       ></div>
-      <div className={styles.thanks__popup}>
+      <PopupWrapper>
         <button
           type="button"
           className={styles.thanks__wrapper_close}
@@ -87,7 +89,7 @@ const ThanksPopup = () => {
             </p>
           </div>
         </div>
-      </div>
+      </PopupWrapper>
     </div>
   );
 };

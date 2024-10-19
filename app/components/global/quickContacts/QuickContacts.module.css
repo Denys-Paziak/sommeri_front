@@ -170,3 +170,13 @@
     width: 18px;
   }
 }
+
+@media (max-width: 600px) {
+  .quick__contacts_block {
+    position: fixed !important;
+    right: 16px !important;
+    left: auto !important;
+    bottom: 16px !important;
+    z-index: 5 !important;
+  }
+}

@@ -149,6 +149,19 @@
 .contact__fields_block.error {
   border: 1px solid var(--red);
 }
+.contact__form_agree {
+  width: 100%;
+}
+.contact__block_agree {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--gray);
+}
+.contact__agree_link {
+  color: var(--primary);
+  text-decoration: underline;
+}
 
 @media (max-width: 1160px) {
   .contact__fields_services {
@@ -187,5 +200,8 @@
   .contact__form_fields,
   .contact__fields_services {
     gap: 16px;
+  }
+  .contact__block_form {
+    gap: 28px;
   }
 }

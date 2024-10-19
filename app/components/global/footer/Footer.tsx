@@ -1,11 +1,16 @@
+"use client";
+
 import React from "react";
 import { Link } from "@/navigation";
 import Logo from "../logo/Logo";
 import styles from "./Footer.module.css";
 import Image from "next/image";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
   const NavbarItems = [
     {
       name: "Services",
@@ -29,11 +34,22 @@ const Footer = () => {
     },
   ];
 
+  const securityMenu = [
+    {
+      name: "Privacy Policy",
+      link: "/privacy-policy",
+    },
+    {
+      name: "Terms of Use",
+      link: "/terms-of-use",
+    },
+  ];
+
   return (
     <footer className={styles.footer}>
       <section className={styles.footer__section}>
         <div className="container">
-          <div className={styles.footer_wrapper}>
+          <div className={styles.footer__wrapper}>
             <div className={styles.footer__wrapper_main}>
               <div className={styles.footer__main_contact}>
                 <div className={styles.footer__contact_logo}>
@@ -95,19 +111,38 @@ const Footer = () => {
                 <div className={styles.footer__info_block}>
                   <h4 className={styles.footer__block_subtitle}>Legal</h4>
                   <ul className={styles.footer__block_security}>
-                    <li className={styles.footer__list_item}>
+                    {securityMenu.map((securityItem) => {
+                      const isActive = pathname.startsWith(securityItem.link);
+
+                      console.log(pathname);
+
+                      return (
+                        <li className={styles.footer__list_item}>
+                          <Link
+                            href={securityItem.link}
+                            className={styles.footer__item_link}
+                            // style={
+                            //   isActive ? { color: "blue" } : { color: "green" }
+                            // }
+                          >
+                            {securityItem.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                    {/* <li className={styles.footer__list_item}>
                       <Link
-                        href={"/privacyPolicy"}
+                        href={"/terms-of-use"}
+                        style={
+                          pathname === "/terms-of-use"
+                            ? activeStyles
+                            : undefined
+                        }
                         className={styles.footer__item_link}
                       >
-                        Privacy Policy
-                      </Link>
-                    </li>
-                    <li className={styles.footer__list_item}>
-                      <Link href={"/"} className={styles.footer__item_link}>
                         Terms of Use
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>

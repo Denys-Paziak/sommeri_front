@@ -98,8 +98,8 @@ const Services: React.FC = () => {
                       Website Development
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Automate communication with customers, our chatbots
-                      provide fast and convenient service.
+                      Створюємо сучасні та функціональні сайти, адаптовані під
+                      ваш бізнес, з акцентом на дизайн, продуктивність та SEO.
                     </p>
                   </div>
                 </div>
@@ -136,10 +136,9 @@ const Services: React.FC = () => {
                       Web & App Design
                     </h3>
                     <p className={styles.services__inner_text}>
-                      We develop and integrate API solutions that ensure
-                      seamless data exchange between your systems and
-                      applications, increasing the efficiency of business
-                      processes.
+                      Дизайни, що поєднують естетику та зручність, допомагають
+                      зробити вебсайти й додатки привабливими та інтуїтивними
+                      для користувачів.
                     </p>
                   </div>
                 </div>
@@ -178,9 +177,8 @@ const Services: React.FC = () => {
                       Mobile App Development
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Our original design emphasizes excellent functionality and
-                      high performance, ensuring that your website meets your
-                      unique needs and provides an unrivaled.
+                      Розробляємо зручні мобільні додатки для iOS та Android,
+                      забезпечуючи високу продуктивність та безпеку.
                     </p>
                   </div>
                 </div>
@@ -215,8 +213,9 @@ const Services: React.FC = () => {
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>Google Ads</h3>
                     <p className={styles.services__inner_text}>
-                      We create functional and intuitive web applications that
-                      increase the efficiency of your business.
+                      Допомагаємо запускати рекламні кампанії в Google Ads, що
+                      підвищують видимість вашого бізнесу та залучають більше
+                      клієнтів.
                     </p>
                   </div>
                 </div>
@@ -254,8 +253,8 @@ const Services: React.FC = () => {
                       SEO Optimization
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Automate communication with customers, our chatbots
-                      provide fast and convenient service.
+                      Забезпечуємо високу позицію вашого сайту в пошукових
+                      системах завдяки професійній SEO-оптимізації.
                     </p>
                   </div>
                 </div>
@@ -289,13 +288,12 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>06</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      Comprehensive IT Solutions
+                      IT Solutions
                     </h3>
                     <p className={styles.services__inner_text}>
-                      We develop and integrate API solutions that ensure
-                      seamless data exchange between your systems and
-                      applications, increasing the efficiency of business
-                      processes.
+                      Пропонуємо комплексні IT-рішення: налаштування VPS,
+                      розробка CRM/ERP, інтеграція сайтів з CRM та оптимізація
+                      бізнес-процесів.
                     </p>
                   </div>
                 </div>
