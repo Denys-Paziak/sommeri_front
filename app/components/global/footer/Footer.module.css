@@ -80,6 +80,11 @@
   left: 0;
   pointer-events: none;
 }
+
+.footer__item_link__active {
+  color: var(--primary);
+}
+
 .footer__item_link::before,
 .footer__item_text::before {
   content: "";

@@ -111,38 +111,18 @@ const Footer = () => {
                 <div className={styles.footer__info_block}>
                   <h4 className={styles.footer__block_subtitle}>Legal</h4>
                   <ul className={styles.footer__block_security}>
-                    {securityMenu.map((securityItem) => {
-                      const isActive = pathname.startsWith(securityItem.link);
-
-                      console.log(pathname);
-
+                    {securityMenu.map((securityItem, index) => {
                       return (
-                        <li className={styles.footer__list_item}>
+                        <li key={index + securityItem.link} className={styles.footer__list_item}>
                           <Link
                             href={securityItem.link}
-                            className={styles.footer__item_link}
-                            // style={
-                            //   isActive ? { color: "blue" } : { color: "green" }
-                            // }
+                            className={"/" + pathname.split("/").at(-1) == securityItem.link ? styles.footer__item_link__active : styles.footer__item_link }
                           >
                             {securityItem.name}
                           </Link>
                         </li>
                       );
                     })}
-                    {/* <li className={styles.footer__list_item}>
-                      <Link
-                        href={"/terms-of-use"}
-                        style={
-                          pathname === "/terms-of-use"
-                            ? activeStyles
-                            : undefined
-                        }
-                        className={styles.footer__item_link}
-                      >
-                        Terms of Use
-                      </Link>
-                    </li> */}
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>
