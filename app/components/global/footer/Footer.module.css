@@ -170,6 +170,12 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .footer__contact_logo {
+    max-width: 180px;
+  }
+}
+
 @media (max-width: 800px) {
   .footer__main_info {
     flex-direction: column;
@@ -187,9 +193,6 @@
   .footer__section {
     padding-top: 40px;
   }
-  .footer__contact_logo {
-    max-width: 180px;
-  }
   .footer__wrapper_bottom {
     padding: 30px;
   }
@@ -201,5 +204,8 @@
   }
   .footer__wrapper_main {
     gap: 60px;
+  }
+  .footer__contact_logo {
+    max-width: 140px;
   }
 }

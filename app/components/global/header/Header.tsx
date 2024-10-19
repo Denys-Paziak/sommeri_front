@@ -19,7 +19,7 @@ const Header = () => {
         <div className="container">
           <div className={styles.header__wrapper}>
             <Logo />
-            <Navbar />
+            <Navbar isMobileMenuOpen={isMobileMenuOpen} />
             <Options />
 
             <div

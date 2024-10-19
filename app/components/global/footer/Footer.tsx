@@ -111,38 +111,22 @@ const Footer = () => {
                 <div className={styles.footer__info_block}>
                   <h4 className={styles.footer__block_subtitle}>Legal</h4>
                   <ul className={styles.footer__block_security}>
-                    {securityMenu.map((securityItem) => {
-                      const isActive = pathname.startsWith(securityItem.link);
-
-                      console.log(pathname);
-
-                      return (
-                        <li className={styles.footer__list_item}>
-                          <Link
-                            href={securityItem.link}
-                            className={styles.footer__item_link}
-                            // style={
-                            //   isActive ? { color: "blue" } : { color: "green" }
-                            // }
-                          >
-                            {securityItem.name}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                    {/* <li className={styles.footer__list_item}>
+                    <li className={styles.footer__list_item}>
+                      <Link
+                        href={"/privacy-policy"}
+                        className={styles.footer__item_link}
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+                    <li className={styles.footer__list_item}>
                       <Link
                         href={"/terms-of-use"}
-                        style={
-                          pathname === "/terms-of-use"
-                            ? activeStyles
-                            : undefined
-                        }
                         className={styles.footer__item_link}
                       >
                         Terms of Use
                       </Link>
-                    </li> */}
+                    </li>
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>

@@ -2,8 +2,13 @@ import React from "react";
 import styles from "../Header.module.css";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
+import Options from "./Options";
 
-const Navbar = () => {
+interface iProps {
+  isMobileMenuOpen: boolean;
+}
+
+const Navbar = ({ isMobileMenuOpen }: iProps) => {
   const NavbarItems = [
     {
       name: "Services",
@@ -28,7 +33,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={styles.header__wrapper_nav}>
+    <nav
+      className={`${styles.header__wrapper_nav} ${
+        isMobileMenuOpen ? `${styles.active}` : ""
+      }`}
+    >
       <ul className={styles.header__nav_list}>
         {NavbarItems.map((NavbarItem) => (
           <SectionLink
@@ -38,6 +47,8 @@ const Navbar = () => {
           />
         ))}
       </ul>
+
+      <Options />
     </nav>
   );
 };
