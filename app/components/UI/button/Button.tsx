@@ -1,7 +1,7 @@
 "use client";
-
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import styles from "./Button.module.css";
+import { gsap } from "gsap";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -18,35 +18,53 @@ const Button: FC<ButtonProps> = ({
   arrowColor,
   style,
 }) => {
+  const btnRef = useRef<HTMLButtonElement | null>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const btn = btnRef.current;
+    if (!btn) return;
+
+    const circle = btn.querySelector("." + styles.circle) as HTMLElement;
+    const rect = btn.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    gsap.set(circle, { top: `${y}px`, left: `${x}px`, width: 0, height: 0, opacity: 1 });
+
+    gsap.to(circle, {
+      width: rect.width * 2,
+      height: rect.width * 2,
+      top: `${y - rect.width}px`,
+      left: `${x - rect.width}px`,
+      duration: 1.4,
+      ease: "power3.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    const btn = btnRef.current;
+    if (!btn) return;
+
+    const circle = btn.querySelector("." + styles.circle) as HTMLElement;
+
+    gsap.to(circle, {
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.in",
+    });
+  };
+
   return (
     <div>
       <button
-        onClick={onClick}
-        className={`${styles.button} ${style === "fill" && styles.fill}`}
-        type={type}
+        ref={btnRef}
+        className={styles.button}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        {/* ---first button animation */}
-        {/* <span>{children}</span> */}
-        {/* --- second button animation */}
         <span>{children}</span>
-        <div className={styles.button__bg}></div>
-
-        {/* <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            style={{ stroke: arrowColor }}
-            d="M14.1248 5.87519L5.87522 14.1248M14.1248 5.87519L14.1248 12.9463M14.1248 5.87519L7.05373 5.87519"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg> */}
+        <div className={styles.circle} />
       </button>
     </div>
   );

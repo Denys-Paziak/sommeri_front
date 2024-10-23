@@ -10,10 +10,11 @@ import "swiper/css/pagination";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 import Link from "next/link";
+import { useLocale } from 'next-intl';
 
 const SimilarProjectItems = ({ projects }: any) => {
   const swiper = useSwiper();
-
+    const locale = useLocale();
   return (
     <>
       <div className={styles.similar__main_content}>
@@ -45,7 +46,7 @@ const SimilarProjectItems = ({ projects }: any) => {
           {projects.map((project: ProjectInterface) => {
             return (
               <SwiperSlide>
-                <Link key={project.documentId} href={`/project/${project.url}`}>
+                <Link key={project.documentId} href={`/${locale}/project/${project.url}`}>
                   <div className={styles.similar__main_item}>
                     <div className={styles.similar__item_banner}>
                       <ImageServer link={project.Preview.url} />
