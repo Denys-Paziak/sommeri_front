@@ -1,25 +1,24 @@
-import Header from "@/app/components/global/header/Header";
 import AboutProject from "@/app/components/global/aboutProject/AboutProject";
-import Footer from "@/app/components/global/footer/Footer";
-import { getProject } from "@/app/utils/server/server";
-import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
-import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
-import ContactFormPopup from "@/app/components/global/contactFormPopup/ContactFormPopup";
-import QuickContacts from "@/app/components/global/quickContacts/QuickContacts";
+import {getProject, getReviews} from "@/app/utils/server/server";
 import Loader from "@/app/components/global/loader/Loader";
+import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
+import Contact from "@/app/components/pages/home/contact/Contact";
 
-const Project = async ({ params }: { params: { id: string } }) => {
-  const project: any = await getProject(params.id);
+const Project = async ({params}: { params: { id: string } }) => {
+    const project: any = await getProject(params.id);
+    let reviews = await getReviews();
 
-    if (!project ) {
-        return  <Loader/>
+    if (!project && !reviews) {
+        return <Loader/>
     }
 
-  return (
-    <div>
-      {project && <AboutProject project={project} />}
-    </div>
-  );
+    return (
+        <div>
+            {project && <AboutProject project={project}/>}
+            <ClientsSay reviews={reviews}/>
+            <Contact/>
+        </div>
+    );
 };
 
 export default Project;

@@ -17,7 +17,6 @@ const Contact = () => {
           </div>
           <div className={styles.contact__wrapper_main}>
             <ContactForm />
-            <div className={styles.contact__main_shape}></div>
           </div>
         </div>
       </div>

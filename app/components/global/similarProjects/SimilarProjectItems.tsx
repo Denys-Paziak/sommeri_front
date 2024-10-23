@@ -10,11 +10,11 @@ import "swiper/css/pagination";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 import Link from "next/link";
-import Image from "next/image";
+import { useLocale } from "next-intl";
 
 const SimilarProjectItems = ({ projects }: any) => {
   const swiper = useSwiper();
-
+  const locale = useLocale();
   return (
     <>
       <div className={styles.similar__main_content}>
