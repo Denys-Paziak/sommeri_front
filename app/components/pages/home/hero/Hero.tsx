@@ -25,7 +25,7 @@ const Hero = () => {
     { image_path: "company-5" },
     { image_path: "company-6" },
   ]);
-  const t = useTranslations("HomePage");
+  const t = useTranslations("home.hero");
 
   const svgRef = useRef<SVGSVGElement | null>(null);
 
@@ -65,12 +65,9 @@ const Hero = () => {
               <h1 className={styles.hero__heading_title}>
                 <span className={styles.hero__title_special}>{t("title")}</span>{" "}
                 <br />
-                our solutions
+                {t("boldTitle")}
               </h1>
-              <p className={styles.hero__heading_text}>
-                We focus on understanding your needs to achieve the best
-                results.
-              </p>
+              <p className={styles.hero__heading_text}>{t("subtitle")}</p>
             </div>
             <div className={styles.hero__wrapper_actions}>
               <Button
@@ -78,19 +75,17 @@ const Hero = () => {
                 type={"button"}
                 onClick={() => handleScroll("contactUs")}
               >
-                Contact Us
+                {t("primaryButton")}
               </Button>
               <SecondaryButton
                 type={"button"}
                 onClick={() => handleScroll("portfolio")}
               >
-                Our Projects
+                {t("secondaryButton")}
               </SecondaryButton>
             </div>
             <div className={styles.hero__wrapper_brands}>
-              <p className={styles.hero__brands_subtitle}>
-                Trusted by the world's biggest brands
-              </p>
+              <p className={styles.hero__brands_subtitle}>{t("partners")}</p>
               <ul className={styles.hero__brands_list}>
                 <li className={styles.hero__brands_item}>
                   <svg

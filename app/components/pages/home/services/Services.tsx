@@ -6,10 +6,12 @@ import AnimBorder from "@/app/components/global/animBorder/AnimBorder";
 import { gsap } from "gsap";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
+import { useTranslations } from "next-intl";
 
 const Services: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const pathRef = useRef<SVGPathElement[]>([]);
+  const t = useTranslations("home.services");
 
   useEffect(() => {
     const checkMobile = () => {
@@ -74,11 +76,8 @@ const Services: React.FC = () => {
         <div className={styles.services__wrapper}>
           <div className={styles.services__wrapper_heading}>
             <div className={styles.services__heading_info}>
-              <TitleWrapper>Our expert services</TitleWrapper>
-              <p className={styles.services__info_subtext}>
-                At Sommeri, we transform concepts into tailored online
-                identities
-              </p>
+              <TitleWrapper>{t("title")}</TitleWrapper>
+              <p className={styles.services__info_subtext}>{t("subtitle")}</p>
             </div>
           </div>
           <div className={styles.services__wrapper_main}>
@@ -95,11 +94,10 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>01</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      Website Development
+                      {t("item1Title")}
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Створюємо сучасні та функціональні сайти, адаптовані під
-                      ваш бізнес, з акцентом на дизайн, продуктивність та SEO.
+                      {t("item1Text")}
                     </p>
                   </div>
                 </div>
@@ -133,12 +131,10 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>02</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      Web & App Design
+                      {t("item2Title")}
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Дизайни, що поєднують естетику та зручність, допомагають
-                      зробити вебсайти й додатки привабливими та інтуїтивними
-                      для користувачів.
+                      {t("item2Text")}
                     </p>
                   </div>
                 </div>
@@ -174,11 +170,10 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>03</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      Mobile App Development
+                      {t("item3Title")}
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Розробляємо зручні мобільні додатки для iOS та Android,
-                      забезпечуючи високу продуктивність та безпеку.
+                      {t("item3Text")}
                     </p>
                   </div>
                 </div>
@@ -211,11 +206,12 @@ const Services: React.FC = () => {
                 <div className={styles.services__card_info}>
                   <span className={styles.services__info_count}>04</span>
                   <div className={styles.services__info_inner}>
-                    <h3 className={styles.services__inner_title}>Google Ads</h3>
+                    <h3 className={styles.services__inner_title}>
+                      {" "}
+                      {t("item4Title")}
+                    </h3>
                     <p className={styles.services__inner_text}>
-                      Допомагаємо запускати рекламні кампанії в Google Ads, що
-                      підвищують видимість вашого бізнесу та залучають більше
-                      клієнтів.
+                      {t("item4Text")}
                     </p>
                   </div>
                 </div>
@@ -250,11 +246,10 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>05</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      SEO Optimization
+                      {t("item5Title")}
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Забезпечуємо високу позицію вашого сайту в пошукових
-                      системах завдяки професійній SEO-оптимізації.
+                      {t("item5Text")}
                     </p>
                   </div>
                 </div>
@@ -288,12 +283,10 @@ const Services: React.FC = () => {
                   <span className={styles.services__info_count}>06</span>
                   <div className={styles.services__info_inner}>
                     <h3 className={styles.services__inner_title}>
-                      IT Solutions
+                      {t("item6Title")}
                     </h3>
                     <p className={styles.services__inner_text}>
-                      Пропонуємо комплексні IT-рішення: налаштування VPS,
-                      розробка CRM/ERP, інтеграція сайтів з CRM та оптимізація
-                      бізнес-процесів.
+                      {t("item6Text")}
                     </p>
                   </div>
                 </div>

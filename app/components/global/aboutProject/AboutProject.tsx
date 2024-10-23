@@ -6,9 +6,18 @@ import AboutProjectMockup from "@/app/components/global/aboutProject/aboutProjec
 import AboutProjectGalery from "@/app/components/global/aboutProject/aboutProjectGalery/AboutProjectGalery";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import AboutProjectSimilar from "./aboutProjectSimilar/AboutProjectSimilar";
-import AboutProjectReviews from "./aboutProjectReviews/AboutProjectReviews";
+import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
+import Contact from "@/app/components/pages/home/contact/Contact";
+import { getReviews } from "@/app/utils/server/server";
+import Loader from "@/app/components/global/loader/Loader";
 
-const AboutProject = ({ project }: { project: ProjectInterface }) => {
+const AboutProject = async ({ project }: { project: ProjectInterface }) => {
+  let reviews = await getReviews();
+
+  if (!reviews) {
+    return <Loader />;
+  }
+
   return (
     <main>
       <AboutProjectTopBar project={project} />
@@ -18,6 +27,8 @@ const AboutProject = ({ project }: { project: ProjectInterface }) => {
       <AboutProjectMockup project={project} />
       <AboutProjectGalery project={project} />
       <AboutProjectSimilar url={project.url} />
+      <ClientsSay reviews={reviews} />
+      <Contact />
     </main>
   );
 };

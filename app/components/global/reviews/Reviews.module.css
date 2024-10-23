@@ -4,6 +4,7 @@
   gap: 20px;
   width: 100%;
 }
+
 .reviews__block_slider {
   position: relative;
   width: 100%;
@@ -12,6 +13,7 @@
   gap: 20px;
   overflow: hidden;
 }
+
 .reviews__slider_track,
 .reviews__slider_track_right {
   display: flex;
@@ -22,6 +24,7 @@
 .reviews__slider_track_right {
   animation: animRight 30s linear infinite;
 }
+
 .reviews__slider_track:hover,
 .reviews__slider_track_right:hover {
   animation-play-state: paused;

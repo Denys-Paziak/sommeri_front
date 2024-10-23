@@ -7,10 +7,14 @@ import styles from "./Footer.module.css";
 import Image from "next/image";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
 import { usePathname } from "next/navigation";
+import {
+  linkOnLinkedin,
+  linkOnTelegram,
+  phoneNumber,
+  salesEmail,
+} from "@/configSommeriData";
 
 const Footer = () => {
-  const pathname = usePathname();
-
   const NavbarItems = [
     {
       name: "Services",
@@ -34,22 +38,13 @@ const Footer = () => {
     },
   ];
 
-  const securityMenu = [
-    {
-      name: "Privacy Policy",
-      link: "/privacy-policy",
-    },
-    {
-      name: "Terms of Use",
-      link: "/terms-of-use",
-    },
-  ];
+  const pathname = usePathname();
 
   return (
     <footer className={styles.footer}>
       <section className={styles.footer__section}>
         <div className="container">
-          <div className={styles.footer__wrapper}>
+          <div className={styles.footer_wrapper}>
             <div className={styles.footer__wrapper_main}>
               <div className={styles.footer__main_contact}>
                 <div className={styles.footer__contact_logo}>
@@ -71,7 +66,7 @@ const Footer = () => {
                       />
                     </svg>
                     <span className={styles.footer__item_text}>
-                      sales@sommeri.com
+                      {salesEmail}
                     </span>
                   </Link>
                   <Link href="/" className={styles.footer__block_item}>
@@ -91,7 +86,7 @@ const Footer = () => {
                       />
                     </svg>
                     <span className={styles.footer__item_text}>
-                      +38(099)-123-1234
+                      {phoneNumber}
                     </span>
                   </Link>
                 </div>
@@ -114,7 +109,11 @@ const Footer = () => {
                     <li className={styles.footer__list_item}>
                       <Link
                         href={"/privacy-policy"}
-                        className={styles.footer__item_link}
+                        className={
+                          pathname.split("/").at(-1) == "privacy-policy"
+                            ? styles.footer__item_link__active
+                            : styles.footer__item_link
+                        }
                       >
                         Privacy Policy
                       </Link>
@@ -122,7 +121,11 @@ const Footer = () => {
                     <li className={styles.footer__list_item}>
                       <Link
                         href={"/terms-of-use"}
-                        className={styles.footer__item_link}
+                        className={
+                          pathname.split("/").at(-1) == "terms-of-use"
+                            ? styles.footer__item_link__active
+                            : styles.footer__item_link
+                        }
                       >
                         Terms of Use
                       </Link>
@@ -133,7 +136,7 @@ const Footer = () => {
                   <h4 className={styles.footer__block_subtitle}>Contact Us</h4>
                   <div className={styles.footer__block_socials}>
                     <Link
-                      href={"https://t.me/sommeri_digital"}
+                      href={linkOnTelegram}
                       target="_blank"
                       className={styles.footer__social_item}
                     >
@@ -161,7 +164,11 @@ const Footer = () => {
                         </defs>
                       </svg>
                     </Link>
-                    <Link href={"/"} className={styles.footer__social_item}>
+                    <Link
+                      href={"/"}
+                      target="_blank"
+                      className={styles.footer__social_item}
+                    >
                       <svg
                         width="28"
                         height="28"
@@ -189,7 +196,11 @@ const Footer = () => {
                         />
                       </svg>
                     </Link>
-                    <Link href={"/"} className={styles.footer__social_item}>
+                    <Link
+                      href={"/"}
+                      target="_blank"
+                      className={styles.footer__social_item}
+                    >
                       <svg
                         width="28"
                         height="28"
@@ -225,7 +236,11 @@ const Footer = () => {
                         </defs>
                       </svg>
                     </Link>
-                    <Link href={"/"} className={styles.footer__social_item}>
+                    <Link
+                      href={"/"}
+                      target="_blank"
+                      className={styles.footer__social_item}
+                    >
                       <svg
                         width="28"
                         height="28"
@@ -250,7 +265,11 @@ const Footer = () => {
                         </defs>
                       </svg>
                     </Link>
-                    <Link href={"/"} className={styles.footer__social_item}>
+                    <Link
+                      href={linkOnLinkedin}
+                      target="_blank"
+                      className={styles.footer__social_item}
+                    >
                       <svg
                         width="28"
                         height="28"

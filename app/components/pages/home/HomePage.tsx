@@ -13,12 +13,17 @@ import {
   getReviews,
 } from "@/app/utils/server/server";
 import Technologies from "@/app/components/pages/home/technologies/Technologies";
+import Loader from "@/app/components/global/loader/Loader";
 
 const HomePage = async () => {
   let posts = await getProjects();
   let categories = await getCategories();
   let faqItems = await getFAQ();
   let reviews = await getReviews();
+
+  if (!posts && !categories && !faqItems && !reviews) {
+    return <Loader />;
+  }
 
   return (
     <>

@@ -5,7 +5,7 @@ const linkOnTelegram = "https://t.me/sommeri_digital";
 const linkOnViber = "";
 const linkOnWhatsApp = "";
 const linkOnFacebook = "";
-const linkOnLinkedin = "";
+const linkOnLinkedin = "https://www.linkedin.com/company/sommeri-digital";
 
 export {
   infoEmail,

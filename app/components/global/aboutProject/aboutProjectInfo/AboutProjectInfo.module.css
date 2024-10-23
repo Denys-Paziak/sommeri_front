@@ -88,6 +88,18 @@
   box-shadow: 0px -10px 20px 20px var(--black);
 }
 
+@media (max-width: 1240px) {
+  .project__info_vector {
+    width: 30%;
+  }
+  .project__info_vector svg {
+    width: 100% !important;
+  }
+  .project__wrapper_inner {
+    width: 70%;
+  }
+}
+
 @media (max-width: 1100px) {
   .project__wrapper_inner {
     width: 100%;

@@ -1,7 +1,54 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "home": {
+    "hero": {
+      "title": "One step ahead with",
+      "boldTitle": "our solutions",
+      "subtitle": "We focus on understanding your needs to achieve the best results.",
+      "partners": "Trusted by our valued partners",
+      "primaryButton": "Contact Us",
+      "secondaryButton": "Our Projects"
+    },
+    "about": {
+      "title": "About us",
+      "subtitle": "Welcome to Sommeri, where beautiful design meets seamless functionality.",
+      "text": "We are the team that will create a customized solution for your business. From the very beginning, we made a decision to focus on our strengths and constantly improve them. This approach allows us not only to become experts in our field, but also to provide our clients with the exceptional experience they deserve. We are committed to innovation and quality, as every step we take is aimed at exceeding expectations and creating a truly valuable product.",
+      "secondaryButton": "Reviews"
+    },
+    "whyUs": {
+      "title": "Why you should work with us",
+      "subtitle": "We create effective solutions that meet your goals and needs.",
+      "item1Title": "Individual approach",
+      "item1Text": "We carefully analyze the needs of each client and create solutions tailored to their business",
+      "item2Title": "Modern technologies",
+      "item2Text": "We use advanced tools and technologies to create fast, reliable and efficient websites",
+      "item3Title": "Functional design",
+      "item3Text": "Our projects combine aesthetics with maximum user-friendliness, which increases conversions",
+      "item4Title": "Adaptability",
+      "item4Text": "The websites we build work perfectly on any device, providing the perfect user experience",
+      "item5Title": "Support and develop.",
+      "item5Text": "We not only create websites, but also provide their support and development, helping your business",
+      "item6Title": "SEO optimization",
+      "item6Text": "Thanks to search engine optimization, you get more traffic and better positions in search results"
+    },
+    "services": {
+      "title": "Our expert services",
+      "subtitle": "At Sommeri, we transform concepts into tailored online identities",
+      "item1Title": "Website Development",
+      "item1Text": "We create modern and functional websites tailored to your business with a focus on design, performance, and SEO.",
+      "item2Title": "Web & App Design",
+      "item2Text": "Designs that combine aesthetics and usability help make websites and apps attractive and intuitive for users.",
+      "item3Title": "Mobile App Development",
+      "item3Text": "We develop user-friendly mobile applications for iOS and Android, ensuring high performance and security.",
+      "item4Title": "Google Ads",
+      "item4Text": "We help you launch advertising campaigns in Google Ads that increase the visibility of your business and attract more customers.",
+      "item5Title": "SEO Optimization",
+      "item5Text": "We ensure a high position of your website in search engines thanks to professional SEO optimization.",
+      "item6Title": "IT Solutions",
+      "item6Text": "We offer comprehensive IT solutions: VPS setup, CRM/ERP development, website integration with CRM, and business process optimization."
+    },
+    "technologies": {
+      "title": "Our technologies"
+    }
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

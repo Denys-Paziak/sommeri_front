@@ -3,15 +3,18 @@
   position: fixed;
   z-index: 5;
   padding: 16px 0;
-  /* backdrop-filter: blur(3.8px);
-  -webkit-backdrop-filter: blur(3.8px); */
-  /* border-bottom: 1px solid var(--dark); */
-  /* background-color: transparent; */
-  /* transition: background-color 0.3s ease; */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 0px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 .header.scrolled {
-  background-color: rgba(12, 12, 12, 0.9); /* Заливка при прокрутці */
+  background-color: rgba(12, 12, 12, 0.9);
+  border-bottom: 1px solid var(--dark);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .header__section {

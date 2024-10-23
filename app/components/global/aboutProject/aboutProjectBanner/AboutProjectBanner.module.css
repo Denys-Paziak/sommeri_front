@@ -1,6 +1,6 @@
 .project__banner_section {
   width: 100%;
-  height: 480px;
+  height: 100%;
 }
 
 .project__banner_wrapper {
@@ -10,7 +10,7 @@
 
 .project__banner_image img {
   width: 100%;
-  height: 480px;
+  height: 100%;
   object-fit: cover;
   user-select: none;
 }

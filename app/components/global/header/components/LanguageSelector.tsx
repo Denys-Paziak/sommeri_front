@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../Header.module.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 interface Language {
   code: string;
@@ -9,10 +11,19 @@ interface Language {
 
 const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const locale = useLocale();
+  const router = useRouter();
 
   const handleLanguageChange = (language: Language) => {
+    const newLocale = language.code;
+    router.push(`/${newLocale}`);
     setIsOpen(false);
   };
+
+  const languages: Language[] = [
+    { code: "en", name: "English" },
+    { code: "ua", name: "Ukrainian" },
+  ];
 
   return (
     <div className={styles.language__selector}>
@@ -20,7 +31,7 @@ const LanguageSelector: React.FC = () => {
         className={styles.language__selector_button}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={styles.languageName}>EN</span>
+        <span className={styles.languageName}>{locale.toUpperCase()}</span>
         <div
           className={`${styles.arrow} ${
             isOpen ? styles.arrowUp : styles.arrowDown
@@ -44,28 +55,25 @@ const LanguageSelector: React.FC = () => {
 
       {isOpen && (
         <ul className={styles.language__list}>
-          <li className={styles.language__list_item}>
-            <span className={styles.language__item_flag}>
-              <Image
-                width={20}
-                height={12}
-                src="/images/ua-flag.svg"
-                alt="flag icon"
-              />
-            </span>
-            <p className={styles.language__item_name}>Ukrainian</p>
-          </li>
-          <li className={styles.language__list_item}>
-            <span className={styles.language__item_flag}>
-              <Image
-                width={20}
-                height={12}
-                src="/images/uk-flag.svg"
-                alt="flag icon"
-              />
-            </span>
-            <p className={styles.language__item_name}>English</p>
-          </li>
+          {languages.map((language) => (
+            <li
+              key={language.code}
+              className={styles.language__list_item}
+              onClick={() => handleLanguageChange(language)}
+            >
+              <span className={styles.language__item_flag}>
+                <Image
+                  width={20}
+                  height={12}
+                  src={`/images/${
+                    language.code === "ua" ? "ua-flag" : "uk-flag"
+                  }.svg`}
+                  alt={`${language.name} flag icon`}
+                />
+              </span>
+              <p className={styles.language__item_name}>{language.name}</p>
+            </li>
+          ))}
         </ul>
       )}
     </div>

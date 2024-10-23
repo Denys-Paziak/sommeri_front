@@ -2,17 +2,18 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import styles from "./WhyUs.module.css";
 import Image from "next/image";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
+import { useTranslations } from "next-intl";
 
 const WhyUs = () => {
+  const t = useTranslations("home.whyUs");
+
   return (
     <SectionWrapper sectionId="whyUs">
       <div className="container">
         <div className={styles.why__us_wrapper}>
           <div className={styles.why__us_heading}>
-            <TitleWrapper>Why you should work with us</TitleWrapper>
-            <p className={styles.why__heading_subtitle}>
-              We create effective solutions that meet your goals and needs.
-            </p>
+            <TitleWrapper>{t("title")}</TitleWrapper>
+            <p className={styles.why__heading_subtitle}>{t("subtitle")}</p>
           </div>
           <div className={styles.why__us_main}>
             <div className={styles.why__main_block}>
@@ -27,11 +28,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>Individual approach</h3>
-                <p className={styles.why__info_text}>
-                  We carefully analyze the needs of each client and create
-                  solutions tailored to their business
-                </p>
+                <h3 className={styles.why__info_title}>{t("item1Title")}</h3>
+                <p className={styles.why__info_text}>{t("item1Text")}</p>
               </div>
             </div>
             <div className={styles.why__main_block}>
@@ -46,11 +44,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>Modern technologies</h3>
-                <p className={styles.why__info_text}>
-                  We use advanced tools and technologies to create fast,
-                  reliable and efficient websites
-                </p>
+                <h3 className={styles.why__info_title}>{t("item2Title")}</h3>
+                <p className={styles.why__info_text}>{t("item2Text")}</p>
               </div>
             </div>
             <div className={styles.why__main_block}>
@@ -65,11 +60,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>Functional design</h3>
-                <p className={styles.why__info_text}>
-                  Our projects combine aesthetics with maximum
-                  user-friendliness, which increases conversions
-                </p>
+                <h3 className={styles.why__info_title}>{t("item3Title")}</h3>
+                <p className={styles.why__info_text}>{t("item3Text")}</p>
               </div>
             </div>
             <div className={styles.why__main_block}>
@@ -84,11 +76,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>Adaptability</h3>
-                <p className={styles.why__info_text}>
-                  The websites we build work perfectly on any device, providing
-                  the perfect user experience
-                </p>
+                <h3 className={styles.why__info_title}>{t("item4Title")}</h3>
+                <p className={styles.why__info_text}>{t("item4Text")}</p>
               </div>
             </div>
             <div className={styles.why__main_block}>
@@ -103,11 +92,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>Support and develop.</h3>
-                <p className={styles.why__info_text}>
-                  We not only create websites, but also provide their support
-                  and development, helping your business
-                </p>
+                <h3 className={styles.why__info_title}>{t("item5Title")}</h3>
+                <p className={styles.why__info_text}>{t("item5Text")}</p>
               </div>
             </div>
             <div className={styles.why__main_block}>
@@ -122,11 +108,8 @@ const WhyUs = () => {
                 <div className={styles.why__icon_shape}></div>
               </div>
               <div className={styles.why__block_info}>
-                <h3 className={styles.why__info_title}>SEO optimization</h3>
-                <p className={styles.why__info_text}>
-                  Thanks to search engine optimization, you get more traffic and
-                  better positions in search results
-                </p>
+                <h3 className={styles.why__info_title}>{t("item6Title")}</h3>
+                <p className={styles.why__info_text}>{t("item6Text")}</p>
               </div>
             </div>
           </div>
