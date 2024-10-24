@@ -1,7 +1,7 @@
 import HomePage from "@/app/components/pages/home/HomePage";
 
-export default function Home() {
+export default function Home({ params }: { params: { locale: string } }) {
     return (
-        <HomePage />
+        <HomePage locale={params.locale} />
     );
 }

@@ -50,17 +50,25 @@ const Button: FC<ButtonProps> = ({
     });
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const btn = btnRef.current;
     if (!btn) return;
 
     const circle = btn.querySelector("." + styles.circle) as HTMLElement;
+    const rect = btn.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
     gsap.to(circle, {
-      opacity: 0,
-      duration: 0.6,
-      ease: "power3.in",
+      width: 0,
+      height: 0,
+      top: `${y}px`,
+      left: `${x}px`,
+      duration: 1.4,
+      ease: "power3.out",
     });
+
   };
 
   return (
