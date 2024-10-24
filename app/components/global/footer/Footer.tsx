@@ -99,8 +99,9 @@ const Footer = () => {
                     {t("footer.subtitle1")}
                   </h4>
                   <ul className={styles.footer__block_menu}>
-                    {NavbarItems.map((NavbarItem) => (
+                    {NavbarItems.map((NavbarItem, index) => (
                       <SectionLink
+                        key={index + Date.now()}
                         name={NavbarItem.name}
                         link={NavbarItem.link}
                       />
