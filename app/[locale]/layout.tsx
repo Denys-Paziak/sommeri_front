@@ -52,45 +52,31 @@ export default async function RootLayout({
     params: { locale: string };
 }>) {
     const supportedLocales = ['uk', 'en'];
-    const currentLocale = locale || 'uk'; // Використовуємо українську як дефолтну
+    const currentLocale = locale || 'uk';
 
     const messages = await getMessages(currentLocale);
 
-    if (supportedLocales.includes(currentLocale)) {
-        return (
-            <html lang={currentLocale}>
-                <head>
-                    <link rel="canonical" href="https://sommeri.com" />
-                    <link rel="icon" href="/favicon.ico" />
-                    <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
-                    <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
-                </head>
-                <body className={inter.className}>
-                    <NextIntlClientProvider messages={messages}>
-                        <ReduxProvider>
-                            <Header />
-                            <CustomCursor />
-                            <ContactFormPopup />
-                            <ThanksPopup />
-                            <QuickContacts />
-                            {children}
-                            <Footer />
-                        </ReduxProvider>
-                    </NextIntlClientProvider>
-                </body>
-            </html>
-        );
-    } else {
-        return (
-            <html lang="en">
-                <head>
-                    <link rel="canonical" href="https://sommeri.com" />
-                    <link rel="icon" href="/favicon.ico" />
-                </head>
-                <body className={inter.className}>
-                    <p>Unsupported language</p>
-                </body>
-            </html>
-        );
-    }
+    return (
+        <html lang={currentLocale}>
+            <head>
+                <link rel="canonical" href="https://sommeri.com" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
+                <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
+            </head>
+            <body className={inter.className}>
+                <NextIntlClientProvider messages={messages}>
+                    <ReduxProvider>
+                        <Header />
+                        <CustomCursor />
+                        <ContactFormPopup />
+                        <ThanksPopup />
+                        <QuickContacts />
+                        {children}
+                        <Footer />
+                    </ReduxProvider>
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    );
 }
