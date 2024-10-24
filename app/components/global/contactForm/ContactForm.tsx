@@ -32,6 +32,7 @@ const ContactForm = () => {
   const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
   const t = useTranslations("contactForm");
+  const [isClient, setIsClient] = useState(false);
 
   const {
     register,
@@ -116,6 +117,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     fetchUserCountry();
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
@@ -298,59 +300,61 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
-            <Controller
-              name="service"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => (
-                <Select
-                  {...field}
-                  options={services}
-                  placeholder={t("input3")}
-                  styles={{
-                    control: (baseStyles, state) => ({
-                      ...baseStyles,
-                      borderColor: state.isFocused
-                        ? "transparent"
-                        : "transparent",
-                      boxShadow: "transparent",
-                      padding: "0",
-                      background: "transparent",
-                      ":hover": {
-                        borderColor: "transparent",
+            {isClient && (
+              <Controller
+                name="service"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <Select
+                    {...field}
+                    options={services}
+                    placeholder={t("input3")}
+                    styles={{
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        borderColor: state.isFocused
+                          ? "transparent"
+                          : "transparent",
+                        boxShadow: "transparent",
+                        padding: "0",
+                        background: "transparent",
+                        ":hover": {
+                          borderColor: "transparent",
+                        },
+                      }),
+                      menu: (baseStyles) => ({
+                        ...baseStyles,
+                        background: "#1c1c1c",
+                        color: "var(--gray)",
+                        padding: "0",
+                        border: "1px solid #444",
+                        borderRadius: "8px",
+                      }),
+                      option: (baseStyles) => ({
+                        ...baseStyles,
+                        ":hover": {
+                          background: "var(--dark)",
+                        },
+                        ":active": {
+                          background: "var(--dark)",
+                        },
+                      }),
+                    }}
+                    theme={(theme) => ({
+                      ...theme,
+                      borderRadius: 8,
+                      colors: {
+                        ...theme.colors,
+                        primary25: "var(--dark)",
+                        primary: "#1c1c1c",
+                        neutral80: "var(--gray)",
                       },
-                    }),
-                    menu: (baseStyles) => ({
-                      ...baseStyles,
-                      background: "#1c1c1c",
-                      color: "var(--gray)",
-                      padding: "0",
-                      border: "1px solid #444",
-                      borderRadius: "8px",
-                    }),
-                    option: (baseStyles) => ({
-                      ...baseStyles,
-                      ":hover": {
-                        background: "var(--dark)",
-                      },
-                      ":active": {
-                        background: "var(--dark)",
-                      },
-                    }),
-                  }}
-                  theme={(theme) => ({
-                    ...theme,
-                    borderRadius: 8,
-                    colors: {
-                      ...theme.colors,
-                      primary25: "var(--dark)",
-                      primary: "#1c1c1c",
-                      neutral80: "var(--gray)",
-                    },
-                  })}
-                />
-              )}
-            />
+                    })}
+                  />
+                )}
+              />
+            )}
           </div>
 
           {/* Textarea for message */}
