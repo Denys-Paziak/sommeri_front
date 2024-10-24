@@ -50,7 +50,9 @@ const Button: FC<ButtonProps> = ({
     });
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleMouseLeave = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     const btn = btnRef.current;
     if (!btn) return;
 
@@ -68,7 +70,6 @@ const Button: FC<ButtonProps> = ({
       duration: 1.4,
       ease: "power3.out",
     });
-
   };
 
   return (
@@ -78,6 +79,7 @@ const Button: FC<ButtonProps> = ({
         className={styles.button}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={onClick}
       >
         <span>{children}</span>
         <div className={styles.circle} />

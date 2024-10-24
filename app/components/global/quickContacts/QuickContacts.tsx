@@ -1,7 +1,10 @@
 import { Link } from "@/navigation";
 import styles from "./QuickContacts.module.css";
+import { useTranslations } from "next-intl";
 
 const QuickContacts = () => {
+  const t = useTranslations("quickContacts");
+
   return (
     <div className={styles.quick__contacts_block}>
       <div className={styles.quick__contacts_wrapper}>
@@ -122,10 +125,8 @@ const QuickContacts = () => {
               </div>
             </div>
             <div className={styles.quick__line_info}>
-              <span className={styles.quick__info_text}>Виникло питання ?</span>
-              <span className={styles.quick__info_text}>
-                Залиште повідовлення!
-              </span>
+              <span className={styles.quick__info_text}>{t("question")}</span>
+              <span className={styles.quick__info_text}>{t("message")}</span>
             </div>
           </div>
           <Link

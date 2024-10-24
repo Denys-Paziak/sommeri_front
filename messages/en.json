@@ -83,6 +83,40 @@
     "agree2": "Privacy policy",
     "button": "Send message"
   },
+  "popupForm": {
+    "title": "Contact Us",
+    "subtitle": "Leave your contact details and we'll get back to you shortly"
+  },
+  "popupThanks": {
+    "title": "Application accepted",
+    "subtitle": "Thank you, your data has been sent successfully. Expect our response within 24 hours!"
+  },
+  "header": {
+    "langCode1": "en",
+    "langCode2": "uk",
+    "lang1": "English",
+    "lang2": "Ukrainian",
+    "button": "Contact Us"
+  },
+  "footer": {
+    "subtitle1": "Menu",
+    "subtitle2": "Legal",
+    "item1": "Privacy Policy",
+    "item2": "Terms of Use",
+    "subtitle3": "Contact Us",
+    "reserved": "© 2024 Sommeri, All Rights Reserved"
+  },
+  "menu": {
+    "item1": "Services",
+    "item2": "About us",
+    "item3": "Technologies",
+    "item4": "Projects",
+    "item5": "Why us"
+  },
+  "quickContacts": {
+    "question": "Do you have a question?",
+    "message": "Leave a message!"
+  },
   "privacyPolicy": {
     "title": "Privacy Policy",
     "subtext": "At <bold>Sommeri</bold>, we take the protection of your personal data seriously and are committed to transparency in its use. This Privacy Policy explains what data we collect, how we use it, and how we ensure its security when you interact with our website and services.",

@@ -6,15 +6,17 @@ import Button from "@/app/components/UI/button/Button";
 import LanguageSelector from "@/app/components/global/header/components/LanguageSelector";
 import { useDispatch } from "react-redux";
 import { openPopup } from "@/app/redux/popupSlice";
+import { useTranslations } from "next-intl";
 
 const Options = () => {
   const dispatch = useDispatch();
+  const t = useTranslations("header");
 
   return (
     <div className={styles.header__wrapper_options}>
       <LanguageSelector />
       <Button style={"fill"} onClick={() => dispatch(openPopup())}>
-        Contact us
+        {t("button")}
       </Button>
     </div>
   );

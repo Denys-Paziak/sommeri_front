@@ -7,10 +7,12 @@ import { RootState } from "@/app/redux/store";
 import styles from "./ThanksPopup.module.css";
 import { closeThanksPopup } from "@/app/redux/thanksPopupSlice";
 import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
+import { useTranslations } from "next-intl";
 
 const ThanksPopup = () => {
   const isOpen = useSelector((state: RootState) => state.thanksPopup.isOpen);
   const dispatch = useDispatch();
+  const t = useTranslations("popupThanks");
 
   useEffect(() => {
     if (isOpen) {
@@ -82,11 +84,8 @@ const ThanksPopup = () => {
                 />
               </svg>
             </div>
-            <h2 className={styles.thanks__main_title}>Application accepted</h2>
-            <p className={styles.thanks__main_message}>
-              Thank you, your data has been sent successfully. Expect our
-              response within 24 hours!
-            </p>
+            <h2 className={styles.thanks__main_title}>{t("title")}</h2>
+            <p className={styles.thanks__main_message}>{t("subtitle")}</p>
           </div>
         </div>
       </PopupWrapper>

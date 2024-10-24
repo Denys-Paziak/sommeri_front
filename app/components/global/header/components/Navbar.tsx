@@ -1,33 +1,34 @@
 import React from "react";
 import styles from "../Header.module.css";
-import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
 import Options from "./Options";
+import { useTranslations } from "next-intl";
 
 interface iProps {
   isMobileMenuOpen: boolean;
 }
 
 const Navbar = ({ isMobileMenuOpen }: iProps) => {
+  const t = useTranslations("menu");
   const NavbarItems = [
     {
-      name: "Services",
+      name: t("item1"),
       link: "services",
     },
     {
-      name: "About us",
+      name: t("item2"),
       link: "about",
     },
     {
-      name: "Technologies",
+      name: t("item3"),
       link: "technologies",
     },
     {
-      name: "Projects",
+      name: t("item4"),
       link: "portfolio",
     },
     {
-      name: "Why us",
+      name: t("item5"),
       link: "whyUs",
     },
   ];

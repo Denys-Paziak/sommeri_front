@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../Header.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface Language {
   code: string;
@@ -11,6 +11,7 @@ interface Language {
 
 const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const t = useTranslations("header");
   const locale = useLocale();
   const router = useRouter();
 
@@ -21,8 +22,8 @@ const LanguageSelector: React.FC = () => {
   };
 
   const languages: Language[] = [
-    { code: "en", name: "English" },
-    { code: "ua", name: "Ukrainian" },
+    { code: t("langCode1"), name: t("lang1") },
+    { code: t("langCode2"), name: t("lang2") },
   ];
 
   return (
@@ -66,7 +67,7 @@ const LanguageSelector: React.FC = () => {
                   width={20}
                   height={12}
                   src={`/images/${
-                    language.code === "ua" ? "ua-flag" : "uk-flag"
+                    language.code === "uk" ? "ua-flag" : "uk-flag"
                   }.svg`}
                   alt={`${language.name} flag icon`}
                 />

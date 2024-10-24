@@ -169,11 +169,14 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .contact__block {
     border-radius: 15px;
     padding: 20px;
   }
+}
+
+@media (max-width: 600px) {
   .contact__block::before {
     border-radius: 15px;
   }

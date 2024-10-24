@@ -13,27 +13,29 @@ import {
   phoneNumber,
   salesEmail,
 } from "@/configSommeriData";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations();
   const NavbarItems = [
     {
-      name: "Services",
+      name: t("menu.item1"),
       link: "services",
     },
     {
-      name: "About us",
+      name: t("menu.item2"),
       link: "about",
     },
     {
-      name: "Technologies",
+      name: t("menu.item3"),
       link: "technologies",
     },
     {
-      name: "Projects",
+      name: t("menu.item4"),
       link: "portfolio",
     },
     {
-      name: "Why us",
+      name: t("menu.item5"),
       link: "whyUs",
     },
   ];
@@ -93,7 +95,9 @@ const Footer = () => {
               </div>
               <div className={styles.footer__main_info}>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>Menu</h4>
+                  <h4 className={styles.footer__block_subtitle}>
+                    {t("footer.subtitle1")}
+                  </h4>
                   <ul className={styles.footer__block_menu}>
                     {NavbarItems.map((NavbarItem) => (
                       <SectionLink
@@ -104,7 +108,9 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>Legal</h4>
+                  <h4 className={styles.footer__block_subtitle}>
+                    {t("footer.subtitle2")}
+                  </h4>
                   <ul className={styles.footer__block_security}>
                     <li className={styles.footer__list_item}>
                       <Link
@@ -115,7 +121,7 @@ const Footer = () => {
                             : styles.footer__item_link
                         }
                       >
-                        Privacy Policy
+                        {t("footer.item1")}
                       </Link>
                     </li>
                     <li className={styles.footer__list_item}>
@@ -127,13 +133,15 @@ const Footer = () => {
                             : styles.footer__item_link
                         }
                       >
-                        Terms of Use
+                        {t("footer.item2")}
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>Contact Us</h4>
+                  <h4 className={styles.footer__block_subtitle}>
+                    {t("footer.subtitle3")}
+                  </h4>
                   <div className={styles.footer__block_socials}>
                     <Link
                       href={linkOnTelegram}
@@ -308,7 +316,7 @@ const Footer = () => {
             </div>
             <div className={styles.footer__wrapper_bottom}>
               <span className={styles.footer__bottom_reserved}>
-                © 2024 Sommeri, All Rights Reserved
+                {t("footer.reserved")}
               </span>
             </div>
           </div>

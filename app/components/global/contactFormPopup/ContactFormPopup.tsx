@@ -11,6 +11,8 @@ import { closePopup } from "@/app/redux/popupSlice";
 import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
 import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
 import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
+import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 
 interface IFormData {
   name: string;
@@ -20,6 +22,7 @@ interface IFormData {
 const ContactFormPopup = () => {
   const isOpen = useSelector((state: RootState) => state.popup.isOpen);
   const dispatch = useDispatch();
+  const t = useTranslations();
 
   const {
     register,
@@ -96,9 +99,9 @@ const ContactFormPopup = () => {
             </svg>
           </button>
           <div className={styles.contact__wrapper_heading}>
-            <h2 className={styles.contact__heading_title}>Contact Us</h2>
+            <TitleWrapper>{t("popupForm.title")}</TitleWrapper>
             <p className={styles.contact__heading_subtitle}>
-              Leave your contact details and we'll get back to you shortly
+              {t("popupForm.subtitle")}
             </p>
           </div>
           <form
@@ -133,7 +136,7 @@ const ContactFormPopup = () => {
                 <input
                   type="text"
                   className={styles.contact__block_input}
-                  placeholder="Name*"
+                  placeholder={t("contactForm.input1")}
                   {...register("name", {
                     required: true,
                   })}
@@ -162,7 +165,7 @@ const ContactFormPopup = () => {
                 <input
                   type="email"
                   className={styles.contact__block_input}
-                  placeholder="Email*"
+                  placeholder={t("contactForm.input2")}
                   {...register("email", {
                     required: true,
                     pattern: {
@@ -177,12 +180,12 @@ const ContactFormPopup = () => {
             {/* agree privacy policy */}
             <div className={styles.contact__form_agree}>
               <p className={styles.contact__block_agree}>
-                Натискаючи на кнопку "Надіслати" ви погоджуєтесь з{" "}
+                {t("contactForm.agree1")}{" "}
                 <Link
                   href={"/privacy-policy"}
                   className={styles.contact__agree_link}
                 >
-                  Політикою конфіденційності
+                  {t("contactForm.agree2")}
                 </Link>
               </p>
             </div>
