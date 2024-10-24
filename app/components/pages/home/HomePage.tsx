@@ -7,37 +7,43 @@ import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
 import Faq from "@/app/components/pages/home/faq/Faq";
 import Contact from "@/app/components/pages/home/contact/Contact";
 import {
-  getCategories,
-  getFAQ,
-  getProjects,
-  getReviews,
+    getCategories,
+    getFAQ,
+    getProjects,
+    getReviews,
 } from "@/app/utils/server/server";
 import Technologies from "@/app/components/pages/home/technologies/Technologies";
 import Loader from "@/app/components/global/loader/Loader";
+import { headers } from "next/headers";
 
-const HomePage = async () => {
-  let posts = await getProjects();
-  let categories = await getCategories();
-  let faqItems = await getFAQ();
-  let reviews = await getReviews();
+const HomePage = async ({ locale }: { locale: string }) => {
+    console.log('Locale from URL:', locale);
+    console.log(locale)
 
-  if (!posts && !categories && !faqItems && !reviews) {
-    return <Loader />;
-  }
+    let posts = await getProjects(locale);
+    let categories = await getCategories(locale);
+    let faqItems = await getFAQ(locale);
+    let reviews = await getReviews(locale);
 
-  return (
-    <>
-      <Hero />
-      <About />
-      <WhyUs />
-      <Services />
-      <Technologies />
-      <OurProjects posts={posts} categories={categories} />
-      <ClientsSay reviews={reviews} />
-      <Faq faqItems={faqItems} />
-      <Contact />
-    </>
-  );
+
+
+    if (!posts && !categories && !faqItems && !reviews) {
+        return <Loader />;
+    }
+
+    return (
+        <>
+            <Hero />
+            <About />
+            <WhyUs />
+            <Services />
+            <Technologies />
+            <OurProjects posts={posts} categories={categories} />
+            <ClientsSay reviews={reviews} />
+            <Faq faqItems={faqItems} />
+            <Contact />
+        </>
+    );
 };
 
 export default HomePage;
