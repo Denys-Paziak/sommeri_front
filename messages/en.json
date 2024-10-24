@@ -48,7 +48,40 @@
     },
     "technologies": {
       "title": "Our technologies"
+    },
+    "portfolio": {
+      "title": "We are proud of our projects",
+      "subtitle": "Our work is a combination of aesthetics and functionality to achieve your business goals.",
+      "all": "All",
+      "view": "View"
+    },
+    "reviews": {
+      "title": "What our clients say",
+      "subtitle": "Discover how we’ve helped businesses transform their online presence with tailored web development solutions that deliver results. Here’s what our satisfied clients have to say about working with us."
+    },
+    "faq": {
+      "title": "Question? Answers"
+    },
+    "contact": {
+      "title": "Let's talk!",
+      "subtitle": "Fill in the contact form below, and we'll get back to you soon"
     }
+  },
+  "contactForm": {
+    "input1": "Name*",
+    "input2": "Email*",
+    "input3": "Select service*",
+    "input4": "How can we help you?",
+    "input5": "Drop the files here...",
+    "service1": "Website Development",
+    "service2": "Web & App Design",
+    "service3": "Mobile App Development",
+    "service4": "Google Ads",
+    "service5": "SEO Optimization",
+    "service6": "IT Solutions",
+    "agree1": "By clicking the 'Submit' button, you agree to",
+    "agree2": "Privacy policy",
+    "button": "Send message"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

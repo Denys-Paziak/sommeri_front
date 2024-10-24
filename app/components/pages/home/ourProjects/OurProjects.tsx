@@ -10,6 +10,7 @@ import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { CategoryInterface } from "@/app/utils/interfaces/category";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
+import { useTranslations } from "next-intl";
 
 interface iProps {
   posts: ProjectInterface[];
@@ -18,6 +19,7 @@ interface iProps {
 
 export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const t = useTranslations("home.portfolio");
 
   const filteredPosts: ProjectInterface[] =
     activeCategory === "All"
@@ -32,10 +34,9 @@ export default function Page({ posts, categories }: iProps) {
       <div className="container">
         <div className={styles.projects__wrapper}>
           <div className={styles.projects__wrapper_heading}>
-            <TitleWrapper>We are proud of our projects</TitleWrapper>
+            <TitleWrapper>{t("title")}</TitleWrapper>
             <h3 className={styles.projects__heading_subtitle}>
-              Our work is a combination of aesthetics and functionality to
-              achieve your business goals.
+              {t("subtitle")}
             </h3>
           </div>
           <div className={styles.projects__wrapper_main}>
@@ -47,7 +48,7 @@ export default function Page({ posts, categories }: iProps) {
                   }`}
                   onClick={() => setActiveCategory("All")}
                 >
-                  All
+                  {t("all")}
                 </li>
 
                 {categories.map((category) => (
@@ -110,7 +111,7 @@ export default function Page({ posts, categories }: iProps) {
                           type="button"
                         >
                           <span className={styles.project__view_text}>
-                            View
+                            {t("view")}
                           </span>
                         </button>
                       </div>

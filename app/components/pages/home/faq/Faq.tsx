@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Faq.module.css";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
+import { useTranslations } from "next-intl";
 
 interface FaqItem {
   title: string;
@@ -17,6 +18,7 @@ interface FaqProps {
 
 const Faq: React.FC<FaqProps> = ({ faqItems }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const t = useTranslations("home.faq");
 
   const handleClick = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index); // Перевіряємо, чи елемент вже активний
@@ -26,7 +28,7 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
     <SectionWrapper>
       <div className="container">
         <div className={styles.faq__wrapper}>
-          <TitleWrapper>Question? Answers</TitleWrapper>
+          <TitleWrapper>{t("title")}</TitleWrapper>
           <div className={styles.faq__wrapper_main}>
             <div className={styles.faq__main_list}>
               {faqItems &&

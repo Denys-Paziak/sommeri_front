@@ -15,6 +15,7 @@ import { sendMessageWithFileToTelegram } from "@/app/api/telegram";
 import Button from "@/app/components/UI/button/Button";
 import { Link } from "@/navigation";
 import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
+import { useTranslations } from "use-intl";
 
 interface IFormData {
   name: string;
@@ -26,10 +27,11 @@ interface IFormData {
 
 const ContactForm = () => {
   const [fileName, setFileName] = useState("");
-  const [userCountryCode, setUserCountryCode] = useState("");
+  const [userCountryCode, setUserCountryCode] = useState("ua");
   const [acceptedFiles, setAcceptedFiles] = useState<File[]>([]);
   const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
+  const t = useTranslations("contactForm");
 
   const {
     register,
@@ -49,14 +51,14 @@ const ContactForm = () => {
   });
 
   const services = [
-    { value: "website", label: "Website Development" },
-    { value: "web-app-design", label: "Web & App Design" },
-    { value: "mobile-app", label: "Mobile App Development" },
-    { value: "google-ads", label: "Google Ads" },
-    { value: "seo", label: "SEO Optimization" },
+    { value: "website", label: t("service1") },
+    { value: "web-app-design", label: t("service2") },
+    { value: "mobile-app", label: t("service3") },
+    { value: "google-ads", label: t("service4") },
+    { value: "seo", label: t("service5") },
     {
       value: "comprehensive-it-solutions",
-      label: "IT Solutions",
+      label: t("service6"),
     },
   ];
 
@@ -76,14 +78,14 @@ const ContactForm = () => {
     const message = `
     🔔Нове повідомлення з сайту🔔
     ----------------------------
-    
+
     Ім'я: ${data.name}
     Пошта: ${data.email}
     Телефон: ${data.phone}
     Послуга: ${data.service?.label}
     Коментар: ${data.message !== "" ? data.message : "Коментар не додано"}
     Файл: ${fileName ? fileName : "Файл не завантажено"}
-    
+
     -------------------------------------
     🚀Обробіть заявку як умога найшвидше🚀
     `;
@@ -117,7 +119,7 @@ const ContactForm = () => {
   }, []);
 
   useEffect(() => {
-    setPhone(`+${userCountryCode}`);
+    setPhone("");
   }, [userCountryCode]);
 
   return (
@@ -154,7 +156,7 @@ const ContactForm = () => {
             <input
               type="text"
               className={styles.contact__block_input}
-              placeholder="Name*"
+              placeholder={t("input1")}
               {...register("name", {
                 required: true,
               })}
@@ -183,7 +185,7 @@ const ContactForm = () => {
             <input
               type="email"
               className={styles.contact__block_input}
-              placeholder="Email*"
+              placeholder={t("input2")}
               {...register("email", {
                 required: true,
                 pattern: {
@@ -249,6 +251,32 @@ const ContactForm = () => {
                 />
               )}
             />
+            {/* <Controller
+              name="phone"
+              control={control}
+              rules={{
+                required: isSubmitted,
+                minLength: {
+                  value: 10,
+                  message: "",
+                },
+              }}
+              render={({ field }) => (
+                <PhoneInput
+                  {...field}
+                  // enableSearch={true}
+                  placeholder={"099-000-00-00"}
+                  inputClass={"contact__block_input"}
+                  buttonClass={"contact__block_lang"}
+                  country={userCountryCode}
+                  regions={"europe"}
+                  inputProps={{
+                    required: true,
+                    autoFocus: false,
+                  }}
+                />
+              )}
+            /> */}
           </div>
 
           {/* Service Select */}
@@ -278,7 +306,7 @@ const ContactForm = () => {
                 <Select
                   {...field}
                   options={services}
-                  placeholder={"Select service*"}
+                  placeholder={t("input3")}
                   styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
@@ -329,7 +357,7 @@ const ContactForm = () => {
           <div className={styles.contact__fields_textarea}>
             <textarea
               className={styles.contact__block_textarea}
-              placeholder="How can we help you?"
+              placeholder={t("input4")}
               {...register("message", {
                 required: false,
               })}
@@ -358,13 +386,9 @@ const ContactForm = () => {
               {fileName ? (
                 <p className={styles.contact__block_file}>{fileName}</p>
               ) : isDragActive ? (
-                <p className={styles.contact__block_file}>
-                  Drop the files here...
-                </p>
+                <p className={styles.contact__block_file}>{t("input5")}</p>
               ) : (
-                <p className={styles.contact__block_file}>
-                  Drop the files here...
-                </p>
+                <p className={styles.contact__block_file}>{t("input5")}</p>
               )}
             </div>
           </div>
@@ -373,18 +397,18 @@ const ContactForm = () => {
         {/* agree privacy policy */}
         <div className={styles.contact__form_agree}>
           <p className={styles.contact__block_agree}>
-            Натискаючи на кнопку "Надіслати" ви погоджуєтесь з{" "}
+            {t("agree1")}{" "}
             <Link
               href={"/privacy-policy"}
               className={styles.contact__agree_link}
             >
-              Політикою конфіденційності
+              {t("agree2")}
             </Link>
           </p>
         </div>
 
         <div className={styles.contact__form_action}>
-          <Button type={"submit"}>Send message</Button>
+          <Button type={"submit"}> {t("button")}</Button>
         </div>
       </form>
     </div>
