@@ -14,7 +14,6 @@ import {
 } from "@/app/utils/server/server";
 import Technologies from "@/app/components/pages/home/technologies/Technologies";
 import Loader from "@/app/components/global/loader/Loader";
-import { headers } from "next/headers";
 
 const HomePage = async ({ locale }: { locale: string }) => {
     console.log('Locale from URL:', locale);

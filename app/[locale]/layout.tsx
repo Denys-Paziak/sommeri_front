@@ -51,7 +51,6 @@ export default async function RootLayout({
     children: React.ReactNode;
     params: { locale: string };
 }>) {
-    const supportedLocales = ['uk', 'en'];
     const currentLocale = locale || 'uk';
 
     const messages = await getMessages(currentLocale);
