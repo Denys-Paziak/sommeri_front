@@ -25,9 +25,9 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-          (project: ProjectInterface) =>
-            project.Category.Name === activeCategory
-        );
+        (project: ProjectInterface) =>
+          project.Category.Name === activeCategory
+      );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
@@ -43,9 +43,8 @@ export default function Page({ posts, categories }: iProps) {
             <div className={styles.projects__main_categories}>
               <ul className={styles.projects__categories_list}>
                 <li
-                  className={`${styles.projects__category_item}  ${
-                    activeCategory === "All" && styles.active
-                  }`}
+                  className={`${styles.projects__category_item}  ${activeCategory === "All" && styles.active
+                    }`}
                   onClick={() => setActiveCategory("All")}
                 >
                   {t("all")}
@@ -54,9 +53,8 @@ export default function Page({ posts, categories }: iProps) {
                 {categories.map((category) => (
                   <li
                     key={category.Name}
-                    className={`${styles.projects__category_item} ${
-                      activeCategory === category.Name && styles.active
-                    }`}
+                    className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
+                      }`}
                     onClick={() => setActiveCategory(category.Name)}
                   >
                     {category.Name}
@@ -67,7 +65,7 @@ export default function Page({ posts, categories }: iProps) {
 
             <MasonryGrid>
               {filteredPosts.map((project, index) => {
-                const projectStyle = index % 2 === 0 ? styles.mt : "";
+                const projectStyle = index % 2 === 0 ? styles.mt : "100px";
 
                 return (
                   <Link
