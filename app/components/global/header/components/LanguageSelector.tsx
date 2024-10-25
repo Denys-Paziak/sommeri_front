@@ -32,7 +32,9 @@ const LanguageSelector: React.FC = () => {
         className={styles.language__selector_button}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={styles.languageName}>{locale.toUpperCase()}</span>
+        <span className={styles.language__name}>
+          {locale === "uk" ? "UA" : locale.toUpperCase()}
+        </span>
         <div
           className={`${styles.arrow} ${
             isOpen ? styles.arrowUp : styles.arrowDown

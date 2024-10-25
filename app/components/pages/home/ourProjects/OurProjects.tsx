@@ -30,7 +30,7 @@ export default function Page({ posts, categories }: iProps) {
         );
 
   return (
-    <SectionWrapper>
+    <SectionWrapper sectionId={"portfolio"}>
       <div className="container">
         <div className={styles.projects__wrapper}>
           <div className={styles.projects__wrapper_heading}>
