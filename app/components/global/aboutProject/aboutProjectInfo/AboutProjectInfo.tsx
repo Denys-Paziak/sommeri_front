@@ -3,6 +3,9 @@ import LineVector from "@/app/components/global/lineVector/LineVector";
 import { ProjectInterface } from "@/app/[locale]/project/[id]/ProjectInterface";
 
 const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
+
+  console.log(project)
+
   return (
     <section className={styles.project__info_section}>
       <div className="container">
@@ -38,13 +41,13 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
             <div className={styles.project__inner_block}>
               <h3 className={styles.project__block_subtitle}>Technologies:</h3>
               <div className={styles.project__block_technologies}>
-                {/* {project.Technologies.map((technologi) => {
+                {project.technologies && project.technologies.map((technology: { Name: string }) => {
                   return (
                     <span className={styles.project__technologies_item}>
-                      {technologi}
+                      {technology.Name}
                     </span>
                   );
-                })} */}
+                })}
               </div>
             </div>
           </div>

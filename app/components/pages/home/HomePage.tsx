@@ -16,9 +16,6 @@ import Technologies from "@/app/components/pages/home/technologies/Technologies"
 import Loader from "@/app/components/global/loader/Loader";
 
 const HomePage = async ({ locale }: { locale: string }) => {
-    console.log('Locale from URL:', locale);
-    console.log(locale)
-
     let posts = await getProjects(locale);
     let categories = await getCategories(locale);
     let faqItems = await getFAQ(locale);

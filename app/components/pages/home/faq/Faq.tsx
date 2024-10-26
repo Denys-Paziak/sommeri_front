@@ -6,6 +6,7 @@ import styles from "./Faq.module.css";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 interface FaqItem {
   title: string;
@@ -28,17 +29,18 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
     <SectionWrapper>
       <div className="container">
         <div className={styles.faq__wrapper}>
-          <TitleWrapper>{t("title")}</TitleWrapper>
+          <AnimatedWrapper type="fade-up" duration={1.2}>
+            <TitleWrapper>{t("title")}</TitleWrapper>
+          </AnimatedWrapper>
           <div className={styles.faq__wrapper_main}>
-            <div className={styles.faq__main_list}>
+            <AnimatedWrapper type="fade-up" className={styles.faq__main_list}>
               {faqItems &&
                 faqItems.map((item, index) => (
                   <div
                     onClick={() => handleClick(index)}
                     key={index}
-                    className={`${styles.faq__main_item} ${
-                      activeIndex === index ? styles.active : ""
-                    }`}
+                    className={`${styles.faq__main_item} ${activeIndex === index ? styles.active : ""
+                      }`}
                   >
                     <div className={styles.faq__item_inner}>
                       <h3 className={styles.faq__inner_title}>{item.title}</h3>
@@ -59,13 +61,13 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                           />
                         </svg>
                       </span>
-                    </div>
+                    </div >
                     <div className={styles.faq__item_content}>
                       <p className={styles.faq__content_text}>{item.content}</p>
                     </div>
                   </div>
                 ))}
-            </div>
+            </AnimatedWrapper>
             <div className={styles.faq__main_grid}>
               <Image
                 width="1036"

@@ -29,16 +29,16 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                 <div className={styles.reviews__slider_track}>
                     {reviews &&
                         [...reviews, ...reviews].map((review, index) => (
-                            <div  key={index + Date.now()} className={styles.reviews__track_item}>
+                            <div key={index + Date.now()} className={styles.reviews__track_item}>
                                 <div className={styles.reviews__item_header}>
                                     <div className={styles.reviews__header_inner}>
-                                        <Image
+                                        {review.image && <Image
                                             src={backHost + review.image.url}
                                             alt="review logo"
                                             width={24}
                                             height={24}
                                             className={styles.reviews__inner_logo}
-                                        />
+                                        />}
                                         <p className={styles.reviews__inner_name}>
                                             {review.name}
                                         </p>
@@ -64,13 +64,14 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
                             <div key={index + Date.now()} className={styles.reviews__track_item}>
                                 <div className={styles.reviews__item_header}>
                                     <div className={styles.reviews__header_inner}>
-                                        <Image
+                                        {review.image && <Image
                                             src={backHost + review.image.url}
                                             alt="review logo"
                                             width={24}
                                             height={24}
                                             className={styles.reviews__inner_logo}
-                                        />
+                                        />}
+
                                         <p className={styles.reviews__inner_name}>
                                             {review.name}
                                         </p>

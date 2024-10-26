@@ -5,6 +5,7 @@ import styles from "./ClientsSay.module.css";
 import Reviews from "@/app/components/global/reviews/Reviews";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "use-intl";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 interface Review {
   id: number;
@@ -25,12 +26,19 @@ const ClientsSay: React.FC<ClientsSayProps> = ({ reviews }) => {
       <div className="container">
         <div className={styles.client__say_wrapper}>
           <div className={styles.client__say_heading}>
-            <TitleWrapper>{t("title")}</TitleWrapper>
-            <p className={styles.client__heading_subtitle}>{t("subtitle")}</p>
+            <AnimatedWrapper type="fade-up" duration={1.2}>
+              <TitleWrapper>{t("title")}</TitleWrapper>
+            </AnimatedWrapper>
+            <AnimatedWrapper type="fade-up" duration={1.4}>
+              <p className={styles.client__heading_subtitle}>{t("subtitle")}</p>
+            </AnimatedWrapper>
           </div>
         </div>
       </div>
-      <Reviews reviews={reviews} />
+      <AnimatedWrapper type="fade-up" duration={1.4}>
+        <Reviews reviews={reviews} />
+      </AnimatedWrapper>
+
       <div className={styles.client__say_shape}></div>
     </SectionWrapper>
   );

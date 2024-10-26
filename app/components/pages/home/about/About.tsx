@@ -6,6 +6,7 @@ import React from "react";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 const About = () => {
   const t = useTranslations("home.about");
@@ -14,24 +15,39 @@ const About = () => {
     <SectionWrapper sectionId="about">
       <div className="container">
         <div className={styles.about__wrapper}>
-          <TitleWrapper>{t("title")}</TitleWrapper>
+
+          <AnimatedWrapper type="fade-up" duration={1.2}>
+            <TitleWrapper>{t("title")}</TitleWrapper>
+          </AnimatedWrapper>
+
           <div className={styles.about__wrapper_main}>
             <div className={styles.about__main_info}>
-              <h3 className={styles.about__info_subtitle}>{t("subtitle")}</h3>
-              <p className={styles.about__info_text}>{t("text")}</p>
-              <SecondaryButton type={"button"}>
-                {" "}
-                {t("secondaryButton")}
-              </SecondaryButton>
+
+              <AnimatedWrapper type="fade-up" duration={1.5} delay={0.2}>
+                <h3 className={styles.about__info_subtitle}>{t("subtitle")}</h3>
+              </AnimatedWrapper>
+
+              <AnimatedWrapper type="fade-up" duration={1.8} delay={0.4}>
+                <p className={styles.about__info_text}>{t("text")}</p>
+              </AnimatedWrapper>
+
+              <AnimatedWrapper type="fade-up" duration={2} delay={0.6}>
+                <SecondaryButton type={"button"}>
+                  {t("secondaryButton")}
+                </SecondaryButton>
+              </AnimatedWrapper>
+
             </div>
             <div className={styles.about__main_banner}>
-              <Image
-                src="/images/about-us-vector.svg"
-                alt="about us vector"
-                width={500}
-                height={500}
-                className={styles.about__banner_vector}
-              />
+              <AnimatedWrapper type="fade-left" duration={1.5} delay={0.8}>
+                <Image
+                  src="/images/about-us-vector.svg"
+                  alt="about us vector"
+                  width={500}
+                  height={500}
+                  className={styles.about__banner_vector}
+                />
+              </AnimatedWrapper>
             </div>
           </div>
         </div>

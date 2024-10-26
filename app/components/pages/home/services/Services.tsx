@@ -7,6 +7,7 @@ import { gsap } from "gsap";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 const Services: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -76,8 +77,15 @@ const Services: React.FC = () => {
         <div className={styles.services__wrapper}>
           <div className={styles.services__wrapper_heading}>
             <div className={styles.services__heading_info}>
-              <TitleWrapper>{t("title")}</TitleWrapper>
-              <p className={styles.services__info_subtext}>{t("subtitle")}</p>
+              <AnimatedWrapper type="fade-up" duration={1.2}>
+                <TitleWrapper>{t("title")}</TitleWrapper>
+              </AnimatedWrapper>
+
+              <AnimatedWrapper type="fade-up" duration={1.4}>
+                <p className={styles.services__info_subtext}>{t("subtitle")}</p>
+              </AnimatedWrapper>
+
+
             </div>
           </div>
           <div className={styles.services__wrapper_main}>
