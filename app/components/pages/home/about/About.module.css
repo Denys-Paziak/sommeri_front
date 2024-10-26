@@ -64,13 +64,8 @@
   .vector {
     display: none;
   }
-  .about__info_subtitle {
-  }
   .about__info_text {
     line-height: 24px;
-  }
-  .about__main_info {
-    align-items: center;
   }
 }
 

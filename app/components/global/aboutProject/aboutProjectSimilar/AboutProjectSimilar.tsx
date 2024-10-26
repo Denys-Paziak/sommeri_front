@@ -1,11 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./AboutProjectSimilar.module.css";
 import { getSimilars } from "@/app/utils/server/server";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import SimilarProjectItems from "@/app/components/global/similarProjects/SimilarProjectItems";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
+import { useTranslations } from "next-intl";
 
-const AboutProjectSimilar = async ({ url }: { url: string }) => {
-  const projects: ProjectInterface[] = await getSimilars(url);
+const AboutProjectSimilar = ({ url }: { url: string }) => {
+  const [projects, setProjects] = useState<ProjectInterface[]>([]);
+  const t = useTranslations("aboutProject");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result: ProjectInterface[] = await getSimilars(url);
+      setProjects(result);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -14,11 +28,9 @@ const AboutProjectSimilar = async ({ url }: { url: string }) => {
           <div className="container">
             <div className={styles.similar__project_wrapper}>
               <div className={styles.similar__wrapper_heading}>
-                <TitleWrapper>Similar projects</TitleWrapper>
+                <TitleWrapper>{t("similarTitle")}</TitleWrapper>
                 <p className={styles.similar__heading_subtitle}>
-                  Explore other projects we’ve delivered for clients who sought
-                  tailored solutions for their websites. Each one showcases our
-                  approach to creating high-quality and functional web products.
+                  {t("similarText")}
                 </p>
               </div>
               <SimilarProjectItems projects={projects} />

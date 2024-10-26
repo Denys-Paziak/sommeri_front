@@ -7,20 +7,17 @@ interface ButtonProps {
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
-  arrowColor?: string;
-  style?: "fill" | "outline";
+  isRounded: boolean;
 }
 
-const Button: FC<ButtonProps> = ({
-  children,
-  type,
-  onClick,
-  arrowColor,
-  style,
-}) => {
+const Button: FC<ButtonProps> = ({ children, type, onClick, isRounded }) => {
   return (
     <div>
-      <button className={styles.button} onClick={onClick}>
+      <button
+        className={`${styles.button} ${isRounded ? `${styles.rounded}` : ""}`}
+        onClick={onClick}
+        type={type}
+      >
         {children}
       </button>
     </div>

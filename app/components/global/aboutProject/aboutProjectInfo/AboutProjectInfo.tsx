@@ -1,8 +1,11 @@
 import styles from "./AboutProjectInfo.module.css";
 import LineVector from "@/app/components/global/lineVector/LineVector";
 import { ProjectInterface } from "@/app/[locale]/project/[id]/ProjectInterface";
+import { useTranslations } from "next-intl";
 
 const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
+  const t = useTranslations("aboutProject");
+
   return (
     <section className={styles.project__info_section}>
       <div className="container">
@@ -11,7 +14,7 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
             {project.About_the_project && (
               <div className={styles.project__inner_block}>
                 <h3 className={styles.project__block_subtitle}>
-                  About the project:
+                  {t("aboutTitle")}
                 </h3>
                 <p className={styles.project__block_text}>
                   {project.About_the_project}
@@ -21,7 +24,9 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
 
             {project.Objectives && (
               <div className={styles.project__inner_block}>
-                <h3 className={styles.project__block_subtitle}>Objectives:</h3>
+                <h3 className={styles.project__block_subtitle}>
+                  {t("objectivesTitle")}
+                </h3>
                 <p className={styles.project__block_text}>
                   {project.Objectives}
                 </p>
@@ -30,13 +35,17 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
 
             {project.Solution && (
               <div className={styles.project__inner_block}>
-                <h3 className={styles.project__block_subtitle}>Solution:</h3>
+                <h3 className={styles.project__block_subtitle}>
+                  {t("solutionTitle")}
+                </h3>
                 <p className={styles.project__block_text}>{project.Solution}</p>
               </div>
             )}
 
             <div className={styles.project__inner_block}>
-              <h3 className={styles.project__block_subtitle}>Technologies:</h3>
+              <h3 className={styles.project__block_subtitle}>
+                {t("technologiesTitle")}
+              </h3>
               <div className={styles.project__block_technologies}>
                 {/* {project.Technologies.map((technologi) => {
                   return (

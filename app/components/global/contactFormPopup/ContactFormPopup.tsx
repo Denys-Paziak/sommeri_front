@@ -1,18 +1,19 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ContactFormPopup.module.css";
 import { sendMessageToTelegram } from "@/app/api/telegram";
 import { RootState } from "@/app/redux/store";
-import { closePopup } from "@/app/redux/popupSlice";
+import { closePopup, openPopup } from "@/app/redux/popupSlice";
 import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
 import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
+import Button from "@/app/components/UI/button/Button";
 
 interface IFormData {
   name: string;
@@ -36,17 +37,28 @@ const ContactFormPopup = () => {
     },
   });
 
+  const startPopupTimer = useCallback(() => {
+    setTimeout(() => {
+      dispatch(openPopup());
+    }, 5 * 60 * 1000);
+  }, [dispatch]);
+
+  useEffect(() => {
+    startPopupTimer();
+  }, [startPopupTimer]);
+
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("no-scroll");
     } else {
-      document.body.style.overflow = "auto";
+      document.body.classList.remove("no-scroll");
+      startPopupTimer();
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.classList.remove("no-scroll");
     };
-  }, [isOpen]);
+  }, [isOpen, startPopupTimer]);
 
   const onSubmit = async (data: IFormData) => {
     const message = `
@@ -191,9 +203,10 @@ const ContactFormPopup = () => {
             </div>
 
             <div className={styles.contact__wrapper_action}>
-              <button className={styles.contact__action_button} type="submit">
-                Send message
-              </button>
+              <Button isRounded={false} type={"submit"}>
+                {" "}
+                {t("contactForm.button")}
+              </Button>
             </div>
           </form>
         </div>

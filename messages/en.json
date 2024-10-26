@@ -5,14 +5,15 @@
       "boldTitle": "our solutions",
       "subtitle": "We focus on understanding your needs to achieve the best results.",
       "partners": "Trusted by our valued partners",
-      "primaryButton": "Contact Us",
-      "secondaryButton": "Our Projects"
+      "primaryButton": "Get a consultation",
+      "secondaryButton": "Our portfolio"
     },
     "about": {
       "title": "About us",
       "subtitle": "Welcome to Sommeri, where beautiful design meets seamless functionality.",
       "text": "We are the team that will create a customized solution for your business. From the very beginning, we made a decision to focus on our strengths and constantly improve them. This approach allows us not only to become experts in our field, but also to provide our clients with the exceptional experience they deserve. We are committed to innovation and quality, as every step we take is aimed at exceeding expectations and creating a truly valuable product.",
-      "secondaryButton": "Reviews"
+      "secondaryButton": "Reviews about us",
+      "vectorLink": "/images/about-us-vector.svg"
     },
     "whyUs": {
       "title": "Why you should work with us",
@@ -21,7 +22,7 @@
       "item1Text": "We carefully analyze the needs of each client and create solutions tailored to their business",
       "item2Title": "Modern technologies",
       "item2Text": "We use advanced tools and technologies to create fast, reliable and efficient websites",
-      "item3Title": "Functional design",
+      "item3Title": "Design",
       "item3Text": "Our projects combine aesthetics with maximum user-friendliness, which increases conversions",
       "item4Title": "Adaptability",
       "item4Text": "The websites we build work perfectly on any device, providing the perfect user experience",
@@ -79,9 +80,9 @@
     "service4": "Google Ads",
     "service5": "SEO Optimization",
     "service6": "IT Solutions",
-    "agree1": "By clicking the 'Submit' button, you agree to",
+    "agree1": "By clicking the 'Leave a request' button, you agree to",
     "agree2": "Privacy policy",
-    "button": "Send message"
+    "button": "Leave a request"
   },
   "popupForm": {
     "title": "Contact Us",
@@ -110,12 +111,23 @@
     "item1": "Services",
     "item2": "About us",
     "item3": "Technologies",
-    "item4": "Projects",
+    "item4": "Portfolio",
     "item5": "Why us"
   },
   "quickContacts": {
     "question": "Do you have a question?",
     "message": "Leave a message!"
+  },
+  "aboutProject": {
+    "visit": "Visit",
+    "aboutTitle": "About the project:",
+    "objectivesTitle": "Objectives:",
+    "solutionTitle": "Solution:",
+    "technologiesTitle": "Technologies:",
+    "weDidTitle": "We did:",
+    "resultTitle": "Result:",
+    "similarTitle": "Similar projects",
+    "similarText": "Explore other projects we’ve delivered for clients who sought tailored solutions for their websites. Each one showcases our approach to creating high-quality and functional web products."
   },
   "privacyPolicy": {
     "title": "Privacy Policy",

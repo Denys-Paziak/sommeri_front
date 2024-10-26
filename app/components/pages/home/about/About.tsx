@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./About.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
@@ -6,6 +8,7 @@ import React from "react";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
+import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 
 const About = () => {
   const t = useTranslations("home.about");
@@ -19,14 +22,17 @@ const About = () => {
             <div className={styles.about__main_info}>
               <h3 className={styles.about__info_subtitle}>{t("subtitle")}</h3>
               <p className={styles.about__info_text}>{t("text")}</p>
-              <SecondaryButton type={"button"}>
+              <SecondaryButton
+                type={"button"}
+                onClick={() => handleScroll("reviews")}
+              >
                 {" "}
                 {t("secondaryButton")}
               </SecondaryButton>
             </div>
             <div className={styles.about__main_banner}>
               <Image
-                src="/images/about-us-vector.svg"
+                src={t("vectorLink")}
                 alt="about us vector"
                 width={500}
                 height={500}

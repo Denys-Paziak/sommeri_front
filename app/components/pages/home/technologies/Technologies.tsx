@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/app/components/UI/button/Button";
 import Image from "next/image";
 import styles from "./Technologies.module.css";
 import { backHost, getTechnologiesWay } from "@/app/utils/server/server";
@@ -8,6 +7,7 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
+import Button from "@/app/components/UI/button/Button";
 
 interface Technology {
   id: string;

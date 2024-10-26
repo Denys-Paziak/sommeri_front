@@ -93,6 +93,9 @@
 .contact__wrapper_action {
   width: 100%;
 }
+.contact__wrapper_action button {
+  width: 100%;
+}
 .contact__action_button {
   width: 100%;
   padding: 20px 0;

@@ -107,6 +107,7 @@
 }
 .hero__brands_item > svg {
   opacity: 0.5;
+  transition: 0.4s;
 }
 .hero__brands_item:hover > svg {
   opacity: 1;

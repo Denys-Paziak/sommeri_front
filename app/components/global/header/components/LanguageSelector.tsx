@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../Header.module.css";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 
 interface Language {
@@ -14,10 +14,12 @@ const LanguageSelector: React.FC = () => {
   const t = useTranslations("header");
   const locale = useLocale();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLanguageChange = (language: Language) => {
     const newLocale = language.code;
-    router.push(`/${newLocale}`);
+    const newPath = `/${newLocale}${pathname.replace(`/${locale}`, "")}`;
+    router.push(newPath);
     setIsOpen(false);
   };
 

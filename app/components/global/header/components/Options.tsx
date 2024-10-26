@@ -15,7 +15,7 @@ const Options = () => {
   return (
     <div className={styles.header__wrapper_options}>
       <LanguageSelector />
-      <Button style={"fill"} onClick={() => dispatch(openPopup())}>
+      <Button isRounded={true} onClick={() => dispatch(openPopup())}>
         {t("button")}
       </Button>
     </div>

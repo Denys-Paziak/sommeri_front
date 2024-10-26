@@ -3,8 +3,11 @@ import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ReactMarkdown from "react-markdown";
 import React from "react";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
+import { useTranslations } from "next-intl";
 
 const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
+  const t = useTranslations("aboutProject");
+
   return (
     <section className={styles.project__galery_section}>
       <div className="container">
@@ -21,7 +24,9 @@ const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
           </div>
           <div className={styles.project__wrapper_result}>
             <div className={styles.project__inner_block}>
-              <h3 className={styles.project__block_subtitle}>Result:</h3>
+              <h3 className={styles.project__block_subtitle}>
+                {t("resultTitle")}
+              </h3>
               <div className={styles.project__result_info}>
                 <div className={styles.project__block_text}>
                   <ReactMarkdown>{project.Result}</ReactMarkdown>

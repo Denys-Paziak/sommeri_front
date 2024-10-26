@@ -412,7 +412,10 @@ const ContactForm = () => {
         </div>
 
         <div className={styles.contact__form_action}>
-          <Button type={"submit"}> {t("button")}</Button>
+          <Button isRounded={false} type={"submit"}>
+            {" "}
+            {t("button")}
+          </Button>
         </div>
       </form>
     </div>
