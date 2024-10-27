@@ -1,6 +1,7 @@
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 import styles from "./AboutProjectTopBar.module.css";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
+import { useTranslations } from "next-intl";
 
 const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
   const t = useTranslations("aboutProject");
@@ -16,7 +17,10 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
             </p>
           </div>
           <button className={styles.project__top_visit} type="button">
-            <span className={styles.project__visit_text}>{t("visit")}</span>
+            <a href={project.url ? project.url : "#"}>
+              {" "}
+              <span className={styles.project__visit_text}>Visit</span>
+            </a>
             <span className={styles.project__visit_icon}>
               <svg
                 width="12"

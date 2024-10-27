@@ -47,13 +47,14 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
                 {t("technologiesTitle")}
               </h3>
               <div className={styles.project__block_technologies}>
-                {/* {project.Technologies.map((technologi) => {
-                  return (
-                    <span className={styles.project__technologies_item}>
-                      {technologi}
-                    </span>
-                  );
-                })} */}
+                {project.technologies &&
+                  project.technologies.map((technology: { Name: string }) => {
+                    return (
+                      <span className={styles.project__technologies_item}>
+                        {technology.Name}
+                      </span>
+                    );
+                  })}
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
-import Button from "@/app/components/UI/button/Button";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 interface Technology {
   id: string;
@@ -44,7 +44,10 @@ const Technologies = () => {
     <SectionWrapper sectionId="technologies">
       <div className="container">
         <div className={styles.technologies__wrapper}>
-          <TitleWrapper>{t("title")}</TitleWrapper>
+          <AnimatedWrapper type="fade-up" duration={1.2}>
+            <TitleWrapper>{t("title")}</TitleWrapper>
+          </AnimatedWrapper>
+
           <div className={styles.technologies__wrapper_main}>
             <div className={styles.technologies__main_column}>
               {data &&
@@ -68,7 +71,7 @@ const Technologies = () => {
 
 const Box: React.FC<BoxProps> = ({ data }) => {
   return (
-    <div className={styles.technologies__column_box}>
+    <AnimatedWrapper className={styles.technologies__column_box}>
       <h3 className={styles.technologies__box_name}>{data.name}</h3>
       <p className={styles.technologies__box_description}>{data.description}</p>
       <div className={styles.technologies__box_list}>
@@ -91,7 +94,7 @@ const Box: React.FC<BoxProps> = ({ data }) => {
             </div>
           ))}
       </div>
-    </div>
+    </AnimatedWrapper>
   );
 };
 

@@ -11,6 +11,7 @@ import { CategoryInterface } from "@/app/utils/interfaces/category";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
+import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 interface iProps {
   posts: ProjectInterface[];
@@ -34,10 +35,15 @@ export default function Page({ posts, categories }: iProps) {
       <div className="container">
         <div className={styles.projects__wrapper}>
           <div className={styles.projects__wrapper_heading}>
-            <TitleWrapper>{t("title")}</TitleWrapper>
-            <h3 className={styles.projects__heading_subtitle}>
-              {t("subtitle")}
-            </h3>
+            <AnimatedWrapper type="fade-up" duration={1.2}>
+              <TitleWrapper>{t("title")}</TitleWrapper>
+            </AnimatedWrapper>
+            <AnimatedWrapper type="fade-up" duration={1.4}>
+              <h3 className={styles.projects__heading_subtitle}>
+                {t("subtitle")}
+              </h3>
+            </AnimatedWrapper>
+
           </div>
           <div className={styles.projects__wrapper_main}>
             <div className={styles.projects__main_categories}>
@@ -73,7 +79,7 @@ export default function Page({ posts, categories }: iProps) {
                     className={projectStyle}
                     href={`/project/${project.url}`}
                   >
-                    <div className={styles.project__portfolio_item}>
+                    <AnimatedWrapper type="fade-up" duration={1.2} className={styles.project__portfolio_item}>
                       <div className={styles.project__item_banner}>
                         <Image
                           src={`${backHost}${project.Preview.url}`}
@@ -126,7 +132,7 @@ export default function Page({ posts, categories }: iProps) {
                           </span>
                         </p>
                       </div>
-                    </div>
+                    </AnimatedWrapper>
                   </Link>
                 );
               })}

@@ -175,5 +175,10 @@
     "seventhText": "We reserve the right to modify these Terms of Use at any time without prior notice. Your continued use of the website following any changes constitutes your acceptance of the revised terms.",
     "eighthSubtitle": "Contact Information",
     "eighthText": "If you have any questions or concerns regarding these Terms of Use, please contact us at:"
+  },
+  "404": {
+    "title": "Page not found",
+    "text": "This page doesn't exist or was removed! We suggest you back to home",
+    "button": "Back to home"
   }
 }

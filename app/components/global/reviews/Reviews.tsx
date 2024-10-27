@@ -23,7 +23,7 @@ interface ReviewsProps {
 const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
   return (
     <div className={styles.reviews__block}>
-      {/* <div className={styles.reviews__block_slider}>
+      <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track}>
           {reviews &&
             [...reviews, ...reviews].map((review, index) => (
@@ -83,7 +83,7 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
               </div>
             ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

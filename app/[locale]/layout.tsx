@@ -64,7 +64,7 @@ export default async function RootLayout({
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
       </head>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <ReduxProvider>
             <Header />
             <CustomCursor />
