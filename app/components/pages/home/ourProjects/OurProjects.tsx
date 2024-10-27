@@ -47,26 +47,28 @@ export default function Page({ posts, categories }: iProps) {
           </div>
           <div className={styles.projects__wrapper_main}>
             <div className={styles.projects__main_categories}>
-              <ul className={styles.projects__categories_list}>
-                <li
-                  className={`${styles.projects__category_item}  ${activeCategory === "All" && styles.active
-                    }`}
-                  onClick={() => setActiveCategory("All")}
-                >
-                  {t("all")}
-                </li>
-
-                {categories.map((category) => (
+              <AnimatedWrapper type="fade-up" duration={1.2}>
+                <ul className={styles.projects__categories_list}>
                   <li
-                    key={category.Name}
-                    className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
+                    className={`${styles.projects__category_item}  ${activeCategory === "All" && styles.active
                       }`}
-                    onClick={() => setActiveCategory(category.Name)}
+                    onClick={() => setActiveCategory("All")}
                   >
-                    {category.Name}
+                    {t("all")}
                   </li>
-                ))}
-              </ul>
+
+                  {categories.map((category) => (
+                    <li
+                      key={category.Name}
+                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
+                        }`}
+                      onClick={() => setActiveCategory(category.Name)}
+                    >
+                      {category.Name}
+                    </li>
+                  ))}
+                </ul>
+              </AnimatedWrapper>
             </div>
 
             <MasonryGrid>

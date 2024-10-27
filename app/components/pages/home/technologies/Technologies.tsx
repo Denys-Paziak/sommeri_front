@@ -45,9 +45,7 @@ const Technologies = () => {
     <SectionWrapper sectionId="technologies">
       <div className="container">
         <div className={styles.technologies__wrapper}>
-          <AnimatedWrapper type="fade-up" duration={1.2}>
-            <TitleWrapper>{t("title")}</TitleWrapper>
-          </AnimatedWrapper>
+          <TitleWrapper>{t("title")}</TitleWrapper>
 
           <div className={styles.technologies__wrapper_main}>
             <div className={styles.technologies__main_column}>
@@ -72,7 +70,7 @@ const Technologies = () => {
 
 const Box: React.FC<BoxProps> = ({ data }) => {
   return (
-    <AnimatedWrapper className={styles.technologies__column_box}>
+    <div className={styles.technologies__column_box}>
       <h3 className={styles.technologies__box_name}>{data.name}</h3>
       <p className={styles.technologies__box_description}>{data.description}</p>
       <div className={styles.technologies__box_list}>
@@ -95,7 +93,7 @@ const Box: React.FC<BoxProps> = ({ data }) => {
             </div>
           ))}
       </div>
-    </AnimatedWrapper>
+    </div>
   );
 };
 

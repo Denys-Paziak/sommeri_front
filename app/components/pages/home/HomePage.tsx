@@ -33,7 +33,7 @@ const HomePage = async ({ locale }: { locale: string }) => {
             <About />
             <WhyUs />
             <Services />
-            <Technologies />
+            {/* <Technologies /> */}
             <OurProjects posts={posts} categories={categories} />
             <ClientsSay reviews={reviews} />
             <Faq faqItems={faqItems} />

@@ -66,10 +66,9 @@ const ContactFormPopup = () => {
     dispatch(openThanksPopup());
   };
 
-  if (!isOpen) return <></>;
 
   return (
-    <div className={styles.modal}>
+    <div className={isOpen ? `${styles.modal} ${styles.open}` : `${styles.modal} ${styles.close}`}>
       <div
         className={styles.overlay}
         onClick={() => dispatch(closePopup())}
@@ -111,9 +110,8 @@ const ContactFormPopup = () => {
             <div className={styles.contact__wrapper_fields}>
               {/* Name Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.name ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
@@ -145,9 +143,8 @@ const ContactFormPopup = () => {
 
               {/* Email Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.email ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
