@@ -20,6 +20,8 @@ const AnimatedWrapper = ({
 
         let animationProps = {};
 
+
+
         // Налаштування параметрів для кожного типу анімації
         switch (type) {
             case "fade-up":
@@ -47,7 +49,6 @@ const AnimatedWrapper = ({
                 y: 0,
                 x: 0,
                 scale: 1,
-                rotate: type === "rotate" ? 360 : 0,
                 duration,
                 delay,
                 scrollTrigger: {
@@ -58,26 +59,6 @@ const AnimatedWrapper = ({
                 },
             }
         );
-
-        // Додатковий ефект для `rotate`
-        if (type === "rotate") {
-            gsap.to(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    end: "bottom top",
-                    scrub: true,
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        gsap.to(element, {
-                            rotateX: progress * 360,
-                            rotateY: progress * 360,
-                            ease: "power1.inOut",
-                        });
-                    },
-                },
-            });
-        }
     }, [type, duration, delay]);
 
     return <div className={className} ref={animatedRef}>{children}</div>;
