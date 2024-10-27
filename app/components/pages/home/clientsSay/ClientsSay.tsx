@@ -6,19 +6,9 @@ import Reviews from "@/app/components/global/reviews/Reviews";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "use-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
+import { Review } from "@/app/utils/interfaces/reviews"; // імпорт інтерфейсу
 
-interface Review {
-  id: number;
-  name: string;
-  content: string;
-  rating: number;
-}
-
-interface ClientsSayProps {
-  reviews: Review[];
-}
-
-const ClientsSay: React.FC<ClientsSayProps> = ({ reviews }) => {
+const ClientsSay = ({ reviews }: { reviews: Review[] }) => {
   const t = useTranslations("home.reviews");
 
   return (

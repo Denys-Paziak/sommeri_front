@@ -16,11 +16,7 @@ interface Review {
   };
 }
 
-interface ReviewsProps {
-  reviews: Review[];
-}
-
-const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
+const Reviews = ({ reviews }: { reviews: Review[] }) => {
   return (
     <div className={styles.reviews__block}>
       <div className={styles.reviews__block_slider}>

@@ -1,6 +1,6 @@
 import styles from "./AboutProjectInfo.module.css";
 import LineVector from "@/app/components/global/lineVector/LineVector";
-import { ProjectInterface } from "@/app/[locale]/project/[id]/ProjectInterface";
+import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { useTranslations } from "next-intl";
 
 const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {

@@ -1,5 +1,5 @@
 import styles from "./AboutProjectFrame.module.css";
-import { ProjectInterface } from "@/app/[locale]/project/[id]/ProjectInterface";
+import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 
 const AboutProjectFrame = ({ project }: { project: ProjectInterface }) => {

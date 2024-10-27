@@ -52,7 +52,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const currentLocale = locale || "uk";
+  const currentLocale: any = locale || "uk";
   const messages = await getMessages(currentLocale);
 
   return (
@@ -64,7 +64,7 @@ export default async function RootLayout({
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
       </head>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
+        <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
             <Header />
             <CustomCursor />
