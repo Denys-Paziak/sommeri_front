@@ -4,17 +4,21 @@
   flex-direction: column;
   gap: 80px;
 }
+
 .technologies__wrapper_main {
   display: flex;
 }
+
 .technologies__main_column {
   width: 50%;
 }
+
 .technologies__main_line {
   position: relative;
   width: 1px;
   background: #ffffff1a;
 }
+
 .technologies__column_box {
   color: var(--white);
   position: relative;
@@ -22,6 +26,7 @@
   border-bottom: 1px solid #ffffff1a;
   transition: 0.4s;
 }
+
 .technologies__column_box::before,
 .technologies__column_box::after {
   position: absolute;
@@ -32,23 +37,28 @@
   left: 0;
   pointer-events: none;
 }
+
 .technologies__column_box::before {
   content: "";
 }
+
 .technologies__column_box::before {
   transform-origin: 100% 50%;
   transform: scale3d(0, 1, 1);
   transition: transform 0.4s;
 }
+
 .technologies__column_box:hover::before {
   transform-origin: 0% 50%;
   transform: scale3d(1, 1, 1);
 }
+
 .technologies__box_name {
   font-size: 28px;
   font-weight: 300;
   margin-bottom: 20px;
 }
+
 .technologies__box_description {
   color: var(--white);
   font-size: 16px;
@@ -56,6 +66,7 @@
   line-height: 24px;
   margin-bottom: 40px;
 }
+
 .technologies__box_list {
   display: flex;
   flex-wrap: wrap;
@@ -63,14 +74,17 @@
   filter: grayscale(1);
   transition: 0.4s ease-in-out;
 }
+
 .technologies__column_box:hover .technologies__box_list {
   filter: grayscale(0);
 }
+
 .technologies__list_item {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .technologies__item_icon {
   width: 28px;
   height: 28px;
@@ -81,25 +95,32 @@
   .technologies__wrapper {
     gap: 40px;
   }
+
   .technologies__wrapper_main {
     flex-direction: column;
   }
+
   .technologies__main_column {
     width: 100%;
   }
+
   .technologies__main_line {
     display: none;
   }
+
   .technologies__column_box {
     padding: 40px 0;
   }
+
   .technologies__box_list {
     gap: 32px;
   }
+
   .technologies__column_box::before {
     transform-origin: 0% 50%;
     transform: scale3d(1, 1, 1);
   }
+
   .technologies__column_box .technologies__box_list {
     filter: grayscale(0);
   }
@@ -109,12 +130,15 @@
   .technologies__column_box {
     padding: 28px 0;
   }
+
   .technologies__box_list {
     gap: 24px;
   }
+
   .technologies__box_description {
     margin-bottom: 28px;
   }
+
   .technologies__box_name {
     margin-bottom: 16px;
     font-size: 26px;
