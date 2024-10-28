@@ -128,6 +128,7 @@ export default function Page({ posts, categories }: iProps) {
                         <button
                           className={styles.project__banner_view}
                           type="button"
+                          aria-label="view button"
                         >
                           <span className={styles.project__view_text}>
                             {t("view")}

@@ -9,6 +9,14 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
+import dynamic from "next/dynamic";
+
+const DynamicLineVectorComponent = dynamic(
+  () => import("@/app/components/global/lineVector/LineVector"),
+  {
+    ssr: false,
+  }
+);
 
 const About = () => {
   const t = useTranslations("home.about");
@@ -32,7 +40,10 @@ const About = () => {
               </AnimatedWrapper>
 
               <AnimatedWrapper type="fade-up" duration={2} delay={0.6}>
-                <SecondaryButton type={"button"}>
+                <SecondaryButton
+                  type={"button"}
+                  ariaLabel={t("secondaryButton")}
+                >
                   {t("secondaryButton")}
                 </SecondaryButton>
               </AnimatedWrapper>
@@ -52,7 +63,8 @@ const About = () => {
         </div>
       </div>
       <div className={styles.vector}>
-        <LineVector />
+        {/* <LineVector /> */}
+        <DynamicLineVectorComponent />
       </div>
     </SectionWrapper>
   );

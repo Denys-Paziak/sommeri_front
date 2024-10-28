@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import dynamic from "next/dynamic";
 
 import styles from "./ContactFormPopup.module.css";
 import { sendMessageToTelegram } from "@/app/api/telegram";
@@ -78,9 +79,14 @@ const ContactFormPopup = () => {
     dispatch(openThanksPopup());
   };
 
-
   return (
-    <div className={isOpen ? `${styles.modal} ${styles.open}` : `${styles.modal} ${styles.close}`}>
+    <div
+      className={
+        isOpen
+          ? `${styles.modal} ${styles.open}`
+          : `${styles.modal} ${styles.close}`
+      }
+    >
       <div
         className={styles.overlay}
         onClick={() => dispatch(closePopup())}
@@ -91,6 +97,7 @@ const ContactFormPopup = () => {
             type="button"
             className={styles.contact__wrapper_close}
             onClick={() => dispatch(closePopup())}
+            aria-label="close popup"
           >
             <svg
               width="13"
@@ -122,8 +129,9 @@ const ContactFormPopup = () => {
             <div className={styles.contact__wrapper_fields}>
               {/* Name Input */}
               <div
-                className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
-                  }`}
+                className={`${styles.contact__fields_block} ${
+                  errors.name ? styles.error : ""
+                }`}
               >
                 <svg
                   width="28"
@@ -143,7 +151,9 @@ const ContactFormPopup = () => {
                     fillOpacity="0.75"
                   />
                 </svg>
+                <label htmlFor="name"></label>
                 <input
+                  id="name"
                   type="text"
                   className={styles.contact__block_input}
                   placeholder={t("contactForm.input1")}
@@ -155,8 +165,9 @@ const ContactFormPopup = () => {
 
               {/* Email Input */}
               <div
-                className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
-                  }`}
+                className={`${styles.contact__fields_block} ${
+                  errors.email ? styles.error : ""
+                }`}
               >
                 <svg
                   width="28"
@@ -171,7 +182,9 @@ const ContactFormPopup = () => {
                     fillOpacity="0.75"
                   />
                 </svg>
+                <label htmlFor="email"></label>
                 <input
+                  id="email"
                   type="email"
                   className={styles.contact__block_input}
                   placeholder={t("contactForm.input2")}
@@ -200,7 +213,11 @@ const ContactFormPopup = () => {
             </div>
 
             <div className={styles.contact__wrapper_action}>
-              <Button isRounded={false} type={"submit"}>
+              <Button
+                isRounded={false}
+                type={"submit"}
+                ariaLabel={t("contactForm.button")}
+              >
                 {" "}
                 {t("contactForm.button")}
               </Button>

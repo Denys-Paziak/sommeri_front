@@ -2,6 +2,14 @@ import styles from "./AboutProjectInfo.module.css";
 import LineVector from "@/app/components/global/lineVector/LineVector";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+
+const DynamicLineVectorComponent = dynamic(
+  () => import("@/app/components/global/lineVector/LineVector"),
+  {
+    ssr: false,
+  }
+);
 
 const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
   const t = useTranslations("aboutProject");
@@ -48,18 +56,24 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
               </h3>
               <div className={styles.project__block_technologies}>
                 {project.technologies &&
-                  project.technologies.map((technology: { Name: string }) => {
-                    return (
-                      <span className={styles.project__technologies_item}>
-                        {technology.Name}
-                      </span>
-                    );
-                  })}
+                  project.technologies.map(
+                    (technology: { Name: string }, index: number) => {
+                      return (
+                        <span
+                          key={index + Date.now()}
+                          className={styles.project__technologies_item}
+                        >
+                          {technology.Name}
+                        </span>
+                      );
+                    }
+                  )}
               </div>
             </div>
           </div>
           <div className={styles.project__info_vector}>
-            <LineVector />
+            {/* <LineVector /> */}
+            <DynamicLineVectorComponent />
           </div>
         </div>
       </div>

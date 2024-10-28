@@ -16,7 +16,11 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
               {project.Category && project.Category.Name}
             </p>
           </div>
-          <button className={styles.project__top_visit} type="button">
+          <button
+            aria-label="visit website"
+            className={styles.project__top_visit}
+            type="button"
+          >
             <a href={project.url ? project.url : "#"}>
               {" "}
               <span className={styles.project__visit_text}>Visit</span>

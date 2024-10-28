@@ -15,7 +15,11 @@ const Options = () => {
   return (
     <div className={styles.header__wrapper_options}>
       <LanguageSelector />
-      <Button isRounded={true} onClick={() => dispatch(openPopup())}>
+      <Button
+        isRounded={true}
+        onClick={() => dispatch(openPopup())}
+        ariaLabel={t("button")}
+      >
         {t("button")}
       </Button>
     </div>

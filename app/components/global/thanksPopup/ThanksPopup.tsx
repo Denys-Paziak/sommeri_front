@@ -39,6 +39,7 @@ const ThanksPopup = () => {
           type="button"
           className={styles.thanks__wrapper_close}
           onClick={() => dispatch(closeThanksPopup())}
+          aria-label="close thanks popup"
         >
           <svg
             width="13"

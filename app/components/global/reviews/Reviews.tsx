@@ -22,7 +22,7 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track}>
           {reviews &&
-            [...reviews, ...reviews].map((review, index) => (
+            [...reviews].map((review, index) => (
               <div
                 key={index + Date.now()}
                 className={styles.reviews__track_item}
@@ -53,7 +53,7 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track_right}>
           {reviews &&
-            [...reviews, ...reviews].map((review, index) => (
+            [...reviews].map((review, index) => (
               <div
                 key={index + Date.now()}
                 className={styles.reviews__track_item}

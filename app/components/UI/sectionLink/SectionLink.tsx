@@ -2,6 +2,7 @@
 
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import styles from "./SectionLink.module.css";
+import Link from "next/link";
 
 interface SectionLinkProps {
   link: string;
@@ -11,12 +12,16 @@ interface SectionLinkProps {
 const SectionLink = ({ link, name }: SectionLinkProps) => {
   return (
     <li className={styles.section__list_item}>
-      <a
-        onClick={() => handleScroll(link)}
+      <Link
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          handleScroll(link);
+        }}
         className={styles.section__item_link}
       >
         {name}
-      </a>
+      </Link>
     </li>
   );
 };

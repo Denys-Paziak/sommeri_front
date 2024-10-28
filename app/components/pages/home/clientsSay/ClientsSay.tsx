@@ -28,8 +28,6 @@ const ClientsSay = ({ reviews }: { reviews: Review[] }) => {
       <AnimatedWrapper type="fade-up" duration={1.4}>
         <Reviews reviews={reviews} />
       </AnimatedWrapper>
-
-      <div className={styles.client__say_shape}></div>
     </SectionWrapper>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./Hero.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 import Button from "@/app/components/UI/button/Button";
@@ -11,12 +11,26 @@ import {
 } from "react-parallax-mouse";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
-
   const t = useTranslations("home.hero");
   const svgRef = useRef<SVGSVGElement | null>(null);
+
+  const startLineAnim = useCallback(
+    (line: SVGPathElement, delay: number) => {
+      gsap.set(line, { strokeDashoffset: 20000 });
+      gsap.to(line, {
+        duration: isMobile ? 80 : 50, // Збільшення тривалості для мобільних
+        strokeDashoffset: 4000,
+        ease: "none",
+        repeat: -1,
+        delay: delay,
+      });
+    },
+    [isMobile]
+  );
 
   useEffect(() => {
     const checkMobile = () => {
@@ -45,18 +59,7 @@ const Hero = () => {
     }
 
     return () => window.removeEventListener("resize", checkMobile);
-  }, [isMobile]);
-
-  function startLineAnim(line: SVGPathElement, delay: number) {
-    gsap.set(line, { strokeDashoffset: 20000 });
-    gsap.to(line, {
-      duration: isMobile ? 80 : 50, // Збільшення тривалості для мобільних
-      strokeDashoffset: 4000,
-      ease: "none",
-      repeat: -1,
-      delay: delay,
-    });
-  }
+  }, [isMobile, startLineAnim]);
 
   return (
     <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>
@@ -77,12 +80,14 @@ const Hero = () => {
                 isRounded={true}
                 type={"button"}
                 onClick={() => handleScroll("contactUs")}
+                ariaLabel={t("primaryButton")}
               >
                 {t("primaryButton")}
               </Button>
               <SecondaryButton
                 type={"button"}
                 onClick={() => handleScroll("portfolio")}
+                ariaLabel={t("secondaryButton")}
               >
                 {t("secondaryButton")}
               </SecondaryButton>
@@ -464,7 +469,9 @@ const Hero = () => {
             >
               <div className={styles.hero__wrapper_bg}>
                 <MouseParallaxChild factorX={0.3} factorY={0.5}>
-                  <img
+                  <Image
+                    width={100}
+                    height={50}
                     src="../../images/code-icon.svg"
                     alt="code icon"
                     className={styles.hero__code_icon}

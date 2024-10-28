@@ -8,15 +8,23 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   isRounded: boolean;
+  ariaLabel: string;
 }
 
-const Button: FC<ButtonProps> = ({ children, type, onClick, isRounded }) => {
+const Button: FC<ButtonProps> = ({
+  children,
+  type,
+  onClick,
+  isRounded,
+  ariaLabel,
+}) => {
   return (
     <div>
       <button
         className={`${styles.button} ${isRounded ? `${styles.rounded}` : ""}`}
         onClick={onClick}
         type={type}
+        aria-label={ariaLabel}
       >
         {children}
       </button>

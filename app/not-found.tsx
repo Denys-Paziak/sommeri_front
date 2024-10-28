@@ -25,11 +25,15 @@ export default function NotFound() {
                 <div className={styles.not__content_info}>
                   <TitleWrapper>Page not found</TitleWrapper>
                   <p className={styles.not__found_text}>
-                    This page doesn't exist or was removed! We suggest you back
+                    This page does not exist or was removed! We suggest you back
                     to home
                   </p>
                 </div>
-                <Button isRounded={true} type={"button"}>
+                <Button
+                  isRounded={true}
+                  type={"button"}
+                  ariaLabel={"Back to home"}
+                >
                   Back to home
                 </Button>
               </div>
@@ -40,7 +44,7 @@ export default function NotFound() {
               width={2000}
               height={880}
               className={styles.not__vector_img}
-              src="/images/404-bg.png"
+              src="/images/404-bg.avif"
               alt="404 background img"
             />
           </div>

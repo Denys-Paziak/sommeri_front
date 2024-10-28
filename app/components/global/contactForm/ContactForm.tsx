@@ -6,7 +6,12 @@ import Select from "react-select";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { isValidPhoneNumber, CountryCode } from "libphonenumber-js";
-import { PhoneInput, getActiveFormattingMask } from "react-international-phone";
+import {
+  PhoneInput,
+  getActiveFormattingMask,
+  defaultCountries,
+  parseCountry,
+} from "react-international-phone";
 import axios from "axios";
 import "react-international-phone/style.css";
 
@@ -33,6 +38,32 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const t = useTranslations("contactForm");
   const [isClient, setIsClient] = useState(false);
+
+  const countries = defaultCountries.filter((country) => {
+    const { iso2 } = parseCountry(country);
+    return [
+      "us", // United States
+      "ua", // Ukraine
+      "gb", // United Kingdom
+      "pl", // Poland
+      "de", // Germany
+      "ch", // Switzerland
+      "at", // Austria
+      "it", // Italy
+      "be", // Belgium
+      "fr", // France
+      "es", // Spain
+      "no", // Norway
+      "nl", // Netherlands
+      "se", // Sweden
+      "fi", // Finland
+      "cz", // Czechia
+      "il", // Israel
+      "ca", // Canada
+      "tr", // Turkey
+      "pt", // Portugal
+    ].includes(iso2);
+  });
 
   const {
     register,
@@ -155,7 +186,9 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
+            <label htmlFor="name"></label>
             <input
+              id="name"
               type="text"
               className={styles.contact__block_input}
               placeholder={t("input1")}
@@ -184,7 +217,9 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
+            <label htmlFor="email"></label>
             <input
+              id="email"
               type="email"
               className={styles.contact__block_input}
               placeholder={t("input2")}
@@ -225,6 +260,7 @@ const ContactForm = () => {
                   value={phone}
                   defaultCountry={userCountryCode}
                   placeholder={"099-000-00-00"}
+                  countries={countries}
                   onChange={(value, { country }) => {
                     setPhone(value);
                     setValue("phone", value);
@@ -253,32 +289,6 @@ const ContactForm = () => {
                 />
               )}
             />
-            {/* <Controller
-              name="phone"
-              control={control}
-              rules={{
-                required: isSubmitted,
-                minLength: {
-                  value: 10,
-                  message: "",
-                },
-              }}
-              render={({ field }) => (
-                <PhoneInput
-                  {...field}
-                  // enableSearch={true}
-                  placeholder={"099-000-00-00"}
-                  inputClass={"contact__block_input"}
-                  buttonClass={"contact__block_lang"}
-                  country={userCountryCode}
-                  regions={"europe"}
-                  inputProps={{
-                    required: true,
-                    autoFocus: false,
-                  }}
-                />
-              )}
-            /> */}
           </div>
 
           {/* Service Select */}
@@ -300,6 +310,7 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
+            <label htmlFor="service"></label>
             {isClient && (
               <Controller
                 name="service"
@@ -308,6 +319,7 @@ const ContactForm = () => {
                 render={({ field }) => (
                   <Select
                     {...field}
+                    id="service"
                     options={services}
                     placeholder={t("input3")}
                     styles={{
@@ -359,7 +371,9 @@ const ContactForm = () => {
 
           {/* Textarea for message */}
           <div className={styles.contact__fields_textarea}>
+            <label htmlFor="textarea"></label>
             <textarea
+              id="textarea"
               className={styles.contact__block_textarea}
               placeholder={t("input4")}
               {...register("message", {
@@ -385,8 +399,9 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
+            <label htmlFor="file"></label>
             <div {...getRootProps()}>
-              <input {...getInputProps()} />
+              <input {...getInputProps()} id="file" />
               {fileName ? (
                 <p className={styles.contact__block_file}>{fileName}</p>
               ) : isDragActive ? (
@@ -398,7 +413,6 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* agree privacy policy */}
         <div className={styles.contact__form_agree}>
           <p className={styles.contact__block_agree}>
             {t("agree1")}{" "}
@@ -412,7 +426,7 @@ const ContactForm = () => {
         </div>
 
         <div className={styles.contact__form_action}>
-          <Button isRounded={false} type={"submit"}>
+          <Button isRounded={false} type={"submit"} ariaLabel={t("button")}>
             {" "}
             {t("button")}
           </Button>

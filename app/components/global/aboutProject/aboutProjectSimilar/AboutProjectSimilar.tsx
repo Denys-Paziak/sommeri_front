@@ -19,7 +19,7 @@ const AboutProjectSimilar = ({ url }: { url: string }) => {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   return (
     <>

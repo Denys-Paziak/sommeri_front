@@ -95,9 +95,9 @@ const Footer = () => {
               </div>
               <div className={styles.footer__main_info}>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>
+                  <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle1")}
-                  </h4>
+                  </p>
                   <ul className={styles.footer__block_menu}>
                     {NavbarItems.map((NavbarItem, index) => (
                       <SectionLink
@@ -109,9 +109,9 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>
+                  <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle2")}
-                  </h4>
+                  </p>
                   <ul className={styles.footer__block_security}>
                     <li className={styles.footer__list_item}>
                       <Link
@@ -140,14 +140,15 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className={styles.footer__info_block}>
-                  <h4 className={styles.footer__block_subtitle}>
+                  <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle3")}
-                  </h4>
+                  </p>
                   <div className={styles.footer__block_socials}>
                     <Link
                       href={linkOnTelegram}
                       target="_blank"
                       className={styles.footer__social_item}
+                      aria-label="Visit our Telegram"
                     >
                       <svg
                         width="28"
@@ -177,6 +178,7 @@ const Footer = () => {
                       href={"/"}
                       target="_blank"
                       className={styles.footer__social_item}
+                      aria-label="Visit our Viber"
                     >
                       <svg
                         width="28"
@@ -209,6 +211,7 @@ const Footer = () => {
                       href={"/"}
                       target="_blank"
                       className={styles.footer__social_item}
+                      aria-label="Visit our WhatsApp"
                     >
                       <svg
                         width="28"
@@ -249,6 +252,7 @@ const Footer = () => {
                       href={"/"}
                       target="_blank"
                       className={styles.footer__social_item}
+                      aria-label="Visit our Facebook page"
                     >
                       <svg
                         width="28"
@@ -278,6 +282,7 @@ const Footer = () => {
                       href={linkOnLinkedin}
                       target="_blank"
                       className={styles.footer__social_item}
+                      aria-label="Visit our LinkedIn page"
                     >
                       <svg
                         width="28"

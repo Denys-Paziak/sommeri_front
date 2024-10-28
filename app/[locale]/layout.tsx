@@ -34,14 +34,6 @@ export const metadata: Metadata = {
       "Sommeri - Розробка Сайтів Під Ключ | Сайт Візитка, Мобільний Додаток, SEO та Google Ads в Україні",
     description:
       "Веб-студія Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, розробка мобільних додатків, веб-дизайн, SEO оптимізація та Google Ads.",
-    images: [
-      {
-        url: "https://sommeri.com/path-to-your-image.jpg",
-        width: 800,
-        height: 600,
-        alt: "Sommeri - Веб-Студія",
-      },
-    ],
   },
 };
 
@@ -54,14 +46,23 @@ export default async function RootLayout({
 }>) {
   const currentLocale: any = locale || "uk";
   const messages = await getMessages(currentLocale);
+  const canonicalUrl = `https://sommeri.com/${locale}`;
 
   return (
     <html lang={currentLocale}>
       <head>
-        <link rel="canonical" href="https://sommeri.com" />
+        <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
+        <link
+          rel="preload"
+          href="https://sommeri.com/_next/static/css/09367faf19133558.css"
+        />
+        <link
+          rel="preload"
+          href="https://sommeri.com/_next/static/css/93799b16dbe7cf26.css"
+        />
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>

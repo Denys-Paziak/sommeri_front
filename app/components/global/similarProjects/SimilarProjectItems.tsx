@@ -43,9 +43,9 @@ const SimilarProjectItems = ({ projects }: any) => {
           modules={[Navigation]}
           className="projectsSwiper"
         >
-          {projects.map((project: ProjectInterface) => {
+          {projects.map((project: ProjectInterface, index: number) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index + Date.now()}>
                 <Link key={project.documentId} href={`/project/${project.url}`}>
                   {/* <div className={styles.similar__main_item}>
                     <div className={styles.similar__item_banner}>
@@ -112,6 +112,7 @@ const SimilarProjectItems = ({ projects }: any) => {
                       <button
                         className={styles.project__banner_view}
                         type="button"
+                        aria-label="view project"
                       >
                         <span className={styles.project__view_text}>View</span>
                       </button>

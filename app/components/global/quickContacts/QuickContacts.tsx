@@ -1,6 +1,12 @@
 import { Link } from "@/navigation";
 import styles from "./QuickContacts.module.css";
 import { useTranslations } from "next-intl";
+import {
+  linkOnTelegram,
+  linkOnViber,
+  linkOnWhatsApp,
+  phoneNumber,
+} from "@/configSommeriData";
 
 const QuickContacts = () => {
   const t = useTranslations("quickContacts");
@@ -11,8 +17,9 @@ const QuickContacts = () => {
         <div className={styles.quick__wrapper_top}>
           <Link
             target="_blank"
-            href={"https://t.me/sommeri_digital"}
+            href={linkOnWhatsApp}
             className={`${styles.quick__top_circle} ${styles.whatsapp}`}
+            aria-label="Visit our WhatsApp"
           >
             <svg
               width="21"
@@ -29,8 +36,9 @@ const QuickContacts = () => {
           </Link>
           <Link
             target="_blank"
-            href={"https://t.me/sommeri_digital"}
+            href={linkOnTelegram}
             className={`${styles.quick__top_circle} ${styles.telegram}`}
+            aria-label="Visit our Telegram"
           >
             <svg
               width="20"
@@ -47,8 +55,9 @@ const QuickContacts = () => {
           </Link>
           <Link
             target="_blank"
-            href={"https://t.me/sommeri_digital"}
+            href={linkOnViber}
             className={`${styles.quick__top_circle} ${styles.viber}`}
+            aria-label="Visit our Viber"
           >
             <svg
               width="20"
@@ -131,8 +140,9 @@ const QuickContacts = () => {
           </div>
           <Link
             target="_blank"
-            href={"phone:0974421770"}
+            href={phoneNumber}
             className={`${styles.quick__inner_call} ${styles.shake}`}
+            aria-label="Call to us"
           >
             <svg
               width="20"
