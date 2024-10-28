@@ -7,39 +7,39 @@ import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
 import Faq from "@/app/components/pages/home/faq/Faq";
 import Contact from "@/app/components/pages/home/contact/Contact";
 import {
-  getCategories,
-  getFAQ,
-  getProjects,
-  getReviews,
-  getTechnologiesWay,
+    getCategories,
+    getFAQ,
+    getProjects,
+    getReviews,
+    getTechnologiesWay,
 } from "@/app/utils/server/server";
 import Technologies from "@/app/components/pages/home/technologies/Technologies";
 import Loader from "@/app/components/global/loader/Loader";
 
 const HomePage = async ({ locale }: { locale: string }) => {
-  let posts = await getProjects(locale);
-  let categories = await getCategories(locale);
-  let faqItems = await getFAQ(locale);
-  let reviews = await getReviews(locale);
-  let technologies = await getTechnologiesWay(locale);
+    let posts = await getProjects(locale);
+    let categories = await getCategories(locale);
+    let faqItems = await getFAQ(locale);
+    let reviews = await getReviews(locale);
+    let technologies = await getTechnologiesWay(locale);
 
-  if (!posts && !categories && !technologies && !faqItems && !reviews) {
-    return <Loader />;
-  }
+    if (!posts && !categories && !technologies && !faqItems && !reviews) {
+        return <Loader />;
+    }
 
-  return (
-    <>
-      <Hero />
-      <About />
-      <WhyUs />
-      <Services />
-      <Technologies technologies={technologies} />
-      <OurProjects posts={posts} categories={categories} />
-      <ClientsSay reviews={reviews} />
-      <Faq faqItems={faqItems} />
-      <Contact />
-    </>
-  );
+    return (
+        <>
+            <Hero />
+            <About />
+            <WhyUs />
+            <Services />
+            <Technologies technologies={technologies} />
+            <OurProjects posts={posts} categories={categories} />
+            <ClientsSay reviews={reviews} />
+            <Faq faqItems={faqItems} />
+            <Contact />
+        </>
+    );
 };
 
 export default HomePage;
