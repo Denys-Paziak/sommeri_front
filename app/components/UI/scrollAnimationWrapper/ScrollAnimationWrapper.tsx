@@ -24,23 +24,25 @@ const AnimatedWrapper: React.FC<AnimatedWrapperProps> = ({
     children,
 }) => {
     const animatedRef = useRef(null);
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // Initialize to true
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                setIsMobile(window.innerWidth <= 768);
+            };
 
-        handleResize();
-        window.addEventListener("resize", handleResize);
+            handleResize();
+            window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+            return () => {
+                window.removeEventListener("resize", handleResize);
+            };
+        }
     }, []);
 
     useEffect(() => {
-        if (isMobile) return;
+        if (isMobile) return; // Do not run animations on mobile
 
         const element = animatedRef.current;
 
