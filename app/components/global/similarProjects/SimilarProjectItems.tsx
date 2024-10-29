@@ -11,6 +11,7 @@ import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import AnimatedWrapper from "../../UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 const SimilarProjectItems = ({ projects }: any) => {
   const swiper = useSwiper();
@@ -46,92 +47,58 @@ const SimilarProjectItems = ({ projects }: any) => {
           {projects.map((project: ProjectInterface, index: number) => {
             return (
               <SwiperSlide key={index + Date.now()}>
-                <Link key={project.documentId} href={`/project/${project.url}`}>
-                  {/* <div className={styles.similar__main_item}>
-                    <div className={styles.similar__item_banner}>
-                      <ImageServer link={project.Preview.url} />
-                    </div>
-                    <div className={styles.similar__item_info}>
-                      <div className={styles.similar__info_inner}>
-                        <h3 className={styles.similar__inner_name}>
-                          {project.Name}
-                        </h3>
+                <AnimatedWrapper type="fade-up" duration={1.2}>
+                  <Link key={project.documentId} href={`/project/${project.url}`}>
+                    <div className={styles.project__portfolio_item}>
+                      <div className={styles.project__item_banner}>
+                        <ImageServer link={project.Preview.url} />
+                        <div className={styles.project__banner_inner}>
+                          <h4 className={styles.project__inner_name}>
+                            {project.Name}
+                          </h4>
+                          <div className={styles.project__inner_visit}>
+                            <svg
+                              width="12"
+                              height="13"
+                              viewBox="0 0 12 13"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
+                                stroke="white"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
+                        </div>
                         <button
-                          className={styles.similar__inner_visit}
+                          className={styles.project__banner_view}
                           type="button"
+                          aria-label="view project"
                         >
-                          <svg
-                            width="12"
-                            height="13"
-                            viewBox="0 0 12 13"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
-                              stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </svg>
+                          <span className={styles.project__view_text}>View</span>
                         </button>
                       </div>
-                      <div className={styles.similar__info_type}>
-                        <p className={styles.similar__type_text}>
-                          {project.Category && project.Category.Name}
+                      <div className={styles.project__item_info}>
+                        <p className={styles.project__info_category}>
+                          {project.Category.Name}
+                        </p>
+                        <p className={styles.project__info_categories}>
+                          <span
+                            key={project.technologies[0].Name}
+                            className={styles.project__categories_item}
+                          >
+                            {project.technologies[0].Name}
+                          </span>
                         </p>
                       </div>
                     </div>
-                  </div> */}
-                  <div className={styles.project__portfolio_item}>
-                    <div className={styles.project__item_banner}>
-                      <ImageServer link={project.Preview.url} />
-                      <div className={styles.project__banner_inner}>
-                        <h4 className={styles.project__inner_name}>
-                          {project.Name}
-                        </h4>
-                        <div className={styles.project__inner_visit}>
-                          <svg
-                            width="12"
-                            height="13"
-                            viewBox="0 0 12 13"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
-                              stroke="white"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <button
-                        className={styles.project__banner_view}
-                        type="button"
-                        aria-label="view project"
-                      >
-                        <span className={styles.project__view_text}>View</span>
-                      </button>
-                    </div>
-                    <div className={styles.project__item_info}>
-                      <p className={styles.project__info_category}>
-                        {project.Category.Name}
-                      </p>
-                      <p className={styles.project__info_categories}>
-                        <span
-                          key={project.technologies[0].Name}
-                          className={styles.project__categories_item}
-                        >
-                          {project.technologies[0].Name}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </AnimatedWrapper>
+
               </SwiperSlide>
             );
           })}

@@ -16,18 +16,17 @@ const Services: React.FC = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // мобільний пристрій, якщо ширина <= 768px
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    checkMobile(); // Викликати при завантаженні
-    window.addEventListener("resize", checkMobile); // Відстежувати зміну розміру вікна
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener("resize", checkMobile); // Очистити обробник події при розмонтуванні
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleMouseEnter = (index: number) => {
-    if (isMobile) return; // Якщо мобільний пристрій, не виконувати анімацію
-
+    if (isMobile) return;
     const path = pathRef.current[index];
     if (path) {
       const length = path.getTotalLength();
@@ -50,7 +49,7 @@ const Services: React.FC = () => {
   };
 
   const handleMouseLeave = (index: number) => {
-    if (isMobile) return; // Якщо мобільний пристрій, не виконувати анімацію
+    if (isMobile) return;
 
     const path = pathRef.current[index];
     if (path) {
