@@ -63,7 +63,6 @@ const About = () => {
         </div>
       </div>
       <div className={styles.vector}>
-        {/* <LineVector /> */}
         <DynamicLineVectorComponent />
       </div>
     </SectionWrapper>

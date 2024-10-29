@@ -55,14 +55,10 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
-        <link
-          rel="preload"
-          href="https://sommeri.com/_next/static/css/09367faf19133558.css"
-        />
-        <link
-          rel="preload"
-          href="https://sommeri.com/_next/static/css/93799b16dbe7cf26.css"
-        />
+        {/* <link rel="preload" href="/_next/static/css/09367faf19133558.css" /> */}
+        <link rel="preload" href="/_next/static/css/93799b16dbe7cf26.css" />
+        {/* <link rel="preload" href="/_next/static/css/572f9dc87f8a03b1.css" /> */}
+        {/* <link rel="preload" href="/_next/static/css/ca539c6bbad8d7f4.css" /> */}
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>

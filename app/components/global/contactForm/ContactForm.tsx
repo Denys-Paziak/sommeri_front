@@ -47,7 +47,6 @@ const ContactForm = () => {
       "gb", // United Kingdom
       "pl", // Poland
       "de", // Germany
-      "ch", // Switzerland
       "at", // Austria
       "it", // Italy
       "be", // Belgium
@@ -55,13 +54,10 @@ const ContactForm = () => {
       "es", // Spain
       "no", // Norway
       "nl", // Netherlands
-      "se", // Sweden
-      "fi", // Finland
       "cz", // Czechia
       "il", // Israel
       "ca", // Canada
       "tr", // Turkey
-      "pt", // Portugal
     ].includes(iso2);
   });
 
@@ -310,7 +306,7 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
-            <label htmlFor="service"></label>
+            <label htmlFor="react-select-2-input"></label>
             {isClient && (
               <Controller
                 name="service"
@@ -319,7 +315,6 @@ const ContactForm = () => {
                 render={({ field }) => (
                   <Select
                     {...field}
-                    id="service"
                     options={services}
                     placeholder={t("input3")}
                     styles={{
