@@ -12,7 +12,6 @@ const WhyUs = () => {
     <SectionWrapper sectionId="whyUs">
       <div className="container">
         <div className={styles.why__us_wrapper}>
-          {/* Заголовок з анімацією */}
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <div className={styles.why__us_heading}>
               <TitleWrapper>{t("title")}</TitleWrapper>
@@ -22,12 +21,7 @@ const WhyUs = () => {
 
           <div className={styles.why__us_main}>
             {[...Array(6)].map((_, index) => (
-              <AnimatedWrapper
-                key={index}
-                type="fade-up"
-                duration={1.4}
-                delay={index * 0.2}
-              >
+              <AnimatedWrapper key={index} type="fade-up" duration={1.4}>
                 <div className={styles.why__main_block}>
                   <div className={styles.why__block_icon}>
                     <Image
@@ -55,7 +49,6 @@ const WhyUs = () => {
         </div>
       </div>
 
-      {/* Нижній вектор з анімацією */}
       <AnimatedWrapper type="fade-up" duration={1.6}>
         <div className={styles.why__us_vector}>
           <Image

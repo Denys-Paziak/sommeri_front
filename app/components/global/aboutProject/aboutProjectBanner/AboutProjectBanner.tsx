@@ -6,11 +6,9 @@ import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAn
 const AboutProjectBanner = ({ project }: { project: ProjectInterface }) => {
   return (
     <section className={styles.project__banner_section}>
-      <AnimatedWrapper type="fade-up" duration={1.2} delay={1.6}>
-        <div className={styles.project__banner_wrapper}>
-          <div className={styles.project__banner_image}>
-            <ImageServer link={project.Hero_image && project.Hero_image.url} />
-          </div>
+      <AnimatedWrapper type="fade-up" duration={1.2} className={styles.project__banner_wrapper}>
+        <div className={styles.project__banner_image}>
+          <ImageServer link={project.Hero_image && project.Hero_image.url} />
         </div>
       </AnimatedWrapper>
     </section>
