@@ -13,7 +13,6 @@ const WhyUs = () => {
       <div className="container">
         <div className={styles.why__us_wrapper}>
 
-          {/* Заголовок з анімацією */}
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <div className={styles.why__us_heading}>
               <TitleWrapper>{t("title")}</TitleWrapper>
@@ -27,7 +26,6 @@ const WhyUs = () => {
                 key={index}
                 type="fade-up"
                 duration={1.4}
-                delay={index * 0.2}
               >
                 <div className={styles.why__main_block}>
                   <div className={styles.why__block_icon}>
@@ -55,7 +53,6 @@ const WhyUs = () => {
         </div>
       </div>
 
-      {/* Нижній вектор з анімацією */}
       <AnimatedWrapper type="fade-up" duration={1.6}>
         <div className={styles.why__us_vector}>
           <Image

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./AboutProjectTopBar.module.css";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { useTranslations } from "next-intl";
@@ -17,14 +16,14 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
               <h2 className={styles.project__top_name}>{project.Name}</h2>
             </AnimatedWrapper>
 
-            <AnimatedWrapper type="fade-up" duration={1.2} delay={0.3}>
+            <AnimatedWrapper type="fade-up" duration={1.2}>
               <p className={styles.project__top_type}>
                 {project.Category && project.Category.Name}
               </p>
             </AnimatedWrapper>
           </div>
 
-          <AnimatedWrapper type="fade-up" duration={1.2} delay={0.6}>
+          <AnimatedWrapper type="fade-up" duration={1.2}>
             <button
               aria-label="visit website"
               className={styles.project__top_visit}

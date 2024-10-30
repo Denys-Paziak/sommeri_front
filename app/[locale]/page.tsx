@@ -1,5 +1,43 @@
-import HomePage from "@/app/components/pages/home/HomePage";
+import Hero from "@/app/components/pages/home/hero/Hero";
+import Services from "@/app/components/pages/home/services/Services";
+import About from "@/app/components/pages/home/about/About";
+import OurProjects from "@/app/components/pages/home/ourProjects/OurProjects";
+import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
+import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
+import Faq from "@/app/components/pages/home/faq/Faq";
+import Contact from "@/app/components/pages/home/contact/Contact";
+import {
+  getCategories,
+  getFAQ,
+  getProjects,
+  getReviews,
+  getTechnologiesWay,
+} from "@/app/utils/server/server";
+import Technologies from "@/app/components/pages/home/technologies/Technologies";
+import Loader from "@/app/components/global/loader/Loader";
 
-export default function Home({ params }: { params: { locale: string } }) {
-  return <HomePage locale={params.locale} />;
+
+
+export default async function Home({ params }: { params: { locale: string } }) {
+  let posts = await getProjects(params.locale);
+  let categories = await getCategories(params.locale);
+  let faqItems = await getFAQ(params.locale);
+  let reviews = await getReviews(params.locale);
+  let technologies = await getTechnologiesWay(params.locale);
+
+  if (!posts && !categories && !technologies && !faqItems && !reviews) {
+    return <Loader />;
+  }
+
+  return <>
+    <Hero />
+    <About />
+    <WhyUs />
+    <Services />
+    <Technologies technologies={technologies} />
+    <OurProjects posts={posts} categories={categories} />
+    <ClientsSay reviews={reviews} />
+    <Faq faqItems={faqItems} />
+    <Contact />
+  </>
 }
