@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   description:
     "Веб-студія Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, розробка мобільних додатків, веб-дизайн, SEO оптимізація та Google Ads",
 
-  //  Facebook Meta Tags
   openGraph: {
     type: "website",
     url: "https://sommeri.com",
@@ -37,15 +36,14 @@ export const metadata: Metadata = {
     images: "",
   },
 
-  // Twitter Meta Tags
   twitter: {
     card: "summary_large_image",
-    site: "@yourTwitterHandle", // замініть на ваш @username у Twitter
+    site: "@yourTwitterHandle",
     title:
       "Sommeri - Розробка Сайтів Під Ключ | Сайт Візитка, Мобільний Додаток, SEO та Google Ads в Україні",
     description:
       "Веб-студія Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, розробка мобільних додатків, веб-дизайн, SEO оптимізація та Google Ads.",
-    images: "", // Додайте URL до зображення, якщо є
+    images: "",
   },
 };
 
