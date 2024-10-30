@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const backHost = "";
+export const backHost = "https://sommeri.com";
 
 export const getProjects = async (lang) => {
   try {
