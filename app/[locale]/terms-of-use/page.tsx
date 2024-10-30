@@ -1,10 +1,15 @@
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
 
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import styles from "./TermsOfUse.module.css";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import { infoEmail } from "@/configSommeriData";
 import { Link } from "@/navigation";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Sommeri",
+};
 
 const TermsOfUse = () => {
   const t = useTranslations("termsOfUse");

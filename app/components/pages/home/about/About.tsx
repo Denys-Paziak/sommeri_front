@@ -3,13 +3,13 @@
 import Image from "next/image";
 import styles from "./About.module.css";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import LineVector from "@/app/components/global/lineVector/LineVector";
 import React from "react";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import dynamic from "next/dynamic";
+import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 
 const DynamicLineVectorComponent = dynamic(
   () => import("@/app/components/global/lineVector/LineVector"),
@@ -43,6 +43,7 @@ const About = () => {
                 <SecondaryButton
                   type={"button"}
                   ariaLabel={t("secondaryButton")}
+                  onClick={() => handleScroll("reviews")}
                 >
                   {t("secondaryButton")}
                 </SecondaryButton>
@@ -51,7 +52,7 @@ const About = () => {
             <div className={styles.about__main_banner}>
               <AnimatedWrapper type="fade-left" duration={1.5} delay={0.8}>
                 <Image
-                  src="/images/about-us-vector.svg"
+                  src={t("vectorLink")}
                   alt="about us vector"
                   width={500}
                   height={500}

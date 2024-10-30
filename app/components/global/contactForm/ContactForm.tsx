@@ -306,7 +306,7 @@ const ContactForm = () => {
                 fillOpacity="0.75"
               />
             </svg>
-            <label htmlFor="react-select-2-input"></label>
+            <label htmlFor="select-2-input"></label>
             {isClient && (
               <Controller
                 name="service"
@@ -317,6 +317,7 @@ const ContactForm = () => {
                     {...field}
                     options={services}
                     placeholder={t("input3")}
+                    aria-label="select-2-input"
                     styles={{
                       control: (baseStyles, state) => ({
                         ...baseStyles,

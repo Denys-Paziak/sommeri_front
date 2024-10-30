@@ -283,3 +283,15 @@
     transform: scale(0.6);
   }
 }
+
+@media (max-width: 600px) {
+  .projects__categories_list {
+    gap: 12px;
+  }
+  .projects__wrapper_main {
+    gap: 60px;
+  }
+  .mt {
+    margin-top: 0;
+  }
+}

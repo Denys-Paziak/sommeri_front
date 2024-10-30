@@ -152,7 +152,7 @@
 @media (max-width: 640px) {
   .contact__fields_block {
     padding: 10px 14px;
-    gap: 18px;
+    gap: 8px;
     height: 52px;
   }
 
