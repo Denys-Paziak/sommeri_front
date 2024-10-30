@@ -12,7 +12,6 @@ const WhyUs = () => {
     <SectionWrapper sectionId="whyUs">
       <div className="container">
         <div className={styles.why__us_wrapper}>
-
           {/* Заголовок з анімацією */}
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <div className={styles.why__us_heading}>
@@ -32,6 +31,7 @@ const WhyUs = () => {
                 <div className={styles.why__main_block}>
                   <div className={styles.why__block_icon}>
                     <Image
+                      fetchPriority="high"
                       width="50"
                       height="40"
                       className={styles.why__icon_item}
@@ -59,6 +59,7 @@ const WhyUs = () => {
       <AnimatedWrapper type="fade-up" duration={1.6}>
         <div className={styles.why__us_vector}>
           <Image
+            fetchPriority="high"
             width={2000}
             height={740}
             src="/images/why-us-vector.svg"

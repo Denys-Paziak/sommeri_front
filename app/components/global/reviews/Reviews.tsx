@@ -30,6 +30,7 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
                 <div className={styles.reviews__item_header}>
                   <div className={styles.reviews__header_inner}>
                     <Image
+                      fetchPriority="high"
                       src={backHost + review.image.url}
                       alt="review logo"
                       width={24}
@@ -61,6 +62,7 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
                 <div className={styles.reviews__item_header}>
                   <div className={styles.reviews__header_inner}>
                     <Image
+                      fetchPriority="high"
                       src={backHost + review.image.url}
                       alt="review logo"
                       width={24}

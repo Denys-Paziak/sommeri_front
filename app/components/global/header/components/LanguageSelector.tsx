@@ -70,6 +70,7 @@ const LanguageSelector: React.FC = () => {
                 <Image
                   width={20}
                   height={12}
+                  fetchPriority="high"
                   src={`/images/${
                     language.code === "uk" ? "ua-flag" : "uk-flag"
                   }.svg`}

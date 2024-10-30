@@ -10,6 +10,7 @@ const HeroBrand: FC<Props> = ({ brand }) => {
   return (
     <li className={styles.hero__brands_item}>
       <Image
+        fetchPriority="high"
         width={100}
         height={40}
         src={`../../images/${brand.image_path}.svg`}

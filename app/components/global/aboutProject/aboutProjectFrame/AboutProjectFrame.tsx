@@ -16,7 +16,6 @@ const AboutProjectFrame = ({ project }: { project: ProjectInterface }) => {
             </div>
           )}
         </AnimatedWrapper>
-
       </div>
     </section>
   );

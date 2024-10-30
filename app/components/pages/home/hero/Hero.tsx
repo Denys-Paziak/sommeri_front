@@ -470,6 +470,7 @@ const Hero = () => {
               <div className={styles.hero__wrapper_bg}>
                 <MouseParallaxChild factorX={0.3} factorY={0.5}>
                   <Image
+                    fetchPriority="high"
                     width={100}
                     height={50}
                     src="../../images/code-icon.svg"

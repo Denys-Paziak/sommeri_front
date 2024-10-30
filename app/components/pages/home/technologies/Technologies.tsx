@@ -48,6 +48,7 @@ const Box = ({ data }: { data: ITechnologies }) => {
               className={styles.technologies__list_item}
             >
               <Image
+                fetchPriority="high"
                 src={backHost + technology.image.url}
                 width={50}
                 height={50}

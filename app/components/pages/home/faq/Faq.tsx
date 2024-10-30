@@ -39,8 +39,9 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                   <div
                     onClick={() => handleClick(index)}
                     key={index}
-                    className={`${styles.faq__main_item} ${activeIndex === index ? styles.active : ""
-                      }`}
+                    className={`${styles.faq__main_item} ${
+                      activeIndex === index ? styles.active : ""
+                    }`}
                   >
                     <div className={styles.faq__item_inner}>
                       <h3 className={styles.faq__inner_title}>{item.title}</h3>
@@ -61,7 +62,7 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                           />
                         </svg>
                       </span>
-                    </div >
+                    </div>
                     <div className={styles.faq__item_content}>
                       <p className={styles.faq__content_text}>{item.content}</p>
                     </div>
@@ -70,6 +71,7 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
             </AnimatedWrapper>
             <div className={styles.faq__main_grid}>
               <Image
+                fetchPriority="high"
                 width="1036"
                 height="580"
                 src="/images/faq-grid.svg"
