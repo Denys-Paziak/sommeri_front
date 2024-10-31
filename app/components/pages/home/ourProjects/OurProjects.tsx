@@ -142,17 +142,21 @@ export default function Page({ posts, categories }: iProps) {
                         </button>
                       </div>
                       <div className={styles.project__item_info}>
-                        <p className={styles.project__info_category}>
+
+                        {project.Category && <p className={styles.project__info_category}>
                           {project.Category.Name}
-                        </p>
-                        <p className={styles.project__info_categories}>
+                        </p>}
+
+                        {project.technologies[0] && <p className={styles.project__info_categories}>
                           <span
                             key={project.technologies[0].Name}
                             className={styles.project__categories_item}
                           >
                             {project.technologies[0].Name}
                           </span>
-                        </p>
+                        </p>}
+
+
                       </div>
                     </AnimatedWrapper>
                   </Link>
