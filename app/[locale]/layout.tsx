@@ -67,36 +67,6 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="style"
-          href="/_next/static/css/09367faf19133558.css"
-        />
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="style"
-          href="/_next/static/css/app/%5Blocale%5D/page.css?v=1730305165517"
-        />
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="style"
-          href="/_next/static/css/93799b16dbe7cf26.css"
-        />
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="style"
-          href="/_next/static/css/572f9dc87f8a03b1.css"
-        />
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="style"
-          href="/_next/static/css/ca539c6bbad8d7f4.css"
-        />
       </head>
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
