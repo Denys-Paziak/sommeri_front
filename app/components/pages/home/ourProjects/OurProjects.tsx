@@ -12,7 +12,7 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
-import Button from "@/app/components/UI/button/Button";
+import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 
 interface iProps {
   posts: ProjectInterface[];
@@ -34,9 +34,9 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-        (project: ProjectInterface) =>
-          project.Category.Name === activeCategory
-      );
+          (project: ProjectInterface) =>
+            project.Category.Name === activeCategory
+        );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
@@ -57,8 +57,9 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
-                      }`}
+                    className={`${styles.projects__category_item} ${
+                      activeCategory === "All" && styles.active
+                    }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -67,8 +68,9 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
-                        }`}
+                      className={`${styles.projects__category_item} ${
+                        activeCategory === category.Name && styles.active
+                      }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}
@@ -142,21 +144,22 @@ export default function Page({ posts, categories }: iProps) {
                         </button>
                       </div>
                       <div className={styles.project__item_info}>
+                        {project.Category && (
+                          <p className={styles.project__info_category}>
+                            {project.Category.Name}
+                          </p>
+                        )}
 
-                        {project.Category && <p className={styles.project__info_category}>
-                          {project.Category.Name}
-                        </p>}
-
-                        {project.technologies[0] && <p className={styles.project__info_categories}>
-                          <span
-                            key={project.technologies[0].Name}
-                            className={styles.project__categories_item}
-                          >
-                            {project.technologies[0].Name}
-                          </span>
-                        </p>}
-
-
+                        {project.technologies[0] && (
+                          <p className={styles.project__info_categories}>
+                            <span
+                              key={project.technologies[0].Name}
+                              className={styles.project__categories_item}
+                            >
+                              {project.technologies[0].Name}
+                            </span>
+                          </p>
+                        )}
                       </div>
                     </AnimatedWrapper>
                   </Link>
@@ -165,7 +168,14 @@ export default function Page({ posts, categories }: iProps) {
             </MasonryGrid>
 
             {visibleProjects < filteredPosts.length && (
-              <Button isRounded={true} ariaLabel={t("button")} onClick={loadMoreProjects} > more projects </Button>
+              <div className={styles.projects__wrapper_more}>
+                <SecondaryButton
+                  ariaLabel={t("button")}
+                  onClick={loadMoreProjects}
+                >
+                  More projects
+                </SecondaryButton>
+              </div>
             )}
           </div>
         </div>

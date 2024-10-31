@@ -47,7 +47,7 @@
 
 .project__item_img {
   width: 100%;
-  height: 340px;
+  max-height: 340px;
   border-radius: 8px;
 }
 
@@ -111,18 +111,9 @@
   .project__banners_item {
     width: 100%;
   }
-
-  .project__banners_item img {
-    height: 300px;
-    object-fit: cover;
-  }
 }
 
 @media (max-width: 600px) {
-  .project__banners_item img {
-    height: 280px;
-  }
-
   .project__galery_section {
     width: 100%;
     padding-top: 40px;
@@ -131,11 +122,6 @@
 
   .project__block_subtitle {
     font-size: 26px;
-    text-align: center;
-  }
-
-  .project__block_text {
-    text-align: center;
   }
 
   .project__galery_wrapper {

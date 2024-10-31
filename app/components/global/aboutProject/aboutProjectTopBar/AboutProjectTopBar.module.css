@@ -65,11 +65,20 @@
 
   .project__top_info {
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   .project__top_wrapper {
-    flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .project__top_visit {
+    padding-top: 6px;
+  }
+
+  .project__top_name {
+    font-size: 24px;
+    line-height: 28px;
   }
 }

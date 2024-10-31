@@ -5,6 +5,11 @@
   gap: 80px;
 }
 
+.projects__wrapper_more {
+  display: flex;
+  justify-content: center;
+}
+
 .projects__wrapper_heading {
   width: 100%;
   display: flex;
