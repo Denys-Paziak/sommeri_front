@@ -12,6 +12,7 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
+import Button from "@/app/components/UI/button/Button";
 
 interface iProps {
   posts: ProjectInterface[];
@@ -20,7 +21,12 @@ interface iProps {
 
 export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [visibleProjects, setVisibleProjects] = useState<number>(6);
   const t = useTranslations("home.portfolio");
+
+  const loadMoreProjects = () => {
+    setVisibleProjects((prev) => prev + 6);
+  };
 
   let step = 1;
 
@@ -28,9 +34,9 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-          (project: ProjectInterface) =>
-            project.Category.Name === activeCategory
-        );
+        (project: ProjectInterface) =>
+          project.Category.Name === activeCategory
+      );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
@@ -51,9 +57,8 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item}  ${
-                      activeCategory === "All" && styles.active
-                    }`}
+                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
+                      }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -62,9 +67,8 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${
-                        activeCategory === category.Name && styles.active
-                      }`}
+                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
+                        }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}
@@ -75,7 +79,7 @@ export default function Page({ posts, categories }: iProps) {
             </div>
 
             <MasonryGrid>
-              {filteredPosts.map((project, index) => {
+              {filteredPosts.slice(0, visibleProjects).map((project, index) => {
                 let projectStyle;
 
                 if (index === step) {
@@ -138,23 +142,31 @@ export default function Page({ posts, categories }: iProps) {
                         </button>
                       </div>
                       <div className={styles.project__item_info}>
-                        <p className={styles.project__info_category}>
+
+                        {project.Category && <p className={styles.project__info_category}>
                           {project.Category.Name}
-                        </p>
-                        <p className={styles.project__info_categories}>
+                        </p>}
+
+                        {project.technologies[0] && <p className={styles.project__info_categories}>
                           <span
                             key={project.technologies[0].Name}
                             className={styles.project__categories_item}
                           >
                             {project.technologies[0].Name}
                           </span>
-                        </p>
+                        </p>}
+
+
                       </div>
                     </AnimatedWrapper>
                   </Link>
                 );
               })}
             </MasonryGrid>
+
+            {visibleProjects < filteredPosts.length && (
+              <Button isRounded={true} ariaLabel={t("button")} onClick={loadMoreProjects} > more projects </Button>
+            )}
           </div>
         </div>
       </div>
