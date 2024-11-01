@@ -1,10 +1,9 @@
 "use client";
 
-import { backHost } from "@/app/utils/server/server";
 import { Link } from "@/navigation";
 import styles from "./OurProjects.module.css";
 import MasonryGrid from "@/app/components/UI/MasonryGrid/MasonryGrid";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { CategoryInterface } from "@/app/utils/interfaces/category";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
@@ -12,8 +11,6 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import Image from "next/image";
-import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 
@@ -131,7 +128,6 @@ function Project({ project, className }: any) {
         className={styles.project__portfolio_item}
       >
         <div className={styles.project__item_banner}>
-
           <ImageServer width={500} height={500} link={project.Preview.url} />
 
           <div className={styles.project__banner_inner}>

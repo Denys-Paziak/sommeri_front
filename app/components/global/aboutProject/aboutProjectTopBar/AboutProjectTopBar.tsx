@@ -29,7 +29,7 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
               className={styles.project__top_visit}
               type="button"
             >
-              <a href={project.url ? project.url : "#"}>
+              <a target="_blank" href={project.Visit ? project.Visit : "#"}>
                 {" "}
                 <span className={styles.project__visit_text}>Visit</span>
               </a>
