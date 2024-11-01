@@ -5,6 +5,11 @@
 
 .project__banner_wrapper {
   width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.project__banner_image {
   height: 100%;
 }
 
