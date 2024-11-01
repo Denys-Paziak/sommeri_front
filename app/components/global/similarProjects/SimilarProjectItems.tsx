@@ -52,7 +52,7 @@ const SimilarProjectItems = ({ projects }: any) => {
                   >
                     <div className={styles.project__portfolio_item}>
                       <div className={styles.project__item_banner}>
-                        <ImageServer link={project.Preview.url} />
+                        <ImageServer width={500} height={500} link={project.Preview.url} />
                         <div className={styles.project__banner_inner}>
                           <h4 className={styles.project__inner_name}>
                             {project.Name}

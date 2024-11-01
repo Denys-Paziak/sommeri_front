@@ -22,7 +22,7 @@ const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
                     className={styles.project__banners_item}
                   >
                     <AnimatedWrapper type="fade-up" duration={1.2}>
-                      <ImageServer link={image.url} />
+                      <ImageServer width={2000} height={2000} link={image.url} />
                     </AnimatedWrapper>
                   </div>
 

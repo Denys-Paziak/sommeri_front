@@ -26,12 +26,12 @@ const AboutProjectMockup = ({ project }: { project: ProjectInterface }) => {
             <div className={styles.project__wrapper_inner}>
               {project.Mokup_2 && (
                 <div className={styles.project__frame_image}>
-                  <ImageServer link={project.Mokup_2 && project.Mokup_2.url} />
+                  <ImageServer width={1000} height={1000} link={project.Mokup_2 && project.Mokup_2.url} />
                 </div>
               )}
               {project.Mokup_3 && (
                 <div className={styles.project__frame_image}>
-                  <ImageServer link={project.Mokup_3 && project.Mokup_3.url} />
+                  <ImageServer width={1000} height={1000} link={project.Mokup_3 && project.Mokup_3.url} />
                 </div>
               )}
             </div>

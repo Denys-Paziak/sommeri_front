@@ -3,7 +3,6 @@ import ImageServer from "../../UI/imageServer/imageServer";
 
 import styles from "@/app/components/pages/home/ourProjects/OurProjects.module.css";
 import { useTranslations } from "next-intl";
-import { backHost } from "@/app/utils/server/server";
 
 
 export default function Project({ project, className }: any) {
