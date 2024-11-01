@@ -6,7 +6,7 @@ import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const ImageServer = ({ link }: { link: string }) => {
+const ImageServer = ({ link, width, height }: { link: string, width: number, height: number }) => {
   const [loading, setLoading] = useState(true)
 
   return (
@@ -15,8 +15,8 @@ const ImageServer = ({ link }: { link: string }) => {
       <Image
         fetchPriority="high"
         src={backHost + link}
-        width={2000}
-        height={2000}
+        width={width}
+        height={height}
         alt={"link"}
         onLoadingComplete={() => { setLoading(false) }}
       />
