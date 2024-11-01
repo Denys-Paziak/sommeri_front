@@ -1,6 +1,5 @@
 .project__galery_section {
   width: 100%;
-  padding-top: 80px;
   padding-bottom: 140px;
 }
 
@@ -116,7 +115,6 @@
 @media (max-width: 600px) {
   .project__galery_section {
     width: 100%;
-    padding-top: 40px;
     padding-bottom: 80px;
   }
 

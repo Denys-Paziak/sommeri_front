@@ -10,14 +10,16 @@ import "swiper/css/pagination";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import AnimatedWrapper from "../../UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 const SimilarProjectItems = ({ projects }: any) => {
   const swiper = useSwiper();
   const locale = useLocale();
+  const t = useTranslations("home.portfolio");
+
   return (
-    <>
+    <div className={styles.similar__main_block}>
       <div className={styles.similar__main_content}>
         <Swiper
           key={"project-slider"}
@@ -28,10 +30,6 @@ const SimilarProjectItems = ({ projects }: any) => {
             prevEl: ".arrow-left-projects",
           }}
           breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
             768: {
               slidesPerView: 1,
               spaceBetween: 20,
@@ -48,7 +46,10 @@ const SimilarProjectItems = ({ projects }: any) => {
             return (
               <SwiperSlide key={index + Date.now()}>
                 <AnimatedWrapper type="fade-up" duration={1.2}>
-                  <Link key={project.documentId} href={`/project/${project.url}`}>
+                  <Link
+                    key={project.documentId}
+                    href={`/project/${project.url}`}
+                  >
                     <div className={styles.project__portfolio_item}>
                       <div className={styles.project__item_banner}>
                         <ImageServer link={project.Preview.url} />
@@ -79,7 +80,9 @@ const SimilarProjectItems = ({ projects }: any) => {
                           type="button"
                           aria-label="view project"
                         >
-                          <span className={styles.project__view_text}>View</span>
+                          <span className={styles.project__view_text}>
+                            {t("view")}
+                          </span>
                         </button>
                       </div>
                       <div className={styles.project__item_info}>
@@ -98,7 +101,6 @@ const SimilarProjectItems = ({ projects }: any) => {
                     </div>
                   </Link>
                 </AnimatedWrapper>
-
               </SwiperSlide>
             );
           })}
@@ -141,7 +143,7 @@ const SimilarProjectItems = ({ projects }: any) => {
           />
         </svg>
       </span>
-    </>
+    </div>
   );
 };
 

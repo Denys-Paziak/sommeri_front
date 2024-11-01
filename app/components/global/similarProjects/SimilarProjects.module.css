@@ -1,3 +1,7 @@
+.similar__main_block {
+  width: 100%;
+  position: relative;
+}
 .similar__wrapper_main {
   width: 100%;
   position: relative;
@@ -146,15 +150,6 @@
   line-height: 20px;
   color: var(--black);
 }
-.project__banner_price {
-  position: absolute;
-  top: 1px;
-  right: 20px;
-  background: var(--red);
-  border-radius: 0 0 8px 8px;
-  padding: 14px;
-  transition: 0.5s;
-}
 .project__price_text {
   font-size: 14px;
   line-height: 15px;
@@ -206,4 +201,13 @@
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .arrow__slide_left {
+    left: 10px;
+  }
+  .arrow__slide_right {
+    right: 10px;
+  }
 }
