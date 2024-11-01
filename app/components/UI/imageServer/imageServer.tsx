@@ -10,8 +10,7 @@ const ImageServer = ({ link, width, height }: { link: string, width: number, hei
   const [loading, setLoading] = useState(true)
 
   return (
-    <>
-      {loading && <Skeleton />}
+    <div>
       <Image
         fetchPriority="high"
         src={backHost + link}
@@ -20,7 +19,9 @@ const ImageServer = ({ link, width, height }: { link: string, width: number, hei
         alt={"link"}
         onLoadingComplete={() => { setLoading(false) }}
       />
-    </>
+      <Skeleton />
+
+    </div>
   );
 };
 
