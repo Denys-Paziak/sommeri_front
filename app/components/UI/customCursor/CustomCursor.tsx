@@ -20,6 +20,12 @@ function CustomCursor() {
   }, []);
 
 
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.cursor = isMobile ? "auto" : "none";
+    }
+  }, [isMobile]);
+
   if (isMobile) return null;
 
   return (
