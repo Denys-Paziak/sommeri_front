@@ -21,7 +21,6 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
         <div className={styles.project__info_wrapper}>
           <div className={styles.project__wrapper_inner}>
 
-
             <AnimatedWrapper type="fade-up" duration={1.2}>
               {project.About_the_project && (
                 <div className={styles.project__inner_block}>

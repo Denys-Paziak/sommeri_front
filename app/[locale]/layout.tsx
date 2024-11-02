@@ -10,6 +10,8 @@ import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
 import ContactFormPopup from "@/app/components/global/contactFormPopup/ContactFormPopup";
 import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
 import QuickContacts from "@/app/components/global/quickContacts/QuickContacts";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -69,13 +71,15 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <Header />
-            <CustomCursor />
-            <ContactFormPopup />
-            <ThanksPopup />
-            <QuickContacts />
-            {children}
-            <Footer />
+            <SkeletonTheme baseColor={"#101010"} highlightColor={"#181818"} >
+              <Header />
+              <CustomCursor />
+              <ContactFormPopup />
+              <ThanksPopup />
+              <QuickContacts />
+              {children}
+              <Footer />
+            </SkeletonTheme>
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

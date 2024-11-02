@@ -84,3 +84,11 @@
     padding: 5px 0 5px 36px !important;
   }
 }
+
+
+
+
+.react-loading-skeleton {
+  width: 100%;
+  height: 100%;
+}

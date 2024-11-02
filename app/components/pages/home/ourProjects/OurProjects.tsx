@@ -1,6 +1,5 @@
 "use client";
 
-import { backHost } from "@/app/utils/server/server";
 import { Link } from "@/navigation";
 import styles from "./OurProjects.module.css";
 import MasonryGrid from "@/app/components/UI/MasonryGrid/MasonryGrid";
@@ -12,7 +11,9 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import ImageLoader from "@/app/components/UI/imageLoader/ImageLoader";
+import 'react-loading-skeleton/dist/skeleton.css';
+import ImageServer from "@/app/components/UI/imageServer/imageServer";
+
 
 
 interface iProps {
@@ -91,73 +92,7 @@ export default function Page({ posts, categories }: iProps) {
                 }
 
                 return (
-                  <Link
-                    key={project.documentId}
-                    className={projectStyle}
-                    href={`/project/${project.url}`}
-                  >
-                    <AnimatedWrapper
-                      type="fade-up"
-                      duration={1.2}
-                      className={styles.project__portfolio_item}
-                    >
-                      <div className={styles.project__item_banner}>
-
-
-                        <ImageLoader style={styles.project__banner_item} src={`${backHost}${project.Preview.url}`} alt="project img" />
-
-                        <div className={styles.project__banner_inner}>
-                          <h4 className={styles.project__inner_name}>
-                            {project.Name}
-                          </h4>
-                          <div className={styles.project__inner_visit}>
-                            <svg
-                              width="12"
-                              height="13"
-                              viewBox="0 0 12 13"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
-                                stroke="white"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <button
-                          className={styles.project__banner_view}
-                          type="button"
-                          aria-label="view button"
-                        >
-                          <span className={styles.project__view_text}>
-                            {t("view")}
-                          </span>
-                        </button>
-                      </div>
-                      <div className={styles.project__item_info}>
-                        {project.Category && (
-                          <p className={styles.project__info_category}>
-                            {project.Category.Name}
-                          </p>
-                        )}
-
-                        {project.technologies[0] && (
-                          <p className={styles.project__info_categories}>
-                            <span
-                              key={project.technologies[0].Name}
-                              className={styles.project__categories_item}
-                            >
-                              {project.technologies[0].Name}
-                            </span>
-                          </p>
-                        )}
-                      </div>
-                    </AnimatedWrapper>
-                  </Link>
+                  <Project key={project.documentId} project={project} className={projectStyle} />
                 );
               })}
             </MasonryGrid>
@@ -179,3 +114,78 @@ export default function Page({ posts, categories }: iProps) {
   );
 }
 
+
+function Project({ project, className }: any) {
+  const t = useTranslations("home.portfolio");
+
+  return (
+    <Link
+      key={project.documentId}
+      className={className}
+      href={`/project/${project.url}`}
+    >
+      <div
+        className={styles.project__portfolio_item}
+      >
+        <div className={styles.project__item_banner}>
+          <ImageServer width={500} height={500} link={project.Preview.url} />
+
+          <div className={styles.project__banner_inner}>
+            <h4 className={styles.project__inner_name}>
+
+              {project.Name}
+
+            </h4>
+            <div className={styles.project__inner_visit}>
+
+              <svg
+                width="12"
+                height="13"
+                viewBox="0 0 12 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.9498 1.55026L1.0503 11.4498M10.9498 1.55026L10.9498 10.0355M10.9498 1.55026L2.46451 1.55026"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <button
+            className={styles.project__banner_view}
+            type="button"
+            aria-label="view button"
+          >
+            <span className={styles.project__view_text}>
+              {t("view")}
+            </span>
+          </button>
+
+        </div>
+        <div className={styles.project__item_info}>
+          {project.Category && (
+            <p className={styles.project__info_category}>
+              {project.Category.Name}
+            </p>
+          )}
+
+          {project.technologies[0] && (
+            <p className={styles.project__info_categories}>
+              <span
+                key={project.technologies[0].Name}
+                className={styles.project__categories_item}
+              >
+                {project.technologies[0].Name}
+              </span>
+            </p>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+}

@@ -12,6 +12,7 @@ export interface ProjectInterface {
   Objectives: string;
   url: string;
   similars: ProjectInterface[];
+  Visit: string;
   technologies: {
     Name: string;
   }[];

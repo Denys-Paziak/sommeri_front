@@ -23,13 +23,14 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
             </AnimatedWrapper>
           </div>
 
-          <AnimatedWrapper type="fade-up" duration={1.2}>
+          {project.Visit && <AnimatedWrapper type="fade-up" duration={1.2}>
+
             <button
               aria-label="visit website"
               className={styles.project__top_visit}
               type="button"
             >
-              <a href={project.url ? project.url : "#"}>
+              <a target="_blank" href={project.Visit}>
                 {" "}
                 <span className={styles.project__visit_text}>Visit</span>
               </a>
@@ -51,7 +52,10 @@ const AboutProjectTopBar = ({ project }: { project: ProjectInterface }) => {
                 </svg>
               </span>
             </button>
-          </AnimatedWrapper>
+          </AnimatedWrapper>}
+
+
+
         </div>
       </div>
     </section>
