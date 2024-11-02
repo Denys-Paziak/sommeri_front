@@ -11,7 +11,6 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import "react-loading-skeleton/dist/skeleton.css";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 
 interface iProps {
