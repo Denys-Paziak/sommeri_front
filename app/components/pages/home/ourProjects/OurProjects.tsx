@@ -104,7 +104,7 @@ export default function Page({ posts, categories }: iProps) {
             {visibleProjects < filteredPosts.length && (
               <div className={styles.projects__wrapper_more}>
                 <SecondaryButton
-                  ariaLabel={t("button")}
+                  ariaLabel={t("more")}
                   onClick={loadMoreProjects}
                 >
                   {t("more")}
