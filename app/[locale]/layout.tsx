@@ -5,7 +5,6 @@ import { Montserrat } from "next/font/google";
 import ReduxProvider from "@/app/redux/ReduxProvider";
 import Header from "@/app/components/global/header/Header";
 import "../globals.css";
-import { SkeletonTheme } from "react-loading-skeleton";
 import dynamic from "next/dynamic";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -86,15 +85,13 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <SkeletonTheme baseColor={"#101010"} highlightColor={"#181818"}>
-              <Header />
-              <DynamicCustomCursor />
-              <DynamicContactFormPopup />
-              <DynamicThanksPopup />
-              <DynamicQuickContacts />
-              {children}
-              <DynamicFooter />
-            </SkeletonTheme>
+            <Header />
+            <DynamicCustomCursor />
+            <DynamicContactFormPopup />
+            <DynamicThanksPopup />
+            <DynamicQuickContacts />
+            {children}
+            <DynamicFooter />
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

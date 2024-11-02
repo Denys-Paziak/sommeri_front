@@ -2,14 +2,17 @@ import Image from "next/image";
 import { backHost } from "@/app/utils/server/server";
 
 interface ImageServerProps {
+  width: number,
+  height: number,
   link: string;
   styles?: string
 }
 
-const ImageServer = ({ link, styles }: ImageServerProps) => {
+const ImageServer = ({ width, height, link, styles }: ImageServerProps) => {
   return (
     <Image
-      fill
+      width={width}
+      height={height}
       src={backHost + link}
       alt="link"
       placeholder="blur"

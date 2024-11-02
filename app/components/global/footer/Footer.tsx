@@ -17,6 +17,7 @@ import {
 } from "@/configSommeriData";
 import { useTranslations } from "next-intl";
 import ImageServer from "../../UI/imageServer/imageServer";
+import Image from "next/image";
 
 const Footer = () => {
   const t = useTranslations();
@@ -305,7 +306,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footer__section_vector}>
-          <ImageServer link="../../images/SOMMERI.svg" />
+          <Image width={1000} height={1000} src="/images/SOMMERI.svg" alt="SOMMERI" />
         </div>
       </section>
     </footer>

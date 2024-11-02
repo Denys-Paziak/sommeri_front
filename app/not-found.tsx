@@ -15,7 +15,7 @@ export default function NotFound() {
           <div className="container">
             <div className={styles.not__found_wrapper}>
               <div className={styles.not__found_robot}>
-                <ImageServer styles={styles.not__robot_img}
+                <ImageServer width={1000} height={1000} styles={styles.not__robot_img}
                   link="/images/404-vector.svg" />
               </div>
               <div className={styles.not__found_content}>
@@ -40,6 +40,7 @@ export default function NotFound() {
           </div>
           <div className={styles.not__found_vector}>
             <ImageServer
+              width={1000} height={1000}
               styles={styles.not__vector_img}
               link="/images/404-bg.avif"
             />
