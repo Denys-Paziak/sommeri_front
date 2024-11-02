@@ -173,9 +173,12 @@
     flex-direction: column;
     gap: 10px;
     position: fixed;
-    left: 28px;
+    right: 16px;
     bottom: 76px;
     z-index: 5;
+  }
+  .quick__wrapper_inner {
+    right: 16px;
   }
   .quick__inner_call svg {
     width: 18px;

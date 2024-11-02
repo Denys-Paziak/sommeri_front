@@ -4,6 +4,7 @@ import Button from "@/app/components/UI/button/Button";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import Image from "next/image";
 import styles from "@/app/components/UI/notFound/NotFound.module.css";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -29,13 +30,15 @@ export default function NotFound() {
                     to home
                   </p>
                 </div>
-                <Button
-                  isRounded={true}
-                  type={"button"}
-                  ariaLabel={"Back to home"}
-                >
-                  Back to home
-                </Button>
+                <Link href={"/"}>
+                  <Button
+                    isRounded={true}
+                    type={"button"}
+                    ariaLabel={"Back to home"}
+                  >
+                    Back to home
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
