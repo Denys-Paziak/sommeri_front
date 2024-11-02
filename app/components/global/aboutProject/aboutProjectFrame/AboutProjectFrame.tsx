@@ -11,7 +11,7 @@ const AboutProjectFrame = ({ project }: { project: ProjectInterface }) => {
           {project.Objectives && (
             <div className={styles.project__frame_wrapper}>
               <div className={styles.project__frame_image}>
-                <ImageServer width={2000} height={2000} link={project.Mokap_1 && project.Mokap_1.url} />
+                <ImageServer link={project.Mokap_1 && project.Mokap_1.url} />
               </div>
             </div>
           )}

@@ -120,7 +120,12 @@ const ContactForm = () => {
 
     const file = acceptedFiles.length > 0 ? acceptedFiles[0] : null;
 
-    await sendMessageWithFileToTelegram(message, file);
+    await sendMessageWithFileToTelegram(
+      message,
+      file,
+      process.env.NEXT_PUBLIC_TELEGRAM_TOKEN,
+      process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
+    );
     reset();
 
     setFileName("");
@@ -133,7 +138,7 @@ const ContactForm = () => {
   const fetchUserCountry = async () => {
     try {
       const response = await axios.get(
-        "https://ipinfo.io?token=2256f517d09a51"
+        `https://ipinfo.io?token=${process.env.NEXT_PUBLIC_IP_INFO_TOKEN}`
       );
       const countryCode = response.data.country.toLowerCase();
       setUserCountryCode(countryCode);

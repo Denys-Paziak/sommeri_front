@@ -1,17 +1,15 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const token = process.env.TELEGRAM_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
-
-const baseURL = `https://api.telegram.org/bot${token}/`;
+// const baseURL = `https://api.telegram.org/bot${token}/`;
 
 export const sendMessageWithFileToTelegram = async (
   message: string,
-  file?: File | null
+  file?: File | null,
+  token?: string,
+  chatId?: string
 ): Promise<void> => {
+  const baseURL = `https://api.telegram.org/bot${token}/`;
+
   try {
     const formData = new FormData();
     formData.append("chat_id", `${chatId}`);
@@ -66,7 +64,12 @@ export const sendMessageWithFileToTelegram = async (
   }
 };
 
-export const sendMessageToTelegram = async (message: string): Promise<void> => {
+export const sendMessageToTelegram = async (
+  message: string,
+  token?: string,
+  chatId?: string
+): Promise<void> => {
+  const baseURL = `https://api.telegram.org/bot${token}/`;
   const url = `${baseURL}sendMessage?chat_id=${chatId}&text=${message}`;
 
   const response = await fetch(url);

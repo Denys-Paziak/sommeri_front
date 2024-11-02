@@ -73,7 +73,11 @@ const ContactFormPopup = () => {
     🚀Обробіть заявку як умога найшвидше🚀
   `;
 
-    await sendMessageToTelegram(message);
+    await sendMessageToTelegram(
+      message,
+      process.env.NEXT_PUBLIC_TELEGRAM_TOKEN,
+      process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
+    );
     reset();
     dispatch(closePopup());
     dispatch(openThanksPopup());
