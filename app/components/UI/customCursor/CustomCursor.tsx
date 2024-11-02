@@ -9,7 +9,7 @@ const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const pos = useRef({ x: 0, y: 0 });
   const mouse = useRef({ x: 0, y: 0 });
-  const speed = 0.01; // Швидкість інтерполяції (0.1 = повільно, 1 = миттєво)
+  const speed = 0.1; // Швидкість інтерполяції (0.1 = повільно, 1 = миттєво)
 
   const [isBlackWhite, setIsBlackWhite] = useState(false);
 
