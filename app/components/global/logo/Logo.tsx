@@ -9,6 +9,7 @@ const Logo = () => {
         fetchPriority="high"
         width={300}
         height={100}
+        priority={true}
         src="../../images/logo.svg"
         alt="logo"
       />

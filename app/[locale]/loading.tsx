@@ -13,14 +13,14 @@ export default function Loading() {
       >
         <defs>
           <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#000" />
-            <stop offset="100%" stop-color="#fff" />
+            <stop offset="0%" stopColor="#000" />
+            <stop offset="100%" stopColor="#fff" />
           </linearGradient>
           <mask id="mask1">
             <rect x="0" y="0" width="128" height="128" fill="url(#grad1)" />
           </mask>
         </defs>
-        <g fill="none" stroke-linecap="round" stroke-width="16">
+        <g fill="none" strokeLinecap="round" strokeWidth="16">
           <circle
             className={styles.lp__ring}
             r="56"

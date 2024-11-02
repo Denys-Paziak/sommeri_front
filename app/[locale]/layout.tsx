@@ -4,16 +4,31 @@ import { getMessages } from "next-intl/server";
 import { Montserrat } from "next/font/google";
 import ReduxProvider from "@/app/redux/ReduxProvider";
 import Header from "@/app/components/global/header/Header";
-import Footer from "@/app/components/global/footer/Footer";
 import "../globals.css";
-import CustomCursor from "@/app/components/UI/customCursor/CustomCursor";
-import ContactFormPopup from "@/app/components/global/contactFormPopup/ContactFormPopup";
-import ThanksPopup from "@/app/components/global/thanksPopup/ThanksPopup";
-import QuickContacts from "@/app/components/global/quickContacts/QuickContacts";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-
+import { SkeletonTheme } from "react-loading-skeleton";
+import dynamic from "next/dynamic";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+
+const DynamicCustomCursor = dynamic(
+  () => import("@/app/components/UI/customCursor/CustomCursor")
+);
+
+const DynamicContactFormPopup = dynamic(
+  () => import("@/app/components/global/contactFormPopup/ContactFormPopup")
+);
+
+const DynamicThanksPopup = dynamic(
+  () => import("@/app/components/global/thanksPopup/ThanksPopup")
+);
+
+const DynamicQuickContacts = dynamic(
+  () => import("@/app/components/global/quickContacts/QuickContacts")
+);
+
+const DynamicFooter = dynamic(
+  () => import("@/app/components/global/footer/Footer")
+);
 
 export const generateViewport = () => ({
   width: "device-width",
@@ -71,14 +86,14 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <SkeletonTheme baseColor={"#101010"} highlightColor={"#181818"} >
+            <SkeletonTheme baseColor={"#101010"} highlightColor={"#181818"}>
               <Header />
-              <CustomCursor />
-              <ContactFormPopup />
-              <ThanksPopup />
-              <QuickContacts />
+              <DynamicCustomCursor />
+              <DynamicContactFormPopup />
+              <DynamicThanksPopup />
+              <DynamicQuickContacts />
               {children}
-              <Footer />
+              <DynamicFooter />
             </SkeletonTheme>
           </ReduxProvider>
         </NextIntlClientProvider>

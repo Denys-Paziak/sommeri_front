@@ -1,11 +1,5 @@
 import Hero from "@/app/components/pages/home/hero/Hero";
-import Services from "@/app/components/pages/home/services/Services";
 import About from "@/app/components/pages/home/about/About";
-import OurProjects from "@/app/components/pages/home/ourProjects/OurProjects";
-import ClientsSay from "@/app/components/pages/home/clientsSay/ClientsSay";
-import WhyUs from "@/app/components/pages/home/whyUs/WhyUs";
-import Faq from "@/app/components/pages/home/faq/Faq";
-import Contact from "@/app/components/pages/home/contact/Contact";
 import {
   getCategories,
   getFAQ,
@@ -13,8 +7,33 @@ import {
   getReviews,
   getTechnologiesWay,
 } from "@/app/utils/server/server";
-import Technologies from "@/app/components/pages/home/technologies/Technologies";
 import Loader from "@/app/components/global/loader/Loader";
+import dynamic from "next/dynamic";
+
+const DynamicWhyUs = dynamic(
+  () => import("@/app/components/pages/home/whyUs/WhyUs")
+);
+
+const DynamicServices = dynamic(
+  () => import("@/app/components/pages/home/services/Services")
+);
+
+const DynamicTechnologies = dynamic(
+  () => import("@/app/components/pages/home/technologies/Technologies")
+);
+
+const DynamicOurProjects = dynamic(
+  () => import("@/app/components/pages/home/ourProjects/OurProjects")
+);
+
+const DynamicClientsSay = dynamic(
+  () => import("@/app/components/pages/home/clientsSay/ClientsSay")
+);
+const DynamicFaq = dynamic(() => import("@/app/components/pages/home/faq/Faq"));
+
+const DynamicContact = dynamic(
+  () => import("@/app/components/pages/home/contact/Contact")
+);
 
 export default async function Home({ params }: { params: { locale: string } }) {
   let posts = await getProjects(params.locale);
@@ -31,13 +50,13 @@ export default async function Home({ params }: { params: { locale: string } }) {
     <>
       <Hero />
       <About />
-      <WhyUs />
-      <Services />
-      <Technologies technologies={technologies} />
-      <OurProjects posts={posts} categories={categories} />
-      <ClientsSay reviews={reviews} />
-      <Faq faqItems={faqItems} />
-      <Contact />
+      <DynamicWhyUs />
+      <DynamicServices />
+      <DynamicTechnologies technologies={technologies} />
+      <DynamicOurProjects posts={posts} categories={categories} />
+      <DynamicClientsSay reviews={reviews} />
+      <DynamicFaq faqItems={faqItems} />
+      <DynamicContact />
     </>
   );
 }

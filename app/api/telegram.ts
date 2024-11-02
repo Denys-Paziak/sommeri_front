@@ -1,7 +1,12 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
-const baseURL =
-  "https://api.telegram.org/bot7543360501:AAGcJrw4orFdD0DOYZ8ySk9YJDwY4mewEpQ/";
+dotenv.config();
+
+const token = process.env.TELEGRAM_TOKEN;
+const chatId = process.env.TELEGRAM_CHAT_ID;
+
+const baseURL = `https://api.telegram.org/bot${token}/`;
 
 export const sendMessageWithFileToTelegram = async (
   message: string,
@@ -9,12 +14,12 @@ export const sendMessageWithFileToTelegram = async (
 ): Promise<void> => {
   try {
     const formData = new FormData();
-    formData.append("chat_id", "-1002440367804");
+    formData.append("chat_id", `${chatId}`);
 
     const messageLength = message.length;
 
     if (messageLength > 1024 || !file) {
-      const url = `${baseURL}sendMessage?chat_id=-1002440367804&text=${encodeURIComponent(
+      const url = `${baseURL}sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
         message
       )}`;
       const response = await fetch(url);
@@ -62,7 +67,7 @@ export const sendMessageWithFileToTelegram = async (
 };
 
 export const sendMessageToTelegram = async (message: string): Promise<void> => {
-  const url = `${baseURL}sendMessage?chat_id=-1002440367804&text=${message}`;
+  const url = `${baseURL}sendMessage?chat_id=${chatId}&text=${message}`;
 
   const response = await fetch(url);
 

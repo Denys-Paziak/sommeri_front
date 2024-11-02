@@ -8,6 +8,7 @@ import Image from "next/image";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
 import { usePathname } from "next/navigation";
 import {
+  linkOnFacebook,
   linkOnLinkedin,
   linkOnTelegram,
   linkOnWhatsApp,
@@ -225,7 +226,7 @@ const Footer = () => {
                       </svg>
                     </Link>
                     <Link
-                      href={"/"}
+                      href={linkOnFacebook}
                       target="_blank"
                       className={styles.footer__social_item}
                       aria-label="Visit our Facebook page"
@@ -307,6 +308,7 @@ const Footer = () => {
           <Image
             width={2000}
             height={240}
+            priority={true}
             src="../../images/SOMMERI.svg"
             alt="sommeri vector"
           />
