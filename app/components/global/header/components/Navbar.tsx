@@ -13,11 +13,11 @@ const Navbar = ({ isMobileMenuOpen }: iProps) => {
   const NavbarItems = [
     {
       name: t("item1"),
-      link: "services",
+      link: "about",
     },
     {
       name: t("item2"),
-      link: "about",
+      link: "services",
     },
     {
       name: t("item3"),
@@ -29,7 +29,7 @@ const Navbar = ({ isMobileMenuOpen }: iProps) => {
     },
     {
       name: t("item5"),
-      link: "whyUs",
+      link: "reviews",
     },
   ];
 

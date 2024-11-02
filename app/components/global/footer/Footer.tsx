@@ -22,11 +22,11 @@ const Footer = () => {
   const NavbarItems = [
     {
       name: t("menu.item1"),
-      link: "services",
+      link: "about",
     },
     {
       name: t("menu.item2"),
-      link: "about",
+      link: "services",
     },
     {
       name: t("menu.item3"),
@@ -38,7 +38,7 @@ const Footer = () => {
     },
     {
       name: t("menu.item5"),
-      link: "whyUs",
+      link: "reviews",
     },
   ];
 

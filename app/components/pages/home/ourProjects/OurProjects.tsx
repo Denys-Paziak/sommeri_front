@@ -11,10 +11,8 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
-import 'react-loading-skeleton/dist/skeleton.css';
+import "react-loading-skeleton/dist/skeleton.css";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
-
-
 
 interface iProps {
   posts: ProjectInterface[];
@@ -36,9 +34,9 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-        (project: ProjectInterface) =>
-          project.Category.Name === activeCategory
-      );
+          (project: ProjectInterface) =>
+            project.Category.Name === activeCategory
+        );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
@@ -59,8 +57,9 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
-                      }`}
+                    className={`${styles.projects__category_item} ${
+                      activeCategory === "All" && styles.active
+                    }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -69,8 +68,9 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
-                        }`}
+                      className={`${styles.projects__category_item} ${
+                        activeCategory === category.Name && styles.active
+                      }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}
@@ -92,7 +92,11 @@ export default function Page({ posts, categories }: iProps) {
                 }
 
                 return (
-                  <Project key={project.documentId} project={project} className={projectStyle} />
+                  <Project
+                    key={project.documentId}
+                    project={project}
+                    className={projectStyle}
+                  />
                 );
               })}
             </MasonryGrid>
@@ -103,7 +107,7 @@ export default function Page({ posts, categories }: iProps) {
                   ariaLabel={t("button")}
                   onClick={loadMoreProjects}
                 >
-                  More projects
+                  {t("more")}
                 </SecondaryButton>
               </div>
             )}
@@ -114,7 +118,6 @@ export default function Page({ posts, categories }: iProps) {
   );
 }
 
-
 function Project({ project, className }: any) {
   const t = useTranslations("home.portfolio");
 
@@ -124,20 +127,13 @@ function Project({ project, className }: any) {
       className={className}
       href={`/project/${project.url}`}
     >
-      <div
-        className={styles.project__portfolio_item}
-      >
+      <div className={styles.project__portfolio_item}>
         <div className={styles.project__item_banner}>
           <ImageServer width={500} height={500} link={project.Preview.url} />
 
           <div className={styles.project__banner_inner}>
-            <h4 className={styles.project__inner_name}>
-
-              {project.Name}
-
-            </h4>
+            <h4 className={styles.project__inner_name}>{project.Name}</h4>
             <div className={styles.project__inner_visit}>
-
               <svg
                 width="12"
                 height="13"
@@ -161,11 +157,8 @@ function Project({ project, className }: any) {
             type="button"
             aria-label="view button"
           >
-            <span className={styles.project__view_text}>
-              {t("view")}
-            </span>
+            <span className={styles.project__view_text}>{t("view")}</span>
           </button>
-
         </div>
         <div className={styles.project__item_info}>
           {project.Category && (

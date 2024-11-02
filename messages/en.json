@@ -54,7 +54,8 @@
       "title": "We are proud of our projects",
       "subtitle": "Our work is a combination of aesthetics and functionality to achieve your business goals.",
       "all": "All",
-      "view": "View"
+      "view": "View",
+      "more": "More projects"
     },
     "reviews": {
       "title": "What our clients say",
@@ -108,11 +109,11 @@
     "reserved": "© 2024 Sommeri, All Rights Reserved"
   },
   "menu": {
-    "item1": "Services",
-    "item2": "About us",
+    "item1": "About us",
+    "item2": "Services",
     "item3": "Technologies",
     "item4": "Portfolio",
-    "item5": "Why us"
+    "item5": "Reviews"
   },
   "quickContacts": {
     "question": "Do you have a question?",

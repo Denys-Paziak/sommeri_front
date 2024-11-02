@@ -169,16 +169,13 @@
     min-height: 38px;
   }
   .quick__wrapper_top {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: fixed;
     right: 16px;
+    left: auto;
     bottom: 76px;
-    z-index: 5;
   }
   .quick__wrapper_inner {
     right: 16px;
+    left: auto;
   }
   .quick__inner_call svg {
     width: 18px;
@@ -189,7 +186,7 @@
   .quick__contacts_block {
     position: fixed !important;
     right: 16px !important;
-    left: auto !important;
+    left: auto;
     bottom: 16px !important;
     z-index: 4 !important;
   }
