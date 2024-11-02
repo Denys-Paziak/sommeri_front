@@ -3,19 +3,17 @@ import { backHost } from "@/app/utils/server/server";
 
 interface ImageServerProps {
   link: string;
-  width: number;
-  height: number;
+  styles?: string
 }
 
-const ImageServer = ({ link, width, height }: ImageServerProps) => {
-
+const ImageServer = ({ link, styles }: ImageServerProps) => {
   return (
     <Image
+      fill
       src={backHost + link}
       alt="link"
-      width={width}
-      height={height}
       placeholder="blur"
+      className={styles}
       blurDataURL="/images/def.jpg"
     />
   );

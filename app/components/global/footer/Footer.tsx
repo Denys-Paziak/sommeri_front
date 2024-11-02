@@ -4,7 +4,6 @@ import React from "react";
 import { Link } from "@/navigation";
 import Logo from "../logo/Logo";
 import styles from "./Footer.module.css";
-import Image from "next/image";
 import SectionLink from "@/app/components/UI/sectionLink/SectionLink";
 import { usePathname } from "next/navigation";
 import {
@@ -17,6 +16,7 @@ import {
   salesEmail,
 } from "@/configSommeriData";
 import { useTranslations } from "next-intl";
+import ImageServer from "../../UI/imageServer/imageServer";
 
 const Footer = () => {
   const t = useTranslations();
@@ -305,13 +305,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footer__section_vector}>
-          <Image
-            width={2000}
-            height={240}
-            priority={true}
-            src="../../images/SOMMERI.svg"
-            alt="sommeri vector"
-          />
+          <ImageServer link="../../images/SOMMERI.svg" />
         </div>
       </section>
     </footer>
