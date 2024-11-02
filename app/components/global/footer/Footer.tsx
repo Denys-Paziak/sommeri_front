@@ -306,7 +306,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footer__section_vector}>
-          <Image width={1000} height={1000} src="/images/SOMMERI.svg" alt="SOMMERI" />
+          {/* <Image width={1000} height={1000} src="/images/SOMMERI.svg" alt="SOMMERI" /> */}
         </div>
       </section>
     </footer>
