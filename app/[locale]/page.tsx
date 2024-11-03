@@ -50,13 +50,13 @@ export default async function Home({ params }: { params: { locale: string } }) {
     <>
       <Hero />
       <About />
-      <DynamicWhyUs />
+      {/* <DynamicWhyUs />
       <DynamicServices />
-      <DynamicTechnologies technologies={technologies} />
-      <DynamicOurProjects posts={posts} categories={categories} />
-      <DynamicClientsSay reviews={reviews} />
+      <DynamicTechnologies technologies={technologies} /> */}
+      {/* <DynamicOurProjects posts={posts} categories={categories} /> */}
+      {/* <DynamicClientsSay reviews={reviews} />
       <DynamicFaq faqItems={faqItems} />
-      <DynamicContact />
+      <DynamicContact /> */}
     </>
   );
 }
