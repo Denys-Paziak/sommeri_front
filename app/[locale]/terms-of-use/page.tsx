@@ -8,7 +8,7 @@ import { infoEmail } from "@/configSommeriData";
 import { Link } from "@/navigation";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Sommeri",
+  title: "Умови використання",
 };
 
 const TermsOfUse = () => {

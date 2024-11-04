@@ -5,7 +5,6 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import Image from "next/image";
 import styles from "@/app/components/UI/notFound/NotFound.module.css";
 import Link from "next/link";
-import ImageServer from "./components/UI/imageServer/imageServer";
 
 export default function NotFound() {
   return (
@@ -15,8 +14,13 @@ export default function NotFound() {
           <div className="container">
             <div className={styles.not__found_wrapper}>
               <div className={styles.not__found_robot}>
-                <ImageServer width={1000} height={1000} styles={styles.not__robot_img}
-                  link="/images/404-vector.svg" />
+                <Image
+                  width={1000}
+                  height={1000}
+                  src="/images/404-vector.svg"
+                  alt="404 robot"
+                  className={styles.not__robot_img}
+                />
               </div>
               <div className={styles.not__found_content}>
                 <div className={styles.not__content_info}>
@@ -39,10 +43,12 @@ export default function NotFound() {
             </div>
           </div>
           <div className={styles.not__found_vector}>
-            <ImageServer
-              width={1000} height={1000}
-              styles={styles.not__vector_img}
-              link="/images/404-bg.avif"
+            <Image
+              width={1000}
+              height={1000}
+              src="/images/404-bg.avif"
+              alt="404 bg"
+              className={styles.not__vector_img}
             />
           </div>
         </div>

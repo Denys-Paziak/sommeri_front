@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 2048 272" width="3544" height="471" xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(180)" d="m0 0h44l-2 4-9 12-13 17-10 13-26 34-10 13-26 34-10 13-7 9 219 1 47 47h192l11-4 8-7 4-9v-19l-5-10-8-7-8-4-8-2-194-1-8-7-49-49v-78h263l15 2 13 5 10 6 8 7 7 10 5 13 1 6v23l-3 12-7 13-8 9-10 7-4 2 13 9 7 7 7 11 4 10 2 9v21l-3 13-6 12-11 12-9 7-11 5-11 3-8 1h-83l-130-1-47-47h-234l-13 17-10 13-13 17-1 1h-44l2-5 14-18 13-17 10-13 26-34 10-13 26-34 10-13 26-34 10-13 13-17 10-13 8-10zm174 37v32l29 29h177l11-3 10-6 8-9 3-8v-15l-3-8-7-7-8-4-4-1z" fill="#FEFEFE"/>
+<path transform="translate(761)" d="m0 0h238v37l-235 1-14 4-9 6-7 8-5 12-1 5-1 125h272v37h-313l-1-1v-167l3-16 5-12 7-11 6-7 12-9 15-7 17-4z" fill="#FEFEFE"/>
+<path transform="translate(1374,116)" d="m0 0h155v119l-3 11-6 10-9 8-13 6-12 2h-136v-23l134-1 9-3 7-6 3-8v-15l-9 6-7 2h-112l-13-3-11-6-7-7-5-10-2-7v-41l4-13 7-9 9-7 11-4zm10 23-9 2-8 6-4 9v29l5 8 6 5 9 3h98l11-4 7-6 4-7 1-5v-39l-35-1z" fill="#FEFEFE"/>
+<path transform="translate(1817,116)" d="m0 0h136l12 3 10 5 8 9 4 10 1 6v85l-1 1h-24l-1-1-1-7-6 5-6 2-7 1h-101l-11-2-8-4-7-6-5-9-1-4v-20l5-12 7-7 8-4 7-2h126l-1-14-4-6-7-4-6-1-127-1zm27 69-6 4-3 4v10l4 6 4 2h104l8-4 6-7 1-3v-12z" fill="#FEFEFE"/>
+<path transform="translate(1239,80)" d="m0 0h2v155h-24l-1-1-1-7-7 5-12 3h-104l-13-2-12-5-10-9-6-12-2-10v-42l3-14 5-9 4-5 11-7 9-3 6-1h129v-27zm-143 59-10 3-7 6-4 10v35l3 8 7 7 7 3h105l10-5 7-8 2-5v-53l-35-1z" fill="#FEFEFE"/>
+<path transform="translate(1694,82)" d="m0 0h3v34h87v23h-87l1 56 4 8 5 4 8 3 71 1v23l-1 1h-71l-13-2-12-5-10-9-6-12-2-9v-59h-50v-23h50v-25l20-8z" fill="#FEFEFE"/>
+<path transform="translate(2046,80)" d="m0 0h2v154l-1 1h-25v-146z" fill="#FEFEFE"/>
+<path transform="translate(1566,116)" d="m0 0h26v119h-25l-1-1z" fill="#FEFEFE"/>
+<path transform="translate(1276,116)" d="m0 0h26v119h-25l-1-1z" fill="#FEFEFE"/>
+<path transform="translate(1566,80)" d="m0 0h26v20h-26z" fill="#FEFEFE"/>
+<path transform="translate(1276,80)" d="m0 0h26v20h-26z" fill="#FEFEFE"/>
+</svg>

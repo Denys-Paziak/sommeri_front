@@ -78,7 +78,9 @@
   height: 40px;
   overflow: scroll;
 }
-
+.reviews__item_main::-webkit-scrollbar {
+  display: none;
+}
 .reviews__main_text {
   font-size: 13px;
   line-height: 16px;

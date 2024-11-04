@@ -5,6 +5,11 @@ import styles from "./PrivacyPolicy.module.css";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import { infoEmail } from "@/configSommeriData";
 import { Link } from "@/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Політика конфіденційності",
+};
 
 const PrivacyPolicy = () => {
   const t = useTranslations("privacyPolicy");

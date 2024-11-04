@@ -415,7 +415,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className={styles.footer__main_info}>
-                {/* <div className={styles.footer__info_block}>
+                <div className={styles.footer__info_block}>
                   <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle1")}
                   </p>
@@ -459,7 +459,7 @@ const Footer = () => {
                       </Link>
                     </li>
                   </ul>
-                </div> */}
+                </div>
                 <div className={styles.footer__info_block}>
                   <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle3")}
@@ -649,16 +649,12 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footer__section_vector}>
-<<<<<<< HEAD
           <Image
             width={2000}
             height={240}
-            src="../../images/SOMMERI.svg"
+            src="/images/SOMMERI.svg"
             alt="sommeri vector"
           />
-=======
-          {/* <Image width={1000} height={1000} src="/images/SOMMERI.svg" alt="SOMMERI" /> */}
->>>>>>> 4990f62f0f0e5a4aaab9ed6b346386021f77c76b
         </div>
       </section>
     </footer>

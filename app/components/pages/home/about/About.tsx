@@ -52,7 +52,6 @@ const About = () => {
             <div className={styles.about__main_banner}>
               <AnimatedWrapper type="fade-left" duration={1.5} delay={0.8}>
                 <Image
-                  fetchPriority="high"
                   src={t("vectorLink")}
                   alt="about us vector"
                   width={500}
