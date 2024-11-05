@@ -61,7 +61,7 @@ export async function generateMetadata({
 
   return {
     title: `${project.Name}`,
-    description: `Веб-студія Sommeri - Портфоліо | Проєкт #${project.Name}`,
+    description: `Sommeri - Портфоліо | Проєкт #${project.Name}`,
 
     openGraph: {
       type: "website",
@@ -69,7 +69,7 @@ export async function generateMetadata({
       siteName: "Sommeri",
       locale: "uk_UA",
       title: `#${project.Name}`,
-      description: `Веб-студія Sommeri - Портфоліо | Проєкт #${project.Name}`,
+      description: `Sommeri - Портфоліо | Проєкт #${project.Name}`,
       images: [
         {
           url: "https://sommeri.com/opengraph-image.png",
