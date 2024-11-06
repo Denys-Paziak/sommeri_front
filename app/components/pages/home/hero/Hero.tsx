@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
     const typeText = (text: string, callback?: () => void) => {
       const chars = text.split("");
       if (textRef.current) {
-        textRef.current.innerHTML = ""; // Очищуємо текст перед друком
+        textRef.current.innerHTML = "";
 
         chars.forEach((char, i) => {
           gsap.to({}, {
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
         <div className={styles.col}>
           <h2 className={styles.heading_title}>
             Розробка <br />
-            <span ref={textRef}></span>|
+            <span ref={textRef}></span><span className={styles.line}></span>
           </h2>
           <p className={styles.heading_text}>
             Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він приносив користь у цифровому світі

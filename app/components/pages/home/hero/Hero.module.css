@@ -55,6 +55,26 @@
   margin-top: 50px;
 }
 
+.line {
+  display: inline-block;
+  width: 2px;
+  height: 64px;
+  background: var(--white);
+  transform: translateY(20%);
+  margin-left: 10px;
+  animation: animLine 1s infinite;
+}
+
+@keyframes animLine {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1026px) {
   .vector {
     top: 50%;
