@@ -412,7 +412,7 @@ const Footer = () => {
                       {phoneNumber}
                     </span>
                   </Link>
-                </div> */}
+                </div>
               </div>
               {/* <div className={styles.footer__main_info}>
                 <div className={styles.footer__info_block}>
