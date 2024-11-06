@@ -4,12 +4,10 @@ import Image from "next/image";
 
 const Logo = () => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} >
       <Image
-        fetchPriority="high"
         width={300}
         height={100}
-        priority={true}
         src="../../images/logo.svg"
         alt="logo"
       />

@@ -10,14 +10,14 @@
 <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_0_1197"/>
 </filter>
 <linearGradient id="paint0_linear_0_1197" x1="101.667" y1="0.0817816" x2="101.667" y2="200.491" gradientUnits="userSpaceOnUse">
-<stop stop-color="#52B69A"/>
-<stop offset="0.495" stop-color="#2696A8"/>
-<stop offset="1" stop-color="#168AAD"/>
+<stop stop-color="#28B665"/>
+<stop offset="0.495" stop-color="#30CC71"/>
+<stop offset="1" stop-color="#30CC71"/>
 </linearGradient>
 <linearGradient id="paint1_linear_0_1197" x1="101.668" y1="0.0817871" x2="101.668" y2="200.491" gradientUnits="userSpaceOnUse">
-<stop stop-color="#52B69A"/>
-<stop offset="0.495" stop-color="#2696A8"/>
-<stop offset="1" stop-color="#168AAD"/>
+<stop stop-color="#28B665"/>
+<stop offset="0.495" stop-color="#30CC71"/>
+<stop offset="1" stop-color="#30CC71"/>
 </linearGradient>
 </defs>
 </svg>

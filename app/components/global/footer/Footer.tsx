@@ -412,9 +412,9 @@ const Footer = () => {
                       {phoneNumber}
                     </span>
                   </Link>
-                </div>
+                </div> */}
               </div>
-              <div className={styles.footer__main_info}>
+              {/* <div className={styles.footer__main_info}>
                 <div className={styles.footer__info_block}>
                   <p className={styles.footer__block_subtitle}>
                     {t("footer.subtitle1")}
@@ -639,13 +639,13 @@ const Footer = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
-            <div className={styles.footer__wrapper_bottom}>
+            {/* <div className={styles.footer__wrapper_bottom}>
               <span className={styles.footer__bottom_reserved}>
                 {t("footer.reserved")}
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.footer__section_vector}>

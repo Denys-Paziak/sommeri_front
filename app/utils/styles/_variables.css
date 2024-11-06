@@ -1,5 +1,5 @@
 :root {
-  --primary: #2696a8;
+  --primary: hsl(145, 62%, 49%);
   --border-primary: #2697a87a;
   --white: #ffffff;
   --black: #0c0c0c;
@@ -9,12 +9,10 @@
   --dark-gray: #252525;
   --text-gray: #95979e;
   --white-gray: rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(
-    180deg,
-    hsl(163, 41%, 52%) 0%,
-    hsl(188, 63%, 40%) 49.5%,
-    hsl(194, 77%, 38%) 100%
-  );
+  --primary-gradient: linear-gradient(180deg,
+      hsl(145, 62%, 49%) 0%,
+      hsl(145, 62%, 49%) 49.5%,
+      hsl(145, 62%, 49%) 100%);
   --red: #f93a3a;
   --border-gray: #ffffff1a;
 }

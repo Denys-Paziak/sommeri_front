@@ -74,16 +74,16 @@ const LineVector = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="white" stopOpacity="0" />
-            <stop offset="0.0777673" stopColor="#4CC3E6" stopOpacity="0.16" />
+            <stop offset="0.0777673" stopColor="#30CC71" stopOpacity="0.16" />
             <stop
               offset="0.320104"
-              stopColor="#35AFD4"
+              stopColor="#30CC71"
               stopOpacity="0.401399"
             />
-            <stop offset="0.382295" stopColor="#168AAD" />
-            <stop offset="0.451095" stopColor="#38B7DD" stopOpacity="0.4" />
-            <stop offset="0.708389" stopColor="#52B69A" stopOpacity="0.16" />
-            <stop offset="0.827999" stopColor="#52B69A" stopOpacity="0.02" />
+            <stop offset="0.382295" stopColor="#30CC71" />
+            <stop offset="0.451095" stopColor="#30CC71" stopOpacity="0.4" />
+            <stop offset="0.708389" stopColor="#28B665" stopOpacity="0.16" />
+            <stop offset="0.827999" stopColor="#28B665" stopOpacity="0.02" />
             <stop offset="0.996703" stopColor="white" stopOpacity="0" />
           </linearGradient>
           <linearGradient
@@ -94,9 +94,9 @@ const LineVector = () => {
             y2="541.9"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#52B69A" />
-            <stop offset="0.495" stopColor="#2696A8" />
-            <stop offset="1" stopColor="#168AAD" />
+            <stop stopColor="#28B665" />
+            <stop offset="0.495" stopColor="#30CC71" />
+            <stop offset="1" stopColor="#30CC71" />
           </linearGradient>
         </defs>
       </svg>

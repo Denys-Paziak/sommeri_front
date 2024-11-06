@@ -2,12 +2,14 @@
   width: 100%;
   padding-bottom: 80px;
 }
+
 .client__say_heading {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 20px;
 }
+
 .client__heading_subtitle {
   max-width: 590px;
   font-size: 16px;
@@ -16,9 +18,11 @@
   color: var(--gray);
   text-align: center;
 }
+
 .client__say_main {
   width: 100%;
 }
+
 .client__say_shape {
   max-width: 600px;
   height: 300px;
@@ -26,7 +30,7 @@
   z-index: -1;
   bottom: 0;
   left: 50%;
-  background: #2696a833;
+  background: #30CC7133;
   transform: translate(-50%, 0);
   filter: blur(300px);
 }

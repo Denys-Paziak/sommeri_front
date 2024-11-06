@@ -7,30 +7,30 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M801.549 208.694L780.694 188.16L760.16 209.015L760.473 249.417L781.327 269.951L801.862 249.097L801.549 208.694Z" fill="url(#paint4_linear_8_76)"/>
 <defs>
 <linearGradient id="paint0_linear_8_76" x1="183.262" y1="229.066" x2="122.36" y2="168.164" gradientUnits="userSpaceOnUse">
-<stop offset="0.02" stop-color="#097578"/>
-<stop offset="0.18" stop-color="#13807A"/>
-<stop offset="0.71" stop-color="#32A380"/>
-<stop offset="1" stop-color="#3FB183"/>
+<stop offset="0.02" stop-color="#1EA562"/>
+<stop offset="0.18" stop-color="#27B76C"/>
+<stop offset="0.71" stop-color="#30CC71"/>
+<stop offset="1" stop-color="#38D97A"/>
 </linearGradient>
 <linearGradient id="paint1_linear_8_76" x1="-11.4861" y1="383.394" x2="213.52" y2="71.7857" gradientUnits="userSpaceOnUse">
-<stop stop-color="#26B7E5"/>
-<stop offset="0.44" stop-color="#37B4B3"/>
-<stop offset="0.8" stop-color="#44B390"/>
-<stop offset="1" stop-color="#49B383"/>
+<stop stop-color="#30CC71"/>
+<stop offset="0.44" stop-color="#30D980"/>
+<stop offset="0.8" stop-color="#26E389"/>
+<stop offset="1" stop-color="#1DE88E"/>
 </linearGradient>
 <linearGradient id="paint2_linear_8_76" x1="25.6835" y1="216.999" x2="86.5855" y2="277.901" gradientUnits="userSpaceOnUse">
-<stop offset="0.02" stop-color="#097578"/>
-<stop offset="0.18" stop-color="#13807A"/>
-<stop offset="0.71" stop-color="#32A380"/>
-<stop offset="1" stop-color="#3FB183"/>
+<stop offset="0.02" stop-color="#1EA562"/>
+<stop offset="0.18" stop-color="#27B76C"/>
+<stop offset="0.71" stop-color="#30CC71"/>
+<stop offset="1" stop-color="#38D97A"/>
 </linearGradient>
 <linearGradient id="paint3_linear_8_76" x1="2163.24" y1="10.5818" x2="2162.02" y2="89.3914" gradientUnits="userSpaceOnUse">
-<stop stop-color="#23C68B"/>
-<stop offset="1" stop-color="#23BDC0"/>
+<stop stop-color="#30CC71"/>
+<stop offset="1" stop-color="#1FC486"/>
 </linearGradient>
 <linearGradient id="paint4_linear_8_76" x1="768.663" y1="195.393" x2="796.61" y2="263.699" gradientUnits="userSpaceOnUse">
-<stop stop-color="#23C68B"/>
-<stop offset="1" stop-color="#23BDC0"/>
+<stop stop-color="#30CC71"/>
+<stop offset="1" stop-color="#1FC486"/>
 </linearGradient>
 </defs>
 </svg>
