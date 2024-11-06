@@ -1,4 +1,4 @@
-.hero__section {
+/* .hero__section {
   position: relative;
   width: 100%;
   padding-top: 230px;
@@ -42,10 +42,6 @@
   z-index: 1;
 }
 
-.buttons {
-  margin-top: 40px;
-}
-
 .brands_list {
   display: flex;
   align-items: center;
@@ -82,8 +78,6 @@
     font-size: 28px;
   }
 
-
-
   .heading_text {
     width: 100%;
   }
@@ -91,19 +85,16 @@
   .brands_list {
     justify-content: center;
   }
+} */
 
-
-}
-
-
-/* .hero__section {
+.hero__section {
   width: 100%;
-  height: 100%;
   position: relative;
-  padding-top: 230px;
   padding-bottom: 120px;
+  overflow: hidden;
 }
-.hero__animation {
+
+/* .hero__animation {
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -118,37 +109,42 @@
 }
 .hero__animation::-webkit-scrollbar {
   display: none;
-}
-.hero__animation svg {
+} */
+
+/* .hero__animation svg {
   position: absolute;
   top: -50%;
   left: 0;
   max-width: 100%;
-}
-.hero__top_blur {
+} */
+/* .hero__top_blur {
   width: 100%;
   height: 260px;
   position: absolute;
   top: 0;
   z-index: 2;
   background: linear-gradient(180deg, #0c0c0c 11%, rgba(0, 0, 0, 0) 100%);
-}
-.hero__bottom_blur {
+} */
+/* .hero__bottom_blur {
   width: 100%;
   height: 200px;
   position: absolute;
   bottom: 0;
   z-index: 2;
   background: linear-gradient(0deg, #0c0c0c 11%, rgba(0, 0, 0, 0) 100%);
-}
+} */
 .hero__wrapper {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   gap: 60px;
-  position: relative;
-  z-index: 3;
+  /* position: relative;
+  z-index: 3; */
+}
+.hero__wrapper_info {
+}
+.hero__wrapper_vector {
 }
 .hero__wrapper_heading {
   width: 100%;
@@ -158,16 +154,16 @@
   gap: 40px;
 }
 .hero__heading_title {
-  font-size: 96px;
-  font-weight: 600;
-  line-height: 100px;
-  text-align: center;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 68px;
   color: var(--white);
-  font-display: swap;
 }
 .hero__title_special {
-  font-weight: 200;
-  font-display: swap;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 68px;
+  color: var(--primary);
 }
 .hero__heading_text {
   color: var(--gray);
@@ -175,7 +171,6 @@
   line-height: 24px;
   font-weight: 500;
   text-align: center;
-  font-display: swap;
 }
 .hero__wrapper_actions {
   display: flex;
@@ -323,4 +318,4 @@
     max-width: 500%;
     left: -200%;
   }
-} */
+}

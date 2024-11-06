@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 
 const Hero: React.FC = () => {
   const t = useTranslations("home.hero");
@@ -22,15 +23,18 @@ const Hero: React.FC = () => {
         textRef.current.innerHTML = ""; // Очищуємо текст перед друком
 
         chars.forEach((char, i) => {
-          gsap.to({}, {
-            delay: i * 0.1,
-            onComplete: () => {
-              if (textRef.current) {
-                textRef.current.innerHTML += char;
-                if (i === chars.length - 1 && callback) callback();
-              }
-            },
-          });
+          gsap.to(
+            {},
+            {
+              delay: i * 0.1,
+              onComplete: () => {
+                if (textRef.current) {
+                  textRef.current.innerHTML += char;
+                  if (i === chars.length - 1 && callback) callback();
+                }
+              },
+            }
+          );
         });
       }
     };
@@ -39,28 +43,38 @@ const Hero: React.FC = () => {
       if (textRef.current) {
         const chars = textRef.current.innerHTML.split("");
         chars.forEach((_, i) => {
-          gsap.to({}, {
-            delay: i * 0.05,
-            onComplete: () => {
-              if (textRef.current) {
-                textRef.current.innerHTML = textRef.current.innerHTML.slice(0, -1);
-                if (i === chars.length - 1 && callback) callback();
-              }
-            },
-          });
+          gsap.to(
+            {},
+            {
+              delay: i * 0.05,
+              onComplete: () => {
+                if (textRef.current) {
+                  textRef.current.innerHTML = textRef.current.innerHTML.slice(
+                    0,
+                    -1
+                  );
+                  if (i === chars.length - 1 && callback) callback();
+                }
+              },
+            }
+          );
         });
       }
     };
 
     const cycleText = () => {
       typeText(words[wordIndex], () => {
-        gsap.to({}, {
-          delay: 1.5,
-          onComplete: () => deleteText(() => {
-            wordIndex = (wordIndex + 1) % words.length;
-            cycleText();
-          }),
-        });
+        gsap.to(
+          {},
+          {
+            delay: 1.5,
+            onComplete: () =>
+              deleteText(() => {
+                wordIndex = (wordIndex + 1) % words.length;
+                cycleText();
+              }),
+          }
+        );
       });
     };
 
@@ -70,35 +84,57 @@ const Hero: React.FC = () => {
   return (
     <section className={styles.hero__section}>
       <div className="container">
-        <div className={styles.col}>
-          <h2 className={styles.heading_title}>
-            Розробка <br />
-            <span ref={textRef}></span>|
-          </h2>
-          <p className={styles.heading_text}>
-            Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він приносив користь у цифровому світі
-          </p>
-          <div className={styles.buttons}>
-            <Button
-              isRounded={true}
-              type={"button"}
-              onClick={() => handleScroll("contactUs")}
-              ariaLabel={t("primaryButton")}
-            >
-              {t("primaryButton")}
-            </Button>
+        <div className={styles.hero__wrapper}>
+          <div className={styles.hero__wrapper_info}>
+            <div className={styles.hero__wrapper_heading}>
+              <h2 className={styles.hero__heading_title}>
+                Розробка <br />
+                <span
+                  ref={textRef}
+                  className={styles.hero__title_special}
+                ></span>
+                |
+              </h2>
+              <p className={styles.hero__heading_text}>
+                Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він
+                приносив користь у цифровому світі
+              </p>
+            </div>
+            <div className={styles.hero__wrapper_actions}>
+              <Button
+                isRounded={true}
+                type={"button"}
+                onClick={() => handleScroll("contactUs")}
+                ariaLabel={t("primaryButton")}
+              >
+                {t("primaryButton")}
+              </Button>
+              <SecondaryButton
+                type={"button"}
+                onClick={() => handleScroll("portfolio")}
+                ariaLabel={t("secondaryButton")}
+              >
+                {t("secondaryButton")}
+              </SecondaryButton>
+            </div>
+          </div>
+          <div className={styles.hero__wrapper_vector}>
+            <div className={styles.vector}>
+              <Image
+                src={"/images/home-vector.png"}
+                width={1000}
+                height={1000}
+                alt="Hero"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.vector}>
-        <Image src={"/images/home-vector.png"} width={1000} height={1000} alt="Hero" />
       </div>
     </section>
   );
 };
 
 export default Hero;
-
 
 // const Hero = () => {
 //   const [isMobile, setIsMobile] = useState(false);
@@ -859,4 +895,3 @@ export default Hero;
 //     </MouseParallaxContainer>
 //   );
 // };
-
