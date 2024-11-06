@@ -109,11 +109,11 @@
     "reserved": "© 2024 Sommeri, All Rights Reserved"
   },
   "menu": {
-    "item1": "About us",
-    "item2": "Services",
-    "item3": "Technologies",
-    "item4": "Portfolio",
-    "item5": "Reviews"
+    "item1": "Services",
+    "item2": "Portfolio",
+    "item3": "About us",
+    "item4": "Reviews",
+    "item5": "FAQ"
   },
   "quickContacts": {
     "question": "Do you have a question?",

@@ -48,7 +48,10 @@ const Header = () => {
         <div className="container">
           <div className={styles.header__wrapper}>
             <Logo />
-            <Navbar isMobileMenuOpen={isMobileMenuOpen} />
+            <Navbar
+              handleBurgerMenu={handleBurgerMenu}
+              isMobileMenuOpen={isMobileMenuOpen}
+            />
             <Options />
 
             <div

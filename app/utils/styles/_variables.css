@@ -1,6 +1,6 @@
 :root {
-  --primary: hsl(145, 62%, 49%);
-  --border-primary: #2697a87a;
+  --primary: #2fca70;
+  --border-primary: hsl(145, 73%, 46%);
   --white: #ffffff;
   --black: #0c0c0c;
   --dark: #181818;
@@ -9,10 +9,12 @@
   --dark-gray: #252525;
   --text-gray: #95979e;
   --white-gray: rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(180deg,
-      hsl(145, 62%, 49%) 0%,
-      hsl(145, 62%, 49%) 49.5%,
-      hsl(145, 62%, 49%) 100%);
+  --primary-gradient: linear-gradient(
+    93.83deg,
+    #76e288 -0.58%,
+    #30cc71 54.43%,
+    #0dbe58 103.35%
+  );
   --red: #f93a3a;
   --border-gray: #ffffff1a;
 }

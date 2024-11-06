@@ -14,13 +14,20 @@ const Hero: React.FC = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
-    const words = [" Веб сайтів", " Дизайну", "Мобільних програм"];
+    const words = [
+      "Веб сайтів",
+      "Дизайн додатків",
+      "Веб дизайну",
+      "Мобільних додатків",
+      "SEO оптимізації",
+      "Чат ботів",
+    ];
     let wordIndex = 0;
 
     const typeText = (text: string, callback?: () => void) => {
       const chars = text.split("");
       if (textRef.current) {
-        textRef.current.innerHTML = ""; // Очищуємо текст перед друком
+        textRef.current.innerHTML = "";
 
         chars.forEach((char, i) => {
           gsap.to(
@@ -85,50 +92,43 @@ const Hero: React.FC = () => {
     <section className={styles.hero__section}>
       <div className="container">
         <div className={styles.hero__wrapper}>
-          <div className={styles.hero__wrapper_info}>
-            <div className={styles.hero__wrapper_heading}>
-              <h2 className={styles.hero__heading_title}>
-                Розробка <br />
-                <span
-                  ref={textRef}
-                  className={styles.hero__title_special}
-                ></span>
-                |
-              </h2>
-              <p className={styles.hero__heading_text}>
-                Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він
-                приносив користь у цифровому світі
-              </p>
-            </div>
-            <div className={styles.hero__wrapper_actions}>
-              <Button
-                isRounded={true}
-                type={"button"}
-                onClick={() => handleScroll("contactUs")}
-                ariaLabel={t("primaryButton")}
-              >
-                {t("primaryButton")}
-              </Button>
-              <SecondaryButton
-                type={"button"}
-                onClick={() => handleScroll("portfolio")}
-                ariaLabel={t("secondaryButton")}
-              >
-                {t("secondaryButton")}
-              </SecondaryButton>
-            </div>
+          <div className={styles.hero__wrapper_heading}>
+            <h2 className={styles.hero__heading_title}>
+              Розробка <br />
+              <span ref={textRef} className={styles.hero__title_special}></span>
+              |
+            </h2>
+            <p className={styles.hero__heading_text}>
+              Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він
+              приносив користь у цифровому світі
+            </p>
           </div>
-          <div className={styles.hero__wrapper_vector}>
-            <div className={styles.vector}>
-              <Image
-                src={"/images/home-vector.png"}
-                width={1000}
-                height={1000}
-                alt="Hero"
-              />
-            </div>
+          <div className={styles.hero__wrapper_actions}>
+            <Button
+              isRounded={true}
+              type={"button"}
+              onClick={() => handleScroll("contactUs")}
+              ariaLabel={t("primaryButton")}
+            >
+              {t("primaryButton")}
+            </Button>
+            <SecondaryButton
+              type={"button"}
+              onClick={() => handleScroll("portfolio")}
+              ariaLabel={t("secondaryButton")}
+            >
+              {t("secondaryButton")}
+            </SecondaryButton>
           </div>
         </div>
+      </div>
+      <div className={styles.vector}>
+        <Image
+          src={"/images/hero-vector.avif"}
+          width={720}
+          height={800}
+          alt="hero vector"
+        />
       </div>
     </section>
   );

@@ -7,9 +7,10 @@ import Link from "next/link";
 interface SectionLinkProps {
   link: string;
   name: string;
+  handleBurgerMenu?: () => void;
 }
 
-const SectionLink = ({ link, name }: SectionLinkProps) => {
+const SectionLink = ({ link, name, handleBurgerMenu }: SectionLinkProps) => {
   return (
     <li className={styles.section__list_item}>
       <Link
@@ -17,6 +18,9 @@ const SectionLink = ({ link, name }: SectionLinkProps) => {
         onClick={(e) => {
           e.preventDefault();
           handleScroll(link);
+          if (handleBurgerMenu) {
+            handleBurgerMenu();
+          }
         }}
         className={styles.section__item_link}
       >

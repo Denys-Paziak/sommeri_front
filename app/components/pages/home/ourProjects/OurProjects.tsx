@@ -33,9 +33,9 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-        (project: ProjectInterface) =>
-          project.Category.Name === activeCategory
-      );
+          (project: ProjectInterface) =>
+            project.Category.Name === activeCategory
+        );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
@@ -56,8 +56,9 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
-                      }`}
+                    className={`${styles.projects__category_item} ${
+                      activeCategory === "All" && styles.active
+                    }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -66,8 +67,9 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
-                        }`}
+                      className={`${styles.projects__category_item} ${
+                        activeCategory === category.Name && styles.active
+                      }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}
@@ -126,7 +128,7 @@ function Project({ project, className }: any) {
     >
       <div className={styles.project__portfolio_item}>
         <div className={styles.project__item_banner}>
-          <ImageServer width={1000} height={1000} link={project.Preview.url} />
+          <ImageServer width={500} height={500} link={project.Preview.url} />
 
           <div className={styles.project__banner_inner}>
             <h4 className={styles.project__inner_name}>{project.Name}</h4>
