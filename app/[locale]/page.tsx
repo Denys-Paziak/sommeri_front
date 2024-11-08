@@ -54,7 +54,6 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <About />
       <DynamicWhyUs />
       <DynamicClientsSay reviews={reviews} />
-      {/* <DynamicTechnologies technologies={technologies} /> */}
       <DynamicFaq faqItems={faqItems} />
       <DynamicContact />
     </>

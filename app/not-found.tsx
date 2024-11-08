@@ -42,15 +42,6 @@ export default function NotFound() {
               </div>
             </div>
           </div>
-          <div className={styles.not__found_vector}>
-            <Image
-              width={1000}
-              height={1000}
-              src="/images/404-bg.avif"
-              alt="404 bg"
-              className={styles.not__vector_img}
-            />
-          </div>
         </div>
       </body>
     </html>

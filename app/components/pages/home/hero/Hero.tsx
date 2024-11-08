@@ -15,12 +15,12 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const words = [
-      "Веб сайтів",
+      "Веб-сайти",
       "Дизайн додатків",
-      "Веб дизайну",
-      "Мобільних додатків",
+      "Веб-дизайн",
+      "Мобільні додатки",
       "SEO оптимізації",
-      "Чат ботів",
+      "CRM-системи",
     ];
     let wordIndex = 0;
 
@@ -94,14 +94,11 @@ const Hero: React.FC = () => {
         <div className={styles.hero__wrapper}>
           <div className={styles.hero__wrapper_heading}>
             <h2 className={styles.hero__heading_title}>
-              Розробка <br />
+              Розробляємо <br />
               <span ref={textRef} className={styles.hero__title_special}></span>
               |
             </h2>
-            <p className={styles.hero__heading_text}>
-              Ми створюємо найкращі сайти, аналізуємо ваш бізнес, щоб він
-              приносив користь у цифровому світі
-            </p>
+            <p className={styles.hero__heading_text}></p>
           </div>
           <div className={styles.hero__wrapper_actions}>
             <Button

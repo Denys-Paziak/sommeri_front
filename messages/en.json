@@ -1,12 +1,16 @@
 {
   "home": {
     "hero": {
-      "title": "One step ahead with",
-      "boldTitle": "our solutions",
-      "subtitle": "We focus on understanding your needs to achieve the best results.",
-      "partners": "Trusted by our valued partners",
-      "primaryButton": "Get a consultation",
-      "secondaryButton": "Our portfolio"
+      "title": "We Develop",
+      "boldTitle1": "Websites",
+      "boldTitle2": "App Design",
+      "boldTitle3": "Web Design",
+      "boldTitle4": "Mobile Apps",
+      "boldTitle5": "SEO Optimization",
+      "boldTitle6": "CRM Systems",
+      "subtitle": "We create the best websites, analyzing your business to bring value in the digital world!",
+      "primaryButton": "Get a Consultation",
+      "secondaryButton": "Our Portfolio"
     },
     "about": {
       "title": "About us",
