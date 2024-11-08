@@ -2,15 +2,19 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Logo = () => {
+const Logo = ({ theme }: { theme: string | undefined }) => {
   return (
-    <Link href={"/"} >
-      <Image
-        width={300}
-        height={100}
-        src="../../images/logo.svg"
-        alt="logo"
-      />
+    <Link href={"/"}>
+
+      {
+        theme != undefined && <Image
+          width={300}
+          height={100}
+          src={`../../images/${theme}_logo.svg`}
+          alt="logo"
+        />
+      }
+
     </Link>
   );
 };

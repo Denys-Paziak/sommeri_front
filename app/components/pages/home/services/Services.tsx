@@ -8,11 +8,13 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
+import { useTheme } from 'next-themes'
 
 const Services: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const pathRef = useRef<SVGPathElement[]>([]);
   const t = useTranslations("home.services");
+  const { theme } = useTheme()
 
   useEffect(() => {
     const checkMobile = () => {
@@ -40,7 +42,8 @@ const Services: React.FC = () => {
         {
           strokeDashoffset: 0,
           duration: 2,
-          stroke: "#30CC71",
+          stroke: "#30CC71"
+          ,
           ease: "power2.inOut",
         },
         "0"
@@ -73,7 +76,7 @@ const Services: React.FC = () => {
   return (
     <SectionWrapper sectionId="services">
       <div className="container">
-        <div className={styles.services__wrapper}>
+        <div className={theme == "light" ? styles.services__wrapper_light : styles.services__wrapper}>
           <div className={styles.services__wrapper_heading}>
             <div className={styles.services__heading_info}>
               <AnimatedWrapper type="fade-up" duration={1.2}>

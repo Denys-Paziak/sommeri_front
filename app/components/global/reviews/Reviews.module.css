@@ -1,4 +1,5 @@
-.reviews__block {
+.reviews__block,
+.reviews__block_light {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -21,6 +22,7 @@
   width: max-content;
   animation: anim 100s linear infinite;
 }
+
 .reviews__slider_track_right {
   animation: animRight 100s linear infinite;
 }
@@ -42,11 +44,16 @@
   margin-right: 20px;
 }
 
+.reviews__block_light .reviews__track_item {
+  background: #fff;
+}
+
 .reviews__header_inner {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .reviews__inner_logo {
   width: 24px;
   height: 24px;
@@ -67,20 +74,24 @@
   font-weight: 500;
   color: var(--gray);
 }
+
 .reviews__header_date {
   font-size: 12px;
   line-height: 15px;
   font-weight: 500;
   color: var(--gray);
 }
+
 .reviews__item_main {
   width: 100%;
   height: 40px;
   overflow: scroll;
 }
+
 .reviews__item_main::-webkit-scrollbar {
   display: none;
 }
+
 .reviews__main_text {
   font-size: 13px;
   line-height: 16px;

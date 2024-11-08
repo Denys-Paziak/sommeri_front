@@ -1,9 +1,9 @@
 .title {
-    font-size: 60px;
-    line-height: 80px;
-    font-weight: 500;
-    color: var(--white);
-    text-align: center;
+  font-size: 60px;
+  line-height: 80px;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
 }
 
 @media (max-width: 1100px) {

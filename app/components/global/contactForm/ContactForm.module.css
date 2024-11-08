@@ -1,10 +1,15 @@
-.contact__block {
+.contact__block,
+.contact__block_light {
   width: 100%;
   background: var(--second-dark);
   border-radius: 30px;
   position: relative;
   overflow: hidden;
   padding: 40px;
+}
+
+.contact__block_light {
+  background: #fff;
 }
 
 .contact__block::before {
@@ -59,6 +64,16 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.contact__block_light .contact__fields_block,
+.contact__block_light .contact__fields_textarea {
+  background: var(--black);
+  border: 1px solid var(--black);
+}
+
+.contact__block_light svg path {
+  fill: var(--white);
 }
 
 .contact__fields_textarea {

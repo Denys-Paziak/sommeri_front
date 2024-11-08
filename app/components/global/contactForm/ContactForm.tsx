@@ -21,6 +21,7 @@ import Button from "@/app/components/UI/button/Button";
 import { Link } from "@/navigation";
 import { openThanksPopup } from "@/app/redux/thanksPopupSlice";
 import { useTranslations } from "use-intl";
+import { useTheme } from "next-themes";
 
 interface IFormData {
   name: string;
@@ -38,6 +39,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const t = useTranslations("contactForm");
   const [isClient, setIsClient] = useState(false);
+  const { theme } = useTheme();
 
   const countries = defaultCountries.filter((country) => {
     const { iso2 } = parseCountry(country);
@@ -157,7 +159,7 @@ const ContactForm = () => {
   }, [userCountryCode]);
 
   return (
-    <div className={styles.contact__block}>
+    <div className={theme == "light" ? styles.contact__block_light : styles.contact__block}>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className={styles.contact__block_form}
@@ -165,9 +167,8 @@ const ContactForm = () => {
         <div className={styles.contact__form_fields}>
           {/* Name Input */}
           <div
-            className={`${styles.contact__fields_block} ${
-              errors.name ? styles.error : ""
-            }`}
+            className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
+              }`}
           >
             <svg
               width="28"
@@ -201,9 +202,8 @@ const ContactForm = () => {
 
           {/* Email Input */}
           <div
-            className={`${styles.contact__fields_block} ${
-              errors.email ? styles.error : ""
-            }`}
+            className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
+              }`}
           >
             <svg
               width="28"
@@ -236,9 +236,8 @@ const ContactForm = () => {
 
           {/* Phone Input */}
           <div
-            className={`${styles.contact__fields_block} ${
-              errors.phone ? styles.error : ""
-            }`}
+            className={`${styles.contact__fields_block} ${errors.phone ? styles.error : ""
+              }`}
           >
             <Controller
               name="phone"
@@ -294,9 +293,8 @@ const ContactForm = () => {
 
           {/* Service Select */}
           <div
-            className={`${styles.contact__fields_block} ${
-              errors.service ? styles.error : ""
-            }`}
+            className={`${styles.contact__fields_block} ${errors.service ? styles.error : ""
+              }`}
           >
             <svg
               width="22"

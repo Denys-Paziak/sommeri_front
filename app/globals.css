@@ -1,9 +1,11 @@
-@import "./utils/styles/_base.css";
 @import "./utils/styles/_variables.css";
+@import "./utils/styles/_base.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 .static-line {
   stroke-width: 3;

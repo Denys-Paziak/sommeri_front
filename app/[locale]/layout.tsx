@@ -6,6 +6,7 @@ import ReduxProvider from "@/app/redux/ReduxProvider";
 import Header from "@/app/components/global/header/Header";
 import "../globals.css";
 import dynamic from "next/dynamic";
+import { ThemeProvider } from 'next-themes'
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -94,13 +95,15 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <Header />
-            <DynamicCustomCursor />
-            <DynamicContactFormPopup />
-            <DynamicThanksPopup />
-            <DynamicQuickContacts />
-            {children}
-            <DynamicFooter />
+            <ThemeProvider>
+              <Header />
+              <DynamicCustomCursor />
+              <DynamicContactFormPopup />
+              <DynamicThanksPopup />
+              <DynamicQuickContacts />
+              {children}
+              <DynamicFooter />
+            </ThemeProvider>
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

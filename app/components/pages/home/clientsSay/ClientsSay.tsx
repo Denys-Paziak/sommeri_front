@@ -6,7 +6,7 @@ import Reviews from "@/app/components/global/reviews/Reviews";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "use-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
-import { Review } from "@/app/utils/interfaces/reviews"; // імпорт інтерфейсу
+import { Review } from "@/app/utils/interfaces/reviews";
 
 const ClientsSay = ({ reviews }: { reviews: Review[] }) => {
   const t = useTranslations("home.reviews");

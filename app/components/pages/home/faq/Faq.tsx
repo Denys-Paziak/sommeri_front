@@ -7,6 +7,7 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
+import { useTheme } from "next-themes";
 
 interface FaqItem {
   title: string;
@@ -22,13 +23,15 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
   const t = useTranslations("home.faq");
 
   const handleClick = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index); // Перевіряємо, чи елемент вже активний
+    setActiveIndex(index === activeIndex ? null : index);
   };
+
+  const { theme } = useTheme();
 
   return (
     <SectionWrapper>
       <div className="container">
-        <div className={styles.faq__wrapper}>
+        <div className={theme == "light" ? styles.faq__wrapper_light : styles.faq__wrapper} >
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <TitleWrapper>{t("title")}</TitleWrapper>
           </AnimatedWrapper>
@@ -39,9 +42,8 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                   <div
                     onClick={() => handleClick(index)}
                     key={index}
-                    className={`${styles.faq__main_item} ${
-                      activeIndex === index ? styles.active : ""
-                    }`}
+                    className={`${styles.faq__main_item} ${activeIndex === index ? styles.active : ""
+                      }`}
                   >
                     <div className={styles.faq__item_inner}>
                       <h3 className={styles.faq__inner_title}>{item.title}</h3>
