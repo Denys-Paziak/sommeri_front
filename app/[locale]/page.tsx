@@ -42,11 +42,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
   let reviews = await getReviews(params.locale);
   let technologies = await getTechnologiesWay(params.locale);
 
-  // if (!posts && !categories && !technologies && !faqItems && !reviews) {
-  //   return <Loader />;
-  // }
-
-  if (true) {
+  if (!posts && !categories && !technologies && !faqItems && !reviews) {
     return <Loader />;
   }
 

@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 import Logo from "../logo/Logo";
 import Navbar from "./components/Navbar";
 import Options from "./components/Options";
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,7 +46,11 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+        theme == "light" && `${styles.light}`
+      }`}
+    >
       <section className={styles.header__section}>
         <div className="container">
           <div className={styles.header__wrapper}>
@@ -55,15 +59,12 @@ const Header = () => {
               handleBurgerMenu={handleBurgerMenu}
               isMobileMenuOpen={isMobileMenuOpen}
             />
-
-
             <Options />
-
-
             <div
               onClick={handleBurgerMenu}
-              className={`${styles.header__mobile_burger} ${isMobileMenuOpen ? `${styles.active}` : ""
-                }`}
+              className={`${styles.header__mobile_burger} ${
+                isMobileMenuOpen ? `${styles.active}` : ""
+              }`}
             >
               <span className={styles.header__burger_bar}></span>
               <span className={styles.header__burger_bar}></span>

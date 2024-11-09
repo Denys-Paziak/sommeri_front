@@ -21,6 +21,17 @@ import { useTheme } from "next-themes";
 
 const Footer = () => {
   const t = useTranslations();
+  const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+
+  const themeHandler = () => {
+    if (theme == "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   const NavbarItems = [
     {
       name: t("menu.item1"),
@@ -39,11 +50,6 @@ const Footer = () => {
       link: "reviews",
     },
   ];
-
-  const pathname = usePathname();
-
-  const { theme } = useTheme();
-
 
   return (
     <footer className={theme == "light" ? styles.footer_light : styles.footer}>
@@ -300,6 +306,18 @@ const Footer = () => {
               <span className={styles.footer__bottom_reserved}>
                 {t("footer.reserved")}
               </span>
+              <div className={styles.footer__bottom_theme}>
+                <label className={styles.ui_switch}>
+                  <input
+                    type="checkbox"
+                    checked={theme === "dark"}
+                    onClick={themeHandler}
+                  />
+                  <div className={styles.slider}>
+                    <div className={styles.circle}></div>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>

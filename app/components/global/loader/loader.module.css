@@ -11,46 +11,6 @@
   z-index: 100;
 }
 
-/* .loader {
-  width: 75px;
-  aspect-ratio: 1;
-  display: grid;
-}
-
-.loader:before,
-.loader:after {
-  content: "";
-  grid-area: 1/1;
-  width: 35px;
-  aspect-ratio: 1;
-  box-shadow: 0 0 0 3px #fff inset;
-  filter: drop-shadow(40px 40px 0 #fff);
-  animation: l8 2s infinite alternate;
-}
-.loader:after {
-  margin: 0 0 0 auto;
-  filter: drop-shadow(-40px 40px 0 #fff);
-  animation-delay: -1s;
-}
-@keyframes l8 {
-  0%,
-  10% {
-    border-radius: 0;
-  }
-  30%,
-  40% {
-    border-radius: 50% 0;
-  }
-  60%,
-  70% {
-    border-radius: 50%;
-  }
-  90%,
-  100% {
-    border-radius: 0 50%;
-  }
-} */
-
 .loader {
   --path: var(--white);
   --dot: var(--primary);
@@ -108,6 +68,17 @@
   animation: pathCircle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
 
+.triangle {
+  width: 48px;
+  position: relative;
+}
+
+.triangle::before {
+  left: 21px;
+  transform: translate(-10px, -18px);
+  animation: dotTriangle 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
 @keyframes pathTriangle {
   33% {
     stroke-dashoffset: 74;
@@ -120,18 +91,15 @@
   }
 }
 
-@keyframes dotRect {
-  25% {
+@keyframes dotTriangle {
+  33% {
     transform: translate(0, 0);
   }
-  50% {
-    transform: translate(18px, -18px);
-  }
-  75% {
-    transform: translate(0, -36px);
+  66% {
+    transform: translate(10px, -18px);
   }
   100% {
-    transform: translate(-18px, -18px);
+    transform: translate(-10px, -18px);
   }
 }
 
@@ -147,6 +115,21 @@
   }
   100% {
     stroke-dashoffset: 256;
+  }
+}
+
+@keyframes dotRect {
+  25% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -18px);
+  }
+  75% {
+    transform: translate(0, -36px);
+  }
+  100% {
+    transform: translate(-18px, -18px);
   }
 }
 

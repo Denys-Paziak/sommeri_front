@@ -5,8 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .static-line {
   stroke-width: 3;
   fill: none;
