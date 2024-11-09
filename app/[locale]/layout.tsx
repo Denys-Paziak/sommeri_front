@@ -95,7 +95,7 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <ThemeProvider defaultTheme="system">
+            <ThemeProvider defaultTheme="system" enableSystem={true}>
               <Header />
               <DynamicCustomCursor />
               <DynamicContactFormPopup />
