@@ -64,7 +64,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #30cc7199;
   filter: blur(30px);
 }
 

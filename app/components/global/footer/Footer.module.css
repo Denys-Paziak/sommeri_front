@@ -1,5 +1,11 @@
-.footer {
+.footer,
+.footer_light {
   width: 100%;
+}
+
+
+.footer_light .footer__contact_block svg path {
+  fill: var(--white);
 }
 
 .footer__section {
@@ -8,6 +14,10 @@
   padding-top: 100px;
   border-top: 1px solid #ffffff1a;
   position: relative;
+}
+
+.footer_light .footer__section {
+  border-top: 1px solid var(--white);
 }
 
 .footer__section_vector {
@@ -182,11 +192,23 @@
   border-top: 1px solid #ffffff1a;
 }
 
+.footer_light .footer__wrapper_bottom {
+  border-top: 1px solid var(--white);
+}
+
+.footer_light .footer__section_vector {
+  opacity: 0;
+}
+
 .footer__bottom_reserved {
   font-size: 12px;
   font-weight: 500;
   line-height: 15px;
   color: #ffffff33;
+}
+
+.footer_light .footer__bottom_reserved {
+  color: var(--white);
 }
 
 .footer__social_item {

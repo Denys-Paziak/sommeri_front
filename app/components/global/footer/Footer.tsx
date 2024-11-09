@@ -17,6 +17,7 @@ import {
   salesEmail,
 } from "@/configSommeriData";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
 const Footer = () => {
   const t = useTranslations();
@@ -41,15 +42,18 @@ const Footer = () => {
 
   const pathname = usePathname();
 
+  const { theme } = useTheme();
+
+
   return (
-    <footer className={styles.footer}>
+    <footer className={theme == "light" ? styles.footer_light : styles.footer}>
       <section className={styles.footer__section}>
         <div className="container">
           <div className={styles.footer_wrapper}>
             <div className={styles.footer__wrapper_main}>
               <div className={styles.footer__main_contact}>
                 <div className={styles.footer__contact_logo}>
-                  <Logo />
+                  <Logo theme={theme} />
                 </div>
                 <div className={styles.footer__contact_block}>
                   <Link

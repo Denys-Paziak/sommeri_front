@@ -11,7 +11,7 @@
 }
 
 .header.scrolled {
-  background-color: rgba(12, 12, 12, 0.9);
+  background-color: var(--dark);
   border-bottom: 1px solid var(--dark);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -87,7 +87,7 @@
 
 .line {
   fill: none;
-  stroke: white;
+  stroke: var(--white);
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -99,11 +99,11 @@
   stroke-dasharray: 12 63;
 }
 
-.hamburger input:checked + svg {
+.hamburger input:checked+svg {
   transform: rotate(-45deg);
 }
 
-.hamburger input:checked + svg .lineTopBottom {
+.hamburger input:checked+svg .lineTopBottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
@@ -115,7 +115,7 @@
 .language__selector_button {
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: var(--white);
   padding: 4px 4px;
   font-size: 14px;
   cursor: pointer;
@@ -132,7 +132,7 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--black);
-  border: 1px solid #ffffff1a;
+  border: 1px solid var(--black);
   border-radius: 8px;
   padding: 16px;
   z-index: 100;
@@ -151,6 +151,11 @@
 .arrow svg {
   width: 10px;
   height: 10px;
+}
+
+.arrow svg {
+  fill: var(--white);
+  transition: 0.4s;
 }
 
 .arrowUp {
@@ -289,7 +294,7 @@
     gap: 40px;
   }
 
-  .header__wrapper_nav > ul {
+  .header__wrapper_nav>ul {
     flex-direction: column;
     gap: 28px;
   }
@@ -323,4 +328,57 @@
   .header__wrapper_logo {
     max-width: 140px;
   }
+}
+
+.switch {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  ;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #303136;
+}
+
+input:checked+.slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }

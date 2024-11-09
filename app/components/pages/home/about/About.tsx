@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import dynamic from "next/dynamic";
 import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
+import { useTheme } from "next-themes";
 
 const DynamicLineVectorComponent = dynamic(
   () => import("@/app/components/global/lineVector/LineVector"),
@@ -20,7 +21,7 @@ const DynamicLineVectorComponent = dynamic(
 
 const About = () => {
   const t = useTranslations("home.about");
-
+  const { theme } = useTheme();
   return (
     <SectionWrapper sectionId="about">
       <div className="container">
@@ -52,7 +53,7 @@ const About = () => {
             <div className={styles.about__main_banner}>
               <AnimatedWrapper type="fade-left" duration={1.5} delay={0.8}>
                 <Image
-                  src={t("vectorLink")}
+                  src={theme == "light" ? "/images/light_" + t("vectorLink") : "/images/" + t("vectorLink")}
                   alt="about us vector"
                   width={500}
                   height={500}

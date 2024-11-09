@@ -12,14 +12,15 @@
 }
 
 
-.seconddary__button:after, .seconddary__button:before {
+.seconddary__button:after,
+.seconddary__button:before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
   width: 100%;
-  background: #fff;
+  background: var(--white);
   transition: 0.4s;
 }
 

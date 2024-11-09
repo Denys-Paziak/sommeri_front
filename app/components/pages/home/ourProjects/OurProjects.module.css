@@ -1,4 +1,5 @@
-.projects__wrapper {
+.projects__wrapper,
+.projects__wrapper_light {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -106,6 +107,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.projects__wrapper_light .project__banner_inner {
+  background: linear-gradient(180deg,
+      rgba(241, 239, 244, 0) 0%,
+      rgba(241, 239, 244, 1) 68.5%);
+
+}
+
+.projects__wrapper_light svg path {
+  stroke: var(--white);
 }
 
 .project__inner_name {

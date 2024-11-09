@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Reviews.module.css";
 // @ts-ignore
 import { backHost } from "@/app/utils/server/server";
+import { useTheme } from "next-themes";
 
 interface Review {
   id: number;
@@ -17,8 +18,10 @@ interface Review {
 }
 
 const Reviews = ({ reviews }: { reviews: Review[] }) => {
+  const { theme } = useTheme();
+
   return (
-    <div className={styles.reviews__block}>
+    <div className={theme == "light" ? styles.reviews__block_light : styles.reviews__block}>
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track}>
           {reviews &&
