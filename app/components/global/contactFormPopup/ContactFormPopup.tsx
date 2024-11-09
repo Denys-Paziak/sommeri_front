@@ -15,6 +15,7 @@ import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import Button from "@/app/components/UI/button/Button";
+import { useTheme } from "next-themes";
 
 interface IFormData {
   name: string;
@@ -25,6 +26,7 @@ const ContactFormPopup = () => {
   const isOpen = useSelector((state: RootState) => state.popup.isOpen);
   const dispatch = useDispatch();
   const t = useTranslations();
+  const { theme } = useTheme();
 
   const {
     register,
@@ -96,7 +98,7 @@ const ContactFormPopup = () => {
         onClick={() => dispatch(closePopup())}
       ></div>
       <PopupWrapper>
-        <div className={styles.contact__popup_wrapper}>
+        <div className={theme == "light" ? styles.contact__popup_wrapper_light : styles.contact__popup_wrapper}>
           <button
             type="button"
             className={styles.contact__wrapper_close}
@@ -133,9 +135,8 @@ const ContactFormPopup = () => {
             <div className={styles.contact__wrapper_fields}>
               {/* Name Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.name ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
@@ -169,9 +170,8 @@ const ContactFormPopup = () => {
 
               {/* Email Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.email ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
