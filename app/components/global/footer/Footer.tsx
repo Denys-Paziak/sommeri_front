@@ -21,11 +21,11 @@ import { useTheme } from "next-themes";
 
 const Footer = () => {
   const t = useTranslations();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const pathname = usePathname();
 
   const themeHandler = () => {
-    if (theme == "light") {
+    if (resolvedTheme == "light") {
       setTheme("dark");
     } else {
       setTheme("light");
@@ -52,14 +52,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={theme == "light" ? styles.footer_light : styles.footer}>
+    <footer className={resolvedTheme == "light" ? styles.footer_light : styles.footer}>
       <section className={styles.footer__section}>
         <div className="container">
           <div className={styles.footer_wrapper}>
             <div className={styles.footer__wrapper_main}>
               <div className={styles.footer__main_contact}>
                 <div className={styles.footer__contact_logo}>
-                  <Logo theme={theme} />
+                  <Logo theme={resolvedTheme} />
                 </div>
                 <div className={styles.footer__contact_block}>
                   <Link
@@ -310,7 +310,7 @@ const Footer = () => {
                 <label className={styles.ui_switch}>
                   <input
                     type="checkbox"
-                    checked={theme === "dark"}
+                    checked={resolvedTheme === "dark"}
                     onClick={themeHandler}
                   />
                   <div className={styles.slider}>
