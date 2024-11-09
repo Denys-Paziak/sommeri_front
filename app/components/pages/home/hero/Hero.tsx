@@ -20,7 +20,6 @@ const Hero: React.FC = () => {
       t("boldTitle3"),
       t("boldTitle4"),
       t("boldTitle5"),
-      t("boldTitle6"),
     ];
     let wordIndex = 0;
 
