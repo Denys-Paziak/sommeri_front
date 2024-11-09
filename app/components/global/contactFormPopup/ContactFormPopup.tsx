@@ -26,7 +26,7 @@ const ContactFormPopup = () => {
   const isOpen = useSelector((state: RootState) => state.popup.isOpen);
   const dispatch = useDispatch();
   const t = useTranslations();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const {
     register,
@@ -98,7 +98,7 @@ const ContactFormPopup = () => {
         onClick={() => dispatch(closePopup())}
       ></div>
       <PopupWrapper>
-        <div className={theme == "light" ? styles.contact__popup_wrapper_light : styles.contact__popup_wrapper}>
+        <div className={resolvedTheme == "light" ? styles.contact__popup_wrapper_light : styles.contact__popup_wrapper}>
           <button
             type="button"
             className={styles.contact__wrapper_close}

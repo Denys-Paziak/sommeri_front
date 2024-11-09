@@ -43,18 +43,17 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <header
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
-        theme == "light" && `${styles.light}`
-      }`}
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${resolvedTheme == "light" && `${styles.light}`
+        }`}
     >
       <section className={styles.header__section}>
         <div className="container">
           <div className={styles.header__wrapper}>
-            <Logo theme={theme} />
+            <Logo theme={resolvedTheme} />
             <Navbar
               handleBurgerMenu={handleBurgerMenu}
               isMobileMenuOpen={isMobileMenuOpen}
@@ -62,9 +61,8 @@ const Header = () => {
             <Options />
             <div
               onClick={handleBurgerMenu}
-              className={`${styles.header__mobile_burger} ${
-                isMobileMenuOpen ? `${styles.active}` : ""
-              }`}
+              className={`${styles.header__mobile_burger} ${isMobileMenuOpen ? `${styles.active}` : ""
+                }`}
             >
               <span className={styles.header__burger_bar}></span>
               <span className={styles.header__burger_bar}></span>

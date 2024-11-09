@@ -18,10 +18,10 @@ interface Review {
 }
 
 const Reviews = ({ reviews }: { reviews: Review[] }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
-    <div className={theme == "light" ? styles.reviews__block_light : styles.reviews__block}>
+    <div className={resolvedTheme == "light" ? styles.reviews__block_light : styles.reviews__block}>
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track}>
           {reviews &&
