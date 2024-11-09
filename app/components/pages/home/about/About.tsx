@@ -64,6 +64,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+
       <div className={styles.vector}>
         <DynamicLineVectorComponent />
       </div>
