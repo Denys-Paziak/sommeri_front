@@ -46,6 +46,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
     return <Loader />;
   }
 
+
   return (
     <>
       <Hero />
