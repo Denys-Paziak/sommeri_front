@@ -14,7 +14,7 @@ const ThanksPopup = () => {
   const isOpen = useSelector((state: RootState) => state.thanksPopup.isOpen);
   const dispatch = useDispatch();
   const t = useTranslations("popupThanks");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +31,7 @@ const ThanksPopup = () => {
   if (!isOpen) return <></>;
 
   return (
-    <div className={theme == "light" ? styles.modal_light : styles.modal}>
+    <div className={resolvedTheme == "light" ? styles.modal_light : styles.modal}>
       <div
         className={styles.overlay}
         onClick={() => dispatch(closeThanksPopup())}

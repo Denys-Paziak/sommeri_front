@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const Logo = ({ theme }: { theme: string | undefined }) => {
   return (
     <Link href={"/"}>
-
       {
         theme != undefined && <Image
           width={300}

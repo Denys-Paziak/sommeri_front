@@ -23,7 +23,7 @@ export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [visibleProjects, setVisibleProjects] = useState<number>(6);
   const t = useTranslations("home.portfolio");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const loadMoreProjects = () => {
     setVisibleProjects((prev) => prev + 6);
@@ -35,16 +35,16 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-          (project: ProjectInterface) =>
-            project.Category.Name === activeCategory
-        );
+        (project: ProjectInterface) =>
+          project.Category.Name === activeCategory
+      );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
       <div className="container">
         <div
           className={
-            theme == "light"
+            resolvedTheme == "light"
               ? styles.projects__wrapper_light
               : styles.projects__wrapper
           }
@@ -64,9 +64,8 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item} ${
-                      activeCategory === "All" && styles.active
-                    }`}
+                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
+                      }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -75,9 +74,8 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${
-                        activeCategory === category.Name && styles.active
-                      }`}
+                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
+                        }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}

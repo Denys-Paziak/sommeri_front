@@ -42,7 +42,6 @@
 }
 
 
-
 .services__main_card {
   height: 318px;
   background-image: url("/images/card-noise.avif");
@@ -162,13 +161,27 @@
   top: 20px;
   right: 20px;
   max-width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
 }
 
-.services__card_image path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  fill: transparent;
+.services__card_image svg {
+  width: 100%;
+  height: 100%;
+}
+
+.services__card_image path,
+.services__card_image rect {
+  opacity: 0.2;
+  transition: 0.4s;
+  stroke: var(--primary);
+  stroke-width: 1;
+}
+
+
+.services__main_card:hover .services__card_image path,
+.services__main_card:hover .services__card_image rect {
+  opacity: 1;
 }
 
 .services__vector_icon {
@@ -238,6 +251,7 @@
     max-width: 120px;
     height: 120px;
   }
+
   .services__inner_title {
     font-size: 24px;
     line-height: 36px;
