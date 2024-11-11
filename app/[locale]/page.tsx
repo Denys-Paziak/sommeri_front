@@ -10,16 +10,8 @@ import {
 import Loader from "@/app/components/global/loader/Loader";
 import dynamic from "next/dynamic";
 
-const DynamicWhyUs = dynamic(
-  () => import("@/app/components/pages/home/whyUs/WhyUs")
-);
-
 const DynamicServices = dynamic(
   () => import("@/app/components/pages/home/services/Services")
-);
-
-const DynamicTechnologies = dynamic(
-  () => import("@/app/components/pages/home/technologies/Technologies")
 );
 
 const DynamicOurProjects = dynamic(
@@ -30,9 +22,13 @@ const DynamicClientsSay = dynamic(
   () => import("@/app/components/pages/home/clientsSay/ClientsSay")
 );
 
+const DynamicAdvantages = dynamic(
+  () => import("@/app/components/pages/home/advantages/Advantages")
+);
+
 const DynamicFaq = dynamic(() => import("@/app/components/pages/home/faq/Faq"));
 
-const DynamicLine = dynamic(
+const DynamicBrifLine = dynamic(
   () => import("@/app/components/global/brifLine/brifLine")
 );
 
@@ -56,11 +52,11 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <Hero />
       <DynamicServices />
       <DynamicOurProjects posts={posts} categories={categories} />
+      <DynamicBrifLine />
       <About />
-      <DynamicWhyUs />
+      <DynamicAdvantages />
       <DynamicClientsSay reviews={reviews} />
       <DynamicFaq faqItems={faqItems} />
-      <DynamicLine />
       <DynamicContact />
     </>
   );

@@ -131,3 +131,9 @@
     object-fit: cover;
   }
 }
+
+@media (max-width: 600px) {
+  .faq__wrapper {
+    gap: 40px;
+  }
+}
