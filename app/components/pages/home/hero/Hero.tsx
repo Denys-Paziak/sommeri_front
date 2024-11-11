@@ -94,9 +94,11 @@ const Hero: React.FC = () => {
           <div className={styles.hero__wrapper_heading}>
             <h2 className={styles.hero__heading_title}>
               {t("title")} <br />
-              <span ref={textRef} className={styles.hero__title_special}></span>
-              |
             </h2>
+            <div className={styles.animText}>
+              <span ref={textRef} className={styles.hero__title_special} ></span>
+              |
+            </div>
             <p className={styles.hero__heading_text}>{t("subtitle")}</p>
           </div>
           <div className={styles.hero__wrapper_actions}>
@@ -121,8 +123,8 @@ const Hero: React.FC = () => {
       <div className={styles.vector}>
         <Image
           src={"/images/hero-vector.svg"}
-          width={1000}
-          height={800}
+          width={800}
+          height={600}
           alt="hero vector"
         />
       </div>

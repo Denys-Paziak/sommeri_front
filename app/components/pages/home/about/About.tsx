@@ -21,7 +21,7 @@ const DynamicLineVectorComponent = dynamic(
 
 const About = () => {
   const t = useTranslations("home.about");
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   return (
     <SectionWrapper sectionId="about">
       <div className="container">
@@ -53,7 +53,7 @@ const About = () => {
             <div className={styles.about__main_banner}>
               <AnimatedWrapper type="fade-left" duration={1.5} delay={0.8}>
                 <Image
-                  src={theme == "light" ? "/images/light_" + t("vectorLink") : "/images/" + t("vectorLink")}
+                  src={resolvedTheme == "light" ? "/images/light_" + t("vectorLink") : "/images/" + t("vectorLink")}
                   alt="about us vector"
                   width={500}
                   height={500}

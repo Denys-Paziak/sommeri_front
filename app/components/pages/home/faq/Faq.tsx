@@ -26,12 +26,12 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper>
       <div className="container">
-        <div className={theme == "light" ? styles.faq__wrapper_light : styles.faq__wrapper} >
+        <div className={resolvedTheme == "light" ? styles.faq__wrapper_light : styles.faq__wrapper} >
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <TitleWrapper>{t("title")}</TitleWrapper>
           </AnimatedWrapper>
