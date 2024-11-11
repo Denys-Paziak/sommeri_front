@@ -26,7 +26,7 @@ const Navbar = ({ isMobileMenuOpen, handleBurgerMenu }: iProps) => {
     },
     {
       name: t("item4"),
-      link: "reviews",
+      link: "contactUs",
     },
   ];
 

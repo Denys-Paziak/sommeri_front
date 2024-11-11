@@ -47,12 +47,14 @@ const Footer = () => {
     },
     {
       name: t("menu.item4"),
-      link: "reviews",
+      link: "contactUs",
     },
   ];
 
   return (
-    <footer className={resolvedTheme == "light" ? styles.footer_light : styles.footer}>
+    <footer
+      className={resolvedTheme == "light" ? styles.footer_light : styles.footer}
+    >
       <section className={styles.footer__section}>
         <div className="container">
           <div className={styles.footer_wrapper}>

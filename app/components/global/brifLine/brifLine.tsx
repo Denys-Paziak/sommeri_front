@@ -1,10 +1,16 @@
+"use client";
+
 import React from "react";
 import Button from "@/app/components/UI/button/Button";
 import Image from "next/image";
 import styles from "./brifLine.module.css";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
+import { useDispatch } from "react-redux";
+import { openPopup } from "@/app/redux/popupSlice";
 
 const BrifLine = () => {
+  const dispatch = useDispatch();
+
   return (
     <SectionWrapper>
       <div className="container">
@@ -19,8 +25,13 @@ const BrifLine = () => {
               </p>
             </div>
             <div className={styles.line__wrapper_action}>
-              <Button ariaLabel={"brif"} isRounded={true} type={"button"}>
-                Заповнити бриф
+              <Button
+                ariaLabel={"brif"}
+                isRounded={true}
+                type={"button"}
+                onClick={() => dispatch(openPopup())}
+              >
+                Заповнити консультацію
               </Button>
             </div>
           </div>

@@ -1,15 +1,16 @@
 "use client";
 
-import Button from "@/app/components/UI/button/Button";
-import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import Image from "next/image";
 import styles from "@/app/components/UI/notFound/NotFound.module.css";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export default function NotFound() {
   return (
     <html lang="en">
-      <body>
+      <body style={{ margin: 0, padding: 0 }} className={montserrat.className}>
         <div className={styles.not__found_section}>
           <div className="container">
             <div className={styles.not__found_wrapper}>
@@ -24,25 +25,38 @@ export default function NotFound() {
               </div>
               <div className={styles.not__found_content}>
                 <div className={styles.not__content_info}>
-                  <TitleWrapper>Page not found</TitleWrapper>
+                  <h2 className={styles.not__info_title}>Page not found</h2>
                   <p className={styles.not__found_text}>
                     This page does not exist or was removed! We suggest you back
                     to home
                   </p>
                 </div>
                 <Link href={"/"}>
-                  <Button
-                    isRounded={true}
-                    type={"button"}
-                    ariaLabel={"Back to home"}
+                  <button
+                    className={styles.not__content_button}
+                    aria-label="home button"
+                    type="button"
                   >
                     Back to home
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </div>
           </div>
         </div>
+        <style jsx global>{`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: ${montserrat.style.fontFamily};
+            margin: 0;
+            padding: 0;
+          }
+        `}</style>
       </body>
     </html>
   );

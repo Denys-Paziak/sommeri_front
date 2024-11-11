@@ -91,42 +91,47 @@ const Hero: React.FC = () => {
     <section className={styles.hero__section}>
       <div className="container">
         <div className={styles.hero__wrapper}>
-          <div className={styles.hero__wrapper_heading}>
-            <h2 className={styles.hero__heading_title}>
-              {t("title")} <br />
-            </h2>
-            <div className={styles.animText}>
-              <span ref={textRef} className={styles.hero__title_special}></span>
-              |
+          <div className={styles.hero__wrapper_content}>
+            <div className={styles.hero__wrapper_heading}>
+              <h2 className={styles.hero__heading_title}>
+                {t("title")} <br />
+                <div className={styles.animText}>
+                  <span
+                    ref={textRef}
+                    className={styles.hero__title_special}
+                  ></span>
+                  |
+                </div>
+              </h2>
+              <p className={styles.hero__heading_text}>{t("subtitle")}</p>
             </div>
-            <p className={styles.hero__heading_text}>{t("subtitle")}</p>
+            <div className={styles.hero__wrapper_actions}>
+              <Button
+                isRounded={true}
+                type={"button"}
+                onClick={() => handleScroll("contactUs")}
+                ariaLabel={t("primaryButton")}
+              >
+                {t("primaryButton")}
+              </Button>
+              <SecondaryButton
+                type={"button"}
+                onClick={() => handleScroll("portfolio")}
+                ariaLabel={t("secondaryButton")}
+              >
+                {t("secondaryButton")}
+              </SecondaryButton>
+            </div>
           </div>
-          <div className={styles.hero__wrapper_actions}>
-            <Button
-              isRounded={true}
-              type={"button"}
-              onClick={() => handleScroll("contactUs")}
-              ariaLabel={t("primaryButton")}
-            >
-              {t("primaryButton")}
-            </Button>
-            <SecondaryButton
-              type={"button"}
-              onClick={() => handleScroll("portfolio")}
-              ariaLabel={t("secondaryButton")}
-            >
-              {t("secondaryButton")}
-            </SecondaryButton>
+          <div className={styles.hero__wrapper_mockup}>
+            <Image
+              src="/images/mockup.png"
+              alt="mockup"
+              width={800}
+              height={600}
+            />
           </div>
         </div>
-      </div>
-      <div className={styles.vector}>
-        <Image
-          src={"/images/hero-vector.avif"}
-          width={1000}
-          height={800}
-          alt="hero vector"
-        />
       </div>
     </section>
   );

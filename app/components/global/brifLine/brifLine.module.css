@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 60px 60px;
+  padding: 60px;
   justify-content: center;
   background: var(--second-dark);
   border-radius: 20px;
@@ -57,6 +57,9 @@
   .line__content_title {
     font-size: 42px;
     line-height: 50px;
+  }
+  .line__wrapper {
+    padding: 40px;
   }
 }
 

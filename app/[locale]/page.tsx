@@ -1,5 +1,4 @@
 import Hero from "@/app/components/pages/home/hero/Hero";
-import About from "@/app/components/pages/home/about/About";
 import {
   getCategories,
   getFAQ,
@@ -24,6 +23,10 @@ const DynamicClientsSay = dynamic(
 
 const DynamicAdvantages = dynamic(
   () => import("@/app/components/pages/home/advantages/Advantages")
+);
+
+const DynamicAbout = dynamic(
+  () => import("@/app/components/pages/home/about/About")
 );
 
 const DynamicFaq = dynamic(() => import("@/app/components/pages/home/faq/Faq"));
@@ -53,8 +56,8 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <DynamicServices />
       <DynamicOurProjects posts={posts} categories={categories} />
       <DynamicBrifLine />
-      <About />
       <DynamicAdvantages />
+      <DynamicAbout />
       <DynamicClientsSay reviews={reviews} />
       <DynamicFaq faqItems={faqItems} />
       <DynamicContact />
