@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
       </div>
       <div className={styles.vector}>
         <Image
-          src={"/images/hero-vector.svg"}
+          src={"/images/hero-vector.avif"}
           width={1000}
           height={800}
           alt="hero vector"

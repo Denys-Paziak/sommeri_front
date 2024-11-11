@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "@/navigation";
 import styles from "./QuickContacts.module.css";
 import { useTranslations } from "next-intl";
@@ -6,14 +8,22 @@ import {
   linkOnWhatsApp,
   phoneNumber,
 } from "@/configSommeriData";
+import { useSelector } from "react-redux";
 
 const QuickContacts = () => {
   const t = useTranslations("quickContacts");
+  const isDiscountVisible = useSelector(
+    (state: any) => state.discount.isVisible
+  );
 
   return (
     <div className={styles.quick__contacts_block}>
       <div className={styles.quick__contacts_wrapper}>
-        <div className={styles.quick__wrapper_top}>
+        <div
+          className={`${styles.quick__wrapper_top} ${
+            isDiscountVisible ? styles.discount : ""
+          }`}
+        >
           <Link
             target="_blank"
             href={linkOnWhatsApp}
@@ -53,7 +63,11 @@ const QuickContacts = () => {
             </svg>
           </Link>
         </div>
-        <div className={styles.quick__wrapper_inner}>
+        <div
+          className={`${styles.quick__wrapper_inner} ${
+            isDiscountVisible ? styles.discount : ""
+          }`}
+        >
           <div className={styles.quick__inner_line}>
             <div className={styles.quick__line_animation}>
               <div className={`${styles.quick__line_icon} ${styles.icon1}`}>

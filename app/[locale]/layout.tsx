@@ -6,7 +6,7 @@ import ReduxProvider from "@/app/redux/ReduxProvider";
 import Header from "@/app/components/global/header/Header";
 import "../globals.css";
 import dynamic from "next/dynamic";
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from "next-themes";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -24,6 +24,10 @@ const DynamicThanksPopup = dynamic(
 
 const DynamicQuickContacts = dynamic(
   () => import("@/app/components/global/quickContacts/QuickContacts")
+);
+
+const DynamicDiscountLine = dynamic(
+  () => import("@/app/components/global/discountLine/DiscountLine")
 );
 
 const DynamicFooter = dynamic(
@@ -101,6 +105,7 @@ export default async function RootLayout({
               <DynamicContactFormPopup />
               <DynamicThanksPopup />
               <DynamicQuickContacts />
+              <DynamicDiscountLine />
               {children}
               <DynamicFooter />
             </ThemeProvider>

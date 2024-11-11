@@ -29,7 +29,12 @@ const DynamicOurProjects = dynamic(
 const DynamicClientsSay = dynamic(
   () => import("@/app/components/pages/home/clientsSay/ClientsSay")
 );
+
 const DynamicFaq = dynamic(() => import("@/app/components/pages/home/faq/Faq"));
+
+const DynamicLine = dynamic(
+  () => import("@/app/components/global/brifLine/brifLine")
+);
 
 const DynamicContact = dynamic(
   () => import("@/app/components/pages/home/contact/Contact")
@@ -46,7 +51,6 @@ export default async function Home({ params }: { params: { locale: string } }) {
     return <Loader />;
   }
 
-
   return (
     <>
       <Hero />
@@ -56,6 +60,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <DynamicWhyUs />
       <DynamicClientsSay reviews={reviews} />
       <DynamicFaq faqItems={faqItems} />
+      <DynamicLine />
       <DynamicContact />
     </>
   );
