@@ -8,10 +8,12 @@ import {
   linkOnWhatsApp,
   phoneNumber,
 } from "@/configSommeriData";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { openPopup } from "@/app/redux/popupSlice";
 
 const QuickContacts = () => {
   const t = useTranslations("quickContacts");
+  const dispatch = useDispatch();
   const isDiscountVisible = useSelector(
     (state: any) => state.discount.isVisible
   );
@@ -68,7 +70,10 @@ const QuickContacts = () => {
             isDiscountVisible ? styles.discount : ""
           }`}
         >
-          <div className={styles.quick__inner_line}>
+          <div
+            onClick={() => dispatch(openPopup())}
+            className={styles.quick__inner_line}
+          >
             <div className={styles.quick__line_animation}>
               <div className={`${styles.quick__line_icon} ${styles.icon1}`}>
                 <svg

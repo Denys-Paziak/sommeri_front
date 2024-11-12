@@ -8,7 +8,7 @@
       "boldTitle4": "Business Card Sites",
       "boldTitle5": "Landing Pages",
       "boldTitle6": "IT Solutions",
-      "subtitle": "We create the best websites, analyzing your business to make it thrive in the digital world!",
+      "subtitle": "We create the best solutions, analyze your business to make it beneficial in your niche",
       "primaryButton": "Get a Consultation",
       "secondaryButton": "Our Portfolio"
     },
@@ -91,7 +91,12 @@
   },
   "popupForm": {
     "title": "Contact Us",
-    "subtitle": "Leave your contact details and we'll get back to you shortly"
+    "subtitle": "Leave your contact details, and we will get back to you shortly",
+    "social1Label": "Telegram:",
+    "social1Text": "Message on Telegram",
+    "social2Label": "WhatsApp:",
+    "social2Text": "Message on WhatsApp",
+    "social3Label": "Phone:"
   },
   "popupThanks": {
     "title": "Application accepted",
@@ -181,9 +186,7 @@
     "eighthSubtitle": "Contact Information",
     "eighthText": "If you have any questions or concerns regarding these Terms of Use, please contact us at:"
   },
-  "404": {
-    "title": "Page not found",
-    "text": "This page doesn't exist or was removed! We suggest you back to home",
-    "button": "Back to home"
+  "discountLine": {
+    "discountLineText": "Get <bold>10% off</bold> on a website until <bold>December 31</bold>"
   }
 }

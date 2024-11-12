@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
     };
 
     cycleText();
-  }, []);
+  }, [t]);
 
   return (
     <section className={styles.hero__section}>
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
         <div className={styles.hero__wrapper}>
           <div className={styles.hero__wrapper_content}>
             <div className={styles.hero__wrapper_heading}>
-              <h2 className={styles.hero__heading_title}>
+              <h1 className={styles.hero__heading_title}>
                 {t("title")} <br />
                 <div className={styles.animText}>
                   <span
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
                   ></span>
                   |
                 </div>
-              </h2>
+              </h1>
               <p className={styles.hero__heading_text}>{t("subtitle")}</p>
             </div>
             <div className={styles.hero__wrapper_actions}>
@@ -125,6 +125,7 @@ const Hero: React.FC = () => {
           </div>
           <div className={styles.hero__wrapper_mockup}>
             <Image
+              priority={true}
               src="/images/mockup.png"
               alt="mockup"
               width={800}

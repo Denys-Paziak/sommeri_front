@@ -313,7 +313,7 @@ const Footer = () => {
                   <input
                     type="checkbox"
                     checked={resolvedTheme === "dark"}
-                    onClick={themeHandler}
+                    onChange={themeHandler}
                   />
                   <div className={styles.slider}>
                     <div className={styles.circle}></div>
@@ -325,6 +325,7 @@ const Footer = () => {
         </div>
         <div className={styles.footer__section_vector}>
           <Image
+            priority={true}
             width={2000}
             height={240}
             src="/images/SOMMERI.svg"

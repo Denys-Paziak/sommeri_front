@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "%s Розробка Сайтів Під Ключ | Сайт Візитка | Інтернет магазин - Sommeri",
   },
   description:
-    "Веб-студія Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, розробка мобільних додатків, веб-дизайн, SEO оптимізація та Google Ads",
+    "Веб-студія Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, інтернет-магазинів, корпоративних сайтів",
 
   openGraph: {
     type: "website",
@@ -65,15 +65,6 @@ export const metadata: Metadata = {
         alt: "Sommeri - Розробка Сайтів Під Ключ",
       },
     ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    site: "@yourTwitterHandle",
-    title: "Sommeri - Розробка Сайтів Під Ключ",
-    description:
-      "Sommeri пропонує професійну розробку сайтів під ключ у Києві та Україні: створення сайтів-візиток, розробка мобільних додатків, веб-дизайн, SEO оптимізація та Google Ads.",
-    images: "",
   },
 };
 
@@ -99,7 +90,11 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
           <ReduxProvider>
-            <ThemeProvider defaultTheme="system" enableSystem={true}>
+            <ThemeProvider
+              attribute="data-theme"
+              defaultTheme="dark"
+              enableSystem={true}
+            >
               <Header />
               <DynamicCustomCursor />
               <DynamicContactFormPopup />

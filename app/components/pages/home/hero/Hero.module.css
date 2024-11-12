@@ -33,14 +33,14 @@
 }
 
 .hero__heading_title {
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 600;
   line-height: 80px;
   color: var(--white);
 }
 
 .animText {
-  font-size: 64px;
+  font-size: 60px;
   line-height: 80px;
 }
 
@@ -109,9 +109,14 @@
     line-height: 48px;
     text-align: center;
   }
-
+  .hero__wrapper_content {
+    align-items: center;
+  }
+  .hero__wrapper_heading {
+    align-items: center;
+  }
   .hero__heading_text {
-    width: 100%;
+    width: 80%;
     font-size: 16px;
     line-height: 22px;
     text-align: center;
@@ -129,13 +134,14 @@
     font-size: 30px;
     line-height: 38px;
   }
-
+  .hero__heading_text {
+    width: 100%;
+  }
   .hero__wrapper_actions {
     gap: 28px;
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .hero__wrapper_heading {
     gap: 20px;
   }

@@ -55,6 +55,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  cursor: pointer;
 }
 .quick__line_info {
   display: flex;

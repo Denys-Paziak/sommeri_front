@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://sommeri.com/sitemap.xml",
+    sitemap: "https://sommeri.com/uk/sitemap-0.xml",
   };
 }

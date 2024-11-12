@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-
 const Logo = ({ theme }: { theme: string | undefined }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <Link href={"/"}>
-      {
-        theme != undefined && <Image
+      {isClient && theme != undefined && (
+        <Image
           width={300}
           height={100}
-          src={`../../images/${theme}_logo.svg`}
+          src={`/images/${theme}_logo.svg`}
           alt="logo"
         />
-      }
-
+      )}
     </Link>
   );
 };
