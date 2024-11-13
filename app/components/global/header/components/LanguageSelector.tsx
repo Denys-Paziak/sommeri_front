@@ -62,7 +62,7 @@ const LanguageSelector: React.FC = () => {
         <ul className={styles.language__list}>
           {languages.map((language) => (
             <a
-              href={`https://sommeri.com/${language}`}
+              href={`https://sommeri.com/${language.code}`}
               key={language.code}
               className={styles.language__list_item}
             >
