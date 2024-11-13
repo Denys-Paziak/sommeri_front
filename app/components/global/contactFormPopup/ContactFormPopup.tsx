@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,6 +32,12 @@ const ContactFormPopup = () => {
   const dispatch = useDispatch();
   const t = useTranslations();
   const { resolvedTheme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
+
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const {
     register,
@@ -91,7 +97,7 @@ const ContactFormPopup = () => {
   };
 
   return (
-    <div
+    isClient && <div
       className={
         isOpen
           ? `${styles.modal} ${styles.open}`
@@ -144,11 +150,9 @@ const ContactFormPopup = () => {
             className={styles.contact__wrapper_form}
           >
             <div className={styles.contact__wrapper_fields}>
-              {/* Name Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.name ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
@@ -180,11 +184,9 @@ const ContactFormPopup = () => {
                 />
               </div>
 
-              {/* Email Input */}
               <div
-                className={`${styles.contact__fields_block} ${
-                  errors.email ? styles.error : ""
-                }`}
+                className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
+                  }`}
               >
                 <svg
                   width="28"
