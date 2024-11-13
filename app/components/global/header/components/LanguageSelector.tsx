@@ -61,10 +61,10 @@ const LanguageSelector: React.FC = () => {
       {isOpen && (
         <ul className={styles.language__list}>
           {languages.map((language) => (
-            <li
+            <a
+              href={`https://sommeri.com/${language}`}
               key={language.code}
               className={styles.language__list_item}
-              onClick={() => handleLanguageChange(language)}
             >
               <span className={styles.language__item_flag}>
                 <Image
@@ -78,7 +78,7 @@ const LanguageSelector: React.FC = () => {
                 />
               </span>
               <p className={styles.language__item_name}>{language.name}</p>
-            </li>
+            </a>
           ))}
         </ul>
       )}
