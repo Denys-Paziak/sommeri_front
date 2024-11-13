@@ -162,7 +162,9 @@ const ContactForm = () => {
   return (
     <div
       className={
-        resolvedTheme == "light" ? styles.contact__block_light : styles.contact__block
+        resolvedTheme == "light"
+          ? styles.contact__block_light
+          : styles.contact__block
       }
     >
       <form
@@ -172,8 +174,9 @@ const ContactForm = () => {
         <div className={styles.contact__form_fields}>
           {/* Name Input */}
           <div
-            className={`${styles.contact__fields_block} ${errors.name ? styles.error : ""
-              }`}
+            className={`${styles.contact__fields_block} ${
+              errors.name ? styles.error : ""
+            }`}
           >
             <svg
               width="28"
@@ -207,8 +210,9 @@ const ContactForm = () => {
 
           {/* Email Input */}
           <div
-            className={`${styles.contact__fields_block} ${errors.email ? styles.error : ""
-              }`}
+            className={`${styles.contact__fields_block} ${
+              errors.email ? styles.error : ""
+            }`}
           >
             <svg
               width="28"
@@ -241,8 +245,9 @@ const ContactForm = () => {
 
           {/* Phone Input */}
           <div
-            className={`${styles.contact__fields_block} ${errors.phone ? styles.error : ""
-              }`}
+            className={`${styles.contact__fields_block} ${
+              errors.phone ? styles.error : ""
+            }`}
           >
             <Controller
               name="phone"
@@ -282,14 +287,19 @@ const ContactForm = () => {
                       "--react-international-phone-border-color": "transparent",
                       "--react-international-phone-background-color":
                         "transparent",
-                      "--react-international-phone-text-color": `${resolvedTheme === "light" ? "var(--white)" : "white"
-                        }`,
-                      "--react-international-phone-selected-dropdown-item-background-color": `${resolvedTheme === "light" ? "var(--dark)" : "var(--dark)"
-                        }`,
+                      "--react-international-phone-text-color": `${
+                        resolvedTheme === "light" ? "var(--white)" : "white"
+                      }`,
+                      "--react-international-phone-selected-dropdown-item-background-color": `${
+                        resolvedTheme === "light"
+                          ? "var(--dark)"
+                          : "var(--dark)"
+                      }`,
                       "--react-international-phone-country-selector-background-color-hover":
                         "transparent",
-                      "--react-international-phone-dropdown-item-background-color": `${resolvedTheme === "light" ? "#fff" : "#1c1c1c"
-                        }`,
+                      "--react-international-phone-dropdown-item-background-color": `${
+                        resolvedTheme === "light" ? "#fff" : "#1c1c1c"
+                      }`,
                     } as React.CSSProperties
                   }
                 />
@@ -299,8 +309,9 @@ const ContactForm = () => {
 
           {/* Service Select */}
           <div
-            className={`${styles.contact__fields_block} ${errors.service ? styles.error : ""
-              }`}
+            className={`${styles.contact__fields_block} ${
+              errors.service ? styles.error : ""
+            }`}
           >
             <svg
               width="22"
@@ -342,35 +353,40 @@ const ContactForm = () => {
                       }),
                       menu: (baseStyles) => ({
                         ...baseStyles,
-                        background: `${siteTheme === "light" ? "#fff" : "#1c1c1c"
-                          }`,
+                        background: `${
+                          siteTheme === "light" ? "#fff" : "#1c1c1c"
+                        }`,
                         color: "var(--gray)",
                         padding: "0",
-                        border: `${siteTheme === "light"
+                        border: `${
+                          siteTheme === "light"
                             ? "1px solid #fff"
                             : "1px solid #1c1c1c"
-                          }`,
+                        }`,
                         borderRadius: "8px",
                       }),
                       option: (baseStyles, { isSelected }) => ({
                         ...baseStyles,
                         background: isSelected
-                          ? `${siteTheme === "light"
-                            ? "var(--white)"
-                            : "var(--dark)"
-                          }`
+                          ? `${
+                              siteTheme === "light"
+                                ? "var(--white)"
+                                : "var(--dark)"
+                            }`
                           : `${siteTheme === "light" ? "#fff" : "transparent"}`,
                         ":hover": {
                           background: isSelected
                             ? `${siteTheme === "light" ? "var(--white)" : ""}`
-                            : `${siteTheme === "light"
-                              ? "#f7f7f7"
-                              : "var(--dark)"
-                            }`,
+                            : `${
+                                siteTheme === "light"
+                                  ? "#f7f7f7"
+                                  : "var(--dark)"
+                              }`,
                         },
                         ":active": {
-                          background: `${siteTheme === "light" ? "#f7f7f7" : ""
-                            }`,
+                          background: `${
+                            siteTheme === "light" ? "#f7f7f7" : ""
+                          }`,
                         },
                       }),
                     }}
@@ -379,12 +395,15 @@ const ContactForm = () => {
                       borderRadius: 8,
                       colors: {
                         ...theme.colors,
-                        primary25: `${siteTheme === "light" ? "var(--dark)" : "var(--dark)"
-                          }`,
-                        primary: `${siteTheme === "light" ? "#fff" : "#1c1c1c"
-                          }`,
-                        neutral80: `${siteTheme === "light" ? "var(--white)" : "var(--gray)"
-                          }`,
+                        primary25: `${
+                          siteTheme === "light" ? "var(--dark)" : "var(--dark)"
+                        }`,
+                        primary: `${
+                          siteTheme === "light" ? "#fff" : "#1c1c1c"
+                        }`,
+                        neutral80: `${
+                          siteTheme === "light" ? "var(--white)" : "var(--gray)"
+                        }`,
                       },
                     })}
                   />

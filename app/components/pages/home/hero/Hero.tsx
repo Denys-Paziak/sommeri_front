@@ -126,10 +126,11 @@ const Hero: React.FC = () => {
           <div className={styles.hero__wrapper_mockup}>
             <Image
               priority={true}
+              fetchPriority="low"
               src="/images/mockup.avif"
               alt="mockup"
-              width={600}
-              height={600}
+              width={500}
+              height={500}
             />
           </div>
         </div>
