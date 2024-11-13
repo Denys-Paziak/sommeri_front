@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "@/navigation";
 import Logo from "../logo/Logo";
 import styles from "./Footer.module.css";
@@ -32,6 +32,12 @@ const Footer = () => {
     }
   };
 
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const NavbarItems = [
     {
       name: t("menu.item1"),
@@ -52,9 +58,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer
+    isClient && <footer
       className={resolvedTheme == "light" ? styles.footer_light : styles.footer}
     >
+
       <section className={styles.footer__section}>
         <div className="container">
           <div className={styles.footer_wrapper}>

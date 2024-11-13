@@ -3,13 +3,16 @@
   width: 100%;
 }
 
+.footer_light {
+  background: #fff;
+}
+
 .footer_light .footer__contact_block svg path {
   fill: var(--white);
 }
 
 .footer_light .footer__section_vector {
   display: none;
-
 }
 
 .footer__section {
