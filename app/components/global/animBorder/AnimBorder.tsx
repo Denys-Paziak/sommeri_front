@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./animBorder.module.css";
-import AnimatedWrapper from "../../UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 
 interface Props {
     children: React.ReactNode;
@@ -8,13 +7,15 @@ interface Props {
     type: string
 }
 
-const AnimBorder: React.FC<Props> = ({ children, className, type }) => {
+const AnimBorder: React.FC<Props> = ({ children, className }) => {
     return (
-        <AnimatedWrapper className={`${styles.anim_border} ${className} ${type == "static" ? styles.animation : styles.animation} `} type="fade-up" duration={1.4}>
-            <div className={styles.content}>
-                {children}
+        <div className={` ${className}  `} >
+            <div className={`${styles.animation} ${styles.anim_border}`}>
+                <div className={styles.content}>
+                    {children}
+                </div>
             </div>
-        </AnimatedWrapper>
+        </div>
     );
 };
 
