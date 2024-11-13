@@ -8,6 +8,7 @@
   bottom: 0;
   z-index: 5;
 }
+
 .discount__line_content {
   display: flex;
   align-items: center;
@@ -16,12 +17,14 @@
   margin: 0 auto;
   z-index: 6;
 }
+
 .discount__line_text {
   font-size: 16px;
   font-weight: 500;
-  color: var(--white);
+  color: #fff;
   line-height: 16px;
 }
+
 .discount__line_close {
   background: transparent;
   border: none;
@@ -34,6 +37,7 @@
   transform: translateY(-50%);
   cursor: pointer;
 }
+
 .discount__line_vector {
   width: 100%;
   position: absolute;
@@ -42,6 +46,7 @@
   right: 0;
   bottom: 0;
 }
+
 .discount__line_vector img {
   width: 100%;
   height: 100%;
@@ -55,6 +60,7 @@
     right: auto;
     transform: translateY(0%);
   }
+
   .discount__line_content {
     justify-content: space-between;
   }
