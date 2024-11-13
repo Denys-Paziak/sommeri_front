@@ -37,6 +37,10 @@
   gap: 40px;
 }
 
+.contact__popup_wrapper_light svg {
+  stroke: var(--black);
+}
+
 .contact__wrapper_close {
   position: absolute;
   top: 40px;
@@ -177,6 +181,7 @@
   justify-content: space-between;
   gap: 20px;
 }
+
 .contact__contacts_block {
   display: flex;
   align-items: center;
@@ -185,31 +190,41 @@
   cursor: pointer;
   outline: none;
 }
+
 .contact__block_media {
   width: 38px;
   height: 38px;
-  background: var(--white);
+  background: #fff;
   border: 2px solid var(--primary);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .contact__block_media svg {
   width: 24px;
   height: 24px;
 }
+
+.contact__block_media svg path {
+  stroke: transparent;
+  fill: var(--primary);
+}
+
 .contact__block_info {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
+
 .contact__info_label {
   font-size: 12px;
   line-height: 12px;
   color: var(--gray);
   font-weight: 400;
 }
+
 .contact__info_text {
   font-size: 14px;
   line-height: 16px;
@@ -217,6 +232,7 @@
   font-weight: 500;
   transition: 0.4s;
 }
+
 .contact__contacts_block:hover .contact__info_text {
   text-decoration: underline;
   color: var(--primary);
