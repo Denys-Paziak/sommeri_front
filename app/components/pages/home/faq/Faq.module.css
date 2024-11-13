@@ -31,8 +31,12 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  transition: gap 0.4s;
+  transition: 0.4s;
   cursor: pointer;
+}
+
+.faq__main_item:hover {
+  border-color: var(--primary);
 }
 
 .faq__wrapper_light .faq__main_item {

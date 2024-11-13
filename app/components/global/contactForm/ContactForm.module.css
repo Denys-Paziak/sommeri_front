@@ -21,15 +21,17 @@
   height: 100%;
   border-radius: 30px;
   padding: 1px;
-  background: linear-gradient(89.96deg,
-      #30cc7100 15.05%,
-      #30CC71 23.12%,
-      #30CC71 48.29%,
-      #30CC71 54.75%,
-      #30CC71 61.9%,
-      #30cc7100 88.62%,
-      #30cc7100 101.04%,
-      #30cc7100 118.56%);
+  background: linear-gradient(
+    89.96deg,
+    #30cc7100 15.05%,
+    #30cc71 23.12%,
+    #30cc71 48.29%,
+    #30cc71 54.75%,
+    #30cc71 61.9%,
+    #30cc7100 88.62%,
+    #30cc7100 101.04%,
+    #30cc7100 118.56%
+  );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
@@ -64,6 +66,12 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  transition: 0.4s;
+}
+
+.contact__fields_block:hover,
+.contact__fields_textarea:hover {
+  border-color: var(--primary);
 }
 
 .contact__block_light .contact__fields_block,
@@ -85,6 +93,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  transition: 0.4s;
 }
 
 .contact__block_input {

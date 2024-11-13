@@ -20,11 +20,11 @@
   display: flex;
   align-items: center;
   width: max-content;
-  animation: anim 100s linear infinite;
+  animation: anim 30s linear infinite;
 }
 
 .reviews__slider_track_right {
-  animation: animRight 100s linear infinite;
+  animation: animRight 30s linear infinite;
 }
 
 .reviews__slider_track:hover,
