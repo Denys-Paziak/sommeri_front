@@ -1,106 +1,116 @@
 {
   "home": {
     "hero": {
-      "title": "We Develop",
-      "boldTitle1": "E-commerce Websites",
+      "title": "Developing",
+      "boldTitle1": "Online Stores",
       "boldTitle2": "Corporate Websites",
       "boldTitle3": "Web Applications",
       "boldTitle4": "Business Card Sites",
       "boldTitle5": "Landing Pages",
       "boldTitle6": "IT Solutions",
-      "subtitle": "We create the best solutions, analyze your business to make it beneficial in your niche",
+      "subtitle": "We create effective solutions to address your business challenges successfully.",
       "primaryButton": "Get a Consultation",
       "secondaryButton": "Our Portfolio"
     },
     "about": {
-      "title": "About us",
-      "subtitle": "Welcome to Sommeri, where beautiful design meets seamless functionality.",
-      "text": "We are the team that will create a customized solution for your business. From the very beginning, we made a decision to focus on our strengths and constantly improve them. This approach allows us not only to become experts in our field, but also to provide our clients with the exceptional experience they deserve. We are committed to innovation and quality, as every step we take is aimed at exceeding expectations and creating a truly valuable product.",
-      "secondaryButton": "Reviews about us",
+      "title": "About Us",
+      "subtitle": "Welcome to Sommeri, where beautiful design meets flawless functionality.",
+      "text": "We are a team dedicated to creating custom solutions for your business. From the start, we decided to focus on our strengths and continually improve them. This approach allows us not only to become experts in our field but also to provide our clients with the exceptional experience they deserve. We strive for innovation and quality, as every step we take is aimed at exceeding expectations and creating truly valuable products.",
+      "secondaryButton": "Client Reviews",
       "vectorLink": "about-us-vector-en.svg"
     },
     "whyUs": {
-      "title": "Why you should work with us",
-      "subtitle": "We create effective solutions that meet your goals and needs.",
-      "item1Title": "Individual approach",
-      "item1Text": "We carefully analyze the needs of each client and create solutions tailored to their business",
-      "item2Title": "Modern technologies",
-      "item2Text": "We use advanced tools and technologies to create fast, reliable and efficient websites",
+      "title": "Why Work With Us",
+      "subtitle": "We create effective solutions that align with your goals and needs.",
+      "item1Title": "Individual Approach",
+      "item1Text": "We carefully analyze each client's needs and create solutions tailored to their business.",
+      "item2Title": "Modern Technologies",
+      "item2Text": "We use advanced tools and technologies to create fast, reliable, and efficient websites.",
       "item3Title": "Design",
-      "item3Text": "Our projects combine aesthetics with maximum user-friendliness, which increases conversions",
-      "item4Title": "Adaptability",
-      "item4Text": "The websites we build work perfectly on any device, providing the perfect user experience",
-      "item5Title": "Support and develop.",
-      "item5Text": "We not only create websites, but also provide their support and development, helping your business",
-      "item6Title": "SEO optimization",
-      "item6Text": "Thanks to search engine optimization, you get more traffic and better positions in search results"
+      "item3Text": "Our projects combine aesthetics with maximum user convenience, enhancing conversion.",
+      "item4Title": "Responsiveness",
+      "item4Text": "The websites we create work seamlessly on any device, ensuring an ideal user experience.",
+      "item5Title": "Support and Development",
+      "item5Text": "We not only create websites but also provide support and development, helping your business grow.",
+      "item6Title": "SEO Optimization",
+      "item6Text": "With search engine optimization, you get more traffic and higher rankings in search results."
     },
     "services": {
-      "title": "Our expert services",
-      "subtitle": "At Sommeri, we transform concepts into tailored online identities",
+      "title": "Our Services",
+      "subtitle": "Sommeri creates digital solutions tailored for the growth and efficiency of your business, with an individual approach to each project.",
       "item1Title": "Website Development",
-      "item1Text": "We create modern and functional websites tailored to your business with a focus on design, performance, and SEO.",
-      "item2Title": "Web & App Design",
-      "item2Text": "Designs that combine aesthetics and usability help make websites and apps attractive and intuitive for users.",
+      "item1Text": "We create modern and functional websites tailored to your business, with a focus on design, performance, and SEO.",
+      "item2Title": "Web and Mobile Design",
+      "item2Text": "We create modern designs that blend aesthetics and usability, making websites and apps attractive and user-friendly.",
       "item3Title": "Mobile App Development",
-      "item3Text": "We develop user-friendly mobile applications for iOS and Android, ensuring high performance and security.",
+      "item3Text": "We develop convenient mobile apps for iOS and Android, ensuring high performance and security.",
       "item4Title": "Google Ads",
-      "item4Text": "We help you launch advertising campaigns in Google Ads that increase the visibility of your business and attract more customers.",
+      "item4Text": "We help you launch Google Ads campaigns that increase your business's visibility and attract more clients.",
       "item5Title": "SEO Optimization",
-      "item5Text": "We ensure a high position of your website in search engines thanks to professional SEO optimization.",
+      "item5Text": "We ensure a high ranking for your site in search engines through professional SEO optimization.",
       "item6Title": "IT Solutions",
-      "item6Text": "We offer comprehensive IT solutions: VPS setup, CRM/ERP development, website integration with CRM, and business process optimization."
+      "item6Text": "We offer comprehensive IT solutions: VPS setup, CRM/ERP development, CRM integration, and business process optimization."
     },
     "technologies": {
-      "title": "Our technologies"
+      "title": "Our Technologies"
     },
     "portfolio": {
-      "title": "We are proud of our projects",
-      "subtitle": "Our work is a combination of aesthetics and functionality to achieve your business goals.",
+      "title": "We Are Proud of Our Projects",
+      "subtitle": "Our portfolio showcases quality solutions with attention to detail, working for your business.",
       "all": "All",
       "view": "View",
-      "more": "More projects"
+      "more": "More Projects"
+    },
+    "advantages": {
+      "advantagesTitle": "Our Advantages",
+      "advantagesSubtitle": "We continuously improve, expand our range of services, and implement new solutions to provide you with the best service and help you achieve maximum results.",
+      "advantagesBlock1Title": "Prepayment",
+      "advantagesBlock1Text": "We work in stages — 20% prepayment at the start, 40% after halfway, and the remainder upon project completion. This ensures reliable and efficient collaboration.",
+      "advantagesBlock2Title": "Technology and Solutions",
+      "advantagesBlock2Text": "We use modern technologies and advanced solutions to create fast, convenient, and responsive websites. This ensures high quality, reliability, and a competitive position for your business in the market.",
+      "advantagesBlock3Title": "Result",
+      "advantagesBlock3Text": "We create web resources that drive the success of your business. Our solutions not only attract new clients but also ensure stable profit growth and long-term results."
     },
     "reviews": {
-      "title": "What our clients say",
-      "subtitle": "Discover how we’ve helped businesses transform their online presence with tailored web development solutions that deliver results. Here’s what our satisfied clients have to say about working with us."
+      "title": "What Our Clients Say",
+      "subtitle": "Discover how our work helped clients achieve their goals and exceed expectations."
     },
     "faq": {
-      "title": "Question? Answers"
+      "title": "Questions? Answers"
     },
     "contact": {
-      "title": "Let's talk!",
-      "subtitle": "Fill in the contact form below, and we'll get back to you soon"
+      "title": "Let's Talk!",
+      "subtitle": "Fill out the contact form below, and we will get back to you soon."
     }
   },
   "contactForm": {
     "input1": "Name*",
     "input2": "Email*",
-    "input3": "Select service*",
+    "input3": "Choose Service*",
     "input4": "How can we help you?",
-    "input5": "Drop the files here...",
+    "input5": "Drag files here...",
     "service1": "Website Development",
-    "service2": "Web & App Design",
+    "service2": "Web and App Design",
     "service3": "Mobile App Development",
     "service4": "Google Ads",
     "service5": "SEO Optimization",
     "service6": "IT Solutions",
-    "agree1": "By clicking the 'Leave a request' button, you agree to",
-    "agree2": "Privacy policy",
-    "button": "Leave a request"
+    "agree1": "By clicking 'Submit Request' you agree to our",
+    "agree2": "Privacy Policy",
+    "button": "Submit Request"
   },
   "popupForm": {
     "title": "Contact Us",
-    "subtitle": "Leave your contact details, and we will get back to you shortly",
+    "subtitle": "Leave your contact details, and we will provide a free website audit!",
     "social1Label": "Telegram:",
     "social1Text": "Message on Telegram",
-    "social2Label": "WhatsApp:",
+    "social2Label": "WhatsApp",
     "social2Text": "Message on WhatsApp",
     "social3Label": "Phone:"
   },
   "popupThanks": {
-    "title": "Application accepted",
-    "subtitle": "Thank you, your data has been sent successfully. Expect our response within 24 hours!"
+    "title": "Request Accepted",
+    "subtitle": "Thank you, your details have been successfully sent. Expect our response within 24 hours!"
   },
   "header": {
     "langCode1": "en",
@@ -111,82 +121,87 @@
   },
   "footer": {
     "subtitle1": "Menu",
-    "subtitle2": "Legal",
+    "subtitle2": "Legal Information",
     "item1": "Privacy Policy",
     "item2": "Terms of Use",
     "subtitle3": "Contact Us",
-    "reserved": "© 2024 Sommeri, All Rights Reserved"
+    "reserved": "© 2024 Sommeri, All rights reserved"
   },
   "menu": {
     "item1": "Services",
     "item2": "Portfolio",
-    "item3": "About us",
+    "item3": "FAQ",
     "item4": "Contacts",
     "item5": "FAQ"
   },
   "quickContacts": {
-    "question": "Do you have a question?",
+    "question": "Have a question?",
     "message": "Leave a message!"
   },
   "aboutProject": {
-    "visit": "Visit",
-    "aboutTitle": "About the project:",
+    "visit": "View",
+    "aboutTitle": "About the Project:",
     "objectivesTitle": "Objectives:",
     "solutionTitle": "Solution:",
     "technologiesTitle": "Technologies:",
-    "weDidTitle": "We did:",
+    "weDidTitle": "We Delivered:",
     "resultTitle": "Result:",
-    "similarTitle": "Similar projects",
-    "similarText": "Explore other projects we’ve delivered for clients who sought tailored solutions for their websites. Each one showcases our approach to creating high-quality and functional web products."
+    "similarTitle": "Similar Projects",
+    "similarText": "Explore other projects we've completed for clients seeking custom solutions for their websites. Each one demonstrates our approach to creating high-quality and functional web products."
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "subtext": "At <bold>Sommeri</bold>, we take the protection of your personal data seriously and are committed to transparency in its use. This Privacy Policy explains what data we collect, how we use it, and how we ensure its security when you interact with our website and services.",
+    "subtext": "At <bold>Sommeri</bold>, we are committed to protecting your personal data and ensuring transparency in how it is used. This Privacy Policy explains what data we collect, how we use it, and how we protect it when you use our website and services.",
     "firstSubtitle": "Data We Collect",
     "firstSubtitleText": "We may collect the following types of information:",
-    "firstSubtitleItem1": "<bold>Personal Information:</bold> your name, email address, phone number, and other contact details that you provide during registration or communication with us.",
-    "firstSubtitleItem2": "<bold>Usage Data:</bold> information about your activity on the website, including your IP address, browser type, and pages viewed.",
+    "firstSubtitleItem1": "<bold>Personal Information:</bold> your name, email address, phone number, and other contact details you provide when registering or communicating with us.",
+    "firstSubtitleItem2": "<bold>Website Usage Data:</bold> information about your activity on the site, including IP address, browser type, and pages viewed.",
     "firstSubtitleItem3": "<bold>Cookies:</bold> files that help us analyze your preferences and improve your experience on the site.",
     "secondSubtitle": "How We Use Your Data",
     "secondSubtitleText": "We use your data for the following purposes:",
-    "secondSubtitleItem1": "Providing services that meet your needs",
-    "secondSubtitleItem2": "Sending newsletters and communicating about our products or services, with your consent.",
-    "secondSubtitleItem3": "Analyzing user behavior to improve website functionality and content.",
-    "thirdSubtitle": "Confidentiality and Security",
-    "thirdText": "We employ modern technical and organizational security measures to protect your information. All your data is stored on secure servers, and access is restricted to authorized personnel only. We do not share your data with third parties without your consent, except as required by law.",
-    "fourthSubtitle": "Collection and Use of Cookies",
-    "fourthText": "Our website uses cookies to help us analyze visitor behavior and improve functionality. You can configure your browser to block cookies, but this may affect your user experience on the site.",
+    "secondSubtitleItem1": "Providing services that meet your needs.",
+    "secondSubtitleItem2": "Sending newsletters and communicating about our products or services, subject to your consent.",
+    "secondSubtitleItem3": "Analyzing user behavior to improve site functionality and content.",
+    "thirdSubtitle": "Privacy and Security",
+    "thirdText": "We implement modern technical and organizational security measures to protect your information. All your data is stored on secure servers, with access limited to authorized personnel only. We do not share your data with third parties without your consent, except as required by law.",
+    "fourthSubtitle": "Cookies Collection and Usage",
+    "fourthText": "Our website uses cookies that help us analyze visitor behavior and improve functionality. You can configure your browser to block cookies, but this may affect your site experience.",
     "fifthSubtitle": "Your Rights",
-    "fifthText": "You have the right to access, correct, or delete your personal data. If you wish to opt out of receiving newsletters, you can do so at any time by clicking the unsubscribe link in the email or by contacting us directly.",
+    "fifthText": "You have the right to access, correct, or delete your personal data. If you wish to unsubscribe from newsletters, you may do so at any time by clicking the appropriate link in the email or by contacting us directly.",
     "sixthSubtitle": "Changes to the Privacy Policy",
-    "sixthText": "We may update this Privacy Policy to reflect changes in our practices or legislation. Any changes will be published on this page, and in the case of significant changes, we will notify you via email.",
-    "footerText": "If you have any questions regarding this Privacy Policy, please contact us at:"
+    "sixthText": "We may update this Privacy Policy to reflect changes in our practices or the law. Any changes will be posted on this page, and in case of significant changes, we will notify you via email.",
+    "footerText": "If you have any questions regarding our Privacy Policy, please contact us at:"
   },
   "termsOfUse": {
     "title": "Terms of Use",
-    "subtext": "Welcome to <bold>Sommeri</bold>. By using our website and services, you agree to comply with and be bound by the following terms. Please read them carefully before using our site.",
+    "subtext": "Welcome to <bold>Sommeri</bold>. By using our website and services, you agree to abide by and be bound by the following terms. Please review them carefully before using our site.",
     "firstSubtitle": "Acceptance of Terms",
-    "firstText": "By using the <bold>Sommeri</bold> website, you confirm that you have read, understood, and agree to these Terms of Use. If you do not agree to these terms, please do not use our website or services.",
-    "secondSubtitle": "Use of the Website",
-    "secondSubtitleText1": "You agree to use the website only for lawful purposes. It is prohibited to:",
+    "firstText": "By using the <bold>Sommeri</bold> website, you confirm that you have read these Terms of Use, understand them, and agree to them. If you do not agree to these terms, please do not use our website or services.",
+    "secondSubtitle": "Website Use",
+    "secondSubtitleText1": "You agree to use the website for lawful purposes only. It is prohibited to:",
     "secondSubtitleItem1": "Use the website in any way that violates applicable laws or regulations.",
-    "secondSubtitleItem2": "Transmit or distribute malicious software, viruses, or harmful code through the website.",
-    "secondSubtitleItem3": "Use the website to engage in fraudulent or illegal activities.",
+    "secondSubtitleItem2": "Transmit or distribute malware, viruses, or harmful code through the website.",
+    "secondSubtitleItem3": "Use the website to engage in fraudulent or unlawful activities.",
     "secondSubtitleText2": "We reserve the right to restrict or terminate access to the website if we believe you are violating these terms.",
     "thirdSubtitle": "Intellectual Property Rights",
-    "thirdText": "All materials, designs, logos, and other intellectual property on the <bold>Sommeri</bold> website are the exclusive property of <bold>Sommeri</bold>, unless otherwise stated. You may not copy, distribute, modify, or create derivative works from any content on this website without prior written permission.",
+    "thirdText": "All materials, designs, logos, and other intellectual property on the <bold>Sommeri</bold> website are the exclusive property of <bold>Sommeri</bold>, unless otherwise stated. You may not copy, distribute, modify, or create derivative works based on any content on this website without prior written consent.",
     "fourthSubtitle": "User-Generated Content",
-    "fourthText": "If you submit or post content on the website (such as comments or reviews), you grant <bold>Sommeri</bold> a non-exclusive, royalty-free, perpetual right to use, modify, and distribute such content. You also agree that the content you submit does not infringe on any third-party rights, including intellectual property or privacy rights.",
+    "fourthText": "If you submit or post content on the website (e.g., comments or reviews), you grant <bold>Sommeri</bold> a non-exclusive, royalty-free, perpetual right to use, modify, and distribute such content. You also agree that the content you submit does not infringe third-party rights, including intellectual property or privacy rights.",
     "fifthSubtitle": "Limitation of Liability",
-    "fifthText": "We strive to ensure the accuracy and completeness of the information on our website, but we make no warranties regarding its completeness, accuracy, or reliability. <bold>Sommeri</bold> shall not be liable for any damages, including direct, indirect, or consequential damages, arising from the use of the website or reliance on its content.",
-    "sixthSubtitle": "Third-Party Links",
-    "sixthText": "Our website may contain links to third-party websites for your convenience. We do not endorse and are not responsible for the content, privacy policies, or practices of such third-party websites. Accessing these websites is at your own risk.",
+    "fifthText": "We strive to ensure the accuracy and timeliness of the information on our website, but we make no guarantees regarding its completeness, accuracy, or reliability. <bold>Sommeri</bold> is not liable for any damages, including direct, indirect, or incidental, resulting from the use of or reliance on the content of the website.",
+    "sixthSubtitle": "Links to Third-Party Sites",
+    "sixthText": "Our website may contain links to third-party websites for your convenience. We do not endorse or assume responsibility for the content, privacy policies, or practices of such third-party websites. Use of these sites is at your own risk.",
     "seventhSubtitle": "Changes to the Terms of Use",
-    "seventhText": "We reserve the right to modify these Terms of Use at any time without prior notice. Your continued use of the website following any changes constitutes your acceptance of the revised terms.",
+    "seventhText": "We reserve the right to modify these Terms of Use at any time without prior notice. Continued use of the website after changes are made constitutes acceptance of the updated terms.",
     "eighthSubtitle": "Contact Information",
-    "eighthText": "If you have any questions or concerns regarding these Terms of Use, please contact us at:"
+    "eighthText": "If you have any questions or comments regarding these Terms of Use, please contact us at:"
   },
   "discountLine": {
-    "discountLineText": "Get <bold>30% off</bold> on a website until <bold>December 31</bold>"
+    "discountLineText": "Discount <bold>30%</bold> on websites until <bold>December 31</bold>"
+  },
+  "brifLine": {
+    "brifLineTitle": "Free website audit",
+    "brifLineText": "Leave a request, and we will conduct a detailed analysis of your website",
+    "brifLineButton": "Get a Consultation"
   }
 }

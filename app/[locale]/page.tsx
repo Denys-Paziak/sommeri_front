@@ -25,10 +25,6 @@ const DynamicAdvantages = dynamic(
   () => import("@/app/components/pages/home/advantages/Advantages")
 );
 
-const DynamicAbout = dynamic(
-  () => import("@/app/components/pages/home/about/About")
-);
-
 const DynamicFaq = dynamic(() => import("@/app/components/pages/home/faq/Faq"));
 
 const DynamicBrifLine = dynamic(
@@ -57,7 +53,6 @@ export default async function Home({ params }: { params: { locale: string } }) {
       <DynamicOurProjects posts={posts} categories={categories} />
       <DynamicBrifLine />
       <DynamicAdvantages />
-      <DynamicAbout />
       <DynamicClientsSay reviews={reviews} />
       <DynamicFaq faqItems={faqItems} />
       <DynamicContact />

@@ -74,6 +74,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .advantages__content_heading {
@@ -110,12 +112,14 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 .advantages__block_vector img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 }
 
 @media (max-width: 1220px) {

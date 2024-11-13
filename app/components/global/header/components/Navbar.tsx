@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 
 interface iProps {
   isMobileMenuOpen: boolean;
-  handleBurgerMenu: () => void;
+  closeBurgerMenu: () => void;
 }
 
-const Navbar = ({ isMobileMenuOpen, handleBurgerMenu }: iProps) => {
+const Navbar = ({ isMobileMenuOpen, closeBurgerMenu }: iProps) => {
   const t = useTranslations("menu");
   const NavbarItems = [
     {
@@ -22,7 +22,7 @@ const Navbar = ({ isMobileMenuOpen, handleBurgerMenu }: iProps) => {
     },
     {
       name: t("item3"),
-      link: "about",
+      link: "faq",
     },
     {
       name: t("item4"),
@@ -39,7 +39,7 @@ const Navbar = ({ isMobileMenuOpen, handleBurgerMenu }: iProps) => {
       <ul className={styles.header__nav_list}>
         {NavbarItems.map((NavbarItem) => (
           <SectionLink
-            handleBurgerMenu={handleBurgerMenu}
+            closeBurgerMenu={closeBurgerMenu}
             key={NavbarItem.name}
             name={NavbarItem.name}
             link={NavbarItem.link}

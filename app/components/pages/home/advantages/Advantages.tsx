@@ -10,21 +10,25 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTheme } from "next-themes";
 
 const Advantages = () => {
-  const t = useTranslations();
+  const t = useTranslations("home.advantages");
 
   const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper>
       <div className="container">
-        <div className={resolvedTheme === 'light' ? styles.advantages__wrapper_light : styles.advantages__wrapper}>
+        <div
+          className={
+            resolvedTheme === "light"
+              ? styles.advantages__wrapper_light
+              : styles.advantages__wrapper
+          }
+        >
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <div className={styles.advantages__wrapper_heading}>
-              <TitleWrapper>Наші переваги</TitleWrapper>
+              <TitleWrapper>{t("advantagesTitle")}</TitleWrapper>
               <p className={styles.advantages__heading_subtitle}>
-                Ми постійно вдосконалюємось, розширюємо спектр послуг та
-                впроваджуємо нові рішення, щоб забезпечити вам найкращий сервіс
-                і допомогти досягнути максимальних результатів.
+                {t("advantagesSubtitle")}
               </p>
             </div>
           </AnimatedWrapper>
@@ -36,13 +40,11 @@ const Advantages = () => {
                     01/:
                   </span>
                   <h3 className={styles.advantages__heading_title}>
-                    Передоплата
+                    {t("advantagesBlock1Title")}
                   </h3>
                 </div>
                 <p className={styles.advantages__content_text}>
-                  Ми працюємо поетапно — 20% передоплати на старті, 40% після
-                  половини роботи, та решта — при здачі проєкту. Це гарантує
-                  надійну та ефективну співпрацю.
+                  {t("advantagesBlock1Text")}
                 </p>
               </div>
               <div className={styles.advantages__block_vector}>
@@ -61,14 +63,11 @@ const Advantages = () => {
                     02/:
                   </span>
                   <h3 className={styles.advantages__heading_title}>
-                    Технології та рішеня
+                    {t("advantagesBlock2Title")}
                   </h3>
                 </div>
                 <p className={styles.advantages__content_text}>
-                  Ми використовуємо сучасні технології та передові рішення, щоб
-                  створити швидкі, зручні та адаптивні сайти. Це забезпечує
-                  високу якість, надійність і вигідну позицію вашого бізнесу на
-                  ринку.
+                  {t("advantagesBlock2Text")}
                 </p>
               </div>
               <div className={styles.advantages__block_vector}>
@@ -87,13 +86,11 @@ const Advantages = () => {
                     03/:
                   </span>
                   <h3 className={styles.advantages__heading_title}>
-                    Результат
+                    {t("advantagesBlock3Title")}
                   </h3>
                 </div>
                 <p className={styles.advantages__content_text}>
-                  Ми не просто робимо сайт і забуваємо про нього. Наша ціль —
-                  створити ресурс, який буде працювати для вас, залучати нових
-                  клієнтів та приносити стабільний прибуток для вашого бізнесу.
+                  {t("advantagesBlock3Text")}
                 </p>
               </div>
               <div className={styles.advantages__block_vector}>

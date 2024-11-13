@@ -8,24 +8,30 @@ import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useDispatch } from "react-redux";
 import { openPopup } from "@/app/redux/popupSlice";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 const BrifLine = () => {
   const dispatch = useDispatch();
+  const t = useTranslations("brifLine");
 
   const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper>
       <div className="container">
-        <div className={resolvedTheme === "light" ? styles.line__wrapper_light : styles.line__wrapper}>
+        <div
+          className={
+            resolvedTheme === "light"
+              ? styles.line__wrapper_light
+              : styles.line__wrapper
+          }
+        >
           <div className={styles.line__vector_main}>
             <div className={styles.line__wrapper_content}>
               <h2 className={styles.line__content_title}>
-                Безкоштовний аудит сайту
+                {t("brifLineTitle")}
               </h2>
-              <p className={styles.line__content_text}>
-                Ми допоможемо вам із розробкою та запуском вашого проекту.
-              </p>
+              <p className={styles.line__content_text}>{t("brifLineText")}</p>
             </div>
             <div className={styles.line__wrapper_action}>
               <Button
@@ -34,7 +40,7 @@ const BrifLine = () => {
                 type={"button"}
                 onClick={() => dispatch(openPopup())}
               >
-                Заповнити консультацію
+                {t("brifLineButton")}
               </Button>
             </div>
           </div>

@@ -15,6 +15,10 @@ const Header = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
   };
 
+  const closeBurgerMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 85) {
@@ -56,7 +60,7 @@ const Header = () => {
           <div className={styles.header__wrapper}>
             <Logo theme={resolvedTheme} />
             <Navbar
-              handleBurgerMenu={handleBurgerMenu}
+              closeBurgerMenu={closeBurgerMenu}
               isMobileMenuOpen={isMobileMenuOpen}
             />
             <Options />

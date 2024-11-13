@@ -29,9 +29,15 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <SectionWrapper>
+    <SectionWrapper sectionId="faq">
       <div className="container">
-        <div className={resolvedTheme == "light" ? styles.faq__wrapper_light : styles.faq__wrapper} >
+        <div
+          className={
+            resolvedTheme == "light"
+              ? styles.faq__wrapper_light
+              : styles.faq__wrapper
+          }
+        >
           <AnimatedWrapper type="fade-up" duration={1.2}>
             <TitleWrapper>{t("title")}</TitleWrapper>
           </AnimatedWrapper>
@@ -42,8 +48,9 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                   <div
                     onClick={() => handleClick(index)}
                     key={index}
-                    className={`${styles.faq__main_item} ${activeIndex === index ? styles.active : ""
-                      }`}
+                    className={`${styles.faq__main_item} ${
+                      activeIndex === index ? styles.active : ""
+                    }`}
                   >
                     <div className={styles.faq__item_inner}>
                       <h3 className={styles.faq__inner_title}>{item.title}</h3>
@@ -71,15 +78,6 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                   </div>
                 ))}
             </AnimatedWrapper>
-            <div className={styles.faq__main_grid}>
-              <Image
-                fetchPriority="high"
-                width="1036"
-                height="580"
-                src="/images/faq-grid.svg"
-                alt="faq grid"
-              />
-            </div>
           </div>
         </div>
       </div>
