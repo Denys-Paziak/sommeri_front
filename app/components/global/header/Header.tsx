@@ -45,13 +45,11 @@ const Header = () => {
 
   const { resolvedTheme } = useTheme();
 
-  console.log("resolvedTheme")
-  console.log(resolvedTheme)
-
   return (
     <header
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${resolvedTheme == "light" && `${styles.light}`
-        }`}
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${
+        resolvedTheme == "light" && `${styles.light}`
+      }`}
     >
       <section className={styles.header__section}>
         <div className="container">
@@ -64,8 +62,9 @@ const Header = () => {
             <Options />
             <div
               onClick={handleBurgerMenu}
-              className={`${styles.header__mobile_burger} ${isMobileMenuOpen ? `${styles.active}` : ""
-                }`}
+              className={`${styles.header__mobile_burger} ${
+                isMobileMenuOpen ? `${styles.active}` : ""
+              }`}
             >
               <span className={styles.header__burger_bar}></span>
               <span className={styles.header__burger_bar}></span>

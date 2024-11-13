@@ -14,7 +14,7 @@ const SectionLink = ({ link, name, handleBurgerMenu }: SectionLinkProps) => {
   return (
     <li className={styles.section__list_item}>
       <Link
-        href="#"
+        href="/#"
         onClick={(e) => {
           e.preventDefault();
           handleScroll(link);
