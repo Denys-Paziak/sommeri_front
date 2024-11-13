@@ -1,9 +1,8 @@
-// components/CustomCursor.tsx
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import styles from './CustomCursor.module.css';
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import styles from "./CustomCursor.module.css";
 
 const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement | null>(null);
@@ -14,7 +13,7 @@ const CustomCursor: React.FC = () => {
   const [isBlackWhite, setIsBlackWhite] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     pos.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     mouse.current = { x: pos.current.x, y: pos.current.y };
@@ -39,7 +38,7 @@ const CustomCursor: React.FC = () => {
     };
 
     const handleMouseEnter = (e: Event) => {
-      if ((e.target as Element).matches('.invert-on-hover')) {
+      if ((e.target as Element).matches(".invert-on-hover")) {
         setIsBlackWhite(true);
       }
     };
@@ -48,22 +47,22 @@ const CustomCursor: React.FC = () => {
       setIsBlackWhite(false);
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseover', handleMouseEnter);
-    document.addEventListener('mouseout', handleMouseLeave);
+    window.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mouseover", handleMouseEnter);
+    document.addEventListener("mouseout", handleMouseLeave);
     updatePosition();
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseover', handleMouseEnter);
-      document.removeEventListener('mouseout', handleMouseLeave);
+      window.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mouseover", handleMouseEnter);
+      document.removeEventListener("mouseout", handleMouseLeave);
     };
   }, []);
 
   return (
     <div
       ref={cursorRef}
-      className={`${styles.cursor} ${isBlackWhite ? styles.blackWhite : ''}`}
+      className={`${styles.cursor} ${isBlackWhite ? styles.blackWhite : ""}`}
     />
   );
 };

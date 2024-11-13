@@ -16,8 +16,8 @@ export default function NotFound() {
             <div className={styles.not__found_wrapper}>
               <div className={styles.not__found_robot}>
                 <Image
-                  width={1000}
-                  height={1000}
+                  width={500}
+                  height={500}
                   src="/images/404-vector.svg"
                   alt="404 robot"
                   className={styles.not__robot_img}
@@ -25,20 +25,16 @@ export default function NotFound() {
               </div>
               <div className={styles.not__found_content}>
                 <div className={styles.not__content_info}>
-                  <h2 className={styles.not__info_title}>Page not found</h2>
+                  <h2 className={styles.not__info_title}>
+                    Сторінку не знайдено
+                  </h2>
                   <p className={styles.not__found_text}>
-                    This page does not exist or was removed! We suggest you back
-                    to home
+                    Ця сторінка не існує або була видалена! Пропонуємо вам
+                    повернутися на головну.
                   </p>
                 </div>
-                <Link href={"/"}>
-                  <button
-                    className={styles.not__content_button}
-                    aria-label="home button"
-                    type="button"
-                  >
-                    Back to home
-                  </button>
+                <Link href="/" className={styles.not__content_button}>
+                  На головну сторінку
                 </Link>
               </div>
             </div>

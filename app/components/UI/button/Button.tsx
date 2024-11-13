@@ -1,7 +1,6 @@
 "use client";
 import React, { FC, useRef } from "react";
 import styles from "./Button.module.css";
-import { gsap } from "gsap";
 
 interface ButtonProps {
   children: React.ReactNode;

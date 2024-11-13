@@ -1,6 +1,5 @@
 import styles from "./AboutProjectGalery.module.css";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
-import ReactMarkdown from "react-markdown";
 import React from "react";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
 import { useTranslations } from "next-intl";
@@ -22,7 +21,11 @@ const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
                     className={styles.project__banners_item}
                   >
                     <AnimatedWrapper type="fade-up" duration={1.2}>
-                      <ImageServer width={1000} height={1000} link={image.url} />
+                      <ImageServer
+                        width={1000}
+                        height={1000}
+                        link={image.url}
+                      />
                     </AnimatedWrapper>
                   </div>
                 );
@@ -37,7 +40,7 @@ const AboutProjectGalery = ({ project }: { project: ProjectInterface }) => {
                 </h3>
                 <div className={styles.project__result_info}>
                   <div className={styles.project__block_text}>
-                    <ReactMarkdown>{project.Result}</ReactMarkdown>
+                    {project.Result}
                   </div>
                 </div>
               </div>

@@ -3,15 +3,18 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Montserrat } from "next/font/google";
 import ReduxProvider from "@/app/redux/ReduxProvider";
-import Header from "@/app/components/global/header/Header";
 import "../globals.css";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "next-themes";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-const DynamicCustomCursor = dynamic(
-  () => import("@/app/components/UI/customCursor/CustomCursor")
+// const DynamicCustomCursor = dynamic(
+//   () => import("@/app/components/UI/customCursor/CustomCursor")
+// );
+
+const DynamicHeader = dynamic(
+  () => import("@/app/components/global/header/Header")
 );
 
 const DynamicContactFormPopup = dynamic(
@@ -95,8 +98,8 @@ export default async function RootLayout({
               defaultTheme="dark"
               enableSystem={true}
             >
-              <Header />
-              <DynamicCustomCursor />
+              <DynamicHeader />
+              {/* <DynamicCustomCursor /> */}
               <DynamicContactFormPopup />
               <DynamicThanksPopup />
               <DynamicQuickContacts />

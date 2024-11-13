@@ -1,6 +1,5 @@
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import styles from "./AboutProjectInfo.module.css";
-import LineVector from "@/app/components/global/lineVector/LineVector";
 import { ProjectInterface } from "@/app/utils/interfaces/project";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
@@ -20,7 +19,6 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
       <div className="container">
         <div className={styles.project__info_wrapper}>
           <div className={styles.project__wrapper_inner}>
-
             <AnimatedWrapper type="fade-up" duration={1.2}>
               {project.About_the_project && (
                 <div className={styles.project__inner_block}>
@@ -34,9 +32,7 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
               )}
             </AnimatedWrapper>
 
-
             <AnimatedWrapper type="fade-up" duration={1.2}>
-
               {project.Objectives && (
                 <div className={styles.project__inner_block}>
                   <h3 className={styles.project__block_subtitle}>
@@ -49,21 +45,20 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
               )}
             </AnimatedWrapper>
 
-
             <AnimatedWrapper type="fade-up" duration={1.2}>
-
               {project.Solution && (
                 <div className={styles.project__inner_block}>
                   <h3 className={styles.project__block_subtitle}>
                     {t("solutionTitle")}
                   </h3>
-                  <p className={styles.project__block_text}>{project.Solution}</p>
+                  <p className={styles.project__block_text}>
+                    {project.Solution}
+                  </p>
                 </div>
               )}
             </AnimatedWrapper>
 
             <AnimatedWrapper type="fade-up" duration={1.2}>
-
               <div className={styles.project__inner_block}>
                 <h3 className={styles.project__block_subtitle}>
                   {t("technologiesTitle")}
@@ -85,8 +80,6 @@ const AboutProjectInfo = ({ project }: { project: ProjectInterface }) => {
                 </div>
               </div>
             </AnimatedWrapper>
-
-
           </div>
           <div className={styles.project__info_vector}>
             <DynamicLineVectorComponent />

@@ -1,5 +1,5 @@
 :root {
-  --primary: #2fca70;
+  --primary: #2ac46b;
   --border-primary: #b5e3d5;
   --white: #0c0c0c;
   --black: #f1eff4;
@@ -20,7 +20,7 @@
 }
 
 [data-theme="dark"] {
-  --primary: #2fca70;
+  --primary: #2ac46b;
   --border-primary: #2697a87a;
   --white: #ffffff;
   --black: #0c0c0c;

@@ -335,6 +335,7 @@ const Footer = () => {
           <div className={styles.footer__section_vector}>
             <Image
               priority={true}
+              fetchPriority="low"
               width={2000}
               height={240}
               src="/images/SOMMERI.svg"

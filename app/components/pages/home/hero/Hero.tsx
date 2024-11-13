@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
               priority={true}
               src="/images/mockup.avif"
               alt="mockup"
-              width={800}
+              width={600}
               height={600}
             />
           </div>
