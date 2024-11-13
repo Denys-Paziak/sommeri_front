@@ -100,7 +100,9 @@ const Hero: React.FC = () => {
                     ref={textRef}
                     className={styles.hero__title_special}
                   ></span>
-                  |
+                  <span
+                    className={styles.hero__line}
+                  ></span>
                 </div>
               </h1>
               <p className={styles.hero__heading_text}>{t("subtitle")}</p>
