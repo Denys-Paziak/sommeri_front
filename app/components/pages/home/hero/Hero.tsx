@@ -100,9 +100,7 @@ const Hero: React.FC = () => {
                     ref={textRef}
                     className={styles.hero__title_special}
                   ></span>
-                  <span
-                    className={styles.hero__line}
-                  ></span>
+                  <span className={styles.hero__line}></span>
                 </div>
               </h1>
               <p className={styles.hero__heading_text}>{t("subtitle")}</p>
@@ -128,7 +126,7 @@ const Hero: React.FC = () => {
           <div className={styles.hero__wrapper_mockup}>
             <Image
               priority={true}
-              src="/images/mockup.png"
+              src="/images/mockup.avif"
               alt="mockup"
               width={800}
               height={600}
