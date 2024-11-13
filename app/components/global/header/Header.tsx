@@ -45,6 +45,9 @@ const Header = () => {
 
   const { resolvedTheme } = useTheme();
 
+  console.log("resolvedTheme")
+  console.log(resolvedTheme)
+
   return (
     <header
       className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${resolvedTheme == "light" && `${styles.light}`

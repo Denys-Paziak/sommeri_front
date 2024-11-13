@@ -81,7 +81,7 @@ const AnimatedWrapper: React.FC<AnimatedWrapperProps> = ({
     }, [type, duration, delay, isMobile]);
 
     return (
-        <div className={className} ref={animatedRef}>
+        <div className={className} >
             {children}
         </div>
     );

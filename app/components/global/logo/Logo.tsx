@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Logo = ({ theme }: { theme: string | undefined }) => {
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  if (!theme) {
+    return
+  }
 
   return (
     <Link href={"/"}>
-      {isClient && theme != undefined && (
+      {theme != undefined && (
         <Image
           width={300}
           height={100}
