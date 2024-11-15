@@ -208,6 +208,14 @@
     stroke-dashoffset: 0;
   }
 
+  .services__card_image path,
+  .services__card_image rect {
+    opacity: 1;
+    transition: 0.4s;
+    stroke: var(--primary);
+    stroke-width: 1;
+  }
+
   .services__main_card {
     height: 320px;
   }

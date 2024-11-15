@@ -9,7 +9,7 @@ interface Props {
 
 const AnimBorder: React.FC<Props> = ({ children, className }) => {
     return (
-        <div className={` ${className}  `} >
+        <div className={`${className}`} >
             <div className={`${styles.animation} ${styles.anim_border}`}>
                 <div className={styles.content}>
                     {children}
