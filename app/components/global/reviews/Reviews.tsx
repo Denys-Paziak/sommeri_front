@@ -21,11 +21,17 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <div className={resolvedTheme == "light" ? styles.reviews__block_light : styles.reviews__block}>
+    <div
+      className={
+        resolvedTheme == "light"
+          ? styles.reviews__block_light
+          : styles.reviews__block
+      }
+    >
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track}>
           {reviews &&
-            [...reviews].map((review, index) => (
+            [...reviews, ...reviews].map((review, index) => (
               <div
                 key={index + Date.now()}
                 className={styles.reviews__track_item}
@@ -57,7 +63,7 @@ const Reviews = ({ reviews }: { reviews: Review[] }) => {
       <div className={styles.reviews__block_slider}>
         <div className={styles.reviews__slider_track_right}>
           {reviews &&
-            [...reviews].map((review, index) => (
+            [...reviews, ...reviews].map((review, index) => (
               <div
                 key={index + Date.now()}
                 className={styles.reviews__track_item}

@@ -1,6 +1,5 @@
 "use client";
 
-import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import styles from "./SectionLink.module.css";
 import Link from "next/link";
 
@@ -11,17 +10,17 @@ interface SectionLinkProps {
 }
 
 const SectionLink = ({ link, name, closeBurgerMenu }: SectionLinkProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (closeBurgerMenu) {
+      closeBurgerMenu();
+    }
+  };
+
   return (
     <li className={styles.section__list_item}>
       <Link
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          handleScroll(link);
-          if (closeBurgerMenu) {
-            closeBurgerMenu();
-          }
-        }}
+        href={`/#${link}`}
+        onClick={handleClick}
         className={styles.section__item_link}
       >
         {name}

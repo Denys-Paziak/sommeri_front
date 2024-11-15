@@ -4,10 +4,10 @@ import React, { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 import Button from "@/app/components/UI/button/Button";
 import gsap from "gsap";
-import { handleScroll } from "@/app/helpers/scrollHelper/ScrollHelper";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   const t = useTranslations("home.hero");
@@ -106,21 +106,23 @@ const Hero: React.FC = () => {
               <p className={styles.hero__heading_text}>{t("subtitle")}</p>
             </div>
             <div className={styles.hero__wrapper_actions}>
-              <Button
-                isRounded={true}
-                type={"button"}
-                onClick={() => handleScroll("contactUs")}
-                ariaLabel={t("primaryButton")}
-              >
-                {t("primaryButton")}
-              </Button>
-              <SecondaryButton
-                type={"button"}
-                onClick={() => handleScroll("portfolio")}
-                ariaLabel={t("secondaryButton")}
-              >
-                {t("secondaryButton")}
-              </SecondaryButton>
+              <Link href={"/#contactUs"}>
+                <Button
+                  isRounded={true}
+                  type={"button"}
+                  ariaLabel={t("primaryButton")}
+                >
+                  {t("primaryButton")}
+                </Button>
+              </Link>
+              <Link href={"/#portfolio"}>
+                <SecondaryButton
+                  type={"button"}
+                  ariaLabel={t("secondaryButton")}
+                >
+                  {t("secondaryButton")}
+                </SecondaryButton>
+              </Link>
             </div>
           </div>
           <div className={styles.hero__wrapper_mockup}>
