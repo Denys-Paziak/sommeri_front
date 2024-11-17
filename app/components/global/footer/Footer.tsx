@@ -17,20 +17,12 @@ import {
   salesEmail,
 } from "@/configSommeriData";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 
 const Footer = () => {
   const t = useTranslations();
-  const { resolvedTheme, setTheme } = useTheme();
   const pathname = usePathname();
 
-  const themeHandler = () => {
-    if (resolvedTheme == "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+
 
   const [isClient, setIsClient] = useState(false);
 
@@ -61,7 +53,7 @@ const Footer = () => {
     isClient && (
       <footer
         className={
-          resolvedTheme == "light" ? styles.footer_light : styles.footer
+          styles.footer
         }
       >
         <section className={styles.footer__section}>
@@ -70,7 +62,7 @@ const Footer = () => {
               <div className={styles.footer__wrapper_main}>
                 <div className={styles.footer__main_contact}>
                   <div className={styles.footer__contact_logo}>
-                    <Logo theme={resolvedTheme} />
+                    <Logo />
                   </div>
                   <div className={styles.footer__contact_block}>
                     <Link
@@ -318,16 +310,7 @@ const Footer = () => {
                   {t("footer.reserved")}
                 </span>
                 <div className={styles.footer__bottom_theme}>
-                  <label className={styles.ui_switch}>
-                    <input
-                      type="checkbox"
-                      checked={resolvedTheme === "dark"}
-                      onChange={themeHandler}
-                    />
-                    <div className={styles.slider}>
-                      <div className={styles.circle}></div>
-                    </div>
-                  </label>
+
                 </div>
               </div>
             </div>

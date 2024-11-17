@@ -12,7 +12,6 @@ import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
 import SecondaryButton from "@/app/components/UI/secondaryButton/SecondaryButton";
 import ImageServer from "@/app/components/UI/imageServer/imageServer";
-import { useTheme } from "next-themes";
 
 interface iProps {
   posts: ProjectInterface[];
@@ -23,7 +22,6 @@ export default function Page({ posts, categories }: iProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [visibleProjects, setVisibleProjects] = useState<number>(6);
   const t = useTranslations("home.portfolio");
-  const { resolvedTheme } = useTheme();
 
   const loadMoreProjects = () => {
     setVisibleProjects((prev) => prev + 6);
@@ -44,9 +42,7 @@ export default function Page({ posts, categories }: iProps) {
       <div className="container">
         <div
           className={
-            resolvedTheme == "light"
-              ? styles.projects__wrapper_light
-              : styles.projects__wrapper
+            styles.projects__wrapper
           }
         >
           <div className={styles.projects__wrapper_heading}>

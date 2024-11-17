@@ -7,21 +7,16 @@ import React from "react";
 import styles from "./Advantages.module.css";
 import Image from "next/image";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
-import { useTheme } from "next-themes";
 
 const Advantages = () => {
   const t = useTranslations("home.advantages");
-
-  const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper>
       <div className="container">
         <div
           className={
-            resolvedTheme === "light"
-              ? styles.advantages__wrapper_light
-              : styles.advantages__wrapper
+            styles.advantages__wrapper
           }
         >
           <AnimatedWrapper type="fade-up" duration={1.2}>
