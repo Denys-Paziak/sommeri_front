@@ -8,13 +8,11 @@ import styles from "./ThanksPopup.module.css";
 import { closeThanksPopup } from "@/app/redux/thanksPopupSlice";
 import PopupWrapper from "@/app/components/UI/popupWrapper/PopupWrapper";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 
 const ThanksPopup = () => {
   const isOpen = useSelector((state: RootState) => state.thanksPopup.isOpen);
   const dispatch = useDispatch();
   const t = useTranslations("popupThanks");
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +29,7 @@ const ThanksPopup = () => {
   if (!isOpen) return <></>;
 
   return (
-    <div className={resolvedTheme == "light" ? styles.modal_light : styles.modal}>
+    <div className={styles.modal}>
       <div
         className={styles.overlay}
         onClick={() => dispatch(closeThanksPopup())}

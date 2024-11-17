@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import styles from "./Faq.module.css";
 import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
-import { useTheme } from "next-themes";
 
 interface FaqItem {
   title: string;
@@ -26,16 +24,13 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
-  const { resolvedTheme } = useTheme();
 
   return (
     <SectionWrapper sectionId="faq">
       <div className="container">
         <div
           className={
-            resolvedTheme == "light"
-              ? styles.faq__wrapper_light
-              : styles.faq__wrapper
+            styles.faq__wrapper
           }
         >
           <AnimatedWrapper type="fade-up" duration={1.2}>
@@ -48,9 +43,8 @@ const Faq: React.FC<FaqProps> = ({ faqItems }) => {
                   <div
                     onClick={() => handleClick(index)}
                     key={index}
-                    className={`${styles.faq__main_item} ${
-                      activeIndex === index ? styles.active : ""
-                    }`}
+                    className={`${styles.faq__main_item} ${activeIndex === index ? styles.active : ""
+                      }`}
                   >
                     <div className={styles.faq__item_inner}>
                       <h3 className={styles.faq__inner_title}>{item.title}</h3>
