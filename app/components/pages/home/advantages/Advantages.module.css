@@ -92,7 +92,7 @@
 }
 
 .advantages__heading_title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 28px;
   color: var(--white);
@@ -147,7 +147,7 @@
 
   .advantages__heading_numeric,
   .advantages__heading_title {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 26px;
   }
 

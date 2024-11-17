@@ -42,6 +42,10 @@ const ContactForm = () => {
   const { resolvedTheme } = useTheme();
   const siteTheme = resolvedTheme;
 
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
+
   const countries = defaultCountries.filter((country) => {
     const { iso2 } = parseCountry(country);
     return [

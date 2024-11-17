@@ -15,7 +15,8 @@
   overflow: hidden;
 }
 
-.line__wrapper::before {
+.line__wrapper::before,
+.line__wrapper_light::before {
   content: "";
   position: absolute;
   top: 0;
