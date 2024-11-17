@@ -7,20 +7,16 @@ import TitleWrapper from "@/app/components/UI/titleWrapper/TitleWrapper";
 import SectionWrapper from "@/app/components/UI/sectionWrapper/SectionWrapper";
 import { useTranslations } from "next-intl";
 import AnimatedWrapper from "@/app/components/UI/scrollAnimationWrapper/ScrollAnimationWrapper";
-import { useTheme } from "next-themes";
 
 const Services: React.FC = () => {
   const t = useTranslations("home.services");
-  const { theme } = useTheme();
 
   return (
     <SectionWrapper sectionId="services">
       <div className="container">
         <div
           className={
-            theme == "light"
-              ? styles.services__wrapper_light
-              : styles.services__wrapper
+            styles.services__wrapper
           }
         >
           <div className={styles.services__wrapper_heading}>
