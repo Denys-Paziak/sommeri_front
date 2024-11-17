@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--dark);
+    color: var(--white);
+}
+
+
+.image {
+    height: 200px;
+    background: var(--white);
+}
+
+.desc {
+    opacity: 0.8;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}

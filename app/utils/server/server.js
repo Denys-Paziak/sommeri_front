@@ -80,3 +80,17 @@ export const getSimilars = async (url) => {
     console.error("Error fetching technologies way:", error);
   }
 };
+
+
+
+export const getBlog = async (url) => {
+  try {
+    const response = await axios.get(
+      `${backHost}/api/blogs/i4u5c71oko42rs8s3cfixoko`
+    );
+
+    return response.data.data;
+  } catch (error) {
+    console.error("Error fetching technologies way:", error);
+  }
+};
