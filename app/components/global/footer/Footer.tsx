@@ -310,15 +310,7 @@ const Footer = () => {
                   {t("footer.reserved")}
                 </span>
                 <div className={styles.footer__bottom_theme}>
-                  <label className={styles.ui_switch}>
-                    <input
-                      type="checkbox"
 
-                    />
-                    <div className={styles.slider}>
-                      <div className={styles.circle}></div>
-                    </div>
-                  </label>
                 </div>
               </div>
             </div>
