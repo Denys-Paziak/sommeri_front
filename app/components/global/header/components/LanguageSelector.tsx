@@ -18,7 +18,9 @@ const LanguageSelector: React.FC = () => {
 
   const handleLanguageChange = (language: Language) => {
     const newLocale = language.code;
+
     const newPath = `/${newLocale}${pathname.replace(`/${locale}`, "")}`;
+
     router.push(newPath);
     setIsOpen(false);
   };
@@ -61,10 +63,10 @@ const LanguageSelector: React.FC = () => {
       {isOpen && (
         <ul className={styles.language__list}>
           {languages.map((language) => (
-            <a
-              href={`https://sommeri.com/${language.code}`}
+            <li
               key={language.code}
               className={styles.language__list_item}
+              onClick={() => handleLanguageChange(language)}
             >
               <span className={styles.language__item_flag}>
                 <Image
@@ -78,7 +80,7 @@ const LanguageSelector: React.FC = () => {
                 />
               </span>
               <p className={styles.language__item_name}>{language.name}</p>
-            </a>
+            </li>
           ))}
         </ul>
       )}
