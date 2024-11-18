@@ -42,6 +42,11 @@
   border-radius: 12px;
   border: 1px solid #ffffff1a;
   margin-right: 20px;
+  transition: 0.4s;
+}
+
+.reviews__track_item:hover {
+  border: 1px solid var(--primary);
 }
 
 .reviews__block_light .reviews__track_item {

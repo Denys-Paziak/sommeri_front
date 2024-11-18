@@ -11,10 +11,9 @@
   overflow: hidden;
 }
 
-
 .seconddary__button:after,
 .seconddary__button:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -34,4 +33,5 @@
 
 .seconddary__button:hover::before {
   left: 0%;
+  background: var(--primary);
 }

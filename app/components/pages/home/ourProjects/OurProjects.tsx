@@ -33,18 +33,14 @@ export default function Page({ posts, categories }: iProps) {
     activeCategory === "All"
       ? posts
       : posts.filter(
-        (project: ProjectInterface) =>
-          project.Category.Name === activeCategory
-      );
+          (project: ProjectInterface) =>
+            project.Category.Name === activeCategory
+        );
 
   return (
     <SectionWrapper sectionId={"portfolio"}>
       <div className="container">
-        <div
-          className={
-            styles.projects__wrapper
-          }
-        >
+        <div className={styles.projects__wrapper}>
           <div className={styles.projects__wrapper_heading}>
             <AnimatedWrapper type="fade-up" duration={1.2}>
               <TitleWrapper>{t("title")}</TitleWrapper>
@@ -60,8 +56,9 @@ export default function Page({ posts, categories }: iProps) {
               <AnimatedWrapper type="fade-up" duration={1.2}>
                 <ul className={styles.projects__categories_list}>
                   <li
-                    className={`${styles.projects__category_item} ${activeCategory === "All" && styles.active
-                      }`}
+                    className={`${styles.projects__category_item} ${
+                      activeCategory === "All" && styles.active
+                    }`}
                     onClick={() => setActiveCategory("All")}
                   >
                     {t("all")}
@@ -70,8 +67,9 @@ export default function Page({ posts, categories }: iProps) {
                   {categories.map((category) => (
                     <li
                       key={category.Name}
-                      className={`${styles.projects__category_item} ${activeCategory === category.Name && styles.active
-                        }`}
+                      className={`${styles.projects__category_item} ${
+                        activeCategory === category.Name && styles.active
+                      }`}
                       onClick={() => setActiveCategory(category.Name)}
                     >
                       {category.Name}
@@ -158,7 +156,7 @@ function Project({ project, className }: any) {
             type="button"
             aria-label="view button"
           >
-            <span className={styles.project__view_text}>{t("view")}</span>
+            {t("view")}
           </button>
         </div>
         <div className={styles.project__item_info}>
