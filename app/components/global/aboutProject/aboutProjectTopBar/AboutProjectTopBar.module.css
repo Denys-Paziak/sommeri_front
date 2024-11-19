@@ -35,6 +35,15 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  transition: 0.4s;
+}
+.project__top_visit:hover .project__visit_text {
+  transition: 0.4s;
+  color: var(--primary);
+}
+.project__top_visit:hover .project__visit_icon svg path {
+  transition: 0.4s;
+  stroke: var(--primary);
 }
 .project__visit_text {
   font-size: 16px;

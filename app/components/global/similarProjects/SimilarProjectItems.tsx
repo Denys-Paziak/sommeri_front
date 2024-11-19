@@ -52,7 +52,11 @@ const SimilarProjectItems = ({ projects }: any) => {
                   >
                     <div className={styles.project__portfolio_item}>
                       <div className={styles.project__item_banner}>
-                        <ImageServer width={1000} height={1000} link={project.Preview.url} />
+                        <ImageServer
+                          width={1000}
+                          height={1000}
+                          link={project.Preview.url}
+                        />
                         <div className={styles.project__banner_inner}>
                           <h4 className={styles.project__inner_name}>
                             {project.Name}
@@ -80,9 +84,7 @@ const SimilarProjectItems = ({ projects }: any) => {
                           type="button"
                           aria-label="view project"
                         >
-                          <span className={styles.project__view_text}>
-                            {t("view")}
-                          </span>
+                          {t("view")}
                         </button>
                       </div>
                       <div className={styles.project__item_info}>
