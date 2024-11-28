@@ -88,6 +88,20 @@ export default async function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" href="https://sommeri.com/uk" hrefLang="uk" />
         <link rel="alternate" href="https://sommeri.com/en" hrefLang="en" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16570340060"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16570340060');
+            `,
+          }}
+        ></script>
       </head>
       <body className={montserrat.className}>
         <NextIntlClientProvider messages={messages}>
