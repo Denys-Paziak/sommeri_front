@@ -47,7 +47,7 @@ const DiscountLine = () => {
       </div>
       <div className={styles.discount__line_vector}>
         <Image
-          src="/images/discount-leaf.avif"
+          src="/images/discount-snow.avif"
           alt="discount vector"
           width={2000}
           height={100}
